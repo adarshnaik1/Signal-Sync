@@ -1,0 +1,566 @@
+# BGV Crew — design + code templates (ready to copy/paste)
+
+Nice — I built a complete, practical plan **plus runnable code templates** you can drop into your project.
+What you’ll get below:
+
+1. a single **schema-first JSON** spec (used by every agent via OpenAI’s structured output capability)
+2. an **example final output** `bgv_output.json` and where it will be written (`{root}/src/signal_sync/output_data`)
+3. a **stock data tool** placed at `{root}/src/signal_sync/tools/stock_tool.py` (uses `yfinance`) which the scam-detection agent will call and which also writes a local cache file
+4. a small **Streamlit frontend** (`app.py`) that uploads the annual-report PDF and accepts company name + ticker and triggers the crew
+5. an orchestrator (`bgv_orchestrator.py`) and **agent stubs** showing how to call SerperDev/search + OpenAI structured outputs and how to combine everything into the final `bgv_output.json`
+6. notes on env vars, dependencies and how to run
+
+I avoided overengineering — each agent is a small module with clear inputs/outputs. Use these as templates and replace the `# TODO` sections with your API calls (SerperDev, OpenAI client, PDF extractors, etc.).
+
+---
+
+# 1) JSON Schema (single canonical schema for bgv_output.json)
+
+Save this schema in code (used by all agents to produce structured outputs). Agents should ask the model to return JSON conforming to this schema using OpenAI’s structured output / response schema capability.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BGV Output Schema",
+  "type": "object",
+  "required": ["meta", "company", "scores", "findings", "evidence"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "generated_at": {"type": "string", "format": "date-time"},
+        "pipeline_version": {"type": "string"},
+        "sources": {
+          "type": "array",
+          "items": {"type": "object",
+                    "properties": {
+                      "name": {"type": "string"},
+                      "type": {"type": "string"},
+                      "url": {"type": "string"}
+                    },
+                    "required": ["name","type"]
+                   }
+          }
+        }
+      },
+    "company": {
+      "type": "object",
+      "required": ["name","ticker","sector"],
+      "properties": {
+        "name": {"type": "string"},
+        "ticker": {"type": "string"},
+        "sector": {"type": "string"},
+        "profile_summary": {"type": "string"},
+        "headquarters": {"type": "string"},
+        "founded_year": {"type":"integer"},
+        "employees": {"type":"integer"}
+      }
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "trustworthiness_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "financial_integrity_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "management_risk_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "market_manipulation_risk_score": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    },
+    "findings": {
+      "type": "object",
+      "properties": {
+        "overview_findings": {"type": "array", "items": {"type":"string"}},
+        "management_findings": {"type": "array", "items": {"type":"string"}},
+        "financial_irregularities": {"type": "array", "items": {"type":"string"}},
+        "scam_signals": {"type": "array", "items": {"type":"string"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {"type":"object",
+                    "properties": {
+                      "type": {"type":"string"},
+                      "location": {"type":"string"},
+                      "summary": {"type":"string"}
+                    },
+                    "required": ["type","location"]
+                   }
+         },
+        "time_series": {
+          "type":"array",
+          "items": {"type":"object",
+                    "properties": {
+                      "source": {"type":"string"},
+                      "from": {"type":"string", "format":"date"},
+                      "to": {"type":"string", "format":"date"},
+                      "file": {"type":"string"},
+                      "metrics": {"type":"object"}
+                    },
+                    "required":["source","file"]
+                   }
+        },
+        "people_profiles": {
+          "type":"array",
+          "items":{"type":"object",
+                 "properties":{
+                   "name":{"type":"string"},
+                   "role":{"type":"string"},
+                   "red_flags":{"type":"array","items":{"type":"string"}},
+                   "evidence_links":{"type":"array","items":{"type":"string"}}
+                 },
+                 "required":["name","role"]
+                }
+        }
+      }
+    },
+    "final_verdict": {"type":"string"}
+  }
+}
+```
+
+---
+
+# 2) Example final `bgv_output.json` (short example instance)
+
+Place final file at:
+
+```
+{root}/src/signal_sync/output_data/bgv_output.json
+```
+
+Example content (shortened):
+
+```json
+{
+  "meta": {
+    "generated_at": "2026-01-16T13:00:00Z",
+    "pipeline_version": "bgv_v0.1",
+    "sources": [
+      {"name": "SerperDev", "type": "web_search"},
+      {"name": "yfinance", "type": "time_series"}
+    ]
+  },
+  "company": {
+    "name": "Example Corp",
+    "ticker": "EXMPL",
+    "sector": "Technology",
+    "profile_summary": "Example Corp builds ...",
+    "headquarters": "San Francisco, CA",
+    "founded_year": 2010,
+    "employees": 425
+  },
+  "scores": {
+    "trustworthiness_score": 78.5,
+    "financial_integrity_score": 72.0,
+    "management_risk_score": 45.0,
+    "market_manipulation_risk_score": 20.0
+  },
+  "findings": {
+    "overview_findings": ["Large market share in region X", "Multiple subsidiaries in EU"],
+    "management_findings": ["Founder had one regulatory fine in 2017"],
+    "financial_irregularities": ["Quarterly revenue spike in 2025-Q1 without matching cash flows"],
+    "scam_signals": ["Sudden volume spike on 2026-01-10 not matched by news"]
+  },
+  "evidence": {
+    "documents": [{"type":"annual_report","location":"uploads/EXMPL_annual_report.pdf","summary":"Contains revenue table"}],
+    "time_series": [{"source":"yfinance","from":"2026-01-01","to":"2026-01-15","file":"tools/cache/EXMPL_yfinance_20260101_20260115.json","metrics":{"max_volume_spike":"4.8x"}}],
+    "people_profiles": [{"name":"Alice Founder","role":"CEO","red_flags":["2017 regulatory fine"],"evidence_links":["https://news.example/2017/issue"]}]
+  },
+  "final_verdict": "Moderate risk: proceed with caution; further audit recommended for Q1-2025 revenue items."
+}
+```
+
+---
+
+# 3) file: `{root}/src/signal_sync/tools/stock_tool.py`
+
+Place this file in your repo. It fetches and caches yfinance time series and returns a path to the cached JSON the agents can consume.
+
+```python
+# src/signal_sync/tools/stock_tool.py
+import os
+import json
+from datetime import datetime
+import yfinance as yf
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+CACHE_DIR = os.path.join(ROOT, "src", "signal_sync", "tools", "cache")
+os.makedirs(CACHE_DIR, exist_ok=True)
+
+def fetch_yfinance(ticker: str, period: str = "30d", interval: str = "1d") -> str:
+    """
+    Fetches historical data using yfinance, saves JSON cache and returns filepath.
+    period examples: '7d','30d','60d', '1y'
+    interval examples: '1d','1h'
+    """
+    ticker = ticker.upper()
+    ts = yf.Ticker(ticker)
+    # .history returns pandas DataFrame
+    df = ts.history(period=period, interval=interval, actions=False)
+    data = {
+        "ticker": ticker,
+        "period": period,
+        "interval": interval,
+        "fetched_at": datetime.utcnow().isoformat() + "Z",
+        "data": df.reset_index().to_dict(orient="records")
+    }
+    fname = f"{ticker}_yfinance_{period}_{interval}_{datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')}.json"
+    path = os.path.join(CACHE_DIR, fname)
+    with open(path, "w") as f:
+        json.dump(data, f, default=str, indent=2)
+    return path
+
+# quick CLI test
+if __name__ == "__main__":
+    import sys
+    ticker = sys.argv[1] if len(sys.argv) > 1 else "AAPL"
+    print(fetch_yfinance(ticker, period="15d", interval="1d"))
+```
+
+**Notes**
+
+* `yfinance` returns a pandas DataFrame; we convert to records for JSON.
+* Agents should call `fetch_yfinance` and then analyze the cached JSON file path.
+
+---
+
+# 4) Streamlit frontend (put at `{root}/streamlit_app/app.py`)
+
+Minimal UI: company name, ticker, upload annual report PDF, and trigger button. On trigger it calls the orchestrator.
+
+```python
+# streamlit_app/app.py
+import streamlit as st
+import requests
+import tempfile
+import os
+import json
+from pathlib import Path
+# We will call the local Python orchestrator directly; simpler: import the orchestrator module if same environment.
+# If running separately, you can call an API endpoint. Here we assume same PYTHONPATH.
+
+st.set_page_config(page_title="BGV Verification", layout="centered")
+st.title("BGV — Background Verification")
+
+company_name = st.text_input("Company name")
+ticker = st.text_input("Ticker (exchange symbol)")
+sector = st.text_input("Sector")
+annual_pdf = st.file_uploader("Upload Annual Report PDF", type=["pdf"])
+
+if st.button("Run BGV Crew"):
+    if not company_name or not ticker or not annual_pdf:
+        st.error("Please provide company name, ticker and annual report PDF.")
+    else:
+        # save uploaded file
+        uploads_dir = Path("uploads")
+        uploads_dir.mkdir(parents=True, exist_ok=True)
+        pdf_path = uploads_dir / f"{ticker}_annual_report.pdf"
+        with open(pdf_path, "wb") as f:
+            f.write(annual_pdf.read())
+
+        st.info("Triggering BGV orchestrator (this can take a minute)...")
+        # If orchestrator is importable, call function directly:
+        try:
+            from src.signal_sync.bgv_orchestrator import run_bgv_pipeline
+            out_path = run_bgv_pipeline(company_name.strip(), ticker.strip(), sector.strip(), str(pdf_path))
+            st.success(f"BGV pipeline completed. Output: {out_path}")
+            with open(out_path) as f:
+                st.json(json.load(f))
+        except Exception as e:
+            st.error(f"Failed to run orchestrator locally: {e}")
+            st.write("If you run the orchestrator as a separate service, POST the form data to its endpoint.")
+```
+
+**Notes**
+
+* This file assumes the orchestrator is importable (same venv). Alternatively expose an HTTP endpoint.
+
+---
+
+# 5) Orchestrator + agent skeletons
+
+Place under `{root}/src/signal_sync/`
+
+`bgv_orchestrator.py` — coordinates agents and writes final `bgv_output.json`.
+
+```python
+# src/signal_sync/bgv_orchestrator.py
+import os
+import json
+from datetime import datetime
+from src.signal_sync.tools.stock_tool import fetch_yfinance
+from src.signal_sync.agents.overview_agent import overview_agent_run
+from src.signal_sync.agents.management_agent import management_agent_run
+from src.signal_sync.agents.financial_agent import financial_agent_run
+from src.signal_sync.agents.scam_agent import scam_agent_run
+
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output_data")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "bgv_output.json")
+
+def run_bgv_pipeline(company_name: str, ticker: str, sector: str, annual_report_pdf_path: str) -> str:
+    """
+    Orchestrates the agents. Each agent returns a dict conforming to the JSON Schema fragments.
+    """
+    # 1. Overview agent (web search + LLM)
+    overview = overview_agent_run(company_name, ticker, sector)
+
+    # 2. Management research agent (people profiles, red flags)
+    management = management_agent_run(company_name, ticker, sector)
+
+    # 3. Financial irregularities agent: analyze annual report PDF + financial tables
+    financial = financial_agent_run(annual_report_pdf_path, company_name, ticker)
+
+    # 4. Fetch time-series data for the scam detection agent
+    ts_path = fetch_yfinance(ticker, period="30d", interval="1d")
+
+    # 5. Scam detection agent analyzes time-series
+    scam = scam_agent_run(ts_path, company_name, ticker)
+
+    # 6. Combine and score
+    output = {
+        "meta": {
+            "generated_at": datetime.utcnow().isoformat() + "Z",
+            "pipeline_version": "bgv_v0.1",
+            "sources": overview.get("sources", []) + management.get("sources", [])
+        },
+        "company": overview.get("company", {}),
+        "scores": {
+            "trustworthiness_score": round((overview.get("trust_score", 60) + financial.get("fin_score", 60) + (100 - management.get("management_risk", 40))) / 3,2),
+            "financial_integrity_score": financial.get("fin_score", 60),
+            "management_risk_score": management.get("management_risk", 40),
+            "market_manipulation_risk_score": scam.get("market_manipulation_risk", 10)
+        },
+        "findings": {
+            "overview_findings": overview.get("findings", []),
+            "management_findings": management.get("findings", []),
+            "financial_irregularities": financial.get("findings", []),
+            "scam_signals": scam.get("findings", [])
+        },
+        "evidence": {
+            "documents": [
+                {"type":"annual_report","location":annual_report_pdf_path,"summary":financial.get("report_summary","")}
+            ],
+            "time_series": [
+                {"source":"yfinance","from":ts_path, "to":ts_path, "file":ts_path, "metrics": scam.get("metrics", {})}
+            ],
+            "people_profiles": management.get("people_profiles", [])
+        },
+        "final_verdict": "Moderate risk: follow-up recommended."
+    }
+
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(output, f, indent=2, default=str)
+
+    return OUTPUT_FILE
+```
+
+### Agent stubs (place under `src/signal_sync/agents/`)
+
+Create `__init__.py` and these files.
+
+**overview_agent.py**
+
+```python
+# src/signal_sync/agents/overview_agent.py
+import os
+from datetime import datetime
+
+def overview_agent_run(company_name: str, ticker: str, sector: str) -> dict:
+    """
+    1) Use SerperDev or curated sources to fetch a company profile
+    2) Use OpenAI structured output to create company profile summary
+    For now return a stubbed response skeleton — replace with real API calls.
+    """
+    # TODO: call SerperDev -> extract bullets -> call OpenAI to create structured output per schema
+    return {
+        "company": {
+            "name": company_name,
+            "ticker": ticker,
+            "sector": sector,
+            "profile_summary": f"Auto-generated summary for {company_name}",
+            "headquarters": "Unknown",
+            "founded_year": None,
+            "employees": None
+        },
+        "findings": ["No flagged global sanctions found in quick scan"],
+        "trust_score": 70,
+        "sources": [{"name":"SerperDev","type":"web_search"}]
+    }
+```
+
+**management_agent.py**
+
+```python
+# src/signal_sync/agents/management_agent.py
+def management_agent_run(company_name: str, ticker: str, sector: str) -> dict:
+    """
+    1) Query SerperDev for founders/executives
+    2) For each person, run an LLM structured output to extract red flags
+    """
+    # TODO: integrate search api + structured output
+    people = [
+        {"name":"Alice Founder", "role":"CEO", "red_flags":["2017 regulatory fine"], "evidence_links":["https://news.example/2017/issue"]}
+    ]
+    return {
+        "people_profiles": people,
+        "findings": ["Founder had regulatory fine in 2017"],
+        "management_risk": 45,
+        "sources":[{"name":"SerperDev","type":"web_search"}]
+    }
+```
+
+**financial_agent.py**
+
+```python
+# src/signal_sync/agents/financial_agent.py
+def financial_agent_run(annual_report_pdf_path: str, company_name: str, ticker: str) -> dict:
+    """
+    1) Extract tables from the annual report PDF (use pdfplumber / tabula-py)
+    2) Run simple heuristics or LLM-based analysis to detect revenue spikes, unusual debt, or audit warnings
+    """
+    # TODO: parse PDF, extract income statements, cashflows, balance sheets
+    findings = ["Revenue spike in 2025-Q1 flagged for further review"]
+    return {"findings": findings, "fin_score": 72, "report_summary": "Revenue spike in Q1 2025 needs verification"}
+```
+
+**scam_agent.py**
+
+```python
+# src/signal_sync/agents/scam_agent.py
+import json
+def scam_agent_run(ts_json_path: str, company_name: str, ticker: str) -> dict:
+    """
+    Load cached yfinance JSON and look for anomalies:
+    - Large volume spikes (e.g > 3x median)
+    - Price gaps
+    - Volume unaccompanied by news (TODO: cross-check with SerperDev)
+    """
+    with open(ts_json_path) as f:
+        data = json.load(f)
+
+    records = data.get("data", [])
+    volumes = [r.get("Volume") or r.get("volume") for r in records if r.get("Volume") or r.get("volume")]
+    volumes = [v for v in volumes if isinstance(v, (int, float))]
+    findings = []
+    metrics = {}
+
+    if volumes:
+        import statistics
+        med = statistics.median(volumes)
+        max_v = max(volumes)
+        if med > 0:
+            ratio = max_v / med
+            metrics["max_volume_spike"] = ratio
+            if ratio > 3:
+                findings.append(f"Detected volume spike: {ratio:.2f}x median volume")
+    else:
+        metrics["max_volume_spike"] = None
+
+    return {"findings": findings, "market_manipulation_risk": 20 if findings else 5, "metrics": metrics}
+```
+
+---
+
+# 6) Using OpenAI structured outputs (pattern)
+
+Below is a **recommended helper** (replace with the exact client you use). Use OpenAI Responses API with `response_format` / `output_schema` (or function-calling / structured output SDK). Example pseudo-code:
+
+```python
+# src/signal_sync/utils/openai_structured.py
+import os
+import json
+from typing import Dict
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Install and use the OpenAI SDK appropriate for structured outputs
+# Example pseudocode:
+def call_structured_llm(prompt: str, schema: Dict) -> Dict:
+    """
+    Call OpenAI (or other LLM) asking it to return JSON matching `schema`.
+    Validate returned JSON against schema before returning.
+    """
+    # TODO: implement using official SDK, e.g., client.responses.create(...)
+    # This is a placeholder.
+    raise NotImplementedError("Implement with your OpenAI client and schema enforcement")
+```
+
+**Important**: Always validate the model output against the JSON Schema before saving (use `jsonschema` package). If validation fails, retry or fall back to conservative defaults.
+
+---
+
+# 7) Where outputs & tools live (summary)
+
+```
+{root}/
+  streamlit_app/app.py
+  uploads/                # uploaded annual PDFs
+  src/
+    signal_sync/
+      output_data/
+        bgv_output.json        # final output (single file)
+      tools/
+        cache/
+        stock_tool.py          # fetch yfinance, save JSON cache
+      agents/
+        __init__.py
+        overview_agent.py
+        management_agent.py
+        financial_agent.py
+        scam_agent.py
+      bgv_orchestrator.py
+      utils/
+        openai_structured.py
+```
+
+---
+
+# 8) Dependencies & env vars
+
+`requirements.txt` (minimal):
+
+```
+streamlit
+yfinance
+pandas
+pdfplumber
+openai
+jsonschema
+```
+
+Env vars:
+
+* `OPENAI_API_KEY` — for structured LLM calls (OpenAI)
+* `SERPERDEV_API_KEY` — for web search (SerperDev) if used
+* (optionally) other keys for news APIs
+
+---
+
+# 9) How to run (dev)
+
+1. Create venv and install requirements: `pip install -r requirements.txt`
+2. Run Streamlit: `streamlit run streamlit_app/app.py`
+3. Fill company name, ticker, upload PDF, click **Run BGV Crew** — this calls `run_bgv_pipeline` and writes `bgv_output.json`.
+
+---
+
+# 10) Next steps / integration notes (quick)
+
+* Replace agent `TODO`s with real API calls: SerperDev for verified search, OpenAI structured outputs for parsing and producing JSON fields, `pdfplumber` (or Tabula) to extract tables from PDFs.
+* Add retry + rate-limit handling for all web calls. Cache search results.
+* Add unit tests for schema validation (use `jsonschema.validate(...)`) — critical to ensure front-end can safely render the JSON.
+* Add a small REST wrapper around `run_bgv_pipeline` if you prefer to run the pipeline as a service (recommended for production).
+* Add a `logs/` directory and instrument metrics (durations, agent success/fail).
+* Extend stock tool to include intraday intervals (1h) when `interval="1h"`, and add optional news cross-check to suppress false positives.
+
+---
+
+If you want, I can now:
+
+* generate these files for you as text blobs you can copy-paste (I can create a single archive of files), **or**
+* implement the `openai_structured.py` helper with the exact `client.responses.create(...)` call you want (I can show code for the latest OpenAI Responses API), **or**
+* expand the `financial_agent` implementation to parse balance sheets from the PDF using `pdfplumber` and produce real structured evidence entries.
+
+Tell me which of the three you want me to create next and I’ll produce the files (full code) inline now.

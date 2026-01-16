@@ -1,0 +1,26 @@
+# Signal Sync - BGV Verification Requirements
+
+# Core CrewAI framework
+crewai[tools]>=0.141.0,<1.0.0
+
+# Stock data fetching
+yfinance>=0.2.36
+
+# Data processing
+pandas>=2.0.0
+
+# PDF processing
+pdfplumber>=0.10.0
+
+# Web UI
+streamlit>=1.31.0
+
+# Data validation
+pydantic>=2.0.0
+jsonschema>=4.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Optional: For enhanced search capabilities
+# serper-dev  # SerperDev API wrapper (if available)

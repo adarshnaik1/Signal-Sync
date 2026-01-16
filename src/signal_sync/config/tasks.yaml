@@ -1,0 +1,169 @@
+# BGV (Background Verification) Tasks Configuration
+
+company_overview_task:
+  description: >
+    Conduct a comprehensive analysis of {company_name} ({ticker}) in the {sector} sector.
+    
+    Your analysis should cover:
+    1. Business description and core operations
+    2. Main products and services offered
+    3. Subsidiaries and affiliated companies
+    4. Geographic market presence and expansion
+    5. Company headquarters and founding information
+    6. Employee count and organizational scale
+    7. Recent news and developments
+    8. Initial trustworthiness assessment based on public information
+    
+    Use web searches to gather verified information from reliable sources such as:
+    - Official company website and filings
+    - Business news outlets (Reuters, Bloomberg, etc.)
+    - Industry reports and analyst coverage
+    - Regulatory filings where available
+    
+    Provide a trust score from 0-100 based on your findings.
+  expected_output: >
+    A comprehensive company overview in JSON format containing:
+    - company: Object with name, ticker, sector, profile_summary, headquarters, 
+      founded_year, employees, products_services, subsidiaries, market_presence
+    - findings: Array of key findings about the company
+    - trust_score: Initial trustworthiness score (0-100)
+    - sources: Array of sources used with name, type, and url
+  agent: company_overview_agent
+
+management_research_task:
+  description: >
+    Research the management team and key executives of {company_name} ({ticker}).
+    
+    For each key person (CEO, CFO, founders, board members), investigate:
+    1. Professional background and career history
+    2. Previous company affiliations and roles
+    3. Any past fraud allegations or investigations
+    4. Regulatory actions or sanctions
+    5. Legal issues or controversies
+    6. Corporate governance concerns
+    7. Public statements and reputation
+    
+    Red flags to look for:
+    - Past involvement in corporate scandals
+    - Regulatory fines or sanctions
+    - Frequent job changes or company failures
+    - Lawsuits or legal proceedings
+    - Connections to known fraudsters
+    - Misleading public statements
+    
+    Use web searches to verify all information from multiple sources.
+    Provide a management risk score from 0-100 (higher = more risky).
+  expected_output: >
+    A management research report in JSON format containing:
+    - people_profiles: Array of executive profiles with name, role, red_flags, evidence_links
+    - findings: Array of key management findings
+    - management_risk_score: Risk score (0-100, higher means more risky)
+    - sources: Array of sources used
+  agent: management_research_agent
+
+financial_irregularities_task:
+  description: >
+    Analyze the financial health and integrity of {company_name} ({ticker}).
+    
+    The annual report PDF is located at: {annual_report_path}
+    
+    Your analysis should focus on:
+    1. Revenue patterns - Look for unusual spikes or inconsistencies
+    2. Cash flow vs. reported earnings discrepancies
+    3. Debt levels and debt-to-equity ratios
+    4. Audit opinions and any qualified statements
+    5. Related party transactions
+    6. Off-balance sheet items
+    7. Accounting policy changes
+    8. Earnings quality indicators
+    
+    Common red flags to identify:
+    - Revenue recognition issues
+    - Aggressive accounting practices
+    - Unexplained one-time gains
+    - Unusual inventory or receivables growth
+    - Frequent restatements
+    - Auditor changes
+    - Going concern warnings
+    
+    Provide a financial integrity score from 0-100.
+  expected_output: >
+    A financial analysis report in JSON format containing:
+    - findings: Array of detected financial irregularities or concerns
+    - financial_integrity_score: Score (0-100)
+    - report_summary: Summary of annual report analysis
+    - anomalies_detected: Array of specific anomalies with details
+  agent: financial_irregularities_agent
+
+scam_detection_task:
+  description: >
+    Analyze trading patterns for {company_name} ({ticker}) to detect potential 
+    market manipulation or scam signals.
+    
+    Use the stock_data_fetcher tool to fetch historical price and volume data.
+    Request at least 30 days of daily data for comprehensive analysis.
+    
+    Analyze the following patterns:
+    1. Volume anomalies:
+       - Sudden volume spikes (>3x median volume)
+       - Volume without corresponding news
+       - Coordinated trading patterns
+    
+    2. Price manipulation signals:
+       - Pump and dump patterns
+       - Unusual price gaps
+       - Price movements without fundamental reasons
+       - Correlation with social media activity
+    
+    3. Trading pattern analysis:
+       - End-of-day price manipulation
+       - Wash trading indicators
+       - Layering or spoofing patterns
+    
+    Cross-reference any suspicious patterns with news and corporate announcements.
+    Provide a market manipulation risk score from 0-100.
+  expected_output: >
+    A scam detection report in JSON format containing:
+    - findings: Array of detected scam or manipulation signals
+    - market_manipulation_risk_score: Risk score (0-100)
+    - metrics: Object with analysis metrics (volume_spike_ratio, price_volatility, etc.)
+    - volume_analysis: Detailed volume analysis results
+    - price_analysis: Detailed price analysis results
+  agent: scam_detection_agent
+
+compile_bgv_report_task:
+  description: >
+    Compile all findings from the verification agents into a comprehensive BGV report
+    for {company_name} ({ticker}) in the {sector} sector.
+    
+    You have access to the results from:
+    1. Company Overview Agent - company profile and initial trust assessment
+    2. Management Research Agent - executive backgrounds and red flags
+    3. Financial Irregularities Agent - financial analysis and concerns
+    4. Scam Detection Agent - trading pattern analysis
+    
+    Your tasks:
+    1. Aggregate all findings into a structured format
+    2. Calculate composite scores:
+       - Trustworthiness Score: Average of (trust_score + financial_integrity_score + (100 - management_risk_score)) / 3
+       - Keep individual scores for financial_integrity, management_risk, and market_manipulation
+    
+    3. Generate a final verdict with one of these categories:
+       - "LOW RISK: Safe for investment consideration"
+       - "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+       - "HIGH RISK: Significant concerns identified, detailed review required"
+       - "CRITICAL RISK: Major red flags detected, not recommended for investment"
+    
+    4. Ensure the output strictly follows the BGV Output Schema format
+    
+    The report will be saved to: {output_path}
+  expected_output: >
+    A complete BGV report in valid JSON format matching the BGVOutput schema with:
+    - meta: Report metadata with generated_at, pipeline_version, sources
+    - company: Complete company profile
+    - scores: All four risk/trust scores
+    - findings: All findings categorized by type
+    - evidence: Documents, time_series data, and people_profiles
+    - final_verdict: Clear assessment with recommendation
+  agent: bgv_report_compiler
+  output_file: bgv_output.json
