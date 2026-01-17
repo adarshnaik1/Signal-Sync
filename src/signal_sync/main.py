@@ -73,11 +73,108 @@ def run_bgv(
         raise Exception(f"An error occurred while running the BGV crew: {e}")
 
 
+def generate_dummy_output(company_name: str, ticker: str, sector: str) -> str:
+    """
+    Generate dummy/mock BGV output for testing without calling AI agents.
+    """
+    dummy_output = {
+        "meta": {
+            "generated_at": datetime.utcnow().isoformat() + "Z",
+            "pipeline_version": "bgv_v1.0_dummy",
+            "sources": [
+                {"name": "Yahoo Finance", "type": "time_series", "url": f"https://finance.yahoo.com/quote/{ticker}"},
+                {"name": "Web Search", "type": "web_search", "url": None}
+            ]
+        },
+        "company": {
+            "name": company_name,
+            "ticker": ticker,
+            "sector": sector,
+            "profile_summary": f"{company_name} is a leading company in the {sector} sector, known for innovation and market leadership.",
+            "headquarters": "United States",
+            "founded_year": 2003,
+            "employees": 100000,
+            "products_services": ["Electric Vehicles", "Energy Storage", "Solar Panels", "Autopilot Software"],
+            "subsidiaries": ["Tesla Energy", "Tesla Insurance"],
+            "market_presence": "Global - North America, Europe, Asia Pacific"
+        },
+        "scores": {
+            "trustworthiness_score": 72.5,
+            "financial_integrity_score": 68.0,
+            "management_risk_score": 45.0,
+            "market_manipulation_risk_score": 35.0
+        },
+        "findings": {
+            "overview_findings": [
+                f"{company_name} has shown consistent growth in the {sector} sector",
+                "Strong brand recognition and market positioning",
+                "Diversified product portfolio reducing risk"
+            ],
+            "management_findings": [
+                "CEO has a strong track record but occasional controversial statements",
+                "Management team has relevant industry experience",
+                "No major fraud allegations found"
+            ],
+            "financial_irregularities": [
+                "Revenue recognition practices appear standard",
+                "Debt levels are manageable but increasing",
+                "No major audit concerns identified"
+            ],
+            "scam_signals": [
+                "Some volume spikes detected around earnings announcements (normal)",
+                "No clear pump-and-dump patterns identified",
+                "Social media activity correlates with legitimate news events"
+            ]
+        },
+        "evidence": {
+            "documents": [],
+            "time_series": [
+                {
+                    "source": "yfinance",
+                    "from_date": "2025-12-17",
+                    "to_date": "2026-01-17",
+                    "file": "DUMMY_cache.json",
+                    "metrics": {
+                        "avg_volume": 50000000,
+                        "price_volatility": 3.2,
+                        "volume_spike_ratio": 1.8
+                    }
+                }
+            ],
+            "people_profiles": [
+                {
+                    "name": "CEO",
+                    "role": "Chief Executive Officer",
+                    "red_flags": [],
+                    "evidence_links": []
+                }
+            ]
+        },
+        "final_verdict": f"MODERATE RISK - {company_name} ({ticker}) appears to be a legitimate company with standard business practices. Some volatility and management-related concerns exist but no major red flags were identified. Suitable for investors with moderate risk tolerance."
+    }
+    
+    output_path = os.path.join(OUTPUT_DIR, "bgv_output.json")
+    with open(output_path, "w") as f:
+        json.dump(dummy_output, f, indent=2)
+    
+    print(f"\n{'='*60}")
+    print(f"[DUMMY MODE] Generated mock BGV output for {company_name} ({ticker})")
+    print(f"Output saved to: {output_path}")
+    print(f"{'='*60}\n")
+    
+    return output_path
+
+
 def run():
     """
     Run the BGV crew with default/example inputs.
     This is the entry point for the CLI command.
     """
+    # Check for --dummy flag
+    dummy_mode = '--dummy' in sys.argv
+    if dummy_mode:
+        sys.argv.remove('--dummy')
+    
     # Default example inputs for testing
     inputs = {
         'company_name': 'Example Corp',
@@ -97,7 +194,15 @@ def run():
         inputs['annual_report_path'] = sys.argv[4]
     
     try:
-        output_path = run_bgv(**inputs)
+        if dummy_mode:
+            # Generate dummy output without calling AI agents
+            output_path = generate_dummy_output(
+                inputs['company_name'],
+                inputs.get('ticker', inputs['company_name'].upper()[:4]),
+                inputs.get('sector', 'Technology')
+            )
+        else:
+            output_path = run_bgv(**inputs)
         
         # Display summary
         if os.path.exists(output_path):
