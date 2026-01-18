@@ -1,0 +1,14 @@
+# Reddit Sentiment Analyzer - Requirements
+# Install with: pip install -r requirements.txt
+
+# Reddit API wrapper
+praw>=7.7.0
+
+# Sentiment analysis
+vaderSentiment>=3.3.2
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Data processing (optional but useful)
+pandas>=2.0.0
