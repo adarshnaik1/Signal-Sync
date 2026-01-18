@@ -7,9 +7,15 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Load environment variables
-ROOT_DIR = Path(__file__).parent.parent
-load_dotenv(ROOT_DIR / ".env")
+# Load environment variables from project root
+MODULE_DIR = Path(__file__).parent.parent
+PROJECT_ROOT = MODULE_DIR.parent.parent  # Signal-Sync root
+
+# Try loading from project root first, then fall back to module directory
+if (PROJECT_ROOT / ".env").exists():
+    load_dotenv(PROJECT_ROOT / ".env")
+else:
+    load_dotenv(MODULE_DIR / ".env")
 
 # Reddit API Credentials
 REDDIT_CONFIG = {
@@ -49,7 +55,7 @@ SENTIMENT_THRESHOLDS = {
 }
 
 # Output directory
-OUTPUT_DIR = ROOT_DIR / "output"
+OUTPUT_DIR = MODULE_DIR / "output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Text preprocessing settings
