@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "generated_at": "2023-10-21T12:00:00Z",
+    "pipeline_version": "1.0.0",
+    "sources": [
+      {
+        "name": "Infosys Official Website",
+        "type": "official",
+        "url": "https://www.infosys.com/"
+      },
+      {
+        "name": "Yahoo Finance - Infosys Limited (INFY) Profile",
+        "type": "business news",
+        "url": "https://finance.yahoo.com/quote/INFY/profile/"
+      },
+      {
+        "name": "Wikipedia - Infosys",
+        "type": "informational",
+        "url": "https://en.wikipedia.org/wiki/Infosys"
+      },
+      {
+        "name": "MarketScreener - Infosys Profile",
+        "type": "business news",
+        "url": "https://markets.ft.com/data/equities/tearsheet/profile?s=INFY:NYQ"
+      },
+      {
+        "name": "Press Release on Infosys' Recent Activities",
+        "type": "press release",
+        "url": "https://www.infosys.com/newsroom/press-releases.html"
+      },
+      {
+        "name": "Business Consolidation and Restructuring News",
+        "type": "news article",
+        "url": "https://seenews.com/news/indias-infosys-consolidates-romanian-operations-1286341"
+      },
+      {
+        "name": "CNN",
+        "type": "news",
+        "url": "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh"
+      },
+      {
+        "name": "National Herald",
+        "type": "news",
+        "url": "https://www.nationalheraldindia.com/business/infosys-techies-accuse-ceo-cfo-of-unethical-practices"
+      },
+      {
+        "name": "Times of India",
+        "type": "news",
+        "url": "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+      }
+    ]
+  },
+  "company": {
+    "name": "Infosys",
+    "ticker": "INFY",
+    "sector": "Technology",
+    "profile_summary": "Infosys is a global leader in technology services and consulting. The company helps clients in over 50 countries navigate their digital transformation.",
+    "headquarters": "Bangalore, Karnataka, India",
+    "founded_year": 1981,
+    "employees": 330000,
+    "products_services": [
+      "IT consulting",
+      "Application development and maintenance",
+      "Infrastructure management services",
+      "Business process outsourcing",
+      "Cloud services",
+      "AI and automation solutions",
+      "Digital experience services"
+    ],
+    "subsidiaries": [
+      "EdgeVerve Systems",
+      "Infosys Consulting LLC",
+      "Infosys BPM",
+      "Infosys Public Services",
+      "Infosys Lithuania",
+      "Infosys Romania"
+    ],
+    "market_presence": "Infosys serves clients in more than 50 countries, with significant operations in North America, Europe, Asia, and Australia."
+  },
+  "scores": {
+    "trustworthiness_score": 69.67,
+    "financial_integrity_score": 65.0,
+    "management_risk_score": 75.0,
+    "market_manipulation_risk_score": 80.0
+  },
+  "findings": {
+    "overview_findings": [
+      "Infosys has been recognized for its rapid growth in brand value and market presence, achieving a CAGR of 15%.",
+      "The company recently announced the merger of its Romanian subsidiaries to streamline operations as part of an internal restructuring effort.",
+      "Infosys is actively expanding its digital transformation services and AI capabilities to drive business growth.",
+      "The firm operates in a highly competitive IT services sector, facing competition from both global and local firms."
+    ],
+    "management_findings": [
+      "Infosys management faces serious allegations related to unethical accounting practices.",
+      "Corporate governance weaknesses have been highlighted based on whistleblower testimonials and controversies."
+    ],
+    "financial_irregularities": [
+      "There are ongoing concerns regarding revenue recognition practices and the need for further transparency around financial statements due to potential discrepancies.",
+      "The independent auditor has flagged issues in terms of cash flow management and the reported financial results, which could affect stakeholder trust.",
+      "Recent reporting indicates a decline in client satisfaction with major contracts, particularly with Daimler, which could impact projected revenues significantly.",
+      "The firm is experiencing pressure with high operational costs and recent analyst reports suggest a cautious outlook for future growth, achieving only moderate revenue."
+    ],
+    "scam_signals": [
+      "Significant volume spikes detected, indicating potential market manipulation.",
+      "Large price fluctuations without corresponding news or events suggest possible pump-and-dump schemes.",
+      "High volatility and irregular trading patterns observed, indicative of possible coordinated trading activities."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Salil Parekh",
+        "role": "CEO",
+        "red_flags": [
+          "Allegations of manipulating financial data",
+          "Discriminatory remarks against employees",
+          "Whistleblower complaints"
+        ],
+        "evidence_links": [
+          "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh",
+          "https://www.nationalheraldindia.com/business/infosys-techies-accuse-ceo-cfo-of-unethical-practices"
+        ]
+      },
+      {
+        "name": "Nilanjan Roy",
+        "role": "CFO",
+        "red_flags": [
+          "Allegations of unethical financial practices",
+          "Part of whistleblower complaints"
+        ],
+        "evidence_links": [
+          "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}
