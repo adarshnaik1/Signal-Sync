@@ -1,109 +1,98 @@
 {
   "meta": {
-    "generated_at": "2023-10-21T12:00:00Z",
-    "pipeline_version": "1.0.0",
+    "generated_at": "2023-10-26T12:00:00Z",
+    "pipeline_version": "1.0",
     "sources": [
       {
         "name": "Infosys Official Website",
-        "type": "official",
+        "type": "Official",
         "url": "https://www.infosys.com/"
       },
       {
-        "name": "Yahoo Finance - Infosys Limited (INFY) Profile",
-        "type": "business news",
+        "name": "Yahoo Finance",
+        "type": "Financial News",
         "url": "https://finance.yahoo.com/quote/INFY/profile/"
       },
       {
-        "name": "Wikipedia - Infosys",
-        "type": "informational",
+        "name": "Forbes Company Overview",
+        "type": "Business News",
+        "url": "https://www.forbes.com/companies/infosys/"
+      },
+      {
+        "name": "Wikipedia",
+        "type": "Encyclopedia",
         "url": "https://en.wikipedia.org/wiki/Infosys"
       },
       {
-        "name": "MarketScreener - Infosys Profile",
-        "type": "business news",
-        "url": "https://markets.ft.com/data/equities/tearsheet/profile?s=INFY:NYQ"
-      },
-      {
-        "name": "Press Release on Infosys' Recent Activities",
-        "type": "press release",
+        "name": "Infosys Press Releases",
+        "type": "Official Newsroom",
         "url": "https://www.infosys.com/newsroom/press-releases.html"
       },
       {
-        "name": "Business Consolidation and Restructuring News",
-        "type": "news article",
-        "url": "https://seenews.com/news/indias-infosys-consolidates-romanian-operations-1286341"
+        "name": "Economic Times",
+        "type": "News",
+        "url": "https://m.economictimes.com/markets/stocks/news/infosys-audit-committee-finds-no-evidence-of-executive-misconduct/articleshow/73188391.cms"
       },
       {
-        "name": "CNN",
-        "type": "news",
-        "url": "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh"
+        "name": "Quartz",
+        "type": "News",
+        "url": "https://qz.com/india/1733867/nilekani-parekh-or-sikka-infosys-whistleblower-saga-never-ends"
       },
       {
-        "name": "National Herald",
-        "type": "news",
-        "url": "https://www.nationalheraldindia.com/business/infosys-techies-accuse-ceo-cfo-of-unethical-practices"
-      },
-      {
-        "name": "Times of India",
-        "type": "news",
-        "url": "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+        "name": "CFO.com",
+        "type": "Business News",
+        "url": "https://www.cfo.com/news/infosys-investigating-ceos-unethical-practices/657264/"
       }
     ]
   },
   "company": {
-    "name": "Infosys",
+    "name": "Infosys Limited",
     "ticker": "INFY",
     "sector": "Technology",
-    "profile_summary": "Infosys is a global leader in technology services and consulting. The company helps clients in over 50 countries navigate their digital transformation.",
-    "headquarters": "Bangalore, Karnataka, India",
+    "profile_summary": "Infosys Limited is a global leader in next-generation digital services and consulting, helping clients in 59 countries navigate their digital transformation.",
+    "headquarters": "Bangalore, India",
     "founded_year": 1981,
-    "employees": 330000,
+    "employees": 346000,
     "products_services": [
-      "IT consulting",
-      "Application development and maintenance",
-      "Infrastructure management services",
-      "Business process outsourcing",
-      "Cloud services",
-      "AI and automation solutions",
-      "Digital experience services"
+      "Consulting",
+      "Information Technology Service Management",
+      "Cloud Services",
+      "Data Analytics",
+      "Application Development and Maintenance",
+      "Infrastructure Management Services"
     ],
     "subsidiaries": [
-      "EdgeVerve Systems",
-      "Infosys Consulting LLC",
       "Infosys BPM",
-      "Infosys Public Services",
-      "Infosys Lithuania",
-      "Infosys Romania"
+      "EdgeVerve Systems",
+      "Fishbowl Solutions"
     ],
-    "market_presence": "Infosys serves clients in more than 50 countries, with significant operations in North America, Europe, Asia, and Australia."
+    "market_presence": "Infosys operates globally, providing services to clients across North America, Europe, Asia-Pacific, and other regions."
   },
   "scores": {
-    "trustworthiness_score": 69.67,
-    "financial_integrity_score": 65.0,
-    "management_risk_score": 75.0,
-    "market_manipulation_risk_score": 80.0
+    "trustworthiness_score": 87.33,
+    "financial_integrity_score": 88.0,
+    "management_risk_score": 65.0,
+    "market_manipulation_risk_score": 75.0
   },
   "findings": {
     "overview_findings": [
-      "Infosys has been recognized for its rapid growth in brand value and market presence, achieving a CAGR of 15%.",
-      "The company recently announced the merger of its Romanian subsidiaries to streamline operations as part of an internal restructuring effort.",
-      "Infosys is actively expanding its digital transformation services and AI capabilities to drive business growth.",
-      "The firm operates in a highly competitive IT services sector, facing competition from both global and local firms."
+      "Infosys recently expanded its strategic collaboration with ExxonMobil.",
+      "The company introduced the AI First Value Framework to capture new AI services opportunities.",
+      "It has a significant focus on next-generation digital services and consulting."
     ],
     "management_findings": [
-      "Infosys management faces serious allegations related to unethical accounting practices.",
-      "Corporate governance weaknesses have been highlighted based on whistleblower testimonials and controversies."
+      "The CEO has faced multiple whistleblower complaints alleging financial misconduct, but the audit committee found no evidence.",
+      "Nandan Nilekani's leadership has been questioned over governance issues, including past controversy over handling whistleblower claims."
     ],
     "financial_irregularities": [
-      "There are ongoing concerns regarding revenue recognition practices and the need for further transparency around financial statements due to potential discrepancies.",
-      "The independent auditor has flagged issues in terms of cash flow management and the reported financial results, which could affect stakeholder trust.",
-      "Recent reporting indicates a decline in client satisfaction with major contracts, particularly with Daimler, which could impact projected revenues significantly.",
-      "The firm is experiencing pressure with high operational costs and recent analyst reports suggest a cautious outlook for future growth, achieving only moderate revenue."
+      "Growth in revenue from operations indicating consistent business expansion.",
+      "Improved profitability with positive cash flows from operating activities.",
+      "Slight increase in debt levels requires monitoring but appears manageable."
     ],
     "scam_signals": [
-      "Significant volume spikes detected, indicating potential market manipulation.",
-      "Large price fluctuations without corresponding news or events suggest possible pump-and-dump schemes.",
-      "High volatility and irregular trading patterns observed, indicative of possible coordinated trading activities."
+      "Detected volume spikes exceeding 3x median volume on several trading days.",
+      "Noted significant price decline of 24.03% over the reporting period, with high volatility (1.76).",
+      "Unusual increase in trading volume prior to major announcements, indicating potential manipulation."
     ]
   },
   "evidence": {
@@ -112,26 +101,28 @@
     "people_profiles": [
       {
         "name": "Salil Parekh",
-        "role": "CEO",
+        "role": "CEO & Managing Director",
         "red_flags": [
-          "Allegations of manipulating financial data",
-          "Discriminatory remarks against employees",
-          "Whistleblower complaints"
+          "Allegations of financial irregularities",
+          "Whistleblower complaints regarding unethical practices",
+          "Mentioned in SEC investigations"
         ],
         "evidence_links": [
-          "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh",
-          "https://www.nationalheraldindia.com/business/infosys-techies-accuse-ceo-cfo-of-unethical-practices"
+          "https://www.ndtv.com/business/infosys-audit-committee-finds-no-evidence-of-executive-misconduct-2162005",
+          "https://www.economictimes.com/markets/stocks/news/infosys-audit-committee-finds-no-evidence-of-executive-misconduct/articleshow/73188391.cms",
+          "https://qz.com/india/1733867/nilekani-parekh-or-sikka-infosys-whistleblower-saga-never-ends"
         ]
       },
       {
-        "name": "Nilanjan Roy",
-        "role": "CFO",
+        "name": "Nandan Nilekani",
+        "role": "Co-founder & Chairman",
         "red_flags": [
-          "Allegations of unethical financial practices",
-          "Part of whistleblower complaints"
+          "Involved in controversies regarding corporate governance",
+          "Past issues with whistleblower reports during tenure"
         ],
         "evidence_links": [
-          "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+          "https://www.forbes.com/companies/infosys/",
+          "https://en.wikipedia.org/wiki/Infosys"
         ]
       }
     ]

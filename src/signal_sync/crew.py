@@ -13,6 +13,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from signal_sync.tools.stock_tool import StockDataTool
+from signal_sync.tools.pdf_extraction_tool import (
+    PDFTextExtractTool,
+    PDFTableExtractTool,
+    PDFFullAnalysisTool,
+    PDFSearchTool as CustomPDFSearchTool
+)
+from signal_sync.helpers.text_extractor import extract_text_sections_impl, get_full_text
+from signal_sync.helpers.table_extractor import extract_tables_impl, extract_financial_tables
 from signal_sync.schemas.bgv_schemas import (
     BGVOutput,
     CompanyOverviewOutput,
@@ -62,38 +70,116 @@ class BGVCrew():
         self.annual_report_path = annual_report_path
         self.output_path = os.path.join(OUTPUT_DIR, "bgv_output.json")
         
-        # Initialize PDF tool if annual report is provided
+        # Initialize PDF tools if annual report is provided
         if annual_report_path and os.path.exists(annual_report_path):
             self.pdf_tool = PDFSearchTool(pdf=annual_report_path)
+            # Initialize custom PDF extraction tools
+            self.pdf_text_tool = PDFTextExtractTool()
+            self.pdf_table_tool = PDFTableExtractTool()
+            self.pdf_analysis_tool = PDFFullAnalysisTool()
+            self.custom_pdf_search = CustomPDFSearchTool()
+            # Pre-extract PDF context for agents
+            self._extract_pdf_context()
         else:
             self.pdf_tool = None
+            self.pdf_text_tool = None
+            self.pdf_table_tool = None
+            self.pdf_analysis_tool = None
+            self.custom_pdf_search = None
+            self.pdf_context = None
+    
+    def _extract_pdf_context(self) -> None:
+        """
+        Pre-extract PDF content to provide context to agents.
+        This is called during initialization when a PDF is provided.
+        """
+        try:
+            pdf_name = os.path.basename(self.annual_report_path)
+            
+            # Extract text sections
+            self.pdf_text_sections = extract_text_sections_impl(
+                self.annual_report_path, pdf_name
+            )
+            
+            # Extract tables
+            self.pdf_tables = extract_tables_impl(
+                self.annual_report_path, pdf_name
+            )
+            
+            # Extract financial tables specifically
+            self.pdf_financial_tables = extract_financial_tables(
+                self.annual_report_path
+            )
+            
+            # Build PDF context summary for agents
+            self.pdf_context = self._build_pdf_context_summary()
+            
+            print(f"PDF Context extracted: {len(self.pdf_text_sections)} pages, "
+                  f"{len(self.pdf_tables)} tables, "
+                  f"{len(self.pdf_financial_tables)} financial tables")
+        except Exception as e:
+            print(f"Warning: Could not extract PDF context: {e}")
+            self.pdf_context = None
+            self.pdf_text_sections = []
+            self.pdf_tables = []
+            self.pdf_financial_tables = []
+    
+    def _build_pdf_context_summary(self) -> str:
+        """
+        Build a summary of the PDF content for agent context.
+        """
+        summary_parts = []
+        
+        # Basic stats
+        summary_parts.append(f"Annual Report: {os.path.basename(self.annual_report_path)}")
+        summary_parts.append(f"Total Pages: {len(self.pdf_text_sections)}")
+        summary_parts.append(f"Total Tables: {len(self.pdf_tables)}")
+        summary_parts.append(f"Financial Tables: {len(self.pdf_financial_tables)}")
+        
+        # First page summary (usually contains key info)
+        if self.pdf_text_sections:
+            first_page = self.pdf_text_sections[0].get('text', '')[:1000]
+            summary_parts.append(f"\n--- First Page Preview ---\n{first_page}")
+        
+        return "\n".join(summary_parts)
 
     @agent
     def company_overview_agent(self) -> Agent:
         """Agent responsible for generating company overview."""
+        tools = [self.serper_tool]  # type: ignore[list-item]
+        # Add PDF tools if annual report is available
+        if self.pdf_text_tool:
+            tools.extend([self.pdf_text_tool, self.pdf_analysis_tool])  # type: ignore[arg-type]
         return Agent(
-            config=self.agents_config['company_overview_agent'],
-            tools=[self.serper_tool],
+            config=self.agents_config['company_overview_agent'],  # type: ignore[attr-defined]
+            tools=tools,
             verbose=True
         )
 
     @agent
     def management_research_agent(self) -> Agent:
         """Agent responsible for researching management team backgrounds."""
+        tools = [self.serper_tool]  # type: ignore[list-item]
+        # Add PDF search for finding management info in annual report
+        if self.custom_pdf_search:
+            tools.append(self.custom_pdf_search)  # type: ignore[arg-type]
         return Agent(
-            config=self.agents_config['management_research_agent'],
-            tools=[self.serper_tool],
+            config=self.agents_config['management_research_agent'],  # type: ignore[attr-defined]
+            tools=tools,
             verbose=True
         )
 
     @agent
     def financial_irregularities_agent(self) -> Agent:
         """Agent responsible for detecting financial irregularities."""
-        tools = [self.serper_tool]
+        tools = [self.serper_tool]  # type: ignore[list-item]
         if self.pdf_tool:
-            tools.append(self.pdf_tool)
+            tools.append(self.pdf_tool)  # type: ignore[arg-type]
+        # Add table extraction for financial analysis
+        if self.pdf_table_tool:
+            tools.extend([self.pdf_table_tool, self.pdf_analysis_tool])  # type: ignore[arg-type]
         return Agent(
-            config=self.agents_config['financial_irregularities_agent'],
+            config=self.agents_config['financial_irregularities_agent'],  # type: ignore[attr-defined]
             tools=tools,
             verbose=True
         )
@@ -102,7 +188,7 @@ class BGVCrew():
     def scam_detection_agent(self) -> Agent:
         """Agent responsible for detecting scam and manipulation signals."""
         return Agent(
-            config=self.agents_config['scam_detection_agent'],
+            config=self.agents_config['scam_detection_agent'],  # type: ignore[attr-defined]
             tools=[self.stock_tool, self.serper_tool],
             verbose=True
         )
@@ -111,7 +197,7 @@ class BGVCrew():
     def bgv_report_compiler(self) -> Agent:
         """Agent responsible for compiling the final BGV report."""
         return Agent(
-            config=self.agents_config['bgv_report_compiler'],
+            config=self.agents_config['bgv_report_compiler'],  # type: ignore[attr-defined]
             verbose=True
         )
 
@@ -119,7 +205,7 @@ class BGVCrew():
     def company_overview_task(self) -> Task:
         """Task for generating company overview."""
         return Task(
-            config=self.tasks_config['company_overview_task'],
+            config=self.tasks_config['company_overview_task'],  # type: ignore[attr-defined]
             output_json=CompanyOverviewOutput,
         )
 
@@ -127,7 +213,7 @@ class BGVCrew():
     def management_research_task(self) -> Task:
         """Task for researching management team."""
         return Task(
-            config=self.tasks_config['management_research_task'],
+            config=self.tasks_config['management_research_task'],  # type: ignore[attr-defined]
             output_json=ManagementResearchOutput,
         )
 
@@ -135,7 +221,7 @@ class BGVCrew():
     def financial_irregularities_task(self) -> Task:
         """Task for detecting financial irregularities."""
         return Task(
-            config=self.tasks_config['financial_irregularities_task'],
+            config=self.tasks_config['financial_irregularities_task'],  # type: ignore[attr-defined]
             output_json=FinancialIrregularitiesOutput,
         )
 
@@ -143,7 +229,7 @@ class BGVCrew():
     def scam_detection_task(self) -> Task:
         """Task for detecting scam signals."""
         return Task(
-            config=self.tasks_config['scam_detection_task'],
+            config=self.tasks_config['scam_detection_task'],  # type: ignore[attr-defined]
             output_json=ScamDetectionOutput,
         )
 
@@ -151,7 +237,7 @@ class BGVCrew():
     def compile_bgv_report_task(self) -> Task:
         """Task for compiling the final BGV report."""
         return Task(
-            config=self.tasks_config['compile_bgv_report_task'],
+            config=self.tasks_config['compile_bgv_report_task'],  # type: ignore[attr-defined]
             output_json=BGVOutput,
             context=[
                 self.company_overview_task(),
@@ -183,7 +269,8 @@ class BGVCrew():
             'ticker': self.ticker,
             'sector': self.sector,
             'annual_report_path': self.annual_report_path,
-            'output_path': self.output_path
+            'output_path': self.output_path,
+            'pdf_context': self.pdf_context if hasattr(self, 'pdf_context') and self.pdf_context else "No annual report provided"
         }
         
         result = self.crew().kickoff(inputs=inputs)
@@ -475,27 +562,27 @@ class SignalSync():
     @agent
     def researcher(self) -> Agent:
         return Agent(
-            config=self.agents_config['company_overview_agent'],
+            config=self.agents_config['company_overview_agent'],  # type: ignore[attr-defined]
             verbose=True
         )
 
     @agent
     def reporting_analyst(self) -> Agent:
         return Agent(
-            config=self.agents_config['bgv_report_compiler'],
+            config=self.agents_config['bgv_report_compiler'],  # type: ignore[attr-defined]
             verbose=True
         )
 
     @task
     def research_task(self) -> Task:
         return Task(
-            config=self.tasks_config['company_overview_task'],
+            config=self.tasks_config['company_overview_task'],  # type: ignore[attr-defined]
         )
 
     @task
     def reporting_task(self) -> Task:
         return Task(
-            config=self.tasks_config['compile_bgv_report_task'],
+            config=self.tasks_config['compile_bgv_report_task'],  # type: ignore[attr-defined]
             output_file='report.md'
         )
 

@@ -23,9 +23,27 @@ sys.path.insert(0, str(ROOT_DIR / "src"))
 # Load environment variables from .env file
 load_dotenv(ROOT_DIR / ".env")
 
+# Import PDF extraction helpers directly (avoiding signal_sync package init which loads crewai)
+PDF_EXTRACTION_AVAILABLE = False
+extract_text_sections_impl = None
+get_full_text = None
+extract_tables_impl = None
+extract_financial_tables = None
+
+try:
+    # Add helpers directory directly to path to avoid triggering crewai imports
+    helpers_dir = ROOT_DIR / "src" / "signal_sync" / "helpers"
+    if str(helpers_dir) not in sys.path:
+        sys.path.insert(0, str(helpers_dir))
+    from text_extractor import extract_text_sections_impl, get_full_text
+    from table_extractor import extract_tables_impl, extract_financial_tables
+    PDF_EXTRACTION_AVAILABLE = True
+except ImportError:
+    pass  # Will use fallback or show message in UI
+
 # Page configuration
 st.set_page_config(
-    page_title="Signal Sync - BGV & Sentiment Analysis",
+    page_title="Signal Sync - BGV & News Analysis",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -116,7 +134,7 @@ with st.sidebar:
     # Navigation
     page = st.radio(
         "Navigate to:",
-        ["🔍 BGV Verification", "📊 Reddit Sentiment Analysis"],
+        ["🔍 BGV Verification", "📊 Reddit News Analysis"],
         index=0
     )
     
@@ -131,7 +149,7 @@ with st.sidebar:
         """)
     else:
         st.markdown("""
-        **Sentiment Analysis Features:**
+        **News Analysis Features:**
         - 📈 Overall Sentiment Score
         - 📊 Sentiment Distribution
         - 🏷️ Subreddit Breakdown
@@ -143,7 +161,7 @@ with st.sidebar:
 
 
 # ============================================================================
-# HELPER FUNCTIONS FOR REDDIT SENTIMENT ANALYSIS
+# HELPER FUNCTIONS FOR REDDIT NEWS ANALYSIS
 # ============================================================================
 
 def get_sentiment_color(sentiment: str) -> str:
@@ -229,18 +247,18 @@ def create_sentiment_gauge(score: float, title: str) -> go.Figure:
 
 
 # ============================================================================
-# PAGE: REDDIT SENTIMENT ANALYSIS
+# PAGE: REDDIT NEWS ANALYSIS
 # ============================================================================
 
 def render_reddit_sentiment_page():
-    """Render the Reddit Sentiment Analysis page."""
-    st.markdown('<h1 class="main-header">📊 Reddit Sentiment Analysis</h1>', unsafe_allow_html=True)
+    """Render the Reddit News Analysis page."""
+    st.markdown('<h1 class="main-header">📊 Reddit News Analysis</h1>', unsafe_allow_html=True)
     
     # Load available sentiment files
     sentiment_files = load_sentiment_files()
     
     if not sentiment_files:
-        st.warning("⚠️ No sentiment analysis results found. Run the Reddit sentiment analyzer first.")
+        st.warning("⚠️ No news analysis results found. Run the Reddit news analyzer first.")
         st.info("To analyze a company, run: `python -m src.reddit_sentiment.main --company 'Company Name'`")
         return
     
@@ -259,7 +277,7 @@ def render_reddit_sentiment_page():
     # Company selection
     st.markdown("### 🏢 Select Company Analysis")
     selected_display = st.selectbox(
-        "Choose a sentiment analysis report:",
+        "Choose a news analysis report:",
         options=list(file_options.keys()),
         help="Select from previously analyzed companies"
     )
@@ -607,6 +625,280 @@ def render_reddit_sentiment_page():
 
 
 # ============================================================================
+# PDF EXTRACTION PREVIEW FUNCTIONS
+# ============================================================================
+
+def render_pdf_extraction_preview(pdf_path: str, pdf_name: str):
+    """Render a preview of extracted PDF content with tables and text."""
+    st.markdown("### 📄 PDF Extraction Preview")
+    
+    with st.expander("🔍 View Extracted Content", expanded=False):
+        try:
+            # Create tabs for different views
+            tab1, tab2, tab3 = st.tabs(["📊 Financial Tables", "📝 Text Content", "📈 Document Stats"])
+            
+            with tab1:
+                render_extracted_tables(pdf_path, pdf_name)
+            
+            with tab2:
+                render_extracted_text(pdf_path, pdf_name)
+            
+            with tab3:
+                render_document_stats(pdf_path, pdf_name)
+                
+        except Exception as e:
+            st.error(f"Error extracting PDF content: {str(e)}")
+
+
+def render_extracted_tables(pdf_path: str, pdf_name: str):
+    """Render extracted tables from the PDF."""
+    st.markdown("#### Extracted Tables")
+    
+    try:
+        # Extract all tables
+        all_tables = extract_tables_impl(pdf_path, pdf_name)
+        
+        if not all_tables:
+            st.info("No tables found in the document.")
+            return
+        
+        st.success(f"Found **{len(all_tables)}** tables in the document")
+        
+        # Filter for financial tables
+        financial_tables = extract_financial_tables(pdf_path)
+        
+        if financial_tables:
+            st.markdown("##### 💰 Financial Tables")
+            st.caption(f"Found {len(financial_tables)} tables with financial data")
+            
+            for i, table in enumerate(financial_tables[:5]):  # Limit to first 5
+                with st.expander(f"📊 {table.get('table_id', f'Table {i+1}')} (Page {table.get('page_no', '?')})", expanded=(i == 0)):
+                    headers = table.get('headers', [])
+                    rows = table.get('rows', [])
+                    
+                    if headers and rows:
+                        # Clean headers - replace None with empty string
+                        clean_headers = [str(h) if h else f"Column {j+1}" for j, h in enumerate(headers)]
+                        
+                        # Clean rows
+                        clean_rows = []
+                        for row in rows:
+                            clean_row = [str(cell) if cell else "" for cell in row]
+                            # Pad row if needed
+                            while len(clean_row) < len(clean_headers):
+                                clean_row.append("")
+                            clean_rows.append(clean_row[:len(clean_headers)])
+                        
+                        # Create DataFrame and display
+                        df = pd.DataFrame(clean_rows, columns=clean_headers)
+                        st.dataframe(df, use_container_width=True)
+                    else:
+                        st.warning("Table has incomplete data")
+        
+        # Show other tables
+        st.markdown("##### 📋 All Tables")
+        table_select = st.selectbox(
+            "Select a table to view:",
+            options=range(len(all_tables)),
+            format_func=lambda x: f"{all_tables[x].get('table_id', f'Table {x+1}')} (Page {all_tables[x].get('page_no', '?')})"
+        )
+        
+        if table_select is not None:
+            selected_table = all_tables[table_select]
+            headers = selected_table.get('headers', [])
+            rows = selected_table.get('rows', [])
+            
+            if headers and rows:
+                clean_headers = [str(h) if h else f"Column {j+1}" for j, h in enumerate(headers)]
+                clean_rows = []
+                for row in rows:
+                    clean_row = [str(cell) if cell else "" for cell in row]
+                    while len(clean_row) < len(clean_headers):
+                        clean_row.append("")
+                    clean_rows.append(clean_row[:len(clean_headers)])
+                
+                df = pd.DataFrame(clean_rows, columns=clean_headers)
+                st.dataframe(df, use_container_width=True)
+                
+                # Download button for the table
+                csv = df.to_csv(index=False)
+                st.download_button(
+                    label="📥 Download as CSV",
+                    data=csv,
+                    file_name=f"{selected_table.get('table_id', 'table')}.csv",
+                    mime="text/csv"
+                )
+                
+    except Exception as e:
+        st.error(f"Error extracting tables: {str(e)}")
+
+
+def render_extracted_text(pdf_path: str, pdf_name: str):
+    """Render extracted text from the PDF."""
+    st.markdown("#### Extracted Text")
+    
+    try:
+        text_sections = extract_text_sections_impl(pdf_path, pdf_name)
+        
+        if not text_sections:
+            st.info("No text content found.")
+            return
+        
+        total_pages = len(text_sections)
+        st.success(f"Extracted text from **{total_pages}** pages")
+        
+        # Page selector
+        col1, col2 = st.columns([1, 3])
+        with col1:
+            page_num = st.number_input(
+                "Select Page:",
+                min_value=1,
+                max_value=total_pages,
+                value=1,
+                step=1
+            )
+        
+        with col2:
+            # Show page text
+            page_data = text_sections[page_num - 1]
+            char_count = page_data.get('char_count', 0)
+            st.caption(f"Page {page_num} • {char_count:,} characters")
+        
+        # Display page text in a scrollable container
+        page_text = page_data.get('text', 'No text found on this page.')
+        st.text_area(
+            "Page Content:",
+            value=page_text,
+            height=400,
+            disabled=True
+        )
+        
+        # Full text search
+        st.markdown("##### 🔍 Search in Document")
+        search_term = st.text_input("Enter search term:", placeholder="e.g., revenue, profit, risk")
+        
+        if search_term:
+            search_results = []
+            for section in text_sections:
+                text = section.get('text', '')
+                if search_term.lower() in text.lower():
+                    page_no = section.get('page_no', 0)
+                    # Find position and extract context
+                    pos = text.lower().find(search_term.lower())
+                    start = max(0, pos - 100)
+                    end = min(len(text), pos + len(search_term) + 100)
+                    context = text[start:end]
+                    search_results.append({
+                        'page': page_no,
+                        'context': f"...{context}..."
+                    })
+            
+            if search_results:
+                st.success(f"Found **{len(search_results)}** matches")
+                for result in search_results[:10]:  # Limit display
+                    st.markdown(f"""
+                    <div class="finding-item">
+                        <strong>Page {result['page']}:</strong> {result['context'].replace(search_term, f'<mark>{search_term}</mark>')}
+                    </div>
+                    """, unsafe_allow_html=True)
+            else:
+                st.warning(f"No matches found for '{search_term}'")
+        
+        # Download full text
+        full_text = get_full_text(pdf_path)
+        st.download_button(
+            label="📥 Download Full Text",
+            data=full_text,
+            file_name=f"{pdf_name.replace('.pdf', '')}_text.txt",
+            mime="text/plain"
+        )
+        
+    except Exception as e:
+        st.error(f"Error extracting text: {str(e)}")
+
+
+def render_document_stats(pdf_path: str, pdf_name: str):
+    """Render document statistics."""
+    st.markdown("#### Document Statistics")
+    
+    try:
+        text_sections = extract_text_sections_impl(pdf_path, pdf_name)
+        all_tables = extract_tables_impl(pdf_path, pdf_name)
+        financial_tables = extract_financial_tables(pdf_path)
+        
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            st.metric("Total Pages", len(text_sections))
+        
+        with col2:
+            total_chars = sum(s.get('char_count', 0) for s in text_sections)
+            st.metric("Total Characters", f"{total_chars:,}")
+        
+        with col3:
+            st.metric("Tables Found", len(all_tables))
+        
+        with col4:
+            st.metric("Financial Tables", len(financial_tables))
+        
+        st.markdown("---")
+        
+        # Character distribution per page
+        st.markdown("##### 📊 Content Distribution by Page")
+        
+        page_data = [
+            {"Page": s.get('page_no', i+1), "Characters": s.get('char_count', 0)}
+            for i, s in enumerate(text_sections)
+        ]
+        df = pd.DataFrame(page_data)
+        
+        fig = px.bar(
+            df,
+            x='Page',
+            y='Characters',
+            title='Characters per Page',
+            color='Characters',
+            color_continuous_scale='Blues'
+        )
+        fig.update_layout(
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font_color='white'
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # Table distribution
+        if all_tables:
+            st.markdown("##### 📋 Table Distribution by Page")
+            table_pages = {}
+            for t in all_tables:
+                page = t.get('page_no', 0)
+                table_pages[page] = table_pages.get(page, 0) + 1
+            
+            table_df = pd.DataFrame([
+                {"Page": k, "Tables": v} for k, v in sorted(table_pages.items())
+            ])
+            
+            fig2 = px.bar(
+                table_df,
+                x='Page',
+                y='Tables',
+                title='Tables per Page',
+                color='Tables',
+                color_continuous_scale='Greens'
+            )
+            fig2.update_layout(
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='white'
+            )
+            st.plotly_chart(fig2, use_container_width=True)
+        
+    except Exception as e:
+        st.error(f"Error calculating statistics: {str(e)}")
+
+
+# ============================================================================
 # PAGE: BGV VERIFICATION (Original functionality)
 # ============================================================================
 
@@ -665,9 +957,23 @@ def render_bgv_page():
         help="Upload the company's annual report for financial analysis"
     )
 
-    # Display uploaded file info
+    # Display uploaded file info and extraction preview
     if annual_pdf:
         st.success(f"✅ Uploaded: {annual_pdf.name} ({annual_pdf.size / 1024:.1f} KB)")
+        
+        # Save temporarily for extraction preview
+        temp_uploads_dir = ROOT_DIR / "uploads"
+        temp_uploads_dir.mkdir(parents=True, exist_ok=True)
+        temp_pdf_path = str(temp_uploads_dir / f"temp_{annual_pdf.name}")
+        
+        with open(temp_pdf_path, "wb") as f:
+            f.write(annual_pdf.getbuffer())
+        
+        # Show PDF extraction preview
+        if PDF_EXTRACTION_AVAILABLE:
+            render_pdf_extraction_preview(temp_pdf_path, annual_pdf.name)
+        else:
+            st.info("📄 PDF preview will be available after running BGV verification.")
 
     st.markdown("---")
 
@@ -918,7 +1224,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: #666;'>
-        <p>Signal Sync - BGV & Sentiment Analysis | Built with CrewAI & Streamlit</p>
+        <p>Signal Sync - BGV & News Analysis | Built with CrewAI & Streamlit</p>
         <p>⚠️ This tool is for informational purposes only. Always conduct your own due diligence.</p>
     </div>
     """,

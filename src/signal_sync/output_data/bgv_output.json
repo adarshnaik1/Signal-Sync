@@ -1,127 +1,98 @@
 {
   "meta": {
-    "generated_at": "2023-10-15T14:30:00Z",
+    "generated_at": "2023-10-26T12:00:00Z",
     "pipeline_version": "1.0",
     "sources": [
       {
-        "name": "Infosys Official Site",
-        "type": "official",
-        "url": "https://www.infosys.com/about.html"
+        "name": "Infosys Official Website",
+        "type": "Official",
+        "url": "https://www.infosys.com/"
       },
       {
-        "name": "Wikipedia - Infosys",
-        "type": "reference",
-        "url": "https://en.wikipedia.org/wiki/Infosys"
+        "name": "Yahoo Finance",
+        "type": "Financial News",
+        "url": "https://finance.yahoo.com/quote/INFY/profile/"
       },
       {
-        "name": "Yahoo Finance - Infosys",
-        "type": "financial news",
-        "url": "https://finance.yahoo.com/quote/INFY/"
-      },
-      {
-        "name": "Infosys Overview",
-        "type": "official",
-        "url": "https://www.infosys.com/about/overview.html"
-      },
-      {
-        "name": "Stock Analysis - Infosys",
-        "type": "financial data",
-        "url": "https://stockanalysis.com/stocks/infy/company/"
-      },
-      {
-        "name": "BCC Research - Infosys Profile",
-        "type": "industry report",
-        "url": "https://www.bccresearch.com/company-index/profile/infosys-ltd"
-      },
-      {
-        "name": "Seeking Alpha - Infosys",
-        "type": "financial analysis",
-        "url": "https://seekingalpha.com/symbol/INFY"
-      },
-      {
-        "name": "Crunchbase - Infosys",
-        "type": "business overview",
-        "url": "https://www.crunchbase.com/organization/infosys"
-      },
-      {
-        "name": "Forbes - Infosys Overview",
-        "type": "business news",
+        "name": "Forbes Company Overview",
+        "type": "Business News",
         "url": "https://www.forbes.com/companies/infosys/"
       },
       {
-        "name": "Business Standard - Infosys News",
-        "type": "financial news",
-        "url": "https://www.business-standard.com"
+        "name": "Wikipedia",
+        "type": "Encyclopedia",
+        "url": "https://en.wikipedia.org/wiki/Infosys"
       },
       {
-        "name": "Times of India - Infosys Articles",
-        "type": "financial news",
-        "url": "https://timesofindia.indiatimes.com/"
+        "name": "Infosys Press Releases",
+        "type": "Official Newsroom",
+        "url": "https://www.infosys.com/newsroom/press-releases.html"
+      },
+      {
+        "name": "Economic Times",
+        "type": "News",
+        "url": "https://m.economictimes.com/markets/stocks/news/infosys-audit-committee-finds-no-evidence-of-executive-misconduct/articleshow/73188391.cms"
+      },
+      {
+        "name": "Quartz",
+        "type": "News",
+        "url": "https://qz.com/india/1733867/nilekani-parekh-or-sikka-infosys-whistleblower-saga-never-ends"
+      },
+      {
+        "name": "CFO.com",
+        "type": "Business News",
+        "url": "https://www.cfo.com/news/infosys-investigating-ceos-unethical-practices/657264/"
       }
     ]
   },
   "company": {
-    "name": "Infosys",
+    "name": "Infosys Limited",
     "ticker": "INFY",
     "sector": "Technology",
-    "profile_summary": "Infosys Limited is an Indian multinational technology company that offers information technology, business consulting, and outsourcing services. It is a global leader in next-generation digital services and consulting, enabling clients in 59 countries to navigate their digital transformation.",
-    "headquarters": "Bengaluru, India",
+    "profile_summary": "Infosys Limited is a global leader in next-generation digital services and consulting, helping clients in 59 countries navigate their digital transformation.",
+    "headquarters": "Bangalore, India",
     "founded_year": 1981,
-    "employees": 320000,
+    "employees": 346000,
     "products_services": [
-      "Business Consulting",
-      "IT Services",
-      "Outsourcing",
-      "Digital Transformation Services",
-      "Application Development",
-      "Product Engineering",
+      "Consulting",
+      "Information Technology Service Management",
       "Cloud Services",
-      "AI and Machine Learning"
+      "Data Analytics",
+      "Application Development and Maintenance",
+      "Infrastructure Management Services"
     ],
     "subsidiaries": [
       "Infosys BPM",
       "EdgeVerve Systems",
-      "Panaya",
-      "Skava",
-      "Infosys Consulting"
+      "Fishbowl Solutions"
     ],
-    "market_presence": "Infosys has a strong global presence, operating in over 59 countries with a significant market in North America and Europe."
+    "market_presence": "Infosys operates globally, providing services to clients across North America, Europe, Asia-Pacific, and other regions."
   },
   "scores": {
-    "trustworthiness_score": 73.33,
-    "financial_integrity_score": 65.0,
-    "management_risk_score": 75.0,
-    "market_manipulation_risk_score": 85.0
+    "trustworthiness_score": 87.33,
+    "financial_integrity_score": 88.0,
+    "management_risk_score": 65.0,
+    "market_manipulation_risk_score": 75.0
   },
   "findings": {
     "overview_findings": [
-      "Infosys was founded in 1981 and has grown to become a leader in technology services globally.",
-      "The company has about 320,000 employees as of 2023.",
-      "Infosys offers a wide range of services including business consulting, IT, and outsourcing.",
-      "The company's headquarters is located in Bengaluru, India.",
-      "Recent developments in 2023 include enhancements in digital offerings and strategic partnerships to drive innovation."
+      "Infosys recently expanded its strategic collaboration with ExxonMobil.",
+      "The company introduced the AI First Value Framework to capture new AI services opportunities.",
+      "It has a significant focus on next-generation digital services and consulting."
     ],
     "management_findings": [
-      "Infosys has faced multiple controversies since its founding in 1981, often tied to executive governance and financial practices.",
-      "The current management team has been involved in several allegations regarding financial misreporting and internal governance disputes.",
-      "Salil Parekh's leadership has coincided with allegations of unethical accounting practices and workplace culture issues.",
-      "Nandan Nilekani's role primarily focuses on addressing high-profile allegations and maintaining the company's reputation amidst challenges."
+      "The CEO has faced multiple whistleblower complaints alleging financial misconduct, but the audit committee found no evidence.",
+      "Nandan Nilekani's leadership has been questioned over governance issues, including past controversy over handling whistleblower claims."
     ],
     "financial_irregularities": [
-      "Revenue growth of 15.4% in FY23 with reported revenues of approximately $18.2 billion; however, this seasonal growth raises questions about sustainability.",
-      "Operating margin at a healthy 21.0% but possible discrepancies with cash flow management were noted, indicating potential issues.",
-      "Indications of debt level management, with a quick ratio of 1.81, suggesting liquidity issues are manageable for immediate liabilities.",
-      "Concerns regarding auditor opinions as previous internal whistleblower allegations may affect credibility.",
-      "Recent periods have shown shifts in related party transactions, warranting further scrutiny in the context of revenue generation.",
-      "Observed fluctuating cash flows in comparison to net earnings, raising flags about earnings quality.",
-      "Overall management risk appears elevated with previous allegations of financial malpractice under current leadership."
+      "Growth in revenue from operations indicating consistent business expansion.",
+      "Improved profitability with positive cash flows from operating activities.",
+      "Slight increase in debt levels requires monitoring but appears manageable."
     ],
     "scam_signals": [
-      "Significant volume spike detected: 9.6x median volume with a corresponding price change of 10.4%, indicating potential manipulation.",
-      "Unusual price movements without corresponding news or fundamental data during the analysis period.",
-      "Evidence of end-of-day price manipulation with prices being adjusted upwards significantly in the last hours of trading.",
-      "High volatility observed suggests potential for pump-and-dump patterns.",
-      "Coordination of volume spikes on specific trading days that align with social media chatter indicating possible pump-and-dump behavior."
+      "Detected volume spikes exceeding 3x median volume on several trading days.",
+      "Noted significant price decline of 24.03% over the reporting period, with high volatility (1.76).",
+      "Unusual increase in trading volume prior to major announcements, indicating potential manipulation."
     ]
   },
   "evidence": {
@@ -130,28 +101,28 @@
     "people_profiles": [
       {
         "name": "Salil Parekh",
-        "role": "Chief Executive Officer",
+        "role": "CEO & Managing Director",
         "red_flags": [
-          "Whistleblower allegations of financial malpractice and unethical practices",
-          "Past controversies regarding corporate governance",
-          "Concerns around workplace culture and employee treatment"
+          "Allegations of financial irregularities",
+          "Whistleblower complaints regarding unethical practices",
+          "Mentioned in SEC investigations"
         ],
         "evidence_links": [
-          "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh",
-          "https://timesofindia.indiatimes.com/business/india-business/infosys-flirts-with-crisis-after-whistleblowers-attack-ceo-salil-parekh/articleshow/71718900.cms",
-          "https://www.ndtv.com/india-news/infosys-ceo-referred-to-colleagues-as-madrasis-claim-whistleblowers-2120511"
+          "https://www.ndtv.com/business/infosys-audit-committee-finds-no-evidence-of-executive-misconduct-2162005",
+          "https://www.economictimes.com/markets/stocks/news/infosys-audit-committee-finds-no-evidence-of-executive-misconduct/articleshow/73188391.cms",
+          "https://qz.com/india/1733867/nilekani-parekh-or-sikka-infosys-whistleblower-saga-never-ends"
         ]
       },
       {
         "name": "Nandan Nilekani",
-        "role": "Co-founder and Chairman",
+        "role": "Co-founder & Chairman",
         "red_flags": [
-          "Involvement in responses to whistleblower allegations",
-          "Public disputes with founding members related to governance issues"
+          "Involved in controversies regarding corporate governance",
+          "Past issues with whistleblower reports during tenure"
         ],
         "evidence_links": [
-          "https://indianexpress.com/article/explained/explained-infosys-allegations-and-why-they-matter-ceo-salil-parekh-nilanjan-roy-nandan-nilekani-6082094/",
-          "https://www.business-standard.com/companies/news/infosys-cognizant-helix-poaching-dispute-legal-battle-125062400650_1.html"
+          "https://www.forbes.com/companies/infosys/",
+          "https://en.wikipedia.org/wiki/Infosys"
         ]
       }
     ]
