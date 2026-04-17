@@ -24,3 +24,14 @@ python-dotenv>=1.0.0
 
 # Optional: For enhanced search capabilities
 # serper-dev  # SerperDev API wrapper (if available)
+
+joblib==1.5.3
+numpy==2.4.4
+pandas==3.0.2
+python-dateutil==2.9.0.post0
+scikit-learn==1.8.0
+scipy==1.17.1
+six==1.17.0
+threadpoolctl==3.6.0
+tzdata==2026.1
+
