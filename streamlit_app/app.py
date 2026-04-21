@@ -621,7 +621,7 @@ def render_reddit_sentiment_page():
                 
                 Sentiment toward {company_name} is mixed or neutral.
                 Consider analyzing individual posts for more context.
-                """)
+                       """)
 
 
 # ============================================================================
