@@ -1,126 +1,154 @@
 {
   "meta": {
-    "generated_at": "2023-10-18T12:00:00Z",
-    "pipeline_version": "1.0",
+    "generated_at": "2023-10-10T10:00:00Z",
+    "pipeline_version": "1.0.0",
     "sources": [
       {
-        "name": "TCS Official Website",
-        "type": "company_website",
-        "url": "https://www.tcs.com"
-      },
-      {
-        "name": "Forbes",
-        "type": "business_news",
-        "url": "https://www.forbes.com/companies/tata-consultancy-services/"
-      },
-      {
-        "name": "Techzine",
-        "type": "business_news",
-        "url": "https://www.techzine.eu/news/applications/137917/tcs-and-amd-aim-to-bridge-the-gap-between-ai-pilots-and-production/"
-      },
-      {
-        "name": "Bloomberg",
-        "type": "business_news",
-        "url": "https://www.bloomberg.com"
+        "name": "Infosys Official Website",
+        "type": "website",
+        "url": "https://www.infosys.com/"
       },
       {
         "name": "Reuters",
-        "type": "business_news",
-        "url": "https://www.reuters.com"
+        "type": "news",
+        "url": "https://www.reuters.com/markets/companies/INFY.P"
       },
       {
-        "name": "News18",
-        "type": "business_news",
-        "url": "https://www.news18.com"
+        "name": "Bloomberg",
+        "type": "news",
+        "url": "https://www.bloomberg.com/quote/INFY:IN"
       },
       {
-        "name": "India Today",
-        "type": "business_news",
-        "url": "https://www.indiatoday.in"
+        "name": "Infosys Integrated Annual Report 2024-25",
+        "type": "PDF",
+        "url": "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-25.pdf"
       },
       {
-        "name": "Economic Times",
-        "type": "business_news",
-        "url": "https://economictimes.indiatimes.com"
+        "name": "CNN",
+        "type": "news",
+        "url": "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh"
+      },
+      {
+        "name": "Times of India",
+        "type": "news",
+        "url": "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+      },
+      {
+        "name": "Chambers",
+        "type": "news",
+        "url": "https://chambers.com/articles/executive-compensation-in-india-summing-up-the-infosys-controversy"
       }
     ]
   },
   "company": {
-    "name": "Tata Consultancy Services",
-    "ticker": "TCS",
+    "name": "Infosys Limited",
+    "ticker": "INFY",
     "sector": "Technology",
-    "profile_summary": "Tata Consultancy Services (TCS) is a leading global IT services, consulting, and business solutions organization, leveraging technology to help businesses transform.",
-    "headquarters": "Mumbai, India",
-    "founded_year": 1968,
-    "employees": 500000,
+    "profile_summary": "Infosys Limited is a global leader in next-generation digital services and consulting, enabling clients to navigate their digital transformation.",
+    "headquarters": "Bengaluru, India",
+    "founded_year": 1981,
+    "employees": 346845,
     "products_services": [
-      "IT Services",
       "Consulting",
-      "Digital Solutions",
-      "Enterprise Applications",
-      "Cloud Services",
-      "Cybersecurity"
+      "Application Management Services",
+      "Proprietary Application Development",
+      "Outsourcing Services",
+      "Distributed Cloud Services",
+      "AI and Machine Learning Solutions"
     ],
     "subsidiaries": [
-      "TCS North America Corp",
-      "Coastal Cloud Holdings"
+      "Infosys BPM Limited",
+      "EdgeVerve Systems Limited",
+      "Infosys Consulting Holding AG",
+      "Infosys Public Services Inc."
     ],
-    "market_presence": "Global presence in North America, Europe, and Asia Pacific"
+    "market_presence": "Infosys operates in 59 countries with a presence across multiple geographies, including North America, Europe, Asia Pacific, and more."
   },
   "scores": {
-    "trustworthiness_score": 65.0,
-    "financial_integrity_score": 55.0,
-    "management_risk_score": 70.0,
-    "market_manipulation_risk_score": 75.0
+    "trustworthiness_score": 78.0,
+    "financial_integrity_score": 78.0,
+    "management_risk_score": 75.0,
+    "market_manipulation_risk_score": 85.0
   },
   "findings": {
     "overview_findings": [
-      "TCS is a leading IT services provider, established in 1968 and headquartered in Mumbai.",
-      "The company employs over 500,000 people globally.",
-      "Recently acquired Coastal Cloud Holdings to enhance Salesforce and AI capabilities.",
-      "Strategic partnership with AMD for advancing AI in enterprises.",
-      "Reported revenue growth but facing legal and reputational challenges."
+      "Infosys has over 346,000 employees and is a major player in the technology consulting sector.",
+      "The company's offerings span software development, technological consulting, and comprehensive outsourcing solutions.",
+      "Infosys is expanding its presence in AI and cloud services, focusing on digital transformation for clients.",
+      "The firm has a strong track record of acquisitions and partnerships to enhance its technological capabilities and reach.",
+      "Recent developments include collaborations with AI providers and innovations in digital transformation frameworks."
     ],
     "management_findings": [
-      "K. Krithivasan involved in a significant recruitment scandal but maintains no fraud occurred.",
-      "Samir Seksaria has a long history with TCS and no reported controversies."
+      "Infosys faces controversies including accusations of unethical practices and executive misconduct.",
+      "Past controversies linked to executive compensation have generated public discontent.",
+      "Whistleblower complaints have led to investigations regarding internal practices and financial reporting."
     ],
     "financial_irregularities": [
-      "Revenue from TCS increased to US$29.1 billion for the fiscal year 2023-2024, but raised concerns about the sustainability of such growth.",
-      "Allegations of bribery and recruitment scam targeting staffing firms linked to TCS contribute to reputational risks.",
-      "A U.S. court imposed a fine totaling $194.2 million on TCS for trade secret misappropriation.",
-      "An ex-employee has accused TCS of visa fraud, which could lead to regulatory scrutiny.",
-      "Reported interest coverage ratio of -25.2, indicating potential concerns with debt servicing."
+      "Revenue from operations increased steadily, suggesting positive growth but needs contextual market analysis.",
+      "Cash flows from operations are increasing, indicating the company can translate earnings into cash effectively.",
+      "Increasing debt levels may indicate reliance on financing; monitoring the debt-to-equity ratio is advisable.",
+      "The independent auditor's report presents no qualifications, indicating the audit outcome is positive.",
+      "No clear signs of red flags, but related party transactions require further investigation."
     ],
     "scam_signals": [
-      "Detected volume spike when TCS partnered with AMD for AI development possibly leading to speculation-driven trades.",
-      "Unusual increase in trading volume around the announcement of the Coastal acquisition suggesting potential pump-and-dump strategies.",
-      "Negative sentiment affecting stock prices due to layoffs and unsubstantiated price changes."
+      "Volume spike ratio indicates potential sudden spikes in trading volume (2.52), suggesting manipulation.",
+      "Recent reports of a 9.23% decline on February 12, 2026, correlate with high volume days, indicating possible pump-and-dump signals.",
+      "Price has decreased significantly (-24.03%), yet there were positive news reports about strategic partnerships.",
+      "The surge of 3.16% in share price on February 26, 2026, followed bullish market sentiments, alongside high volume trading patterns."
     ]
   },
   "evidence": {
-    "documents": [],
-    "time_series": [],
+    "documents": [
+      {
+        "type": "Annual Report",
+        "location": "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-25.pdf",
+        "summary": "Infosys financial performance and operational insights."
+      }
+    ],
+    "time_series": [
+      {
+        "source": "Trading Data",
+        "from_date": "2023-10-01",
+        "to_date": "2023-10-31",
+        "file": "trading_data_INF.xlsx",
+        "metrics": {
+          "average_volume": 17048480,
+          "price_change_percent": -24.03
+        }
+      }
+    ],
     "people_profiles": [
       {
-        "name": "K. Krithivasan",
-        "role": "CEO",
+        "name": "Salil Parekh",
+        "role": "Chief Executive Officer & Managing Director",
         "red_flags": [
-          "Involved in bribes-for-jobs scandal",
-          "Claims no fraud occurred is contested"
+          "Accusations of under-reporting costs to inflate profits.",
+          "Whistleblower allegations of unethical practices.",
+          "Involvement in controversies regarding toxic work culture."
         ],
         "evidence_links": [
-          "https://www.news18.com/business/bribe-for-jobs-case-a-code-of-conduct-violation-not-systemic-failure-says-tcs-ceo-k-krithivasan-8331895.html",
-          "https://www.indiatoday.in/technology/news/story/tcs-fires-16-employees-involved-in-bribes-for-jobs-scam-removes-3-people-from-resource-management-function-2449524-2023-10-16"
+          "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh",
+          "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
         ]
       },
       {
-        "name": "Samir Seksaria",
-        "role": "CFO",
-        "red_flags": [],
+        "name": "Nandan Nilekani",
+        "role": "Co-founder and Chairman of the Board",
+        "red_flags": [
+          "Criticism regarding executive compensation."
+        ],
         "evidence_links": [
-          "https://www.tcs.com/who-we-are/leadership/samir-seksaria",
-          "https://m.economictimes.com/tech/information-tech/tcs-names-samir-seksaria-as-cfo/articleshow/82327948.cms"
+          "https://chambers.com/articles/executive-compensation-in-india-summing-up-the-infosys-controversy"
+        ]
+      },
+      {
+        "name": "Jayesh Sanghrajka",
+        "role": "Chief Financial Officer",
+        "red_flags": [
+          "Linked to allegations of unethical practices and financial irregularities."
+        ],
+        "evidence_links": [
+          "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
         ]
       }
     ]

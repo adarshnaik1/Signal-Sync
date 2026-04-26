@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "generated_at": "2023-10-10T10:00:00Z",
+    "pipeline_version": "1.0.0",
+    "sources": [
+      {
+        "name": "Infosys Official Website",
+        "type": "website",
+        "url": "https://www.infosys.com/"
+      },
+      {
+        "name": "Reuters",
+        "type": "news",
+        "url": "https://www.reuters.com/markets/companies/INFY.P"
+      },
+      {
+        "name": "Bloomberg",
+        "type": "news",
+        "url": "https://www.bloomberg.com/quote/INFY:IN"
+      },
+      {
+        "name": "Infosys Integrated Annual Report 2024-25",
+        "type": "PDF",
+        "url": "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-25.pdf"
+      },
+      {
+        "name": "CNN",
+        "type": "news",
+        "url": "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh"
+      },
+      {
+        "name": "Times of India",
+        "type": "news",
+        "url": "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+      },
+      {
+        "name": "Chambers",
+        "type": "news",
+        "url": "https://chambers.com/articles/executive-compensation-in-india-summing-up-the-infosys-controversy"
+      }
+    ]
+  },
+  "company": {
+    "name": "Infosys Limited",
+    "ticker": "INFY",
+    "sector": "Technology",
+    "profile_summary": "Infosys Limited is a global leader in next-generation digital services and consulting, enabling clients to navigate their digital transformation.",
+    "headquarters": "Bengaluru, India",
+    "founded_year": 1981,
+    "employees": 346845,
+    "products_services": [
+      "Consulting",
+      "Application Management Services",
+      "Proprietary Application Development",
+      "Outsourcing Services",
+      "Distributed Cloud Services",
+      "AI and Machine Learning Solutions"
+    ],
+    "subsidiaries": [
+      "Infosys BPM Limited",
+      "EdgeVerve Systems Limited",
+      "Infosys Consulting Holding AG",
+      "Infosys Public Services Inc."
+    ],
+    "market_presence": "Infosys operates in 59 countries with a presence across multiple geographies, including North America, Europe, Asia Pacific, and more."
+  },
+  "scores": {
+    "trustworthiness_score": 78.0,
+    "financial_integrity_score": 78.0,
+    "management_risk_score": 75.0,
+    "market_manipulation_risk_score": 85.0
+  },
+  "findings": {
+    "overview_findings": [
+      "Infosys has over 346,000 employees and is a major player in the technology consulting sector.",
+      "The company's offerings span software development, technological consulting, and comprehensive outsourcing solutions.",
+      "Infosys is expanding its presence in AI and cloud services, focusing on digital transformation for clients.",
+      "The firm has a strong track record of acquisitions and partnerships to enhance its technological capabilities and reach.",
+      "Recent developments include collaborations with AI providers and innovations in digital transformation frameworks."
+    ],
+    "management_findings": [
+      "Infosys faces controversies including accusations of unethical practices and executive misconduct.",
+      "Past controversies linked to executive compensation have generated public discontent.",
+      "Whistleblower complaints have led to investigations regarding internal practices and financial reporting."
+    ],
+    "financial_irregularities": [
+      "Revenue from operations increased steadily, suggesting positive growth but needs contextual market analysis.",
+      "Cash flows from operations are increasing, indicating the company can translate earnings into cash effectively.",
+      "Increasing debt levels may indicate reliance on financing; monitoring the debt-to-equity ratio is advisable.",
+      "The independent auditor's report presents no qualifications, indicating the audit outcome is positive.",
+      "No clear signs of red flags, but related party transactions require further investigation."
+    ],
+    "scam_signals": [
+      "Volume spike ratio indicates potential sudden spikes in trading volume (2.52), suggesting manipulation.",
+      "Recent reports of a 9.23% decline on February 12, 2026, correlate with high volume days, indicating possible pump-and-dump signals.",
+      "Price has decreased significantly (-24.03%), yet there were positive news reports about strategic partnerships.",
+      "The surge of 3.16% in share price on February 26, 2026, followed bullish market sentiments, alongside high volume trading patterns."
+    ]
+  },
+  "evidence": {
+    "documents": [
+      {
+        "type": "Annual Report",
+        "location": "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-25.pdf",
+        "summary": "Infosys financial performance and operational insights."
+      }
+    ],
+    "time_series": [
+      {
+        "source": "Trading Data",
+        "from_date": "2023-10-01",
+        "to_date": "2023-10-31",
+        "file": "trading_data_INF.xlsx",
+        "metrics": {
+          "average_volume": 17048480,
+          "price_change_percent": -24.03
+        }
+      }
+    ],
+    "people_profiles": [
+      {
+        "name": "Salil Parekh",
+        "role": "Chief Executive Officer & Managing Director",
+        "red_flags": [
+          "Accusations of under-reporting costs to inflate profits.",
+          "Whistleblower allegations of unethical practices.",
+          "Involvement in controversies regarding toxic work culture."
+        ],
+        "evidence_links": [
+          "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh",
+          "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+        ]
+      },
+      {
+        "name": "Nandan Nilekani",
+        "role": "Co-founder and Chairman of the Board",
+        "red_flags": [
+          "Criticism regarding executive compensation."
+        ],
+        "evidence_links": [
+          "https://chambers.com/articles/executive-compensation-in-india-summing-up-the-infosys-controversy"
+        ]
+      },
+      {
+        "name": "Jayesh Sanghrajka",
+        "role": "Chief Financial Officer",
+        "red_flags": [
+          "Linked to allegations of unethical practices and financial irregularities."
+        ],
+        "evidence_links": [
+          "https://timesofindia.indiatimes.com/business/india-business/infosys-says-probing-alleged-unethical-practices-by-ceo-cfo-shares-tank/articleshow/71705017.cms"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}
