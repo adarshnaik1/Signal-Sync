@@ -3,32 +3,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { ShieldCheck, BarChart, UserSearch, AlertTriangle } from "lucide-react";
 import Header from "../../components/ui/Header";
 import Toast from "../../components/ui/Toast";
-
-const features = [
-  {
-    name: "Company Overview",
-    description: "Get comprehensive profiles including business models, market presence, and more.",
-    icon: <ShieldCheck className="w-8 h-8 text-blue-500" />,
-  },
-  {
-    name: "Management Research",
-    description: "Verify backgrounds of key executives to identify potential red flags or past controversies.",
-    icon: <UserSearch className="w-8 h-8 text-blue-500" />,
-  },
-  {
-    name: "Financial Analysis",
-    description: "Detect accounting anomalies, unusual revenue patterns, and other financial integrity concerns.",
-    icon: <BarChart className="w-8 h-8 text-blue-500" />,
-  },
-  {
-    name: "Scam Detection",
-    description: "Analyze trading patterns to spot volume spikes and signs of market manipulation.",
-    icon: <AlertTriangle className="w-8 h-8 text-blue-500" />,
-  },
-];
+import features from "../../data/team_features";
+import teamData from "../../data/team_data";
 
 const MESSAGES = {
   login: "Login successful.",
@@ -51,12 +29,12 @@ export default function Home() {
   }, [searchParams, router]);
 
   return (
-    <div className="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200">
+    <div className="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 ">
       <Header />
 
       {/* Hero Section */}
-      <main className="container mx-auto px-6 pt-32 pb-16 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+      <main className="container mx-auto px-6 pt-32 pb-16 text-center mb-10">
+        <h1 className=" tracking-tighter text-4xl md:text-6xl font-bold leading-tight mb-4">
           Invest with Confidence.
         </h1>
         <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto mb-8">
@@ -72,10 +50,10 @@ export default function Home() {
       </main>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-zinc-50 dark:bg-zinc-800">
+      <section id="features" className="py-20 bg-zinc-50 dark:bg-zinc-800 ">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Comprehensive BGV for Investors</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Comprehensive  Analysis for Investors</h2>
             <p className="text-md text-zinc-600 dark:text-zinc-400 mt-2">
               We analyze every angle to give you a clear picture.
             </p>
@@ -93,6 +71,36 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/*The Team */}
+      <section className="py-10 bg-black">
+            <div className="mx-auto px-6  ">
+              <div className="text-center py-2 my-2">
+                 <h2 className="text-white text-4xl font-bold tracking-tighter ">The Team Behind This </h2>
+                 <p className="text-zinc-500 py-5">The Brains Behind This</p>
+              </div>
+            </div>
+              <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6 mx-20">
+                {teamData.map((data)=> (
+                  <div  key={data.name} className="bg-zinc-700 p-6 rounded-lg shadow-md text-center ">
+                    <h2 className="text-white font-bold tracking-tighter py-2">{data.name}</h2>
+                    <div className="flex justify-center mx-2 my-2 rounded-lg bg-gray-600   text-white text-center border-gray-600 ">
+                      <p className="text-sm">{data.work_area}</p>
+                    </div>
+
+                  </div>
+
+                )
+
+                )}
+
+              </div>
+              <h4 className=" my-8 text-center tracking-tight text-gray-500"> Made with ❤️ In India </h4>
+             
+
+            
+            
       </section>
 
       {toast && <Toast message={toast} onDone={() => setToast("")} />}
