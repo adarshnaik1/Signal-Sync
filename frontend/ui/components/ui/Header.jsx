@@ -56,9 +56,13 @@ export default function Header() {
   <div className="flex items-center space-x-4">
     {user ? (
       <>
-        <span className="text-sm text-zinc-600 dark:text-zinc-400 hidden sm:block">
+        <button
+          type="button"
+          onClick={() => router.push("/profile")}
+          className="hidden text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200 sm:block"
+        >
           {user.user_metadata?.full_name || user.email}
-        </span>
+        </button>
         <button
           onClick={handleLogout}
           className="bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-zinc-700 transition-colors text-sm"
