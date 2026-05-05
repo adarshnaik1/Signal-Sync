@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function middleware(req) {
   let res = NextResponse.next({ request: req });
+  const { pathname } = req.nextUrl;
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -23,7 +24,16 @@ export async function middleware(req) {
   );
 
   // Refresh session on every request so cookies stay up to date
-  await supabase.auth.getSession();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (pathname.startsWith("/stocks") && !session) {
+    const loginUrl = req.nextUrl.clone();
+    loginUrl.pathname = "/login";
+    loginUrl.searchParams.set("next", pathname);
+    return NextResponse.redirect(loginUrl);
+  }
 
   return res;
 }
