@@ -2,7 +2,11 @@ import requests
 import re
 
 
-API_KEY = "pub_44655aa9ec2a4c808bd2b012040cb7ad"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("NEWSDATA_API_KEY")
 
 
 def clean_summary(text):
