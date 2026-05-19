@@ -12,5 +12,95 @@
     "progress": 100,
     "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\output_data\\ITC.NS_bgv_20260519T080652Z.json",
     "error": null
+  },
+  "bgv_20260519T102246Z_411926": {
+    "job_id": "bgv_20260519T102246Z_411926",
+    "status": "failed",
+    "created_at": "2026-05-19T10:22:46.574535Z",
+    "updated_at": "2026-05-19T10:22:46.731194Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive"
+    },
+    "progress": 100,
+    "current_step": "Initializing",
+    "current_agent": null,
+    "step_message": "BGV analysis failed",
+    "completed_steps": [],
+    "remaining_steps": [
+      {
+        "key": "company_overview_task",
+        "label": "Company Overview",
+        "agent": "Corporate Intelligence Analyst"
+      },
+      {
+        "key": "management_research_task",
+        "label": "Management Research",
+        "agent": "Executive Background Verification Specialist"
+      },
+      {
+        "key": "financial_irregularities_task",
+        "label": "Financial Irregularities",
+        "agent": "Forensic Financial Analyst"
+      },
+      {
+        "key": "scam_detection_task",
+        "label": "Scam Detection",
+        "agent": "Market Manipulation Detection Specialist"
+      },
+      {
+        "key": "compile_bgv_report_task",
+        "label": "Final Report",
+        "agent": "BGV Report Compiler"
+      }
+    ],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\output_data\\ITC.NS_bgv_20260519T102246Z.json",
+    "error": "api.jobs_store.update_job() got multiple values for keyword argument 'current_step'"
+  },
+  "bgv_20260519T102535Z_49d152": {
+    "job_id": "bgv_20260519T102535Z_49d152",
+    "status": "done",
+    "created_at": "2026-05-19T10:25:35.739118Z",
+    "updated_at": "2026-05-19T10:27:47.483916Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "BGV analysis complete",
+    "completed_steps": [
+      {
+        "key": "company_overview_task",
+        "label": "Company Overview",
+        "agent": "Corporate Intelligence Analyst"
+      },
+      {
+        "key": "management_research_task",
+        "label": "Management Research",
+        "agent": "Executive Background Verification Specialist"
+      },
+      {
+        "key": "financial_irregularities_task",
+        "label": "Financial Irregularities",
+        "agent": "Forensic Financial Analyst"
+      },
+      {
+        "key": "scam_detection_task",
+        "label": "Scam Detection",
+        "agent": "Market Manipulation Detection Specialist"
+      },
+      {
+        "key": "compile_bgv_report_task",
+        "label": "Final Report",
+        "agent": "BGV Report Compiler"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\output_data\\ITC.NS_bgv_20260519T102535Z.json",
+    "error": null
   }
 }

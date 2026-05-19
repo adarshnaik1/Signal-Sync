@@ -34,6 +34,11 @@ def create_job(metadata: dict) -> dict:
         "updated_at": datetime.utcnow().isoformat() + "Z",
         "metadata": metadata,
         "progress": 0,
+        "current_step": None,
+        "current_agent": None,
+        "step_message": "Queued",
+        "completed_steps": [],
+        "remaining_steps": [],
         "output_path": None,
         "error": None,
     }
@@ -52,6 +57,10 @@ def update_job(job_id: str, **fields) -> dict:
     jobs[job_id] = job
     _save_jobs(jobs)
     return job
+
+
+def update_job_progress(job_id: str, **fields) -> dict:
+    return update_job(job_id, **fields)
 
 
 def get_job(job_id: str) -> dict:

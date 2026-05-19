@@ -69,7 +69,7 @@ def bgv_status(job_id: str):
     job = get_job(job_id)
     if not job:
         raise HTTPException(status_code=404, detail="Job not found")
-    return {"job_id": job_id, "status": job.get("status"), "progress": job.get("progress"), "error": job.get("error"), "output_path": job.get("output_path")}
+    return job
 
 
 @app.get("/api/bgv/result/{job_id}")

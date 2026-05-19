@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import BGVResults from "./BGVResults";
+import { useRouter } from "next/navigation";
 
 const API_BASE = process.env.NEXT_PUBLIC_BGV_API_BASE_URL || "";
 
@@ -53,8 +53,9 @@ export default function StockDetails({ data }) {
     { label: "52W Low", value: formatNumber(fiftyTwoWeekLow) },
   ];
 
-  const [jobId, setJobId] = useState(null);
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   return (
     <div className="mx-auto max-w-6xl rounded-3xl border border-slate-200 bg-zinc-100 p-6 shadow-lg shadow-slate-200/60 sm:p-8">
@@ -78,7 +79,7 @@ export default function StockDetails({ data }) {
               onClick={async () => {
                 if (!symbol) return;
                 try {
-                  setJobId(null);
+                  setError(null);
                   setLoading(true);
                   const form = new FormData();
                   form.append("company_name", companyName || symbol);
@@ -95,18 +96,28 @@ export default function StockDetails({ data }) {
                   } catch {
                     throw new Error(`Invalid API response: ${text.slice(0, 120)}`);
                   }
-                  setJobId(json.job_id);
+                  if (!json?.job_id) {
+                    throw new Error("Missing job id in BGV response");
+                  }
+                  router.push(`/bgv/${json.job_id}`);
                 } catch (err) {
-                  console.error(err);
+                  setError(err instanceof Error ? err.message : String(err));
                 } finally {
                   setLoading(false);
                 }
               }}
-              className="ml-3 inline-flex items-center rounded-md bg-amber-400 px-3 py-1.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-amber-300"
+              className="ml-3 inline-flex items-center rounded-md bg-amber-400 px-3 py-1.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-60"
+              disabled={loading}
             >
-              Run BGV Analysis
+              {loading ? "Starting..." : "Run BGV Analysis"}
             </button>
           </div>
+
+          {error ? (
+            <div className="mt-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </div>
+          ) : null}
 
           <div className="border-white border mt-2 text-sm text-black lg:w-80 rounded-2xl p-2  bg-amber-200/40 shadow-amber-300 shadow">
                 {sector ? <span>{sector}</span> : null}
@@ -124,10 +135,6 @@ export default function StockDetails({ data }) {
           </div>
           <div className="mt-1 text-sm text-slate-300">Current price</div>
         </div>
-      </div>
-
-      <div className="mt-6">
-        <BGVResults jobId={jobId} />
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
