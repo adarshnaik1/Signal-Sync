@@ -1,0 +1,16 @@
+{
+  "bgv_20260519T080652Z_114478": {
+    "job_id": "bgv_20260519T080652Z_114478",
+    "status": "done",
+    "created_at": "2026-05-19T08:06:52.872200Z",
+    "updated_at": "2026-05-19T08:10:04.767363Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive"
+    },
+    "progress": 100,
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\output_data\\ITC.NS_bgv_20260519T080652Z.json",
+    "error": null
+  }
+}

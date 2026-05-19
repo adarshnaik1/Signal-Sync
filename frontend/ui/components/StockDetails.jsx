@@ -1,3 +1,10 @@
+"use client";
+
+import React, { useState } from "react";
+import BGVResults from "./BGVResults";
+
+const API_BASE = process.env.NEXT_PUBLIC_BGV_API_BASE_URL || "";
+
 export default function StockDetails({ data }) {
   const {
     companyName,
@@ -46,6 +53,9 @@ export default function StockDetails({ data }) {
     { label: "52W Low", value: formatNumber(fiftyTwoWeekLow) },
   ];
 
+  const [jobId, setJobId] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="mx-auto max-w-6xl rounded-3xl border border-slate-200 bg-zinc-100 p-6 shadow-lg shadow-slate-200/60 sm:p-8">
       <div className="flex flex-col gap-6 border-b border-slate-200 pb-6 lg:flex-row lg:items-end lg:justify-between">
@@ -60,6 +70,42 @@ export default function StockDetails({ data }) {
                 {symbol}
               </span>
             ) : null}
+          </div>
+
+          <div className="mt-3">
+            <button
+              type="button"
+              onClick={async () => {
+                if (!symbol) return;
+                try {
+                  setJobId(null);
+                  setLoading(true);
+                  const form = new FormData();
+                  form.append("company_name", companyName || symbol);
+                  form.append("ticker", symbol);
+                  form.append("sector", sector || "");
+                  const res = await fetch(`${API_BASE}/api/bgv/start`, { method: "POST", body: form });
+                  const text = await res.text();
+                  if (!res.ok) {
+                    throw new Error(text || "Failed to start BGV analysis");
+                  }
+                  let json;
+                  try {
+                    json = JSON.parse(text);
+                  } catch {
+                    throw new Error(`Invalid API response: ${text.slice(0, 120)}`);
+                  }
+                  setJobId(json.job_id);
+                } catch (err) {
+                  console.error(err);
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="ml-3 inline-flex items-center rounded-md bg-amber-400 px-3 py-1.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-amber-300"
+            >
+              Run BGV Analysis
+            </button>
           </div>
 
           <div className="border-white border mt-2 text-sm text-black lg:w-80 rounded-2xl p-2  bg-amber-200/40 shadow-amber-300 shadow">
@@ -78,6 +124,10 @@ export default function StockDetails({ data }) {
           </div>
           <div className="mt-1 text-sm text-slate-300">Current price</div>
         </div>
+      </div>
+
+      <div className="mt-6">
+        <BGVResults jobId={jobId} />
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
