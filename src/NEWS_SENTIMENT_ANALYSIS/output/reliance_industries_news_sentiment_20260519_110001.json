@@ -1,0 +1,164 @@
+{
+  "company_name": "Reliance Industries",
+  "symbol": "RELIANCE.NS",
+  "generated_at": "2026-05-19T05:30:01.990842+00:00",
+  "summary": {
+    "company_name": "Reliance Industries",
+    "symbol": "RELIANCE.NS",
+    "total_articles": 3,
+    "average_sentiment": 0.3248,
+    "overall_sentiment": "Positive",
+    "overall_sentiment_score": 0.3248,
+    "sentiment_distribution": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 1,
+      "positive_percentage": 66.7,
+      "negative_percentage": 0.0,
+      "neutral_percentage": 33.3
+    },
+    "most_positive_source": {
+      "name": "thehindubusinessline.com",
+      "average_score": 0.5102
+    },
+    "most_negative_source": {
+      "name": "economictimes.indiatimes.com",
+      "average_score": -0.046
+    },
+    "source_breakdown": {
+      "thehindubusinessline.com": {
+        "count": 2,
+        "avg_score": 0.5102
+      },
+      "economictimes.indiatimes.com": {
+        "count": 1,
+        "avg_score": -0.046
+      }
+    },
+    "timeline": [
+      {
+        "date": "2026-05-17",
+        "sentiment_score": 0.1834
+      },
+      {
+        "date": "2026-05-18",
+        "sentiment_score": 0.6077
+      }
+    ],
+    "analysis_timestamp": "2026-05-19T05:30:01.990288+00:00"
+  },
+  "keywords": {
+    "keywords": [
+      "crore",
+      "bank",
+      "firms",
+      "airtel",
+      "rs",
+      "reliance",
+      "hdfc",
+      "hdfc bank",
+      "biggest",
+      "market",
+      "12",
+      "12 lakh",
+      "lakh",
+      "lakh crore",
+      "valuation"
+    ],
+    "keyword_scores": {
+      "crore": 0.4620817608084119,
+      "bank": 0.40281478639850016,
+      "firms": 0.3691713021307528,
+      "airtel": 0.36912211061344946,
+      "rs": 0.32130014338276924,
+      "reliance": 0.32029989399087067,
+      "hdfc": 0.305071970118736,
+      "hdfc bank": 0.305071970118736,
+      "biggest": 0.2926358118217347,
+      "market": 0.2906109282840403,
+      "12": 0.2714284858509886,
+      "12 lakh": 0.2714284858509886,
+      "lakh": 0.2714284858509886,
+      "lakh crore": 0.2714284858509886,
+      "valuation": 0.24611420142050183
+    },
+    "trending_terms": [
+      "crore",
+      "bank",
+      "firms",
+      "airtel",
+      "rs",
+      "reliance",
+      "hdfc",
+      "hdfc bank",
+      "biggest",
+      "market"
+    ]
+  },
+  "news_summary": {
+    "overview": "Analyzed 3 articles about Reliance Industries. Sentiment mix: 2 positive, 1 neutral, 0 negative. Key topics: crore, bank, firms, airtel, rs, reliance, hdfc, hdfc bank.",
+    "top_headlines": [
+      {
+        "title": "Airtel dethrones HDFC Bank as India’s second-most valuable company",
+        "source": "thehindubusinessline.com",
+        "sentiment": "Positive",
+        "published_at": "2026-05-18T09:58:57.000000Z"
+      },
+      {
+        "title": "Mcap of nine of top 10 valued firms erodes by ₹3.12 lakh crore; Reliance biggest laggard",
+        "source": "thehindubusinessline.com",
+        "sentiment": "Positive",
+        "published_at": "2026-05-17T04:50:26.000000Z"
+      },
+      {
+        "title": "9 of top 10 valued firms lose Rs 3.12 lakh crore in m-cap; Reliance hardest hit",
+        "source": "economictimes.indiatimes.com",
+        "sentiment": "Neutral",
+        "published_at": "2026-05-17T05:10:16.000000Z"
+      }
+    ],
+    "keyword_topics": [
+      "crore",
+      "bank",
+      "firms",
+      "airtel",
+      "rs",
+      "reliance",
+      "hdfc",
+      "hdfc bank",
+      "biggest",
+      "market"
+    ],
+    "snippets": [
+      "Bharti Airtel surpassed HDFC Bank on Monday to become India’s second-largest company by market capitalisation, as its shares climbed 1.68 per cent to trade at...",
+      "The combined market valuation of nine of the top 10 valued firms eroded by ₹3.12 lakh crore last week, with Reliance Industries taking the biggest hit.\n\nLast ...",
+      "Live Events\n\n\n\nas a Reliable and Trusted News Source Addas a Reliable and Trusted News Source Add Now!\n\n(You can now subscribe to our\n\n(You can now subscribe to..."
+    ]
+  },
+  "articles": [
+    {
+      "title": "Airtel dethrones HDFC Bank as India’s second-most valuable company",
+      "source": "thehindubusinessline.com",
+      "sentiment": "Positive",
+      "sentiment_score": 0.6077,
+      "published_at": "2026-05-18T09:58:57.000000Z",
+      "url": "https://www.thehindubusinessline.com/markets/stock-markets/airtel-dethrones-hdfc-bank-as-indias-second-most-valuable-company/article70993448.ece"
+    },
+    {
+      "title": "9 of top 10 valued firms lose Rs 3.12 lakh crore in m-cap; Reliance hardest hit",
+      "source": "economictimes.indiatimes.com",
+      "sentiment": "Neutral",
+      "sentiment_score": -0.046,
+      "published_at": "2026-05-17T05:10:16.000000Z",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/9-of-top-10-valued-firms-lose-rs-3-12-lakh-crore-in-m-cap-reliance-hardest-hit/articleshow/131149167.cms"
+    },
+    {
+      "title": "Mcap of nine of top 10 valued firms erodes by ₹3.12 lakh crore; Reliance biggest laggard",
+      "source": "thehindubusinessline.com",
+      "sentiment": "Positive",
+      "sentiment_score": 0.4128,
+      "published_at": "2026-05-17T04:50:26.000000Z",
+      "url": "https://www.thehindubusinessline.com/markets/mcap-of-nine-of-top-10-valued-firms-erodes-by-312-lakh-crore-reliance-biggest-laggard/article70989614.ece"
+    }
+  ]
+}
