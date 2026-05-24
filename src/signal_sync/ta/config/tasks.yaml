@@ -1,0 +1,53 @@
+market_data_task:
+  description: >
+    Use fetch_market_data_bundle_tool as the only tool.
+    It returns a compact bundle_file plus row counts, validation, and actions metadata in one deterministic pass.
+    Use the bundle_file path as the handoff to downstream tasks instead of embedding the full OHLCV list in context.
+    Do not perform analysis, do not ask coworkers, and do not split the work into multiple tool calls.
+  expected_output: >
+    JSON with bundle_file, daily_rows, optional weekly_rows, actions_count, and validation summary.
+  agent: market_data_agent
+
+indicator_task:
+  description: >
+    Use indicator_rule_engine_tool as the only tool.
+    It computes SMA, EMA20/50/100/200, RSI, MACD, ATR, Bollinger Bands, and OBV in one deterministic pass.
+    Pass the bundle_file path from market_data_task directly into the tool.
+  expected_output: >
+    JSON object with trend, momentum, volatility, and volume indicator sections.
+  agent: indicator_agent
+
+pattern_detection_task:
+  description: >
+    Detect deterministic candlestick and chart patterns from cleaned OHLCV, then render
+    chart and perform advisory-only vision review.
+    Pass the bundle_file path from market_data_task directly into the tools.
+  expected_output: >
+    JSON with candlestick_patterns, chart_patterns, chart_path, and visual_review.
+  agent: pattern_detection_agent
+
+support_resistance_task:
+  description: >
+    Build support and resistance zones by combining swings, clustered levels,
+    volume zones, and dynamic EMA levels with weighted confidence.
+    Pass the bundle_file path from market_data_task directly into the tools.
+  expected_output: >
+    JSON with support_zones, resistance_zones, evidence_by_layer, and confidence scores.
+  agent: support_resistance_agent
+
+strategy_signal_task:
+  description: >
+    Synthesize indicators, patterns, support/resistance, and visual advisory into
+    technical stance, confidence, and thesis for medium/long term.
+  expected_output: >
+    JSON with stance, confidence, thesis, and key supporting evidence.
+  agent: strategy_signal_agent
+
+explanation_task:
+  description: >
+    Explain the analysis in human-readable terms with no hype and no guarantees.
+    Include uncertainty, invalidation points, and what to monitor next.
+  expected_output: >
+    JSON with summary, indicator_explanation, pattern_explanation, sr_explanation,
+    uncertainty_notes, and monitoring_checklist.
+  agent: explanation_agent
