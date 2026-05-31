@@ -14,6 +14,16 @@ pdfplumber>=0.10.0
 
 # Web UI
 streamlit>=1.31.0
+plotly>=5.18.0
+
+# News Sentiment Analysis (see src/news_sentiment/requirements.txt)
+feedparser>=6.0.0
+newspaper3k>=0.2.8
+lxml_html_clean>=0.1.0
+transformers>=4.36.0
+torch>=2.0.0
+beautifulsoup4>=4.12.0
+nltk>=3.8.0
 
 # Data validation
 pydantic>=2.0.0

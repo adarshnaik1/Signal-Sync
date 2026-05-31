@@ -1,0 +1,63 @@
+{
+  "company": "Reliance",
+  "overall_sentiment": "Positive",
+  "average_sentiment_score": 0.9186,
+  "confidence": "MEDIUM_CONFIDENCE",
+  "events_detected": [
+    "Acquisition"
+  ],
+  "summary": "Reliance received positive sentiment driven by acquisition based on analysis of 5 article(s) from Economic Times, Moneycontrol. Key events detected include Acquisition. News verification status: moderate confidence across trusted financial outlets.",
+  "articles": [
+    {
+      "source": "Moneycontrol",
+      "title": "Stellantis India to hike vehicle prices by up to Rs 17,000 from April 30",
+      "url": "https://www.moneycontrol.com/news/business/stellantis-india-to-hike-vehicle-prices-byto-rs-17000april-30_17531771.html",
+      "published_date": "Tue, 23 Apr 2024 14:17:55 +0530",
+      "event_type": "General News",
+      "sentiment": "Positive",
+      "sentiment_score": 0.8216,
+      "confidence": 50
+    },
+    {
+      "source": "Economic Times",
+      "title": "Mcap of 7 of top-10 valued firms erodes by Rs 1.54 lakh cr; Reliance takes biggest hit",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcap-of-7-of-top-10-valued-firms-erodes-by-rs-1-54-lakh-cr-reliance-takes-biggest-hit/articleshow/131418746.cms",
+      "published_date": "Sun, 31 May 2026 10:00:53 +0530",
+      "event_type": "General News",
+      "sentiment": "Negative",
+      "sentiment_score": 0.9652,
+      "confidence": 60
+    },
+    {
+      "source": "Economic Times",
+      "title": "Bonus issues, dividends and more: Reliance Industries, Trent among 20 stocks turning ex-date this week",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonus-issues-dividends-and-more-reliance-industries-trent-among-20-stocks-turning-ex-date-this-week/articleshow/131418356.cms",
+      "published_date": "Sun, 31 May 2026 09:03:58 +0530",
+      "event_type": "General News",
+      "sentiment": "Neutral",
+      "sentiment_score": 0.9336,
+      "confidence": 60
+    },
+    {
+      "source": "Economic Times",
+      "title": "Triveni Engineering Q4 profit falls to Rs 167.4 crore; FY26 profit rises 12.8%",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/earnings/triveni-engineering-q4-profit-falls-to-rs-167-4-crore-fy26-profit-rises-12-8/articleshow/131407258.cms",
+      "published_date": "Sat, 30 May 2026 15:21:00 +0530",
+      "event_type": "Acquisition",
+      "sentiment": "Positive",
+      "sentiment_score": 0.9444,
+      "confidence": 60
+    },
+    {
+      "source": "Economic Times",
+      "title": "Dalal Street Week Ahead: Nifty stuck in consolidation zone; 23,800 remains key breakout hurdle",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/dalal-street-week-ahead-nifty-stuck-in-consolidation-zone-23800-remains-key-breakout-hurdle/articleshow/131407082.cms",
+      "published_date": "Sat, 30 May 2026 15:06:45 +0530",
+      "event_type": "General News",
+      "sentiment": "Negative",
+      "sentiment_score": 0.9283,
+      "confidence": 60
+    }
+  ],
+  "generated_at": "2026-05-31T04:56:35.928333Z"
+}

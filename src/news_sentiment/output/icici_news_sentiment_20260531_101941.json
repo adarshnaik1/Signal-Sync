@@ -1,0 +1,33 @@
+{
+  "company": "Icici",
+  "overall_sentiment": "Negative",
+  "average_sentiment_score": 0.9667,
+  "confidence": "MEDIUM_CONFIDENCE",
+  "events_detected": [
+    "Dividend"
+  ],
+  "summary": "Icici received negative sentiment driven by dividend based on analysis of 2 article(s) from Moneycontrol. Key events detected include Dividend. News verification status: moderate confidence across trusted financial outlets.",
+  "articles": [
+    {
+      "source": "Moneycontrol",
+      "title": "ICICI Prudential Life Insurance to focus on growing absolute VNB amid slump in FY24",
+      "url": "https://www.moneycontrol.com/news/business/icici-prudential-life-insurance-to-focusgrowing-absolute-vnb-amid-slumpfy24_17532041.html",
+      "published_date": "Tue, 23 Apr 2024 22:36:32 +0530",
+      "event_type": "General News",
+      "sentiment": "Negative",
+      "sentiment_score": 0.9716,
+      "confidence": 50
+    },
+    {
+      "source": "Moneycontrol",
+      "title": "ICICI Pru Life Q4 net profit falls 26% to Rs 174 cr, insurer announces dividend",
+      "url": "https://www.moneycontrol.com/news/business/icici-pru-life-q4-net-profit-falls-26-to-rs-174-cr-insurer-announces-dividend_17532101.html",
+      "published_date": "Tue, 23 Apr 2024 18:26:16 +0530",
+      "event_type": "Dividend",
+      "sentiment": "Negative",
+      "sentiment_score": 0.9617,
+      "confidence": 55
+    }
+  ],
+  "generated_at": "2026-05-31T04:49:41.312188Z"
+}

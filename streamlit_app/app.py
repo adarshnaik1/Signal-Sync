@@ -134,7 +134,7 @@ with st.sidebar:
     # Navigation
     page = st.radio(
         "Navigate to:",
-        ["🔍 BGV Verification", "📊 Reddit News Analysis"],
+        ["🔍 BGV Verification", "📰 News Sentiment Analysis", "📊 Reddit News Analysis"],
         index=0
     )
     
@@ -146,6 +146,15 @@ with st.sidebar:
         - 👥 Management Research
         - 📊 Financial Irregularities
         - ⚠️ Scam Detection
+        """)
+    elif page == "📰 News Sentiment Analysis":
+        st.markdown("""
+        **Financial News Analysis:**
+        - 📈 Overall Sentiment (FinBERT)
+        - 🛡️ Confidence Meter
+        - 📅 Event Timeline
+        - 📰 Article Cards
+        - 📊 Sentiment Charts
         """)
     else:
         st.markdown("""
@@ -244,6 +253,383 @@ def create_sentiment_gauge(score: float, title: str) -> go.Figure:
     )
     
     return fig
+
+
+# ============================================================================
+# HELPER FUNCTIONS FOR NEWS SENTIMENT ANALYSIS
+# ============================================================================
+
+def load_news_sentiment_files():
+    """Load all available news sentiment analysis files."""
+    output_dir = ROOT_DIR / "src" / "news_sentiment" / "output"
+    if not output_dir.exists():
+        output_dir = Path(__file__).resolve().parent.parent / "src" / "news_sentiment" / "output"
+    if not output_dir.exists():
+        return []
+    files = list(output_dir.glob("*_news_sentiment_*.json"))
+    return sorted(files, key=lambda x: x.stat().st_mtime, reverse=True)
+
+
+def extract_news_company_name(filename: str) -> str:
+    """Extract company name from news sentiment filename."""
+    parts = filename.replace("_news_sentiment_", "|").split("|")
+    if parts:
+        return parts[0].replace("_", " ").title()
+    return "Unknown"
+
+
+def create_confidence_gauge(confidence: str, score: float = None) -> go.Figure:
+    """Create a gauge chart for news confidence level."""
+    confidence_scores = {
+        "HIGH_CONFIDENCE": 90,
+        "MEDIUM_CONFIDENCE": 60,
+        "LOW_CONFIDENCE": 25,
+    }
+    value = score if score is not None else confidence_scores.get(confidence, 50)
+
+    color_map = {
+        "HIGH_CONFIDENCE": "#43e97b",
+        "MEDIUM_CONFIDENCE": "#fee140",
+        "LOW_CONFIDENCE": "#f5576c",
+    }
+    bar_color = color_map.get(confidence, "#667eea")
+
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=value,
+        domain={'x': [0, 1], 'y': [0, 1]},
+        title={'text': "News Confidence", 'font': {'size': 16, 'color': 'white'}},
+        number={'suffix': '%', 'font': {'color': 'white'}},
+        gauge={
+            'axis': {'range': [0, 100], 'tickcolor': 'white'},
+            'bar': {'color': bar_color},
+            'bgcolor': 'rgba(0,0,0,0)',
+            'borderwidth': 2,
+            'bordercolor': '#334155',
+            'steps': [
+                {'range': [0, 40], 'color': 'rgba(245, 87, 108, 0.3)'},
+                {'range': [40, 70], 'color': 'rgba(254, 225, 64, 0.3)'},
+                {'range': [70, 100], 'color': 'rgba(67, 233, 123, 0.3)'},
+            ],
+        }
+    ))
+    fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font={'color': 'white'},
+        height=250,
+        margin=dict(l=20, r=20, t=50, b=20)
+    )
+    return fig
+
+
+def create_finbert_gauge(score: float) -> go.Figure:
+    """Create a gauge chart for FinBERT sentiment score (0-1)."""
+    normalized = score * 100
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=normalized,
+        domain={'x': [0, 1], 'y': [0, 1]},
+        title={'text': "FinBERT Score", 'font': {'size': 16, 'color': 'white'}},
+        number={'suffix': '%', 'font': {'color': 'white'}},
+        gauge={
+            'axis': {'range': [0, 100], 'tickcolor': 'white'},
+            'bar': {'color': '#667eea'},
+            'bgcolor': 'rgba(0,0,0,0)',
+            'borderwidth': 2,
+            'bordercolor': '#334155',
+            'steps': [
+                {'range': [0, 33], 'color': '#f5576c'},
+                {'range': [33, 66], 'color': '#fee140'},
+                {'range': [66, 100], 'color': '#43e97b'},
+            ],
+        }
+    ))
+    fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font={'color': 'white'},
+        height=250,
+        margin=dict(l=20, r=20, t=50, b=20)
+    )
+    return fig
+
+
+# ============================================================================
+# PAGE: NEWS SENTIMENT ANALYSIS
+# ============================================================================
+
+def render_news_sentiment_page():
+    """Render the Financial News Sentiment Analysis page."""
+    st.markdown('<h1 class="main-header">📰 News Sentiment Analysis</h1>', unsafe_allow_html=True)
+    st.markdown(
+        "<p style='text-align:center;color:#94a3b8;'>"
+        "Indian stock market news from trusted sources — Moneycontrol & Economic Times"
+        "</p>",
+        unsafe_allow_html=True,
+    )
+
+    tab_run, tab_view = st.tabs(["🔍 Run Analysis", "📊 View Results"])
+
+    with tab_run:
+        st.markdown("### Analyze Company News")
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            company_input = st.text_input(
+                "Company Name or Ticker",
+                placeholder="e.g., Infosys, TCS, Reliance",
+                help="Enter company name or stock ticker (INFY, TCS, RIL, etc.)",
+            )
+        with col2:
+            max_articles = st.number_input("Max Articles", min_value=5, max_value=20, value=15)
+
+        if st.button("🚀 Run News Sentiment Analysis", type="primary", use_container_width=True):
+            if not company_input.strip():
+                st.error("Please enter a company name.")
+            else:
+                with st.spinner(f"Analyzing news for {company_input}... This may take a few minutes on first run (FinBERT model download)."):
+                    try:
+                        from news_sentiment.main import run_news_sentiment_analysis
+                        result = run_news_sentiment_analysis(
+                            company=company_input.strip(),
+                            max_articles=int(max_articles),
+                            save_output=True,
+                        )
+                        if result.get("error"):
+                            st.warning(result.get("summary", "No articles found."))
+                        else:
+                            st.success(f"✅ Analysis complete for {result.get('company', company_input)}!")
+                            st.info(result.get("summary", ""))
+                            if result.get("output_path"):
+                                st.caption(f"Saved to: {result['output_path']}")
+                    except ImportError as e:
+                        st.error(f"Missing dependencies: {e}")
+                        st.info("Install with: `pip install -r src/news_sentiment/requirements.txt`")
+                    except Exception as e:
+                        st.error(f"Analysis failed: {e}")
+                        st.exception(e)
+
+    with tab_view:
+        news_files = load_news_sentiment_files()
+
+        if not news_files:
+            st.warning("⚠️ No news sentiment results found. Run an analysis first.")
+            st.info("Run: `python src/news_sentiment/main.py \"Infosys\"`")
+            return
+
+        file_options = {}
+        for f in news_files:
+            company = extract_news_company_name(f.stem)
+            timestamp = f.stem.split("_")[-2] + "_" + f.stem.split("_")[-1]
+            try:
+                dt = datetime.strptime(timestamp, "%Y%m%d_%H%M%S")
+                display_name = f"{company} - {dt.strftime('%b %d, %Y %H:%M')}"
+            except Exception:
+                display_name = f"{company} - {timestamp}"
+            file_options[display_name] = f
+
+        selected_display = st.selectbox(
+            "Choose a news analysis report:",
+            options=list(file_options.keys()),
+        )
+
+        if not selected_display:
+            return
+
+        selected_file = file_options[selected_display]
+        with open(selected_file, encoding="utf-8") as f:
+            data = json.load(f)
+
+        company_name = data.get("company", "Unknown")
+        overall_sentiment = data.get("overall_sentiment", "Neutral")
+        confidence = data.get("confidence", "LOW_CONFIDENCE")
+        events = data.get("events_detected", [])
+        summary = data.get("summary", "")
+        articles = data.get("articles", [])
+        avg_score = data.get("average_sentiment_score", 0.5)
+
+        # Section 1: Overall Sentiment
+        st.markdown("---")
+        st.markdown(f"## 🎯 Overall Sentiment for **{company_name}**")
+
+        col1, col2, col3, col4 = st.columns(4)
+        sentiment_emoji = get_sentiment_emoji(overall_sentiment)
+
+        with col1:
+            st.markdown(f"""
+            <div class="score-card sentiment-{overall_sentiment.lower()}">
+                <h3>Overall Sentiment</h3>
+                <h1>{sentiment_emoji} {overall_sentiment}</h1>
+                <p>FinBERT Analysis</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col2:
+            st.markdown(f"""
+            <div class="score-card">
+                <h3>Avg. FinBERT Score</h3>
+                <h1>{avg_score:.2f}</h1>
+                <p>Range: 0.0 to 1.0</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col3:
+            conf_display = confidence.replace("_", " ").title()
+            conf_class = "sentiment-positive" if "HIGH" in confidence else (
+                "sentiment-neutral" if "MEDIUM" in confidence else "sentiment-negative"
+            )
+            st.markdown(f"""
+            <div class="score-card {conf_class}">
+                <h3>Confidence</h3>
+                <h1>{conf_display}</h1>
+                <p>Trusted Source Verified</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col4:
+            st.markdown(f"""
+            <div class="score-card">
+                <h3>Articles Analyzed</h3>
+                <h1>{len(articles)}</h1>
+                <p>{len(events)} event(s) detected</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        if summary:
+            st.info(f"📝 **Summary:** {summary}")
+
+        # Section 2: Confidence Meter & Charts
+        st.markdown("---")
+        st.markdown("## 📊 Sentiment & Confidence Charts")
+
+        chart_col1, chart_col2, chart_col3 = st.columns(3)
+
+        with chart_col1:
+            if articles:
+                sentiment_counts = {}
+                for a in articles:
+                    s = a.get("sentiment", "Neutral")
+                    sentiment_counts[s] = sentiment_counts.get(s, 0) + 1
+                fig_pie = px.pie(
+                    names=list(sentiment_counts.keys()),
+                    values=list(sentiment_counts.values()),
+                    color_discrete_sequence=["#43e97b", "#f5576c", "#667eea"],
+                    title="Sentiment Distribution",
+                )
+                fig_pie.update_layout(
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    font={'color': 'white'},
+                )
+                st.plotly_chart(fig_pie, use_container_width=True)
+
+        with chart_col2:
+            avg_conf = sum(a.get("confidence", 50) for a in articles) / len(articles) if articles else 50
+            fig_conf = create_confidence_gauge(confidence, avg_conf)
+            st.plotly_chart(fig_conf, use_container_width=True)
+
+        with chart_col3:
+            fig_finbert = create_finbert_gauge(avg_score)
+            st.plotly_chart(fig_finbert, use_container_width=True)
+
+        # Section 3: Event Timeline
+        st.markdown("---")
+        st.markdown("## 📅 Event Timeline")
+
+        if articles:
+            for article in articles:
+                pub_date = article.get("published_date", "")
+                date_display = pub_date[:16] if pub_date else "Recent"
+                event_type = article.get("event_type", "General News")
+                title = article.get("title", "No title")
+                st.markdown(f"""
+                <div class="finding-item">
+                    <strong>[{date_display}]</strong> {event_type}<br/>
+                    <span style="color:#94a3b8;">{title[:120]}{'...' if len(title) > 120 else ''}</span>
+                </div>
+                """, unsafe_allow_html=True)
+        else:
+            st.info("No events to display.")
+
+        # Section 4: Article Cards
+        st.markdown("---")
+        st.markdown("## 📰 Article Analysis")
+
+        if articles:
+            source_filter = st.multiselect(
+                "Filter by Source:",
+                options=sorted({a.get("source", "") for a in articles}),
+                default=sorted({a.get("source", "") for a in articles}),
+            )
+            sentiment_filter = st.multiselect(
+                "Filter by Sentiment:",
+                options=["Positive", "Negative", "Neutral"],
+                default=["Positive", "Negative", "Neutral"],
+            )
+
+            for article in articles:
+                if article.get("source") not in source_filter:
+                    continue
+                if article.get("sentiment") not in sentiment_filter:
+                    continue
+
+                card_class = f"post-card-{article.get('sentiment', 'neutral').lower()}"
+                st.markdown(f"""
+                <div class="post-card {card_class}">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span class="subreddit-tag">{article.get('source', '')}</span>
+                        <span style="color:{get_sentiment_color(article.get('sentiment', 'Neutral'))};font-weight:bold;">
+                            {article.get('sentiment', 'Neutral')} ({article.get('sentiment_score', 0):.2f})
+                        </span>
+                    </div>
+                    <h4 style="margin:10px 0;color:#e2e8f0;">{article.get('title', '')}</h4>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+                        <span style="color:#94a3b8;">
+                            🎯 {article.get('event_type', 'General News')} |
+                            🛡️ Confidence: {article.get('confidence', 0)}%
+                        </span>
+                        <a href="{article.get('url', '#')}" target="_blank" style="color:#60a5fa;">Read Article →</a>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Section 5: Bar chart by source
+            st.markdown("---")
+            st.markdown("## 📊 Sentiment by Source")
+            source_data = {}
+            for a in articles:
+                src = a.get("source", "Unknown")
+                if src not in source_data:
+                    source_data[src] = {"Positive": 0, "Negative": 0, "Neutral": 0}
+                source_data[src][a.get("sentiment", "Neutral")] += 1
+
+            if source_data:
+                df_source = pd.DataFrame([
+                    {"Source": src, "Sentiment": sent, "Count": count}
+                    for src, sentiments in source_data.items()
+                    for sent, count in sentiments.items()
+                    if count > 0
+                ])
+                fig_bar = px.bar(
+                    df_source, x="Source", y="Count", color="Sentiment",
+                    color_discrete_sequence=["#43e97b", "#f5576c", "#667eea"],
+                    title="Sentiment by News Source", barmode="stack",
+                )
+                fig_bar.update_layout(
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    font={'color': 'white'},
+                )
+                st.plotly_chart(fig_bar, use_container_width=True)
+
+            st.download_button(
+                label="📥 Download Full Analysis (JSON)",
+                data=json.dumps(data, indent=2, ensure_ascii=False),
+                file_name=selected_file.name,
+                mime="application/json",
+            )
+        else:
+            st.info("No articles in this report.")
 
 
 # ============================================================================
@@ -1216,6 +1602,8 @@ def render_bgv_page():
 # Route to the appropriate page based on sidebar selection
 if page == "🔍 BGV Verification":
     render_bgv_page()
+elif page == "📰 News Sentiment Analysis":
+    render_news_sentiment_page()
 else:
     render_reddit_sentiment_page()
 

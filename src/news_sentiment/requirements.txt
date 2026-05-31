@@ -1,0 +1,15 @@
+# News Sentiment Analysis - Dependencies
+# Free libraries only, optimized for CPU-only execution
+
+feedparser>=6.0.0
+newspaper3k>=0.2.8
+lxml_html_clean>=0.1.0
+transformers>=4.36.0
+torch>=2.0.0
+beautifulsoup4>=4.12.0
+pandas>=2.0.0
+plotly>=5.18.0
+nltk>=3.8.0
+
+# Optional: spaCy small model for enhanced event detection
+# pip install spacy && python -m spacy download en_core_web_sm
