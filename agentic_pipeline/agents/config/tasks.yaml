@@ -17,3 +17,4 @@ data_acquisition_task:
     - market_data: historical prices, volumes, ratios
     - news_data: recent news articles with headlines and summaries
   agent: data_acquisition_agent
+

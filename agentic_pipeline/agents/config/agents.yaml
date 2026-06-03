@@ -12,3 +12,5 @@ data_acquisition_agent:
     from multiple financial sources and ensuring data quality and consistency.
   allow_delegation: false
   verbose: true
+
+

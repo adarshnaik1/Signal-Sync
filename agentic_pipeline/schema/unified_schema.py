@@ -23,6 +23,7 @@ def extract_metric(dataframe, metric_name):
 def build_schema(raw_data,news_data):
 
     info = raw_data["info"]
+    exchange = raw_data["selected_exchange"]
 
     financials = raw_data["financials"]
     balance_sheet = raw_data["balance_sheet"]
@@ -35,7 +36,7 @@ def build_schema(raw_data,news_data):
         "company_identification": {
             "symbol": info.get("symbol"),
             "long_name": info.get("longName"),
-            "exchange": info.get("exchange")
+            "exchange": raw_data.get("selected_exchange")
         },
 
         "company_metadata": {
@@ -45,6 +46,7 @@ def build_schema(raw_data,news_data):
         },
 
         "market_data": {
+            "currency": "INR",
             "market_cap": info.get("marketCap"),
             "current_price": info.get("currentPrice"),
             "fifty_two_week_high": info.get("fiftyTwoWeekHigh"),

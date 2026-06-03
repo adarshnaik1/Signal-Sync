@@ -1,3 +1,7 @@
+#this is a standalone test file for running only the data acquisition agent
+#don't mistaken it to be the script for running the entire pipeline, that is main_pipeline.py
+
+
 from tools.financial_tool import fetch_company_data
 from tools.news_tool import fetch_company_news
 from schema.unified_schema import build_schema
