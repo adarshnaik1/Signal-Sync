@@ -1,0 +1,465 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\ITC.NS_bundle_20260604T164049Z.json",
+  "daily_rows": 63,
+  "weekly_rows": 53,
+  "actions_count": 40,
+  "validation": {
+    "success": true,
+    "rows": 63,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 293.1969,
+      "sma50": 294.0684,
+      "sma100": null,
+      "sma200": null
+    },
+    "ema": {
+      "ema20": 290.7126,
+      "ema50": 294.5821,
+      "ema100": 297.0772,
+      "ema200": 299.477
+    }
+  },
+  "momentum": {
+    "rsi14": 24.9196,
+    "macd": -4.556,
+    "macd_signal": -2.4365,
+    "macd_histogram": -2.1195
+  },
+  "volatility": {
+    "atr14": 5.4793,
+    "bb_basis20": 293.1969,
+    "bb_upper20": 308.8697,
+    "bb_lower20": 277.5242
+  },
+  "volume": {
+    "obv": 20893767.0
+  },
+  "candlestick_patterns": [],
+  "chart_patterns": [],
+  "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ITC.NS_20260604T164110Z.png",
+  "visual_review": {
+    "summary": "The chart shows a recent downtrend with the price closing below the EMA20, EMA50, and EMA200, indicating bearish momentum. The EMA20 has crossed below the EMA50, reinforcing the short-term bearish signal. Volume appears to spike during some down days, suggesting selling pressure. There is no clear breakout yet, but the price is consolidating near recent lows, which could precede either a continuation of the downtrend or a reversal depending on upcoming price action.",
+    "confidence": 0.85,
+    "image_analysis_status": "completed",
+    "image_size": {
+      "width": 1820,
+      "height": 1040
+    },
+    "reviewed_image_size": {
+      "width": 1200,
+      "height": 686
+    },
+    "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ITC.NS_20260604T164110Z.png",
+    "advisory_only": true,
+    "chart_url": "/api/ta/artifacts/ta_20260604T164036Z_87eba9/ITC.NS_20260604T164110Z.png"
+  },
+  "support_zones": [
+    {
+      "zone_low": 277.0,
+      "zone_high": 284.25,
+      "confidence": 0.8
+    },
+    {
+      "zone_low": 290.7296,
+      "zone_high": 292.7252,
+      "confidence": 0.7
+    }
+  ],
+  "resistance_zones": [
+    {
+      "zone_low": 294.5821,
+      "zone_high": 299.477,
+      "confidence": 0.9
+    },
+    {
+      "zone_low": 300.1471,
+      "zone_high": 302.0706,
+      "confidence": 0.8
+    }
+  ],
+  "evidence_by_layer": {
+    "swing_levels": {
+      "highs": [
+        300.8537,
+        296.1811,
+        301.4378,
+        307.8628,
+        302.0706,
+        283.25
+      ],
+      "lows": [
+        297.8846,
+        280.07,
+        290.7296,
+        293.6013,
+        292.7252,
+        277.0
+      ]
+    },
+    "clustered_levels": [
+      298.6093
+    ],
+    "volume_zones": [
+      {
+        "zone_low": 296.2892,
+        "zone_high": 300.1471,
+        "volume_weight": 290529977.0
+      },
+      {
+        "zone_low": 292.4314,
+        "zone_high": 296.2892,
+        "volume_weight": 290050686.0
+      },
+      {
+        "zone_low": 300.1471,
+        "zone_high": 304.0049,
+        "volume_weight": 234224260.0
+      }
+    ],
+    "dynamic_levels": {
+      "ema50": 294.5821,
+      "ema100": 297.0772,
+      "ema200": 299.477
+    }
+  },
+  "summary": {
+    "stance": "bearish",
+    "confidence": 0.85,
+    "thesis": "The technical indicators and price action suggest a strong bearish outlook, with key moving averages indicating a sustained downtrend."
+  },
+  "indicator_explanation": {
+    "moving_averages": "The price remains below critical moving averages: the EMA20 at 290.7126, EMA50 at 294.5821, and EMA200 at 299.477. This indicates that the recent price action is trending downward.",
+    "momentum_signals": "Current momentum indicators show that the RSI is at 24.9196, suggesting oversold conditions, while the MACD is at -4.556, which confirms negative momentum."
+  },
+  "pattern_explanation": {
+    "overall_trend": "The chart shows a clear downtrend characterized by the EMA20 crossing below the EMA50. This crossover is a strong bearish signal and indicates that sellers are exerting control over the market."
+  },
+  "sr_explanation": {
+    "support_levels": "There are key support zones located between 277.0-284.25 (80% confidence) and 290.7296-292.7252 (70% confidence). However, these supports are at risk of being tested further due to the bearish sentiment.",
+    "resistance_levels": "Resistance is strong at levels between 294.5821 (EMA50) and 299.477 (EMA200), which pose significant hurdles for any upward movements."
+  },
+  "uncertainty_notes": [
+    "While the RSI indicates oversold conditions at 24.9196, there is the potential for a short-term rebound, though this is contingent on the occurrence of bullish reversal signals.",
+    "The MACD histogram reading of -2.1195 suggests continued bearish momentum; however, if it begins to show signs of convergence, this could hint at a potential change in trend direction.",
+    "The current trading volume (OBV at 20893767.0) indicates consistent selling pressure, which may continue unless buying interest significantly increases."
+  ],
+  "monitoring_checklist": [
+    "Watch for any bullish reversal signals forming around the support zones, particularly if price approaches 277.0-284.25.",
+    "Keep an eye on the MACD for signs of a crossover above the signal line, which could suggest weakening bearish momentum.",
+    "Observe any breaches above the EMA50 at 294.5821 to see if that can establish a new resistance level, indicating a shift toward bullish sentiment."
+  ],
+  "_task_results": {
+    "market_data_task": {
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\ITC.NS_bundle_20260604T164049Z.json",
+      "daily_rows": 63,
+      "weekly_rows": 53,
+      "actions_count": 40,
+      "validation": {
+        "success": true,
+        "rows": 63,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "trend": {
+        "sma": {
+          "sma20": 293.1969,
+          "sma50": 294.0684,
+          "sma100": null,
+          "sma200": null
+        },
+        "ema": {
+          "ema20": 290.7126,
+          "ema50": 294.5821,
+          "ema100": 297.0772,
+          "ema200": 299.477
+        }
+      },
+      "momentum": {
+        "rsi14": 24.9196,
+        "macd": -4.556,
+        "macd_signal": -2.4365,
+        "macd_histogram": -2.1195
+      },
+      "volatility": {
+        "atr14": 5.4793,
+        "bb_basis20": 293.1969,
+        "bb_upper20": 308.8697,
+        "bb_lower20": 277.5242
+      },
+      "volume": {
+        "obv": 20893767.0
+      }
+    },
+    "pattern_detection_task": {
+      "candlestick_patterns": [],
+      "chart_patterns": [],
+      "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ITC.NS_20260604T164110Z.png",
+      "visual_review": {
+        "summary": "The chart shows a recent downtrend with the price closing below the EMA20, EMA50, and EMA200, indicating bearish momentum. The EMA20 has crossed below the EMA50, reinforcing the short-term bearish signal. Volume appears to spike during some down days, suggesting selling pressure. There is no clear breakout yet, but the price is consolidating near recent lows, which could precede either a continuation of the downtrend or a reversal depending on upcoming price action.",
+        "confidence": 0.85,
+        "image_analysis_status": "completed",
+        "image_size": {
+          "width": 1820,
+          "height": 1040
+        },
+        "reviewed_image_size": {
+          "width": 1200,
+          "height": 686
+        }
+      }
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        {
+          "zone_low": 277.0,
+          "zone_high": 284.25,
+          "confidence": 0.8
+        },
+        {
+          "zone_low": 290.7296,
+          "zone_high": 292.7252,
+          "confidence": 0.7
+        }
+      ],
+      "resistance_zones": [
+        {
+          "zone_low": 294.5821,
+          "zone_high": 299.477,
+          "confidence": 0.9
+        },
+        {
+          "zone_low": 300.1471,
+          "zone_high": 302.0706,
+          "confidence": 0.8
+        }
+      ],
+      "evidence_by_layer": {
+        "swing_levels": {
+          "highs": [
+            300.8537,
+            296.1811,
+            301.4378,
+            307.8628,
+            302.0706,
+            283.25
+          ],
+          "lows": [
+            297.8846,
+            280.07,
+            290.7296,
+            293.6013,
+            292.7252,
+            277.0
+          ]
+        },
+        "clustered_levels": [
+          298.6093
+        ],
+        "volume_zones": [
+          {
+            "zone_low": 296.2892,
+            "zone_high": 300.1471,
+            "volume_weight": 290529977.0
+          },
+          {
+            "zone_low": 292.4314,
+            "zone_high": 296.2892,
+            "volume_weight": 290050686.0
+          },
+          {
+            "zone_low": 300.1471,
+            "zone_high": 304.0049,
+            "volume_weight": 234224260.0
+          }
+        ],
+        "dynamic_levels": {
+          "ema50": 294.5821,
+          "ema100": 297.0772,
+          "ema200": 299.477
+        }
+      },
+      "confidence_scores": {
+        "swing_levels": 0.6,
+        "clustered_levels": 0.7,
+        "volume_zones": 0.8,
+        "dynamic_levels": 0.9
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "bearish",
+      "confidence": 0.85,
+      "thesis": "The current technical indicators, including moving averages and momentum signals, indicate a strong bearish outlook. Price action remains below key moving averages such as EMA20, EMA50, and EMA200, signifying a sustained downtrend. Furthermore, the RSI indicates oversold conditions, and MACD is in negative territory, reinforcing bearish momentum. Although there are support zones at 277.0-284.25 and 290.7296-292.7252, these levels are under pressure given the current market context. The overall price action suggests a potential continuation of this downtrend unless significant bullish reversal signals are observed.",
+      "key_supporting_evidence": {
+        "trend": {
+          "sma20": 293.1969,
+          "sma50": 294.0684,
+          "ema20": 290.7126,
+          "ema50": 294.5821,
+          "ema100": 297.0772,
+          "ema200": 299.477
+        },
+        "momentum": {
+          "rsi14": 24.9196,
+          "macd": -4.556,
+          "macd_signal": -2.4365,
+          "macd_histogram": -2.1195
+        },
+        "volatility": {
+          "atr14": 5.4793,
+          "bb_upper20": 308.8697,
+          "bb_lower20": 277.5242
+        },
+        "volume": {
+          "obv": 20893767.0
+        },
+        "visual_review": {
+          "summary": "The chart shows a recent downtrend with the price closing below key moving averages, indicating bearish momentum. The EMA20 has crossed below the EMA50, reinforcing the short-term bearish signal.",
+          "confidence": 0.85
+        },
+        "support_zones": [
+          {
+            "zone_low": 277.0,
+            "zone_high": 284.25,
+            "confidence": 0.8
+          },
+          {
+            "zone_low": 290.7296,
+            "zone_high": 292.7252,
+            "confidence": 0.7
+          }
+        ],
+        "resistance_zones": [
+          {
+            "zone_low": 294.5821,
+            "zone_high": 299.477,
+            "confidence": 0.9
+          },
+          {
+            "zone_low": 300.1471,
+            "zone_high": 302.0706,
+            "confidence": 0.8
+          }
+        ],
+        "dynamic_levels": {
+          "ema50": 294.5821,
+          "ema100": 297.0772,
+          "ema200": 299.477
+        }
+      }
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "bearish",
+        "confidence": 0.85,
+        "thesis": "The technical indicators and price action suggest a strong bearish outlook, with key moving averages indicating a sustained downtrend."
+      },
+      "indicator_explanation": {
+        "moving_averages": "The price remains below critical moving averages: the EMA20 at 290.7126, EMA50 at 294.5821, and EMA200 at 299.477. This indicates that the recent price action is trending downward.",
+        "momentum_signals": "Current momentum indicators show that the RSI is at 24.9196, suggesting oversold conditions, while the MACD is at -4.556, which confirms negative momentum."
+      },
+      "pattern_explanation": {
+        "overall_trend": "The chart shows a clear downtrend characterized by the EMA20 crossing below the EMA50. This crossover is a strong bearish signal and indicates that sellers are exerting control over the market."
+      },
+      "sr_explanation": {
+        "support_levels": "There are key support zones located between 277.0-284.25 (80% confidence) and 290.7296-292.7252 (70% confidence). However, these supports are at risk of being tested further due to the bearish sentiment.",
+        "resistance_levels": "Resistance is strong at levels between 294.5821 (EMA50) and 299.477 (EMA200), which pose significant hurdles for any upward movements."
+      },
+      "uncertainty_notes": [
+        "While the RSI indicates oversold conditions at 24.9196, there is the potential for a short-term rebound, though this is contingent on the occurrence of bullish reversal signals.",
+        "The MACD histogram reading of -2.1195 suggests continued bearish momentum; however, if it begins to show signs of convergence, this could hint at a potential change in trend direction.",
+        "The current trading volume (OBV at 20893767.0) indicates consistent selling pressure, which may continue unless buying interest significantly increases."
+      ],
+      "monitoring_checklist": [
+        "Watch for any bullish reversal signals forming around the support zones, particularly if price approaches 277.0-284.25.",
+        "Keep an eye on the MACD for signs of a crossover above the signal line, which could suggest weakening bearish momentum.",
+        "Observe any breaches above the EMA50 at 294.5821 to see if that can establish a new resistance level, indicating a shift toward bullish sentiment."
+      ]
+    }
+  },
+  "chart_url": "/api/ta/artifacts/ta_20260604T164036Z_87eba9/ITC.NS_20260604T164110Z.png",
+  "_artifact_urls": [
+    "/api/ta/artifacts/ta_20260604T164036Z_87eba9/ITC.NS_20260604T164110Z.png"
+  ],
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 294.5821
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 293.1969
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 24.9196
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": -4.556
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 5.4793
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": 20893767.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 293.1969
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

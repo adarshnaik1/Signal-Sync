@@ -1,0 +1,74 @@
+{
+  "raw": "```json\n{\n  \"summary\": {\n    \"stance\": \"Bullish\",\n    \"confidence\": 0.8,\n    \"thesis\": \"The market trend indicates bullish momentum, characterized by price action consistently above key moving averages.\"\n  },\n  \"indicator_explanation\": {\n    \"moving_averages\": {\n      \"sma_20\": 2766.29,\n      \"sma_50\": 2401.104,\n      \"sma_100\": 2253.62,\n      \"sma_200\": 2316.3015,\n      \"ema_20\": 2778.6995,\n      \"ema_50\": 2531.8868,\n      \"ema_100\": 2389.9803,\n      \"ema_200\": 2353.8431\n    },\n    \"rsi\": {\n      \"value\": 70.9982,\n      \"interpretation\": \"Indicates potential overbought conditions, suggesting prices may correct.\"\n    },\n    \"macd\": {\n      \"value\": 156.8293,\n      \"signal\": 159.2843,\n      \"histogram\": -2.4549,\n      \"interpretation\": \"Shows a bearish divergence, which may indicate a weakening of the current momentum.\"\n    },\n    \"volatility\": {\n      \"atr_14\": 77.6714,\n      \"bollinger_bands\": {\n        \"upper\": 3135.4099,\n        \"basis\": 2766.29,\n        \"lower\": 2397.1702\n      }\n    },\n    \"obv\": 72527170.0\n  },\n  \"pattern_explanation\": \"Current price patterns suggest a strong upward trend, yet caution is advised due to the high RSI value and bearish MACD indications.\",\n  \"sr_explanation\": {\n    \"support_zones\": [\n      {\n        \"zone_low\": 2353.8431,\n        \"zone_high\": 2389.9803,\n        \"confidence\": 0.85,\n        \"importance\": \"Strong support level where price may bounce back.\"\n      },\n      {\n        \"zone_low\": 2183.8051,\n        \"zone_high\": 2244.5201,\n        \"confidence\": 0.75,\n        \"importance\": \"Secondary support level providing stability.\"\n      },\n      {\n        \"zone_low\": 2244.5201,\n        \"zone_high\": 2305.2351,\n        \"confidence\": 0.70,\n        \"importance\": \"Additional support zone potentially attractive for buy opportunities.\"\n    ],\n    \"resistance_zones\": [\n      {\n        \"zone_low\": 2296.37,\n        \"zone_high\": 2405.2,\n        \"confidence\": 0.80,\n        \"importance\": \"Critical resistance level where price might face challenges.\"\n      },\n      {\n        \"zone_low\": 2487.3801,\n        \"zone_high\": 2548.0951,\n        \"confidence\": 0.75,\n        \"importance\": \"A higher resistance zone to watch as the price moves.\"\n      }\n    ]\n  },\n  \"uncertainty_notes\": \"Despite a bullish stance, be aware of the high RSI suggesting potential overbought conditions. The MACD indicates a bearish divergence, which could foreshadow a possible price correction. Each of these factors introduces uncertainties in the current trend.\",\n  \"monitoring_checklist\": [\n    \"Watch for price movement below the 20 SMA (2766.29) which may indicate a breakdown.\",\n    \"Monitor RSI closely; if it drops below 70, it might signal a correction.\",\n    \"Observe MACD for any cross below the signal line, further suggesting weakening momentum.\",\n    \"Keep an eye on trading volume; falling volume might indicate a weakening bullish trend.\",\n    \"Watch for test of support zones around 2353.8431 to 2389.9803 for confirmation of continued buying interest.\"\n  ]\n}\n```",
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious."
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital."
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery."
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals."
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high."
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV."
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

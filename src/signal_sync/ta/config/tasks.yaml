@@ -46,8 +46,13 @@ strategy_signal_task:
 explanation_task:
   description: >
     Explain the analysis in human-readable terms with no hype and no guarantees.
-    Include uncertainty, invalidation points, and what to monitor next.
+    Make every uncertainty note specific to the current ticker and grounded in the
+    supplied JSON values. Reference concrete indicator values, support/resistance
+    levels, or pattern names instead of generic market filler.
+    Include clear invalidation points and what to monitor next.
   expected_output: >
     JSON with summary, indicator_explanation, pattern_explanation, sr_explanation,
     uncertainty_notes, and monitoring_checklist.
+    Keep uncertainty_notes concise, company-specific, and distinct from each other.
+    Prefer 2-4 notes that cite different evidence sources.
   agent: explanation_agent

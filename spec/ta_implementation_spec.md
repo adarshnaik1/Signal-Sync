@@ -171,6 +171,7 @@ Expected end-to-end behavior:
 - pattern and support/resistance tasks consume same handoff
 - strategy and explanation synthesize deterministic outputs
 - final analysis is printed to stdout and returned by run
+- frontend integration starts jobs via `/api/ta/start`, polls `/api/ta/status/{job_id}`, fetches `/api/ta/result/{job_id}`, and renders progress at `/ta/{job_id}`
 
 ## 10. Engineering Constraints
 

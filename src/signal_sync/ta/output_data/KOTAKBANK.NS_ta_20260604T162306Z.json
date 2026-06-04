@@ -1,0 +1,658 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\KOTAKBANK.NS_bundle_20260604T162317Z.json",
+  "daily_rows": 63,
+  "weekly_rows": 53,
+  "actions_count": 29,
+  "validation": {
+    "success": true,
+    "rows": 63,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 383.4875,
+      "sma50": 376.936,
+      "sma100": null,
+      "sma200": null
+    },
+    "ema": {
+      "ema20": 382.4874,
+      "ema50": 382.0836,
+      "ema100": 385.935,
+      "ema200": 391.7267
+    }
+  },
+  "momentum": {
+    "rsi14": 44.4333,
+    "macd": 0.7712,
+    "macd_signal": 1.6309,
+    "macd_histogram": -0.8597
+  },
+  "volatility": {
+    "atr14": 8.2286,
+    "bb_basis20": 383.4875,
+    "bb_upper20": 393.0137,
+    "bb_lower20": 373.9613
+  },
+  "volume": {
+    "obv": 109622773.0
+  },
+  "candlestick_patterns": [],
+  "chart_patterns": [
+    "channel"
+  ],
+  "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\KOTAKBANK.NS_20260604T162342Z.png",
+  "visual_review": {
+    "visual_summary": "The chart shows an initial downtrend followed by a recovery phase where the price consolidates between the 20-day EMA (blue) and 50-day EMA (orange). The 20-day EMA has crossed above the 50-day EMA recently, indicating a potential bullish crossover. The price remains below the 200-day EMA (green), which is acting as resistance. Volume spikes are observed intermittently but no strong breakout volume is evident. Overall, the price appears to be in a consolidation phase with a slight bullish bias, awaiting a breakout above the 200-day EMA for confirmation of a stronger uptrend.",
+    "confidence": 0.85,
+    "advisory_only": true,
+    "image_analysis_status": "completed",
+    "model": "gpt-4.1-mini",
+    "image_size": {
+      "width": 1820,
+      "height": 1040
+    },
+    "reviewed_image_size": {
+      "width": 1200,
+      "height": 686
+    },
+    "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\KOTAKBANK.NS_20260604T162342Z.png",
+    "chart_url": "/api/ta/artifacts/ta_20260604T162306Z_2a11e5/KOTAKBANK.NS_20260604T162342Z.png"
+  },
+  "support_zones": [
+    {
+      "low": 373.6125,
+      "high": 380.35,
+      "confidence_score": 0.75
+    },
+    {
+      "low": 366.875,
+      "high": 373.6125,
+      "confidence_score": 0.6
+    }
+  ],
+  "resistance_zones": [
+    {
+      "low": 380.35,
+      "high": 387.0875,
+      "confidence_score": 0.8
+    },
+    {
+      "low": 385.1722,
+      "high": 392.85,
+      "confidence_score": 0.65
+    }
+  ],
+  "evidence_by_layer": {
+    "swings": {
+      "highs": [
+        407.3,
+        375.4,
+        371.1,
+        380.15,
+        383.6,
+        383.3,
+        381.05,
+        391.8,
+        392.85
+      ],
+      "lows": [
+        366.85,
+        353.4,
+        371.9,
+        370.4,
+        371.35,
+        376.0,
+        380.85,
+        377.4
+      ]
+    },
+    "clusters": [
+      385.1722
+    ],
+    "volume_zones": [
+      {
+        "zone_low": 380.35,
+        "zone_high": 387.0875,
+        "volume_weight": 317923425.0
+      },
+      {
+        "zone_low": 373.6125,
+        "zone_high": 380.35,
+        "volume_weight": 291450802.0
+      },
+      {
+        "zone_low": 366.875,
+        "zone_high": 373.6125,
+        "volume_weight": 270986943.0
+      }
+    ],
+    "ema_levels": {
+      "ema50": 382.0836,
+      "ema100": 385.935,
+      "ema200": 391.7267
+    }
+  },
+  "summary": {
+    "stance": "neutral",
+    "confidence": 0.75,
+    "thesis": "The asset is engaged in a consolidation phase with a slight bullish bias. Although recent price actions have shown some positive momentum supported by the moving averages, the price remains constrained below the 200-day EMA, indicating a need for a significant breakout to establish a stronger trend.",
+    "key_support": "Support levels are identified between 373.6125 and 380.35, providing a cushion for price action.",
+    "key_resistance": "Resistance is currently pegged at 391.7267 due to the 200-day EMA."
+  },
+  "indicator_explanation": {
+    "trend_indicators": {
+      "sma": {
+        "sma20": 383.4875,
+        "sma50": 376.936
+      },
+      "ema": {
+        "ema20": 382.4874,
+        "ema50": 382.0836,
+        "ema100": 385.935,
+        "ema200": 391.7267
+      }
+    },
+    "momentum_indicators": {
+      "rsi14": 44.4333,
+      "macd": {
+        "value": 0.7712,
+        "signal": 1.6309,
+        "histogram": -0.8597
+      }
+    },
+    "volatility": {
+      "atr14": 8.2286,
+      "bollinger_bands": {
+        "basis": 383.4875,
+        "upper": 393.0137,
+        "lower": 373.9613
+      }
+    },
+    "volume_analysis": {
+      "on_balance_volume": 109622773.0,
+      "volume_zones": [
+        {
+          "zone_low": 380.35,
+          "zone_high": 387.0875,
+          "volume_weight": 317923425.0
+        },
+        {
+          "zone_low": 373.6125,
+          "zone_high": 380.35,
+          "volume_weight": 291450802.0
+        }
+      ]
+    }
+  },
+  "pattern_explanation": {
+    "chart_patterns": [
+      "channel"
+    ],
+    "visual_review": {
+      "summary": "The chart reflects an initial downtrend followed by a recovery phase characterized by consolidation around the 20-day EMA and 50-day EMA. Notably, a bullish crossover was observed; however, the 200-day EMA acts as a barrier to confirming a new uptrend.",
+      "confidence": 0.85,
+      "image_analysis_status": "completed"
+    }
+  },
+  "sr_explanation": {
+    "support_zones": [
+      {
+        "low": 373.6125,
+        "high": 380.35,
+        "confidence_score": 0.75
+      },
+      {
+        "low": 366.875,
+        "high": 373.6125,
+        "confidence_score": 0.6
+      }
+    ],
+    "resistance_zones": [
+      {
+        "low": 380.35,
+        "high": 387.0875,
+        "confidence_score": 0.8
+      },
+      {
+        "low": 385.1722,
+        "high": 392.85,
+        "confidence_score": 0.65
+      }
+    ]
+  },
+  "uncertainty_notes": [
+    "The Relative Strength Index (RSI) is at 44.4333, suggesting that the asset is nearing a neutral level, indicating potential indecision in the current price movement.",
+    "The MACD histogram is negative (-0.8597), indicating that recent price momentum might not be strong enough to push through the existing resistance at the 200-day EMA.",
+    "The price must breach the 391.7267 level for a confirmed uptrend; failure to do so may solidify the consolidation phase."
+  ],
+  "monitoring_checklist": [
+    "Watch for a breakout above the 200-day EMA at 391.7267 to signal a stronger bullish trend.",
+    "Observe trading volume as it approaches key resistance levels (380.35 - 387.0875) to confirm momentum.",
+    "Maintain awareness of RSI and MACD values for indications of strengthening or weakening momentum."
+  ],
+  "_task_results": {
+    "market_data_task": {
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\KOTAKBANK.NS_bundle_20260604T162317Z.json",
+      "daily_rows": 63,
+      "weekly_rows": 53,
+      "actions_count": 29,
+      "validation": {
+        "success": true,
+        "rows": 63,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "trend": {
+        "sma": {
+          "sma20": 383.4875,
+          "sma50": 376.936,
+          "sma100": null,
+          "sma200": null
+        },
+        "ema": {
+          "ema20": 382.4874,
+          "ema50": 382.0836,
+          "ema100": 385.935,
+          "ema200": 391.7267
+        }
+      },
+      "momentum": {
+        "rsi14": 44.4333,
+        "macd": 0.7712,
+        "macd_signal": 1.6309,
+        "macd_histogram": -0.8597
+      },
+      "volatility": {
+        "atr14": 8.2286,
+        "bb_basis20": 383.4875,
+        "bb_upper20": 393.0137,
+        "bb_lower20": 373.9613
+      },
+      "volume": {
+        "obv": 109622773.0
+      }
+    },
+    "pattern_detection_task": {
+      "candlestick_patterns": [],
+      "chart_patterns": [
+        "channel"
+      ],
+      "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\KOTAKBANK.NS_20260604T162342Z.png",
+      "visual_review": {
+        "visual_summary": "The chart shows an initial downtrend followed by a recovery phase where the price consolidates between the 20-day EMA (blue) and 50-day EMA (orange). The 20-day EMA has crossed above the 50-day EMA recently, indicating a potential bullish crossover. The price remains below the 200-day EMA (green), which is acting as resistance. Volume spikes are observed intermittently but no strong breakout volume is evident. Overall, the price appears to be in a consolidation phase with a slight bullish bias, awaiting a breakout above the 200-day EMA for confirmation of a stronger uptrend.",
+        "confidence": 0.85,
+        "advisory_only": true,
+        "image_analysis_status": "completed",
+        "model": "gpt-4.1-mini",
+        "image_size": {
+          "width": 1820,
+          "height": 1040
+        },
+        "reviewed_image_size": {
+          "width": 1200,
+          "height": 686
+        }
+      }
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        {
+          "low": 373.6125,
+          "high": 380.35,
+          "confidence_score": 0.75
+        },
+        {
+          "low": 366.875,
+          "high": 373.6125,
+          "confidence_score": 0.6
+        }
+      ],
+      "resistance_zones": [
+        {
+          "low": 380.35,
+          "high": 387.0875,
+          "confidence_score": 0.8
+        },
+        {
+          "low": 385.1722,
+          "high": 392.85,
+          "confidence_score": 0.65
+        }
+      ],
+      "evidence_by_layer": {
+        "swings": {
+          "highs": [
+            407.3,
+            375.4,
+            371.1,
+            380.15,
+            383.6,
+            383.3,
+            381.05,
+            391.8,
+            392.85
+          ],
+          "lows": [
+            366.85,
+            353.4,
+            371.9,
+            370.4,
+            371.35,
+            376.0,
+            380.85,
+            377.4
+          ]
+        },
+        "clusters": [
+          385.1722
+        ],
+        "volume_zones": [
+          {
+            "zone_low": 380.35,
+            "zone_high": 387.0875,
+            "volume_weight": 317923425.0
+          },
+          {
+            "zone_low": 373.6125,
+            "zone_high": 380.35,
+            "volume_weight": 291450802.0
+          },
+          {
+            "zone_low": 366.875,
+            "zone_high": 373.6125,
+            "volume_weight": 270986943.0
+          }
+        ],
+        "ema_levels": {
+          "ema50": 382.0836,
+          "ema100": 385.935,
+          "ema200": 391.7267
+        }
+      },
+      "confidence_scores": {
+        "support_zones_score": 0.55,
+        "resistance_zones_score": 0.72,
+        "volume_weighted_score": 0.85,
+        "ema_dynamic_score": 0.6
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "neutral",
+      "confidence": 0.75,
+      "thesis": "The asset is currently consolidating with a slight bullish bias supported by recent price action and moving averages. However, it remains under the resistance of the 200-day EMA, suggesting that a breakout is needed for a stronger trend. Key support around 373.6125 to 380.35 provides a safety net, but without a significant breakout, neutrality remains essential.",
+      "key_supporting_evidence": {
+        "trend_indicators": {
+          "sma": {
+            "sma20": 383.4875,
+            "sma50": 376.936
+          },
+          "ema": {
+            "ema20": 382.4874,
+            "ema50": 382.0836,
+            "ema100": 385.935,
+            "ema200": 391.7267
+          }
+        },
+        "momentum_indicators": {
+          "rsi14": 44.4333,
+          "macd": {
+            "value": 0.7712,
+            "signal": 1.6309,
+            "histogram": -0.8597
+          }
+        },
+        "volatility": {
+          "atr14": 8.2286,
+          "bollinger_bands": {
+            "basis": 383.4875,
+            "upper": 393.0137,
+            "lower": 373.9613
+          }
+        },
+        "volume_analysis": {
+          "on_balance_volume": 109622773.0,
+          "volume_zones": [
+            {
+              "zone_low": 380.35,
+              "zone_high": 387.0875,
+              "volume_weight": 317923425.0
+            },
+            {
+              "zone_low": 373.6125,
+              "zone_high": 380.35,
+              "volume_weight": 291450802.0
+            }
+          ]
+        },
+        "support_resistance_zones": {
+          "support_zones": [
+            {
+              "low": 373.6125,
+              "high": 380.35,
+              "confidence_score": 0.75
+            },
+            {
+              "low": 366.875,
+              "high": 373.6125,
+              "confidence_score": 0.6
+            }
+          ],
+          "resistance_zones": [
+            {
+              "low": 380.35,
+              "high": 387.0875,
+              "confidence_score": 0.8
+            },
+            {
+              "low": 385.1722,
+              "high": 392.85,
+              "confidence_score": 0.65
+            }
+          ]
+        },
+        "visual_review": {
+          "summary": "The chart shows an initial downtrend followed by a recovery phase with consolidation around the 20-day EMA and 50-day EMA. The recent bullish crossover is noted, but the 200-day EMA is preventing confirmation of a new uptrend.",
+          "confidence": 0.85,
+          "image_analysis_status": "completed"
+        },
+        "chart_patterns": [
+          "channel"
+        ]
+      }
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "neutral",
+        "confidence": 0.75,
+        "thesis": "The asset is engaged in a consolidation phase with a slight bullish bias. Although recent price actions have shown some positive momentum supported by the moving averages, the price remains constrained below the 200-day EMA, indicating a need for a significant breakout to establish a stronger trend.",
+        "key_support": "Support levels are identified between 373.6125 and 380.35, providing a cushion for price action.",
+        "key_resistance": "Resistance is currently pegged at 391.7267 due to the 200-day EMA."
+      },
+      "indicator_explanation": {
+        "trend_indicators": {
+          "sma": {
+            "sma20": 383.4875,
+            "sma50": 376.936
+          },
+          "ema": {
+            "ema20": 382.4874,
+            "ema50": 382.0836,
+            "ema100": 385.935,
+            "ema200": 391.7267
+          }
+        },
+        "momentum_indicators": {
+          "rsi14": 44.4333,
+          "macd": {
+            "value": 0.7712,
+            "signal": 1.6309,
+            "histogram": -0.8597
+          }
+        },
+        "volatility": {
+          "atr14": 8.2286,
+          "bollinger_bands": {
+            "basis": 383.4875,
+            "upper": 393.0137,
+            "lower": 373.9613
+          }
+        },
+        "volume_analysis": {
+          "on_balance_volume": 109622773.0,
+          "volume_zones": [
+            {
+              "zone_low": 380.35,
+              "zone_high": 387.0875,
+              "volume_weight": 317923425.0
+            },
+            {
+              "zone_low": 373.6125,
+              "zone_high": 380.35,
+              "volume_weight": 291450802.0
+            }
+          ]
+        }
+      },
+      "pattern_explanation": {
+        "chart_patterns": [
+          "channel"
+        ],
+        "visual_review": {
+          "summary": "The chart reflects an initial downtrend followed by a recovery phase characterized by consolidation around the 20-day EMA and 50-day EMA. Notably, a bullish crossover was observed; however, the 200-day EMA acts as a barrier to confirming a new uptrend.",
+          "confidence": 0.85,
+          "image_analysis_status": "completed"
+        }
+      },
+      "sr_explanation": {
+        "support_zones": [
+          {
+            "low": 373.6125,
+            "high": 380.35,
+            "confidence_score": 0.75
+          },
+          {
+            "low": 366.875,
+            "high": 373.6125,
+            "confidence_score": 0.6
+          }
+        ],
+        "resistance_zones": [
+          {
+            "low": 380.35,
+            "high": 387.0875,
+            "confidence_score": 0.8
+          },
+          {
+            "low": 385.1722,
+            "high": 392.85,
+            "confidence_score": 0.65
+          }
+        ]
+      },
+      "uncertainty_notes": [
+        "The Relative Strength Index (RSI) is at 44.4333, suggesting that the asset is nearing a neutral level, indicating potential indecision in the current price movement.",
+        "The MACD histogram is negative (-0.8597), indicating that recent price momentum might not be strong enough to push through the existing resistance at the 200-day EMA.",
+        "The price must breach the 391.7267 level for a confirmed uptrend; failure to do so may solidify the consolidation phase."
+      ],
+      "monitoring_checklist": [
+        "Watch for a breakout above the 200-day EMA at 391.7267 to signal a stronger bullish trend.",
+        "Observe trading volume as it approaches key resistance levels (380.35 - 387.0875) to confirm momentum.",
+        "Maintain awareness of RSI and MACD values for indications of strengthening or weakening momentum."
+      ]
+    }
+  },
+  "chart_url": "/api/ta/artifacts/ta_20260604T162306Z_2a11e5/KOTAKBANK.NS_20260604T162342Z.png",
+  "_artifact_urls": [
+    "/api/ta/artifacts/ta_20260604T162306Z_2a11e5/KOTAKBANK.NS_20260604T162342Z.png"
+  ],
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 382.0836
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 383.4875
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 44.4333
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": 0.7712
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 8.2286
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": 109622773.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 383.4875
+    },
+    "patterns": {
+      "channel": {
+        "meaning": "Price oscillating between parallel support and resistance lines.",
+        "implication": [
+          "Buy near lower boundary with tight stops; sell or trim near upper boundary.",
+          "Breakout from the channel can lead to a stronger directional move."
+        ],
+        "takeaway": "Trade the range with clear stop-loss; on breakout, look for confirmation before scaling exposure."
+      }
+    }
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+    "Trade the range with clear stop-loss; on breakout, look for confirmation before scaling exposure."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "ticker": "ASIANPAINT.NS",
+  "period": "1d",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 1,
+  "ohlcv": [
+    {
+      "Date": "2026-06-04",
+      "Close": 2658.300048828125,
+      "High": 2698.800048828125,
+      "Low": 2644.89990234375,
+      "Open": 2663.89990234375,
+      "Volume": 1840515
+    }
+  ]
+}

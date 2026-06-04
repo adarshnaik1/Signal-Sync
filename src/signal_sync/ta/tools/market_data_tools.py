@@ -12,6 +12,7 @@ CACHE_DIR = os.path.join(ROOT, "src", "signal_sync", "ta", "cache")
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 VALID_YF_PERIODS = {"1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"}
+MIN_TA_DAILY_ROWS = 40
 PERIOD_ALIASES = {
     "1w": "1y",
     "1wk": "1y",
@@ -257,10 +258,21 @@ class FetchMarketDataBundleTool(BaseTool):
 
     def _run(self, ticker: str, daily_period: str = "3mo", weekly_period: str = "1y", auto_adjust: bool = True) -> str:
         try:
-            daily_raw = FetchOHLCVTool()._run(ticker=ticker, period=_normalize_period(daily_period, "3mo"), interval="1d", auto_adjust=auto_adjust)
+            requested_daily_period = _normalize_period(daily_period, "3mo")
+            if requested_daily_period in {"1d", "5d"}:
+                requested_daily_period = "3mo"
+
+            fetch_tool = FetchOHLCVTool()
+            daily_raw = fetch_tool._run(ticker=ticker, period=requested_daily_period, interval="1d", auto_adjust=auto_adjust)
             daily_data = json.loads(daily_raw)
             if not daily_data.get("success"):
                 return json.dumps({"success": False, "error": daily_data.get("error", "Daily OHLCV fetch failed.")})
+
+            if len(daily_data.get("ohlcv", [])) < MIN_TA_DAILY_ROWS and requested_daily_period != "1y":
+                fallback_raw = fetch_tool._run(ticker=ticker, period="1y", interval="1d", auto_adjust=auto_adjust)
+                fallback_data = json.loads(fallback_raw)
+                if fallback_data.get("success") and len(fallback_data.get("ohlcv", [])) > len(daily_data.get("ohlcv", [])):
+                    daily_data = fallback_data
 
             weekly_raw = FetchOHLCVTool()._run(ticker=ticker, period=_normalize_period(weekly_period, "1y"), interval="1wk", auto_adjust=auto_adjust)
             weekly_data = json.loads(weekly_raw)

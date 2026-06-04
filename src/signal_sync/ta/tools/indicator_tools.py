@@ -1,10 +1,10 @@
 import json
 import math
-import os
 from typing import Dict, Type
 
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
+from .tool_utils import extract_ohlcv_rows, load_json_or_path
 
 
 class IndicatorInput(BaseModel):
@@ -21,34 +21,11 @@ def _safe_round(value, ndigits: int = 4):
         return None
 
 
-def _extract_ohlcv_rows(raw):
-    if isinstance(raw, list):
-        return raw
-
-    if isinstance(raw, dict):
-        for key in ["ohlcv", "daily_ohlcv", "weekly_ohlcv"]:
-            value = raw.get(key)
-            if isinstance(value, list):
-                return value
-
-        if all(k in raw for k in ["Open", "High", "Low", "Close"]):
-            return [raw]
-
-        if all(k in raw for k in ["open", "high", "low", "close"]):
-            return [raw]
-
-    raise ValueError("No OHLCV rows found. Expected list or dict with keys: ohlcv/daily_ohlcv/weekly_ohlcv.")
-
-
-def _load_df(ohlcv_json: str):
+def _load_df(ohlcv_json: str, min_rows: int = 1):
     import pandas as pd
 
-    if os.path.exists(ohlcv_json):
-        with open(ohlcv_json, "r", encoding="utf-8") as f:
-            raw = json.load(f)
-    else:
-        raw = json.loads(ohlcv_json)
-    rows = _extract_ohlcv_rows(raw)
+    raw = load_json_or_path(ohlcv_json)
+    rows, _ = extract_ohlcv_rows(raw, min_rows=min_rows)
     df = pd.DataFrame(rows)
 
     rename_map = {
@@ -84,7 +61,7 @@ class ComputeEMATool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=20)
             out = {}
             for span in [20, 50, 100, 200]:
                 col = f"ema{span}"
@@ -102,7 +79,7 @@ class ComputeRSITool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=15)
             delta = df["Close"].diff()
             gain = delta.clip(lower=0)
             loss = -delta.clip(upper=0)
@@ -129,7 +106,7 @@ class ComputeMACDTool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=26)
             ema12 = df["Close"].ewm(span=12, adjust=False).mean()
             ema26 = df["Close"].ewm(span=26, adjust=False).mean()
             macd = ema12 - ema26
@@ -154,7 +131,7 @@ class ComputeATRTool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=15)
             hl = df["High"] - df["Low"]
             hc = (df["High"] - df["Close"].shift()).abs()
             lc = (df["Low"] - df["Close"].shift()).abs()
@@ -174,7 +151,7 @@ class ComputeBollingerTool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=20)
             basis = df["Close"].rolling(20).mean()
             std = df["Close"].rolling(20).std()
             upper = basis + 2 * std
@@ -198,7 +175,7 @@ class ComputeOBVTool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=2)
             direction = df["Close"].diff().fillna(0)
             sign = direction.apply(lambda x: 1 if x > 0 else (-1 if x < 0 else 0))
             obv = (sign * df["Volume"].fillna(0)).cumsum()
@@ -214,7 +191,7 @@ class ComputeSMATool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=20)
             out: Dict[str, object] = {}
             for period in [20, 50, 100, 200]:
                 series = df["Close"].rolling(period).mean()
@@ -235,7 +212,7 @@ class IndicatorRuleEngineTool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json)
+            df = _load_df(ohlcv_json, min_rows=40)
             if df.empty or "Close" not in df.columns:
                 return json.dumps({"success": False, "error": "No valid OHLCV data provided."})
 

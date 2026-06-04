@@ -1,0 +1,17 @@
+{
+  "ticker": "BRITANNIA.NS",
+  "period": "1d",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 1,
+  "ohlcv": [
+    {
+      "Date": "2026-06-04",
+      "Close": 5086.5,
+      "High": 5119.5,
+      "Low": 5035.0,
+      "Open": 5051.5,
+      "Volume": 150386
+    }
+  ]
+}

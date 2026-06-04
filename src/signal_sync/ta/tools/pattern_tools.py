@@ -1,43 +1,20 @@
 import json
-import os
 from typing import List, Type
 
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
+from .tool_utils import extract_ohlcv_rows, load_json_or_path
 
 
 class PatternInput(BaseModel):
     ohlcv_json: str = Field(..., description="JSON string or file path containing OHLCV list/object. Supports keys: ohlcv, daily_ohlcv, weekly_ohlcv.")
 
 
-def _extract_ohlcv_rows(raw):
-    if isinstance(raw, list):
-        return raw
-
-    if isinstance(raw, dict):
-        for key in ["ohlcv", "daily_ohlcv", "weekly_ohlcv"]:
-            value = raw.get(key)
-            if isinstance(value, list):
-                return value
-
-        if all(k in raw for k in ["Open", "High", "Low", "Close"]):
-            return [raw]
-
-        if all(k in raw for k in ["open", "high", "low", "close"]):
-            return [raw]
-
-    raise ValueError("No OHLCV rows found. Expected list or dict with keys: ohlcv/daily_ohlcv/weekly_ohlcv.")
-
-
-def _load_df(ohlcv_json: str):
+def _load_df(ohlcv_json: str, min_rows: int = 1):
     import pandas as pd
 
-    if os.path.exists(ohlcv_json):
-        with open(ohlcv_json, "r", encoding="utf-8") as f:
-            raw = json.load(f)
-    else:
-        raw = json.loads(ohlcv_json)
-    rows = _extract_ohlcv_rows(raw)
+    raw = load_json_or_path(ohlcv_json)
+    rows, _ = extract_ohlcv_rows(raw, min_rows=min_rows)
     df = pd.DataFrame(rows)
 
     rename_map = {
@@ -75,7 +52,7 @@ class DetectCandlestickPatternsTool(BaseTool):
 
     def _run(self, ohlcv_json: str) -> str:
         try:
-            df = _load_df(ohlcv_json).dropna(subset=["Open", "High", "Low", "Close"])
+            df = _load_df(ohlcv_json, min_rows=2).dropna(subset=["Open", "High", "Low", "Close"])
             if len(df) < 2:
                 return json.dumps({"success": False, "error": "Need at least 2 candles."})
 
@@ -124,7 +101,7 @@ class DetectChartPatternsTool(BaseTool):
             import numpy as np
             from scipy.signal import find_peaks
 
-            df = _load_df(ohlcv_json).dropna(subset=["Close"])
+            df = _load_df(ohlcv_json, min_rows=40).dropna(subset=["Close"])
             close = df["Close"].to_numpy()
             if close.size < 40:
                 return json.dumps({"success": False, "error": "Need at least 40 data points."})

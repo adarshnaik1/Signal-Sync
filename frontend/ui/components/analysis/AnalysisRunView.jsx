@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const API_BASE = process.env.NEXT_PUBLIC_BGV_API_BASE_URL || "";
 
@@ -21,10 +21,23 @@ function defaultStepLabel(step) {
   return step?.label || step?.key || "Step";
 }
 
-export default function AnalysisRunView({ jobId, title, subtitle, steps = [], renderResult }) {
+export default function AnalysisRunView({
+  jobId,
+  title,
+  subtitle,
+  steps = [],
+  renderResult,
+  statusPath = "/api/bgv/status",
+  resultPath = "/api/bgv/result",
+}) {
   const [job, setJob] = useState(null);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  const routesRef = useRef({ statusPath, resultPath });
+
+  useEffect(() => {
+    routesRef.current = { statusPath, resultPath };
+  }, [statusPath, resultPath]);
 
   useEffect(() => {
     if (!jobId) return;
@@ -33,11 +46,16 @@ export default function AnalysisRunView({ jobId, title, subtitle, steps = [], re
 
     const poll = async () => {
       try {
-        const state = await fetchJson(`${API_BASE}/api/bgv/status/${jobId}`);
+        const { statusPath: currentStatusPath, resultPath: currentResultPath } = routesRef.current;
+        const state = await fetchJson(`${API_BASE}${currentStatusPath}/${jobId}`);
         if (!mounted) return;
         setJob(state);
         if (state.status === "done") {
-          const data = await fetchJson(`${API_BASE}/api/bgv/result/${jobId}`);
+          if (state.result_json) {
+            setResult(state.result_json);
+            return;
+          }
+          const data = await fetchJson(`${API_BASE}${currentResultPath}/${jobId}`);
           if (!mounted) return;
           setResult(data);
         } else if (state.status === "failed") {

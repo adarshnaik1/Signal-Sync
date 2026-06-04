@@ -24,9 +24,10 @@ def _save_jobs(jobs):
             json.dump(jobs, f, indent=2, default=str)
 
 
-def create_job(metadata: dict) -> dict:
+def create_job(metadata: dict, prefix: str = "bgv") -> dict:
     jobs = _load_jobs()
-    job_id = f"bgv_{datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
+    safe_prefix = (prefix or "job").strip().lower()
+    job_id = f"{safe_prefix}_{datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
     job = {
         "job_id": job_id,
         "status": "queued",

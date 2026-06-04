@@ -8,6 +8,8 @@ Purpose
 -------
 This document describes the integration contract and operational behavior for integrating a "crew" (BGV crew) into the Signal Sync system. It captures the backend API, job store schema, runner behavior, progress model, frontend contract, error handling, testing guidance, and rollout notes.
 
+The same contract now also applies to the TA crew integration, which follows the same start/status/result pattern but renders technical-analysis progress and final signal output.
+
 Scope
 -----
 - BGVCrew integration (agentic sequence of tasks) exposed via FastAPI endpoints.
@@ -20,15 +22,31 @@ Architecture Overview
 - `run_bgv_job` (runner) executes the crew sequentially, updating the job via `update_job()` after each step and at key transition points.
 - Job state and final structured output are persisted on-disk; frontend polls `/api/bgv/status/{job_id}` for progress and `/api/bgv/result/{job_id}` for final output.
 
+TA uses the same lifecycle with these endpoints:
+- POST `/api/ta/start`
+- GET `/api/ta/status/{job_id}`
+- GET `/api/ta/result/{job_id}`
+
+Frontend TA entry points:
+- Stock details CTA button starts TA analysis.
+- TA progress screen lives at `/ta/{job_id}`.
+- TA report renderer maps structured technical-analysis JSON to cards/sections, not raw JSON.
+
 Key Files
 ---------
 - Backend runner: `src/signal_sync/api_runner.py`
+- TA backend runner: `src/signal_sync/ta/api_runner.py`
 - Step definitions / progress helper: `src/api/analysis_steps.py`
+- TA step definitions / progress helper: `src/api/ta_analysis_steps.py`
 - Job store: `src/api/jobs_store.py`
 - API endpoints: `src/api/bgv_api.py`
+- TA API endpoints are exposed on the same FastAPI app as BGV for a single server entrypoint.
 - Crew implementation: `src/signal_sync/crew.py` (BGVCrew)
+- TA crew implementation: `src/signal_sync/ta/crew.py`
 - Frontend progress UI: `frontend/ui/components/analysis/AnalysisRunView.jsx`
 - Frontend report renderer: `frontend/ui/components/bgv/BGVReportView.jsx`
+- TA progress UI: `frontend/ui/components/ta/TAAnalysisClient.jsx`
+- TA report renderer: `frontend/ui/components/ta/TAReportView.jsx`
 
 API Contract
 ------------
@@ -110,6 +128,15 @@ Frontend Contract (UI expectations)
   - Row 1: two side-by-side cards — `Live Progress` (left) and `Run Summary` (right).
   - Row 2: full-width `Final Report` area rendered only when `status === 'done'` and result is available.
 - The `renderResult(result, job)` callback should render the structured BGV output. The frontend should *not* display raw JSON; instead map fields to cards/sections (scores, company profile, findings, evidence groups).
+
+TA uses the same UI contract but renders technical-analysis-specific sections:
+- Technical thesis and confidence
+- Indicators
+- Patterns
+- Support/resistance
+- Uncertainty and monitoring checklist
+
+The TA launcher button should sit on the stock details page next to the existing BGV analysis action.
 
 Error Handling and Retries
 -------------------------
