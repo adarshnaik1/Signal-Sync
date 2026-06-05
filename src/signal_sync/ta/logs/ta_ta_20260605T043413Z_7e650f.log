@@ -1,0 +1,810 @@
+[33m╭─[0m[33m───────────────────────────[0m[33m Task Started [0m[33m────────────────────────────[0m[33m─╮[0m
+[33m│[0m                                                                       [33m│[0m
+[33m│[0m  [1;33m📋 Task: ecbbcd3f-20e9-47ae-a8e6-ac612fdcfb4b[0m                        [33m│[0m
+[33m│[0m  [37mStatus: [0m[2;33mExecuting Task...[0m                                            [33m│[0m
+[33m│[0m                                                                       [33m│[0m
+[33m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+
+[35m╭─[0m[35m─────────────────────────[0m[35m 🤖 Agent Started [0m[35m──────────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mMarket Data Validation Specialist for ICICIBANK.NS[0m            [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mTask: [0m[92mUse fetch_market_data_bundle_tool as the only tool. It [0m        [35m│[0m
+[35m│[0m  [92mreturns a compact bundle_file plus row counts, validation, and [0m      [35m│[0m
+[35m│[0m  [92mactions metadata in one deterministic pass. Use the bundle_file [0m     [35m│[0m
+[35m│[0m  [92mpath as the handoff to downstream tasks instead of embedding the [0m    [35m│[0m
+[35m│[0m  [92mfull OHLCV list in context. Do not perform analysis, do not ask [0m     [35m│[0m
+[35m│[0m  [92mcoworkers, and do not split the work into multiple tool calls.[0m       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mMarket Data Validation Specialist for ICICIBANK.NS[0m            [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mI need to fetch the adjusted OHLCV and corporate actions [0m   [35m│[0m
+[35m│[0m  [92mdata for ICICIBANK.NS.[0m                                               [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mfetch_market_data_bundle_tool[0m                            [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ticker\": \"ICICIBANK.NS\", \"daily_period\": \"1d\", \"weekly_[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{"success": true, "ticker": "ICICIBANK.NS", "bundle_file": [0m          [32m│[0m
+[32m│[0m  [92m"C:\\Users\\ADARSH [0m                                                  [32m│[0m
+[32m│[0m  [92mNAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\ICICIBANK.[0m  [32m│[0m
+[32m│[0m  [92mNS_bundle_20260605T043425Z.json", "daily_rows": 63, "weekly_rows": [0m  [32m│[0m
+[32m│[0m  [92m53, "actions_count": 24, "validation": {"success": true, "rows": [0m    [32m│[0m
+[32m│[0m  [92m63, "dropped_rows": 0}}[0m                                              [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[32m╭─[0m[32m───────────────────────[0m[32m ✅ Agent Final Answer [0m[32m───────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mAgent: [0m[1;92mMarket Data Validation Specialist for ICICIBANK.NS[0m            [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mFinal Answer:[0m                                                        [32m│[0m
+[32m│[0m  [92m{"bundle_file":"C:\\Users\\ADARSH [0m                                   [32m│[0m
+[32m│[0m  [92mNAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\ICICIBANK.[0m  [32m│[0m
+[32m│[0m  [92mNS_bundle_20260605T043425Z.json","daily_rows":63,"weekly_rows":53,"[0m  [32m│[0m
+[32m│[0m  [92mactions_count":24,"validation":{"success":true,"rows":63,"dropped_r[0m  [32m│[0m
+[32m│[0m  [92mows":0}}[0m                                                             [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[33m╭─[0m[33m───────────────────────────[0m[33m Task Started [0m[33m────────────────────────────[0m[33m─╮[0m
+[33m│[0m                                                                       [33m│[0m
+[33m│[0m  [1;33m📋 Task: 3a2631ab-9e56-4099-882d-d5c885c48ed7[0m                        [33m│[0m
+[33m│[0m  [37mStatus: [0m[2;33mExecuting Task...[0m                                            [33m│[0m
+[33m│[0m                                                                       [33m│[0m
+[33m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+
+[35m╭─[0m[35m─────────────────────────[0m[35m 🤖 Agent Started [0m[35m──────────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mTechnical Indicator Computation Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mTask: [0m[92mUse indicator_rule_engine_tool as the only tool. It computes [0m  [35m│[0m
+[35m│[0m  [92mSMA, EMA20/50/100/200, RSI, MACD, ATR, Bollinger Bands, and OBV in [0m  [35m│[0m
+[35m│[0m  [92mone deterministic pass. Pass the bundle_file path from [0m              [35m│[0m
+[35m│[0m  [92mmarket_data_task directly into the tool.[0m                             [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mTechnical Indicator Computation Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I need to compute the technical indicators using [0m  [35m│[0m
+[35m│[0m  [92mthe provided bundle file path to gather the necessary data for [0m      [35m│[0m
+[35m│[0m  [92mtrend, momentum, volatility, and volume indicators.[0m                  [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mindicator_rule_engine_tool[0m                               [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{"success": true, "trend": {"sma": {"sma20": 1253.055, "sma50": [0m     [32m│[0m
+[32m│[0m  [92m1275.334, "sma100": null, "sma200": null}, "ema": {"ema20": [0m         [32m│[0m
+[32m│[0m  [92m1258.3817, "ema50": 1275.3647, "ema100": 1296.6659, "ema200": [0m       [32m│[0m
+[32m│[0m  [92m1318.7957}}, "momentum": {"rsi14": 52.4669, "macd": -7.9426, [0m        [32m│[0m
+[32m│[0m  [92m"macd_signal": -8.7684, "macd_histogram": 0.8259}, "volatility": [0m    [32m│[0m
+[32m│[0m  [92m{"atr14": 23.5357, "bb_basis20": 1253.055, "bb_upper20": 1286.7911,[0m  [32m│[0m
+[32m│[0m  [92m"bb_lower20": 1219.3189}, "volume": {"obv": -132028469.0}}[0m           [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[32m╭─[0m[32m───────────────────────[0m[32m ✅ Agent Final Answer [0m[32m───────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mAgent: [0m[1;92mTechnical Indicator Computation Specialist[0m                    [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mFinal Answer:[0m                                                        [32m│[0m
+[32m│[0m  [92m{"trend":{"sma":{"sma20":1253.055,"sma50":1275.334,"sma100":null,"s[0m  [32m│[0m
+[32m│[0m  [92mma200":null},"ema":{"ema20":1258.3817,"ema50":1275.3647,"ema100":12[0m  [32m│[0m
+[32m│[0m  [92m96.6659,"ema200":1318.7957}},"momentum":{"rsi14":52.4669,"macd":-7.[0m  [32m│[0m
+[32m│[0m  [92m9426,"macd_signal":-8.7684,"macd_histogram":0.8259},"volatility":{"[0m  [32m│[0m
+[32m│[0m  [92matr14":23.5357,"bb_basis20":1253.055,"bb_upper20":1286.7911,"bb_low[0m  [32m│[0m
+[32m│[0m  [92mer20":1219.3189},"volume":{"obv":-132028469.0}}[0m                      [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[33m╭─[0m[33m───────────────────────────[0m[33m Task Started [0m[33m────────────────────────────[0m[33m─╮[0m
+[33m│[0m                                                                       [33m│[0m
+[33m│[0m  [1;33m📋 Task: d83dce56-507d-41b5-8174-469bdd58a094[0m                        [33m│[0m
+[33m│[0m  [37mStatus: [0m[2;33mExecuting Task...[0m                                            [33m│[0m
+[33m│[0m                                                                       [33m│[0m
+[33m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+
+[35m╭─[0m[35m─────────────────────────[0m[35m 🤖 Agent Started [0m[35m──────────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mDeterministic Pattern Detection Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mTask: [0m[92mDetect deterministic candlestick and chart patterns from [0m      [35m│[0m
+[35m│[0m  [92mcleaned OHLCV, then render chart and perform advisory-only vision [0m   [35m│[0m
+[35m│[0m  [92mreview. Pass the bundle_file path from market_data_task directly [0m    [35m│[0m
+[35m│[0m  [92minto the tools.[0m                                                      [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mDeterministic Pattern Detection Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I need to detect candlestick patterns using the [0m   [35m│[0m
+[35m│[0m  [92mavailable OHLCV data before proceeding to chart pattern detection [0m   [35m│[0m
+[35m│[0m  [92mand rendering the chart.[0m                                             [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mdetect_candlestick_patterns_tool[0m                         [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{"success": true, "candlestick_patterns": []}[0m                        [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mDeterministic Pattern Detection Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: Now that I have detected the candlestick [0m          [35m│[0m
+[35m│[0m  [92mpatterns, I will proceed to detect chart patterns using the same [0m    [35m│[0m
+[35m│[0m  [92mOHLCV data.[0m                                                          [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mdetect_chart_patterns_tool[0m                               [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{"success": true, "chart_patterns": ["double_bottom", "channel"]}[0m    [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mDeterministic Pattern Detection Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: Having detected both candlestick and chart [0m        [35m│[0m
+[35m│[0m  [92mpatterns, I will now render the chart with the detected patterns [0m    [35m│[0m
+[35m│[0m  [92mincluded.[0m                                                            [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mrender_chart_tool[0m                                        [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{'success': True, 'chart_path': 'C:\\Users\\ADARSH [0m                  [32m│[0m
+[32m│[0m  [92mNAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK[0m  [32m│[0m
+[32m│[0m  [92m.NS_20260605T043448Z.png', 'rows_rendered': 63, 'source_key': [0m       [32m│[0m
+[32m│[0m  [92m'daily_ohlcv'}[0m                                                       [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92mYou ONLY have access to the following tools, and should NEVER make [0m  [32m│[0m
+[32m│[0m  [92mup tools that are not listed here:[0m                                   [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92mTool Name: detect_candlestick_patterns_tool[0m                          [32m│[0m
+[32m│[0m  [92mTool Arguments: {'ohlcv_json': {'description': 'JSON string or file[0m  [32m│[0m
+[32m│[0m  [92mpath containing OHLCV list/object. Supports keys: ohlcv, [0m            [32m│[0m
+[32m│[0m  [92mdaily_ohlcv, weekly_ohlcv.', 'type': 'str'}}[0m                         [32m│[0m
+[32m│[0m  [92mTool Description: Detect deterministic candlestick patterns: doji, [0m  [32m│[0m
+[32m│[0m  [92mhammer, engulfing, shooting star.[0m                                    [32m│[0m
+[32m│[0m  [92mTool Name: detect_chart_patterns_tool[0m                                [32m│[0m
+[32m│[0m  [92mTool Arguments: {'ohlcv_json': {'description': 'JSON string or file[0m  [32m│[0m
+[32m│[0m  [92mpath containing OHLCV list/object. Supports keys: ohlcv, [0m            [32m│[0m
+[32m│[0m  [92mdaily_ohlcv, weekly_ohlcv.', 'type': 'str'}}[0m                         [32m│[0m
+[32m│[0m  [92mTool Description: Detect deterministic chart structures using local[0m  [32m│[0m
+[32m│[0m  [92mextrema: double top, double bottom, channel proxy.[0m                   [32m│[0m
+[32m│[0m  [92mTool Name: render_chart_tool[0m                                         [32m│[0m
+[32m│[0m  [92mTool Arguments: {'ohlcv_json': {'description': 'JSON string or file[0m  [32m│[0m
+[32m│[0m  [92mpath containing OHLCV list/object. Supports bundle keys: ohlcv, [0m     [32m│[0m
+[32m│[0m  [92mdaily_ohlcv, weekly_ohlcv.', 'type': 'str'}, 'ticker': [0m              [32m│[0m
+[32m│[0m  [92m{'description': 'Ticker symbol for chart title and filename.', [0m      [32m│[0m
+[32m│[0m  [92m'type': 'str'}, 'include_rsi': {'description': 'Render optional RSI[0m  [32m│[0m
+[32m│[0m  [92mpanel.', 'type': 'bool'}}[0m                                            [32m│[0m
+[32m│[0m  [92mTool Description: Render internal TA chart PNG (price-volume + EMA [0m  [32m│[0m
+[32m│[0m  [92moverlays, optional RSI).[0m                                             [32m│[0m
+[32m│[0m  [92mTool Name: vision_review_tool[0m                                        [32m│[0m
+[32m│[0m  [92mTool Arguments: {'chart_path': {'description': 'Absolute path to [0m    [32m│[0m
+[32m│[0m  [92mgenerated chart image file.', 'type': 'str'}, 'model': [0m              [32m│[0m
+[32m│[0m  [92m{'description': 'Vision-capable model name.', 'type': 'str'}}[0m        [32m│[0m
+[32m│[0m  [92mTool Description: Advisory visual review of generated chart. [0m        [32m│[0m
+[32m│[0m  [92mDeterministic tools remain source-of-truth.[0m                          [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92mIMPORTANT: Use the following format in your response:[0m                [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m```[0m                                                                  [32m│[0m
+[32m│[0m  [92mThought: you should always think about what to do[0m                    [32m│[0m
+[32m│[0m  [92mAction: the action to take, only one name of [0m                        [32m│[0m
+[32m│[0m  [92m[detect_candlestick_patterns_tool, detect_chart_patterns_tool, [0m      [32m│[0m
+[32m│[0m  [92mrender_chart_tool, vision_review_tool], just the name, ...[0m           [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mDeterministic Pattern Detection Specialist[0m                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I have successfully rendered the chart. Now, I [0m    [35m│[0m
+[35m│[0m  [92mwill perform an advisory visual review of the generated chart to [0m    [35m│[0m
+[35m│[0m  [92mensure everything aligns correctly.[0m                                  [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mvision_review_tool[0m                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"chart_path\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{'success': True, 'visual_summary': 'The chart shows ICICIBANK.NS [0m   [32m│[0m
+[32m│[0m  [92mprice action with a recent upward movement from a low near 1210 to [0m  [32m│[0m
+[32m│[0m  [92maround 1260. The price is currently below the EMA50 and EMA200, [0m     [32m│[0m
+[32m│[0m  [92mindicating a longer-term bearish trend, but above the EMA20, [0m        [32m│[0m
+[32m│[0m  [92msuggesting short-term strength. The EMA20 is below EMA50 and [0m        [32m│[0m
+[32m│[0m  [92mEMA200, and the EMA50 is also below EMA200, which confirms the [0m      [32m│[0m
+[32m│[0m  [92moverall bearish bias. Volume appears mixed without a clear surge. [0m   [32m│[0m
+[32m│[0m  [92mThe RSI is around 55, indicating neither overbought nor oversold [0m    [32m│[0m
+[32m│[0m  [92mconditions, but showing some recent strength from oversold levels. [0m  [32m│[0m
+[32m│[0m  [92mOverall, the chart suggests a short-term bounce within a [0m            [32m│[0m
+[32m│[0m  [92mlonger-term downtrend, with no clear breakout above key resistance [0m  [32m│[0m
+[32m│[0m  [92mlevels yet.', 'confidence': 0.85, 'advisory_only': True, [0m            [32m│[0m
+[32m│[0m  [92m'image_analysis_status': 'completed', 'chart_path': [0m                 [32m│[0m
+[32m│[0m  [92m'C:\\Users\\ADARSH [0m                                                  [32m│[0m
+[32m│[0m  [92mNAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK[0m  [32m│[0m
+[32m│[0m  [92m.NS_20260605T043448Z.png', 'model': 'gpt-4.1-mini', 'image_size': [0m   [32m│[0m
+[32m│[0m  [92m{'width': 1820, 'height': 1040}, 'reviewed_image_size': {'width': [0m   [32m│[0m
+[32m│[0m  [92m1200, 'height': 686}}[0m                                                [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[32m╭─[0m[32m───────────────────────[0m[32m ✅ Agent Final Answer [0m[32m───────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mAgent: [0m[1;92mDeterministic Pattern Detection Specialist[0m                    [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mFinal Answer:[0m                                                        [32m│[0m
+[32m│[0m  [92m{[0m                                                                    [32m│[0m
+[32m│[0m  [92m  "candlestick_patterns": [],[0m                                        [32m│[0m
+[32m│[0m  [92m  "chart_patterns": ["double_bottom", "channel"],[0m                    [32m│[0m
+[32m│[0m  [92m  "chart_path": "C:\\Users\\ADARSH [0m                                  [32m│[0m
+[32m│[0m  [92mNAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK[0m  [32m│[0m
+[32m│[0m  [92m.NS_20260605T043448Z.png",[0m                                           [32m│[0m
+[32m│[0m  [92m  "visual_review": {[0m                                                 [32m│[0m
+[32m│[0m  [92m    "success": true,[0m                                                 [32m│[0m
+[32m│[0m  [92m    "visual_summary": "The chart shows ICICIBANK.NS price action [0m    [32m│[0m
+[32m│[0m  [92mwith a recent upward movement from a low near 1210 to around 1260. [0m  [32m│[0m
+[32m│[0m  [92mThe price is currently below the EMA50 and EMA200, indicating a [0m     [32m│[0m
+[32m│[0m  [92mlonger-term bearish trend, but above the EMA20, suggesting [0m          [32m│[0m
+[32m│[0m  [92mshort-term strength. The EMA20 is below EMA50 and EMA200, and the [0m   [32m│[0m
+[32m│[0m  [92mEMA50 is also below EMA200, which confirms the overall bearish [0m      [32m│[0m
+[32m│[0m  [92mbias. Volume appears mixed without a clear surge. The RSI is around[0m  [32m│[0m
+[32m│[0m  [92m55, indicating neither overbought nor oversold conditions, but [0m      [32m│[0m
+[32m│[0m  [92mshowing some recent strength from oversold levels. Overall, the [0m     [32m│[0m
+[32m│[0m  [92mchart suggests a short-term bounce within a longer-term downtrend, [0m  [32m│[0m
+[32m│[0m  [92mwith no clear breakout above key resistance levels yet.",[0m            [32m│[0m
+[32m│[0m  [92m    "confidence": 0.85,[0m                                              [32m│[0m
+[32m│[0m  [92m    "advisory_only": true,[0m                                           [32m│[0m
+[32m│[0m  [92m    "image_analysis_status": "completed",[0m                            [32m│[0m
+[32m│[0m  [92m    "chart_path": "C:\\Users\\ADARSH [0m                                [32m│[0m
+[32m│[0m  [92mNAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK[0m  [32m│[0m
+[32m│[0m  [92m.NS_20260605T043448Z.png",[0m                                           [32m│[0m
+[32m│[0m  [92m    "model": "gpt-4.1-mini",[0m                                         [32m│[0m
+[32m│[0m  [92m    "image_size": {"width": 1820, "height": 1040},[0m                   [32m│[0m
+[32m│[0m  [92m    "reviewed_image_size": {"width": 1200, "height": 686}[0m            [32m│[0m
+[32m│[0m  [92m  }[0m                                                                  [32m│[0m
+[32m│[0m  [92m}[0m                                                                    [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[33m╭─[0m[33m───────────────────────────[0m[33m Task Started [0m[33m────────────────────────────[0m[33m─╮[0m
+[33m│[0m                                                                       [33m│[0m
+[33m│[0m  [1;33m📋 Task: 64e61b40-7647-405a-b442-98955eff9b99[0m                        [33m│[0m
+[33m│[0m  [37mStatus: [0m[2;33mExecuting Task...[0m                                            [33m│[0m
+[33m│[0m                                                                       [33m│[0m
+[33m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+
+[35m╭─[0m[35m─────────────────────────[0m[35m 🤖 Agent Started [0m[35m──────────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mSupport and Resistance Structure Specialist[0m                   [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mTask: [0m[92mBuild support and resistance zones by combining swings, [0m       [35m│[0m
+[35m│[0m  [92mclustered levels, volume zones, and dynamic EMA levels with [0m         [35m│[0m
+[35m│[0m  [92mweighted confidence. Pass the bundle_file path from [0m                 [35m│[0m
+[35m│[0m  [92mmarket_data_task directly into the tools.[0m                            [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mSupport and Resistance Structure Specialist[0m                   [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I need to gather the necessary data by [0m            [35m│[0m
+[35m│[0m  [92midentifying swing highs and lows first to establish potential [0m       [35m│[0m
+[35m│[0m  [92msupport and resistance levels.[0m                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mfind_swings_tool[0m                                         [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{'success': True, 'swing_highs': [1311.9, 1289.3, 1259.7, 1388.4, [0m   [32m│[0m
+[32m│[0m  [92m1279.5, 1251.1, 1291.8], 'swing_lows': [1254.8, 1205.9, 1281.3, [0m     [32m│[0m
+[32m│[0m  [92m1251.3, 1235.6, 1237.3, 1226.6]}[0m                                     [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mSupport and Resistance Structure Specialist[0m                   [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I have identified swing highs and lows. Now, I [0m    [35m│[0m
+[35m│[0m  [92mwill cluster these levels to create support and resistance zones [0m    [35m│[0m
+[35m│[0m  [92mbased on proximity.[0m                                                  [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mcluster_levels_tool[0m                                      [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"levels_json\": \"{\\\"swing_highs\\\":[1311.9,1289.3,1259.7,138[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{'success': True, 'clusters': [1295.9571]}[0m                           [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mSupport and Resistance Structure Specialist[0m                   [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I have successfully clustered the identified [0m      [35m│[0m
+[35m│[0m  [92mswing highs and lows into zones. Next, I will analyze the volume [0m    [35m│[0m
+[35m│[0m  [92mzones to identify areas of high trading participation.[0m               [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mvolume_zone_tool[0m                                         [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{'success': True, 'volume_zones': [{'zone_low': 1228.7125, [0m          [32m│[0m
+[32m│[0m  [92m'zone_high': 1251.525, 'volume_weight': 310123836.0}, {'zone_low': [0m  [32m│[0m
+[32m│[0m  [92m1251.525, 'zone_high': 1274.3375, 'volume_weight': 221017911.0}, [0m    [32m│[0m
+[32m│[0m  [92m{'zone_low': 1274.3375, 'zone_high': 1297.15, 'volume_weight': [0m      [32m│[0m
+[32m│[0m  [92m196211484.0}]}[0m                                                       [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92mYou ONLY have access to the following tools, and should NEVER make [0m  [32m│[0m
+[32m│[0m  [92mup tools that are not listed here:[0m                                   [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92mTool Name: find_swings_tool[0m                                          [32m│[0m
+[32m│[0m  [92mTool Arguments: {'ohlcv_json': {'description': 'JSON string or file[0m  [32m│[0m
+[32m│[0m  [92mpath containing OHLCV list/object. Supports keys: ohlcv, [0m            [32m│[0m
+[32m│[0m  [92mdaily_ohlcv, weekly_ohlcv.', 'type': 'str'}}[0m                         [32m│[0m
+[32m│[0m  [92mTool Description: Detect swing highs/lows using scipy find_peaks [0m    [32m│[0m
+[32m│[0m  [92mwith prominence and distance.[0m                                        [32m│[0m
+[32m│[0m  [92mTool Name: cluster_levels_tool[0m                                       [32m│[0m
+[32m│[0m  [92mTool Arguments: {'levels_json': {'description': 'JSON list of [0m       [32m│[0m
+[32m│[0m  [92mnumeric levels or object containing levels list.', 'type': 'str'}, [0m  [32m│[0m
+[32m│[0m  [92m'threshold_pct': {'description': 'Cluster threshold as % of level, [0m  [32m│[0m
+[32m│[0m  [92mdefault 0.5%.', 'type': 'float'}}[0m                                    [32m│[0m
+[32m│[0m  [92mTool Description: Merge nearby levels into support/resistance zones[0m  [32m│[0m
+[32m│[0m  [92musing threshold clustering.[0m                                          [32m│[0m
+[32m│[0m  [92mTool Name: volume_zone_tool[0m                                          [32m│[0m
+[32m│[0m  [92mTool Arguments: {'ohlcv_json': {'description': 'JSON string or file[0m  [32m│[0m
+[32m│[0m  [92mpath containing OHLCV list/object. Supports keys: ohlcv, [0m            [32m│[0m
+[32m│[0m  [92mdaily_ohlcv, weekly_ohlcv.', 'type': 'str'}}[0m                         [32m│[0m
+[32m│[0m  [92mTool Description: Identify high-participation price zones using [0m     [32m│[0m
+[32m│[0m  [92mvolume concentration bins.[0m                                           [32m│[0m
+[32m│[0m  [92mTool Name: dynamic_sr_tool[0m                                           [32m│[0m
+[32m│[0m  [92mTool Arguments: {'ohlcv_json': {'description': 'JSON string or file[0m  [32m│[0m
+[32m│[0m  [92mpath containing OHLCV list/object. Supports keys: ohlcv, [0m            [32m│[0m
+[32m│[0m  [92mdaily_ohlcv, weekly_ohlcv.', 'type': 'str'}}[0m                         [32m│[0m
+[32m│[0m  [92mTool Description: Use EMA50/100/200 as dynamic support/resistance [0m   [32m│[0m
+[32m│[0m  [92mcontext.[0m                                                             [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92mIMPORTANT: Use the following format in your response:[0m                [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m```[0m                                                                  [32m│[0m
+[32m│[0m  [92mThought: you should always think about what to do[0m                    [32m│[0m
+[32m│[0m  [92mAction: the action to take, only one name of [find_swings_tool, [0m     [32m│[0m
+[32m│[0m  [92mcluster_levels_tool, volume_zone_tool, dynamic_sr_tool], just the [0m   [32m│[0m
+[32m│[0m  [92mname, exactly as it's written.[0m                                       [32m│[0m
+[32m│[0m  [92mAction Input: the input to the action, just a simple JSON object, [0m   [32m│[0m
+[32m│[0m  [92menclosed in curly braces, using " to wrap keys and values.[0m           [32m│[0m
+[32m│[0m  [92mObservation: the...[0m                                                  [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[35m╭─[0m[35m──────────────────────[0m[35m 🔧 Agent Tool Execution [0m[35m──────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mSupport and Resistance Structure Specialist[0m                   [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mThought: [0m[92mThought: I have identified volume zones that correspond [0m    [35m│[0m
+[35m│[0m  [92mwith price levels. Next, I will use dynamic support and resistance [0m  [35m│[0m
+[35m│[0m  [92mlevels provided by the EMA to further confirm these zones.[0m           [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mUsing Tool: [0m[1;92mdynamic_sr_tool[0m                                          [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+[34m╭─[0m[34m────────────────────────────[0m[34m Tool Input [0m[34m─────────────────────────────[0m[34m─╮[0m
+[34m│[0m                                                                       [34m│[0m
+[34m│[0m  [38;2;230;219;116;49m"{\"ohlcv_json\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal[0m  [34m│[0m
+[34m│[0m                                                                       [34m│[0m
+[34m╰───────────────────────────────────────────────────────────────────────╯[0m
+[32m╭─[0m[32m────────────────────────────[0m[32m Tool Output [0m[32m────────────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [92m{'success': True, 'close': 1259.3, 'ema_levels': {'ema50': [0m          [32m│[0m
+[32m│[0m  [92m1275.3647, 'ema100': 1296.6659, 'ema200': 1318.7957}, [0m               [32m│[0m
+[32m│[0m  [92m'dynamic_support': [], 'dynamic_resistance': [1275.3647, 1296.6659,[0m  [32m│[0m
+[32m│[0m  [92m1318.7957]}[0m                                                          [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[32m╭─[0m[32m───────────────────────[0m[32m ✅ Agent Final Answer [0m[32m───────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mAgent: [0m[1;92mSupport and Resistance Structure Specialist[0m                   [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mFinal Answer:[0m                                                        [32m│[0m
+[32m│[0m  [92m{[0m                                                                    [32m│[0m
+[32m│[0m  [92m  "support_zones": [[0m                                                 [32m│[0m
+[32m│[0m  [92m    {[0m                                                                [32m│[0m
+[32m│[0m  [92m      "zone_low": 1228.7125,[0m                                         [32m│[0m
+[32m│[0m  [92m      "zone_high": 1251.525,[0m                                         [32m│[0m
+[32m│[0m  [92m      "confidence": 0.75,[0m                                            [32m│[0m
+[32m│[0m  [92m      "evidence": ["volume_zone"][0m                                    [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    {[0m                                                                [32m│[0m
+[32m│[0m  [92m      "zone_low": 1251.525,[0m                                          [32m│[0m
+[32m│[0m  [92m      "zone_high": 1274.3375,[0m                                        [32m│[0m
+[32m│[0m  [92m      "confidence": 0.65,[0m                                            [32m│[0m
+[32m│[0m  [92m      "evidence": ["volume_zone", "swing_low"][0m                       [32m│[0m
+[32m│[0m  [92m    }[0m                                                                [32m│[0m
+[32m│[0m  [92m  ],[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "resistance_zones": [[0m                                              [32m│[0m
+[32m│[0m  [92m    {[0m                                                                [32m│[0m
+[32m│[0m  [92m      "zone_low": 1295.9571,[0m                                         [32m│[0m
+[32m│[0m  [92m      "zone_high": 1318.7957,[0m                                        [32m│[0m
+[32m│[0m  [92m      "confidence": 0.80,[0m                                            [32m│[0m
+[32m│[0m  [92m      "evidence": ["swings", "dynamic_resistance"][0m                   [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    {[0m                                                                [32m│[0m
+[32m│[0m  [92m      "zone_low": 1275.3647,[0m                                         [32m│[0m
+[32m│[0m  [92m      "zone_high": 1296.6659,[0m                                        [32m│[0m
+[32m│[0m  [92m      "confidence": 0.70,[0m                                            [32m│[0m
+[32m│[0m  [92m      "evidence": ["dynamic_resistance", "volume_zone"][0m              [32m│[0m
+[32m│[0m  [92m    }[0m                                                                [32m│[0m
+[32m│[0m  [92m  ],[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "evidence_by_layer": {[0m                                             [32m│[0m
+[32m│[0m  [92m    "swings": {[0m                                                      [32m│[0m
+[32m│[0m  [92m      "highs": [1311.9, 1289.3, 1388.4],[0m                             [32m│[0m
+[32m│[0m  [92m      "lows": [1254.8, 1205.9][0m                                       [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "clusters": [1295.9571],[0m                                         [32m│[0m
+[32m│[0m  [92m    "volume_zones": [[0m                                                [32m│[0m
+[32m│[0m  [92m      {"zone_low": 1228.7125, "zone_high": 1251.525},[0m                [32m│[0m
+[32m│[0m  [92m      {"zone_low": 1251.525, "zone_high": 1274.3375},[0m                [32m│[0m
+[32m│[0m  [92m      {"zone_low": 1274.3375, "zone_high": 1297.15}[0m                  [32m│[0m
+[32m│[0m  [92m    ],[0m                                                               [32m│[0m
+[32m│[0m  [92m    "dynamic_emas": {[0m                                                [32m│[0m
+[32m│[0m  [92m      "ema50": 1275.3647,[0m                                            [32m│[0m
+[32m│[0m  [92m      "ema100": 1296.6659,[0m                                           [32m│[0m
+[32m│[0m  [92m      "ema200": 1318.7957[0m                                            [32m│[0m
+[32m│[0m  [92m    }[0m                                                                [32m│[0m
+[32m│[0m  [92m  },[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "confidence_scores": {[0m                                             [32m│[0m
+[32m│[0m  [92m    "overall_confidence": 0.75[0m                                       [32m│[0m
+[32m│[0m  [92m  }[0m                                                                  [32m│[0m
+[32m│[0m  [92m}[0m                                                                    [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[33m╭─[0m[33m───────────────────────────[0m[33m Task Started [0m[33m────────────────────────────[0m[33m─╮[0m
+[33m│[0m                                                                       [33m│[0m
+[33m│[0m  [1;33m📋 Task: 5e6dab39-f396-414a-b794-f1ec149f4c3e[0m                        [33m│[0m
+[33m│[0m  [37mStatus: [0m[2;33mExecuting Task...[0m                                            [33m│[0m
+[33m│[0m                                                                       [33m│[0m
+[33m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+
+[35m╭─[0m[35m─────────────────────────[0m[35m 🤖 Agent Started [0m[35m──────────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mTechnical Thesis and Signal Reasoning Specialist[0m              [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mTask: [0m[92mSynthesize indicators, patterns, support/resistance, and [0m      [35m│[0m
+[35m│[0m  [92mvisual advisory into technical stance, confidence, and thesis for [0m   [35m│[0m
+[35m│[0m  [92mmedium/long term.[0m                                                    [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[32m╭─[0m[32m───────────────────────[0m[32m ✅ Agent Final Answer [0m[32m───────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mAgent: [0m[1;92mTechnical Thesis and Signal Reasoning Specialist[0m              [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mFinal Answer:[0m                                                        [32m│[0m
+[32m│[0m  [92m{[0m                                                                    [32m│[0m
+[32m│[0m  [92m  "stance": "bearish",[0m                                               [32m│[0m
+[32m│[0m  [92m  "confidence": 0.75,[0m                                                [32m│[0m
+[32m│[0m  [92m  "thesis": "The overall market sentiment for ICICIBANK.NS [0m          [32m│[0m
+[32m│[0m  [92mindicates a bearish stance due to prevailing longer-term trends, [0m    [32m│[0m
+[32m│[0m  [92mdespite signs of short-term strength. The price action suggests [0m     [32m│[0m
+[32m│[0m  [92mrecovery from recent lows but lacks conviction to break through key[0m  [32m│[0m
+[32m│[0m  [92mresistance levels, indicating potential for further downside before[0m  [32m│[0m
+[32m│[0m  [92many sustained upward movement.",[0m                                     [32m│[0m
+[32m│[0m  [92m  "key_supporting_evidence": {[0m                                       [32m│[0m
+[32m│[0m  [92m    "trend_analysis": {[0m                                              [32m│[0m
+[32m│[0m  [92m      "sma": {[0m                                                       [32m│[0m
+[32m│[0m  [92m        "sma20": 1253.055,[0m                                           [32m│[0m
+[32m│[0m  [92m        "sma50": 1275.334[0m                                            [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "ema": {[0m                                                       [32m│[0m
+[32m│[0m  [92m        "ema20": 1258.3817,[0m                                          [32m│[0m
+[32m│[0m  [92m        "ema50": 1275.3647,[0m                                          [32m│[0m
+[32m│[0m  [92m        "ema200": 1318.7957[0m                                          [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "comment": "Price is currently below both EMA50 and EMA200 [0m    [32m│[0m
+[32m│[0m  [92mbut above EMA20, suggesting mixed signals with a bearish bias."[0m      [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "momentum_indicators": {[0m                                         [32m│[0m
+[32m│[0m  [92m      "rsi": 52.4669,[0m                                                [32m│[0m
+[32m│[0m  [92m      "macd": {[0m                                                      [32m│[0m
+[32m│[0m  [92m        "value": -7.9426,[0m                                            [32m│[0m
+[32m│[0m  [92m        "signal": -8.7684,[0m                                           [32m│[0m
+[32m│[0m  [92m        "histogram": 0.8259[0m                                          [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "comment": "RSI around the mid-point indicates no overbought [0m  [32m│[0m
+[32m│[0m  [92mor oversold conditions, while MACD shows a bearish crossover."[0m       [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "volatility": {[0m                                                  [32m│[0m
+[32m│[0m  [92m      "atr14": 23.5357,[0m                                              [32m│[0m
+[32m│[0m  [92m      "bb": {[0m                                                        [32m│[0m
+[32m│[0m  [92m        "basis": 1253.055,[0m                                           [32m│[0m
+[32m│[0m  [92m        "upper": 1286.7911,[0m                                          [32m│[0m
+[32m│[0m  [92m        "lower": 1219.3189[0m                                           [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "comment": "Volatility levels suggest that price is trading [0m   [32m│[0m
+[32m│[0m  [92mwithin a range, encountering resistance near upper bands."[0m           [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "volume": {[0m                                                      [32m│[0m
+[32m│[0m  [92m      "obv": -132028469.0,[0m                                           [32m│[0m
+[32m│[0m  [92m      "comment": "A declining OBV indicates bearish pressure on the[0m  [32m│[0m
+[32m│[0m  [92mstock despite recent price movements."[0m                               [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "chart_patterns": [[0m                                              [32m│[0m
+[32m│[0m  [92m      "double_bottom",[0m                                               [32m│[0m
+[32m│[0m  [92m      "channel"[0m                                                      [32m│[0m
+[32m│[0m  [92m    ],[0m                                                               [32m│[0m
+[32m│[0m  [92m    "visual_review": {[0m                                               [32m│[0m
+[32m│[0m  [92m      "summary": "The chart indicates a recent upward movement from[0m  [32m│[0m
+[32m│[0m  [92m1210 to 1260; however, the stock remains below critical EMAs, [0m       [32m│[0m
+[32m│[0m  [92msupporting bearish outlook.",[0m                                        [32m│[0m
+[32m│[0m  [92m      "confidence": 0.85[0m                                             [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "support_zones": [[0m                                               [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1228.7125,[0m                                            [32m│[0m
+[32m│[0m  [92m        "high": 1251.525,[0m                                            [32m│[0m
+[32m│[0m  [92m        "confidence": 0.75,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["volume_zone"][0m                                  [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1251.525,[0m                                             [32m│[0m
+[32m│[0m  [92m        "high": 1274.3375,[0m                                           [32m│[0m
+[32m│[0m  [92m        "confidence": 0.65,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["volume_zone", "swing_low"][0m                     [32m│[0m
+[32m│[0m  [92m      }[0m                                                              [32m│[0m
+[32m│[0m  [92m    ],[0m                                                               [32m│[0m
+[32m│[0m  [92m    "resistance_zones": [[0m                                            [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1295.9571,[0m                                            [32m│[0m
+[32m│[0m  [92m        "high": 1318.7957,[0m                                           [32m│[0m
+[32m│[0m  [92m        "confidence": 0.80,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["swings", "dynamic_resistance"][0m                 [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1275.3647,[0m                                            [32m│[0m
+[32m│[0m  [92m        "high": 1296.6659,[0m                                           [32m│[0m
+[32m│[0m  [92m        "confidence": 0.70,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["dynamic_resistance", "volume_zone"][0m            [32m│[0m
+[32m│[0m  [92m      }[0m                                                              [32m│[0m
+[32m│[0m  [92m    ][0m                                                                [32m│[0m
+[32m│[0m  [92m  }[0m                                                                  [32m│[0m
+[32m│[0m  [92m}[0m                                                                    [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[33m╭─[0m[33m───────────────────────────[0m[33m Task Started [0m[33m────────────────────────────[0m[33m─╮[0m
+[33m│[0m                                                                       [33m│[0m
+[33m│[0m  [1;33m📋 Task: 3965d402-1cae-45bd-8721-29ecd8cbb68d[0m                        [33m│[0m
+[33m│[0m  [37mStatus: [0m[2;33mExecuting Task...[0m                                            [33m│[0m
+[33m│[0m                                                                       [33m│[0m
+[33m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+
+[35m╭─[0m[35m─────────────────────────[0m[35m 🤖 Agent Started [0m[35m──────────────────────────[0m[35m─╮[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mAgent: [0m[1;92mTechnical Analysis Explainer[0m                                  [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m  [37mTask: [0m[92mExplain the analysis in human-readable terms with no hype and[0m  [35m│[0m
+[35m│[0m  [92mno guarantees. Make every uncertainty note specific to the current [0m  [35m│[0m
+[35m│[0m  [92mticker and grounded in the supplied JSON values. Reference concrete[0m  [35m│[0m
+[35m│[0m  [92mindicator values, support/resistance levels, or pattern names [0m       [35m│[0m
+[35m│[0m  [92minstead of generic market filler. Include clear invalidation points[0m  [35m│[0m
+[35m│[0m  [92mand what to monitor next.[0m                                            [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m│[0m                                                                       [35m│[0m
+[35m╰───────────────────────────────────────────────────────────────────────╯[0m
+
+[32m╭─[0m[32m───────────────────────[0m[32m ✅ Agent Final Answer [0m[32m───────────────────────[0m[32m─╮[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mAgent: [0m[1;92mTechnical Analysis Explainer[0m                                  [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m│[0m  [37mFinal Answer:[0m                                                        [32m│[0m
+[32m│[0m  [92m```json[0m                                                              [32m│[0m
+[32m│[0m  [92m{[0m                                                                    [32m│[0m
+[32m│[0m  [92m  "summary": {[0m                                                       [32m│[0m
+[32m│[0m  [92m    "stance": "bearish",[0m                                             [32m│[0m
+[32m│[0m  [92m    "confidence": 0.75,[0m                                              [32m│[0m
+[32m│[0m  [92m    "thesis": "The overall market sentiment for ICICIBANK.NS [0m        [32m│[0m
+[32m│[0m  [92mindicates a bearish stance due to prevailing longer-term trends, [0m    [32m│[0m
+[32m│[0m  [92mdespite signs of short-term strength. The price action suggests [0m     [32m│[0m
+[32m│[0m  [92mrecovery from recent lows but lacks conviction to break through key[0m  [32m│[0m
+[32m│[0m  [92mresistance levels, indicating potential for further downside before[0m  [32m│[0m
+[32m│[0m  [92many sustained upward movement."[0m                                      [32m│[0m
+[32m│[0m  [92m  },[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "indicator_explanation": {[0m                                         [32m│[0m
+[32m│[0m  [92m    "trend_analysis": {[0m                                              [32m│[0m
+[32m│[0m  [92m      "sma": {[0m                                                       [32m│[0m
+[32m│[0m  [92m        "sma20": 1253.055,[0m                                           [32m│[0m
+[32m│[0m  [92m        "sma50": 1275.334[0m                                            [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "ema": {[0m                                                       [32m│[0m
+[32m│[0m  [92m        "ema20": 1258.3817,[0m                                          [32m│[0m
+[32m│[0m  [92m        "ema50": 1275.3647,[0m                                          [32m│[0m
+[32m│[0m  [92m        "ema200": 1318.7957[0m                                          [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "comment": "The price is currently at 1258.38, below both the[0m  [32m│[0m
+[32m│[0m  [92mEMA50 (1275.36) and EMA200 (1318.80) but above the EMA20 (1258.38),[0m  [32m│[0m
+[32m│[0m  [92msignaling mixed trends with a bearish bias."[0m                         [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "momentum_indicators": {[0m                                         [32m│[0m
+[32m│[0m  [92m      "rsi": 52.4669,[0m                                                [32m│[0m
+[32m│[0m  [92m      "macd": {[0m                                                      [32m│[0m
+[32m│[0m  [92m        "value": -7.9426,[0m                                            [32m│[0m
+[32m│[0m  [92m        "signal": -8.7684,[0m                                           [32m│[0m
+[32m│[0m  [92m        "histogram": 0.8259[0m                                          [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "comment": "The RSI of 52.47 indicates a neutral momentum [0m     [32m│[0m
+[32m│[0m  [92mzone, while the MACD's recent bearish crossover suggests the [0m        [32m│[0m
+[32m│[0m  [92mpotential for downward movement."[0m                                    [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "volatility": {[0m                                                  [32m│[0m
+[32m│[0m  [92m      "atr14": 23.5357,[0m                                              [32m│[0m
+[32m│[0m  [92m      "bb": {[0m                                                        [32m│[0m
+[32m│[0m  [92m        "basis": 1253.055,[0m                                           [32m│[0m
+[32m│[0m  [92m        "upper": 1286.7911,[0m                                          [32m│[0m
+[32m│[0m  [92m        "lower": 1219.3189[0m                                           [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      "comment": "The price currently trades between the lower [0m      [32m│[0m
+[32m│[0m  [92m(1219.32) and upper Bollinger Bands (1286.79), showing limited [0m      [32m│[0m
+[32m│[0m  [92mvolatility but approaching potential resistance."[0m                    [32m│[0m
+[32m│[0m  [92m    },[0m                                                               [32m│[0m
+[32m│[0m  [92m    "volume": {[0m                                                      [32m│[0m
+[32m│[0m  [92m      "obv": -132028469.0,[0m                                           [32m│[0m
+[32m│[0m  [92m      "comment": "The negative OBV indicates that selling pressure [0m  [32m│[0m
+[32m│[0m  [92mpersists, overshadowing recent upward price movements."[0m              [32m│[0m
+[32m│[0m  [92m    }[0m                                                                [32m│[0m
+[32m│[0m  [92m  },[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "pattern_explanation": {[0m                                           [32m│[0m
+[32m│[0m  [92m    "chart_patterns": [[0m                                              [32m│[0m
+[32m│[0m  [92m      "double_bottom",[0m                                               [32m│[0m
+[32m│[0m  [92m      "channel"[0m                                                      [32m│[0m
+[32m│[0m  [92m    ],[0m                                                               [32m│[0m
+[32m│[0m  [92m    "comment": "The double bottom pattern provides a bullish [0m        [32m│[0m
+[32m│[0m  [92moutlook; however, it is not currently confirmed due to the failure [0m  [32m│[0m
+[32m│[0m  [92mto breach significant resistance levels, while price movement [0m       [32m│[0m
+[32m│[0m  [92mwithin a channel suggests potential for a reversal."[0m                 [32m│[0m
+[32m│[0m  [92m  },[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "sr_explanation": {[0m                                                [32m│[0m
+[32m│[0m  [92m    "support_zones": [[0m                                               [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1228.7125,[0m                                            [32m│[0m
+[32m│[0m  [92m        "high": 1251.525,[0m                                            [32m│[0m
+[32m│[0m  [92m        "confidence": 0.75,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["volume_zone"][0m                                  [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1251.525,[0m                                             [32m│[0m
+[32m│[0m  [92m        "high": 1274.3375,[0m                                           [32m│[0m
+[32m│[0m  [92m        "confidence": 0.65,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["volume_zone", "swing_low"][0m                     [32m│[0m
+[32m│[0m  [92m      }[0m                                                              [32m│[0m
+[32m│[0m  [92m    ],[0m                                                               [32m│[0m
+[32m│[0m  [92m    "resistance_zones": [[0m                                            [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1295.9571,[0m                                            [32m│[0m
+[32m│[0m  [92m        "high": 1318.7957,[0m                                           [32m│[0m
+[32m│[0m  [92m        "confidence": 0.80,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["swings", "dynamic_resistance"][0m                 [32m│[0m
+[32m│[0m  [92m      },[0m                                                             [32m│[0m
+[32m│[0m  [92m      {[0m                                                              [32m│[0m
+[32m│[0m  [92m        "low": 1275.3647,[0m                                            [32m│[0m
+[32m│[0m  [92m        "high": 1296.6659,[0m                                           [32m│[0m
+[32m│[0m  [92m        "confidence": 0.70,[0m                                          [32m│[0m
+[32m│[0m  [92m        "evidence": ["dynamic_resistance", "volume_zone"][0m            [32m│[0m
+[32m│[0m  [92m      }[0m                                                              [32m│[0m
+[32m│[0m  [92m    ],[0m                                                               [32m│[0m
+[32m│[0m  [92m    "comment": "Key support exists between 1228.71 and 1251.53, [0m     [32m│[0m
+[32m│[0m  [92mwhile significant resistance lies between 1275.36 and 1295.96 based[0m  [32m│[0m
+[32m│[0m  [92mon recent swing highs."[0m                                              [32m│[0m
+[32m│[0m  [92m  },[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "uncertainty_notes": [[0m                                             [32m│[0m
+[32m│[0m  [92m    "The bearish MACD crossover at -7.94 coupled with the declining[0m  [32m│[0m
+[32m│[0m  [92mOBV indicates that downward momentum is present, but price action [0m   [32m│[0m
+[32m│[0m  [92mshows potential recovery signals that could shift this outlook.",[0m    [32m│[0m
+[32m│[0m  [92m    "While the RSI remains neutral, if it moves below 50, it could [0m  [32m│[0m
+[32m│[0m  [92mstrengthen the bearish case, particularly if the price breaks below[0m  [32m│[0m
+[32m│[0m  [92msupport at 1228.71.",[0m                                                [32m│[0m
+[32m│[0m  [92m    "The proximity to resistance near 1275.36 suggests that if the [0m  [32m│[0m
+[32m│[0m  [92mprice fails to break this level decisively, it may reiterate the [0m    [32m│[0m
+[32m│[0m  [92mbearish sentiment; watch for confirmation or rejection within this [0m  [32m│[0m
+[32m│[0m  [92mzone."[0m                                                               [32m│[0m
+[32m│[0m  [92m  ],[0m                                                                 [32m│[0m
+[32m│[0m  [92m  "monitoring_checklist": [[0m                                          [32m│[0m
+[32m│[0m  [92m    "Track daily closes below support level of 1251.53, which could[0m  [32m│[0m
+[32m│[0m  [92mtrigger stronger bearish movement.",[0m                                 [32m│[0m
+[32m│[0m  [92m    "Watch for breakthroughs above resistance at 1275.36, which may[0m  [32m│[0m
+[32m│[0m  [92msignal a shift in trend to more bullish behavior.",[0m                  [32m│[0m
+[32m│[0m  [92m    "Observe RSI movements; an ascension towards 60 could indicate [0m  [32m│[0m
+[32m│[0m  [92man increase in upward momentum worth noting."[0m                        [32m│[0m
+[32m│[0m  [92m  ][0m                                                                  [32m│[0m
+[32m│[0m  [92m}[0m                                                                    [32m│[0m
+[32m│[0m  [92m```[0m                                                                  [32m│[0m
+[32m│[0m                                                                       [32m│[0m
+[32m╰───────────────────────────────────────────────────────────────────────╯[0m
+

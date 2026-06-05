@@ -1,0 +1,360 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\INFY.NS_bundle_20260605T044720Z.json",
+  "daily_rows": 63,
+  "weekly_rows": 53,
+  "actions_count": 69,
+  "validation": {
+    "success": true,
+    "rows": 63,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 1173.335,
+      "sma50": 1219.11,
+      "sma100": null,
+      "sma200": null
+    },
+    "ema": {
+      "ema20": 1191.1263,
+      "ema50": 1210.8177,
+      "ema100": 1240.2679,
+      "ema200": 1266.4521
+    }
+  },
+  "momentum": {
+    "rsi14": 61.9507,
+    "macd": 2.8013,
+    "macd_signal": -6.7289,
+    "macd_histogram": 9.5302
+  },
+  "volatility": {
+    "atr14": 33.1429,
+    "bb_basis20": 1173.335,
+    "bb_upper20": 1252.981,
+    "bb_lower20": 1093.689
+  },
+  "volume": {
+    "obv": 58662254.0
+  },
+  "candlestick_patterns": [],
+  "chart_patterns": [],
+  "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\INFY.NS_20260605T044735Z.png",
+  "visual_review": {
+    "success": true,
+    "visual_summary": "The chart shows a recent upward movement after a period of decline and sideways consolidation. The price has crossed above the EMA20 and EMA50, but remains below the EMA200, indicating a potential early-stage recovery but still within a longer-term downtrend. Volume spikes coincide with price increases, suggesting buying interest. Watch for a sustained break above the EMA200 for a stronger bullish signal or a drop below recent support levels for bearish continuation.",
+    "confidence": 0.85,
+    "image_analysis_status": "completed",
+    "model": "gpt-4.1-mini",
+    "image_size": {
+      "width": 1820,
+      "height": 1040
+    },
+    "reviewed_image_size": {
+      "width": 1200,
+      "height": 686
+    },
+    "error": null,
+    "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\INFY.NS_20260605T044735Z.png",
+    "advisory_only": true,
+    "chart_url": "/api/ta/artifacts/ta_20260605T044716Z_ec6ae4/INFY.NS_20260605T044735Z.png"
+  },
+  "support_zones": [
+    1157.8,
+    1189.2,
+    1210.8177
+  ],
+  "resistance_zones": [
+    1255.0375,
+    1240.2679,
+    1266.4521
+  ],
+  "evidence_by_layer": {
+    "swings": [
+      1267.1,
+      1279.1,
+      1346.2,
+      1319.2,
+      1181.8,
+      1179.2,
+      1196.9,
+      1270.8,
+      1220.8,
+      1250.6,
+      1276.8,
+      1152.1,
+      1162.7,
+      1095.0,
+      1159.9
+    ],
+    "clusters": [
+      1255.0375
+    ],
+    "volume_zones": [
+      1157.8,
+      1189.2,
+      1252.0,
+      1283.4,
+      1283.4,
+      1314.8
+    ],
+    "dynamic_levels": [
+      1210.8177,
+      1240.2679,
+      1266.4521
+    ]
+  },
+  "summary": {
+    "stance": "neutral",
+    "confidence": "medium",
+    "thesis": "The market exhibits a potential early-stage recovery with upward movement, but the price remains below critical resistance levels. Sustained bullish momentum is contingent on breaking above the EMA200 while recent support can maintain the current price range. A risk persists for bearish continuation should the price drop below key supports."
+  },
+  "indicator_explanation": "The price has recently crossed above both the EMA20 and the EMA50, which are key indicators suggesting short-term bullish momentum. These moving averages can act as dynamic support now that the price is above them. Meanwhile, the RSI14 value stands at 61.9507, indicating that bullish momentum is present without yet entering overbought territory, giving room for further gains.",
+  "pattern_explanation": "Visual analysis shows a successful upward movement following a consolidation phase. However, the price remains constrained below the EMA200, which serves as a critical resistance level. This pattern suggests a potential for a bullish breakout, but it is yet to be confirmed.",
+  "sr_explanation": "Key support levels are identified at 1157.8 and 1189.2. These levels may provide a buffer against bearish continuation. If the price drops below these supports, it could indicate a shift toward bearish sentiment. On the resistance side, levels at 1255.0375 and 1266.4521 are crucial as they need to be broken for the market to establish a stronger bullish trend.",
+  "uncertainty_notes": [
+    "While the short-term indicators suggest bullish momentum, the inability to break above the EMA200 introduces a risk factor for potential bearish trends if the market fails to maintain upward pressure.",
+    "The current RSI indicates bullish momentum, but it remains below overbought levels, leaving room for further price appreciation. However, if the RSI approaches 70, it may signal overbought conditions and possible corrections.",
+    "Volume spikes during price increases support bullish sentiment; however, a decline in volume could suggest weakening buying interest, warranting close monitoring of the next trading sessions."
+  ],
+  "monitoring_checklist": [
+    "Watch for sustained price movement above the EMA200 as a confirmation of bullish trend resumption.",
+    "Keep an eye on the key support levels at 1157.8 and 1189.2; a drop below these could signal a bearish reversal.",
+    "Monitor RSI levels for potential overbought signals once it approaches the 70 mark, indicating a possible price pullback."
+  ],
+  "_task_results": {
+    "market_data_task": {
+      "success": true,
+      "ticker": "INFY.NS",
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\INFY.NS_bundle_20260605T044720Z.json",
+      "daily_rows": 63,
+      "weekly_rows": 53,
+      "actions_count": 69,
+      "validation": {
+        "success": true,
+        "rows": 63,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "trend": {
+        "sma": {
+          "sma20": 1173.335,
+          "sma50": 1219.11,
+          "sma100": null,
+          "sma200": null
+        },
+        "ema": {
+          "ema20": 1191.1263,
+          "ema50": 1210.8177,
+          "ema100": 1240.2679,
+          "ema200": 1266.4521
+        }
+      },
+      "momentum": {
+        "rsi14": 61.9507,
+        "macd": 2.8013,
+        "macd_signal": -6.7289,
+        "macd_histogram": 9.5302
+      },
+      "volatility": {
+        "atr14": 33.1429,
+        "bb_basis20": 1173.335,
+        "bb_upper20": 1252.981,
+        "bb_lower20": 1093.689
+      },
+      "volume": {
+        "obv": 58662254.0
+      }
+    },
+    "pattern_detection_task": {
+      "candlestick_patterns": [],
+      "chart_patterns": [],
+      "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\INFY.NS_20260605T044735Z.png",
+      "visual_review": {
+        "success": true,
+        "visual_summary": "The chart shows a recent upward movement after a period of decline and sideways consolidation. The price has crossed above the EMA20 and EMA50, but remains below the EMA200, indicating a potential early-stage recovery but still within a longer-term downtrend. Volume spikes coincide with price increases, suggesting buying interest. Watch for a sustained break above the EMA200 for a stronger bullish signal or a drop below recent support levels for bearish continuation.",
+        "confidence": 0.85,
+        "image_analysis_status": "completed",
+        "model": "gpt-4.1-mini",
+        "image_size": {
+          "width": 1820,
+          "height": 1040
+        },
+        "reviewed_image_size": {
+          "width": 1200,
+          "height": 686
+        },
+        "error": null
+      }
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        1157.8,
+        1189.2,
+        1210.8177
+      ],
+      "resistance_zones": [
+        1255.0375,
+        1240.2679,
+        1266.4521
+      ],
+      "evidence_by_layer": {
+        "swings": [
+          1267.1,
+          1279.1,
+          1346.2,
+          1319.2,
+          1181.8,
+          1179.2,
+          1196.9,
+          1270.8,
+          1220.8,
+          1250.6,
+          1276.8,
+          1152.1,
+          1162.7,
+          1095.0,
+          1159.9
+        ],
+        "clusters": [
+          1255.0375
+        ],
+        "volume_zones": [
+          1157.8,
+          1189.2,
+          1252.0,
+          1283.4,
+          1283.4,
+          1314.8
+        ],
+        "dynamic_levels": [
+          1210.8177,
+          1240.2679,
+          1266.4521
+        ]
+      },
+      "confidence_scores": {
+        "swings": 0.75,
+        "clusters": 0.8,
+        "volume": 0.85,
+        "dynamic": 0.9
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "neutral",
+      "confidence": "medium",
+      "thesis": "The market exhibits a potential early-stage recovery with upward movement, but the price remains below critical resistance levels. Sustained bullish momentum is contingent on breaking above the EMA200 while recent support can maintain the current price range. A risk persists for bearish continuation should the price drop below key supports.",
+      "key_supporting_evidence": [
+        "Price has crossed above EMA20 and EMA50, indicating short-term bullish momentum.",
+        "RSI14 at 61.9507 indicates bullish momentum, but not yet in overbought territory.",
+        "Volume spikes during price increases suggest buying interest.",
+        "Visual review indicates successful upward movement after consolidation, but remains below EMA200.",
+        "Key support levels at 1157.8 and 1189.2 provide a buffer against bearish continuation.",
+        "Resistance levels at 1255.0375 and 1266.4521 are critical for establishing a bullish trend."
+      ]
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "neutral",
+        "confidence": "medium",
+        "thesis": "The market exhibits a potential early-stage recovery with upward movement, but the price remains below critical resistance levels. Sustained bullish momentum is contingent on breaking above the EMA200 while recent support can maintain the current price range. A risk persists for bearish continuation should the price drop below key supports."
+      },
+      "indicator_explanation": "The price has recently crossed above both the EMA20 and the EMA50, which are key indicators suggesting short-term bullish momentum. These moving averages can act as dynamic support now that the price is above them. Meanwhile, the RSI14 value stands at 61.9507, indicating that bullish momentum is present without yet entering overbought territory, giving room for further gains.",
+      "pattern_explanation": "Visual analysis shows a successful upward movement following a consolidation phase. However, the price remains constrained below the EMA200, which serves as a critical resistance level. This pattern suggests a potential for a bullish breakout, but it is yet to be confirmed.",
+      "sr_explanation": "Key support levels are identified at 1157.8 and 1189.2. These levels may provide a buffer against bearish continuation. If the price drops below these supports, it could indicate a shift toward bearish sentiment. On the resistance side, levels at 1255.0375 and 1266.4521 are crucial as they need to be broken for the market to establish a stronger bullish trend.",
+      "uncertainty_notes": [
+        "While the short-term indicators suggest bullish momentum, the inability to break above the EMA200 introduces a risk factor for potential bearish trends if the market fails to maintain upward pressure.",
+        "The current RSI indicates bullish momentum, but it remains below overbought levels, leaving room for further price appreciation. However, if the RSI approaches 70, it may signal overbought conditions and possible corrections.",
+        "Volume spikes during price increases support bullish sentiment; however, a decline in volume could suggest weakening buying interest, warranting close monitoring of the next trading sessions."
+      ],
+      "monitoring_checklist": [
+        "Watch for sustained price movement above the EMA200 as a confirmation of bullish trend resumption.",
+        "Keep an eye on the key support levels at 1157.8 and 1189.2; a drop below these could signal a bearish reversal.",
+        "Monitor RSI levels for potential overbought signals once it approaches the 70 mark, indicating a possible price pullback."
+      ]
+    }
+  },
+  "chart_url": "/api/ta/artifacts/ta_20260605T044716Z_ec6ae4/INFY.NS_20260605T044735Z.png",
+  "_artifact_urls": [
+    "/api/ta/artifacts/ta_20260605T044716Z_ec6ae4/INFY.NS_20260605T044735Z.png"
+  ],
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 1210.8177
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 1173.335
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 61.9507
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": 2.8013
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 33.1429
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": 58662254.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 1173.335
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

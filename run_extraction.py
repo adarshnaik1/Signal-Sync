@@ -3,7 +3,7 @@ from helpers.pdf_extraction.annual_report_pdf import AnnualReportPDF
 from pathlib import Path
 
 OUTPUT_PATH = Path("outputs/text_extracted.json")
-PDF_PATH = r"C:\Users\hedet\Downloads\ITC Limited Annual Report 2024.pdf"  # change as needed
+PDF_PATH = r"C:\Users\ADARSH NAIK\Desktop\signal_sync\ITC Limited Annual Report 2024.pdf"  # change as needed
 
 
 def main():

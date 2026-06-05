@@ -27,6 +27,14 @@ from signal_sync.ta.tools import (
     RenderChartTool,
     VisionReviewTool,
 )
+from signal_sync.ta.schemas import (
+    MarketDataTaskOutput,
+    IndicatorTaskOutput,
+    PatternDetectionTaskOutput,
+    SupportResistanceTaskOutput,
+    StrategySignalTaskOutput,
+    ExplanationTaskOutput,
+)
 
 
 @CrewBase
@@ -155,36 +163,42 @@ class TAAnalysisCrew:
     def market_data_task(self) -> Task:
         cfg = self._task_config("market_data_task").copy()
         # No manager task; market data runs standalone
+        cfg["output_pydantic"] = MarketDataTaskOutput
         return Task(**cfg)
 
     @task
     def indicator_task(self) -> Task:
         cfg = self._task_config("indicator_task").copy()
         cfg["context"] = [self.market_data_task()]
+        cfg["output_pydantic"] = IndicatorTaskOutput
         return Task(**cfg)
 
     @task
     def pattern_detection_task(self) -> Task:
         cfg = self._task_config("pattern_detection_task").copy()
         cfg["context"] = [self.market_data_task()]
+        cfg["output_pydantic"] = PatternDetectionTaskOutput
         return Task(**cfg)
 
     @task
     def support_resistance_task(self) -> Task:
         cfg = self._task_config("support_resistance_task").copy()
         cfg["context"] = [self.market_data_task()]
+        cfg["output_pydantic"] = SupportResistanceTaskOutput
         return Task(**cfg)
 
     @task
     def strategy_signal_task(self) -> Task:
         cfg = self._task_config("strategy_signal_task").copy()
         cfg["context"] = [self.indicator_task(), self.pattern_detection_task(), self.support_resistance_task()]
+        cfg["output_pydantic"] = StrategySignalTaskOutput
         return Task(**cfg)
 
     @task
     def explanation_task(self) -> Task:
         cfg = self._task_config("explanation_task").copy()
         cfg["context"] = [self.strategy_signal_task()]
+        cfg["output_pydantic"] = ExplanationTaskOutput
         return Task(**cfg)
 
     @crew
