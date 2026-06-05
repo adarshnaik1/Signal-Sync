@@ -14,6 +14,7 @@ if ROOT not in sys.path:
 from api.jobs_store import create_job, get_job, update_job
 from signal_sync.api_runner import run_bgv_job
 from signal_sync.ta.api_runner import run_ta_job
+from agentic_pipeline.fa_api_runner import run_fa_job
 
 app = FastAPI(title="BGV API")
 
@@ -165,3 +166,61 @@ def ta_artifact(job_id: str, filename: str):
         return FileResponse(file_path)
 
     raise HTTPException(status_code=404, detail="Artifact not found in charts or artifacts dir")
+
+
+# ── Fundamental Analysis endpoints ────────────────────────────────────
+
+@app.post("/api/fa/start")
+async def start_fa(
+    background: BackgroundTasks,
+    company_name: str = Form(...),
+    ticker: str = Form(...),
+    sector: str = Form(""),
+    exchange: str = Form("NSE"),
+):
+    """
+    Start a Fundamental Analysis job.
+    Returns job_id to poll for status.
+    """
+    metadata = {
+        "company_name": company_name,
+        "ticker": ticker,
+        "sector": sector,
+        "exchange": exchange,
+    }
+    job = create_job(metadata, prefix="fa")
+    job_id = job["job_id"]
+
+    background.add_task(run_fa_job, job_id, company_name, ticker, sector, exchange)
+
+    return {"job_id": job_id, "status": "queued"}
+
+
+@app.get("/api/fa/status/{job_id}")
+def fa_status(job_id: str):
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return job
+
+
+@app.get("/api/fa/result/{job_id}")
+def fa_result(job_id: str):
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    if job.get("status") != "done":
+        raise HTTPException(status_code=409, detail="Job not completed")
+
+    stored_result = job.get("result_json")
+    if isinstance(stored_result, dict) and stored_result:
+        return stored_result
+
+    output_path = job.get("output_path")
+    if not output_path or not os.path.exists(output_path):
+        raise HTTPException(status_code=404, detail="Result file not found")
+
+    import json
+    with open(output_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data
