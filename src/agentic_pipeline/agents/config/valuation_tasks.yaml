@@ -1,0 +1,8 @@
+# Valuation Task Configuration
+
+valuation_task:
+  description: >
+    Analyze company valuation using financial metrics, earnings, growth, and market indicators.
+  expected_output: >
+    Compact JSON-based valuation assessment.
+  agent: valuation_agent

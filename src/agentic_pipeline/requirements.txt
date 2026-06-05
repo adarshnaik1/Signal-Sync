@@ -1,0 +1,6 @@
+crewai
+yfinance
+pandas
+requests
+python-dotenv
+langchain

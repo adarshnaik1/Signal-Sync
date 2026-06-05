@@ -1,0 +1,8 @@
+risk_analysis_task:
+  description: >
+    Analyze the company's risk profile using financial ratios, market data,
+    cash flows, and profitability metrics.
+  expected_output: >
+    A professional company risk assessment covering financial, market,
+    liquidity, and operational risks.
+  agent: risk_analysis_agent
