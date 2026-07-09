@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "generated_at": "2023-10-01T12:00:00Z",
+    "pipeline_version": "1.0",
+    "sources": [
+      {
+        "name": "ITC Limited - Wikipedia",
+        "type": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/ITC_Limited"
+      },
+      {
+        "name": "Our Profile - ITC",
+        "type": "Official Website",
+        "url": "https://itcportal.com/about-itc/our-profile.html"
+      },
+      {
+        "name": "ITC Ltd Company Profile - GlobalData",
+        "type": "GlobalData",
+        "url": "https://www.globaldata.com/company-profile/itc-ltd/"
+      },
+      {
+        "name": "ITC Limited (ITC.NS) Company Profile & Facts - Yahoo Finance",
+        "type": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/ITC.NS/profile/"
+      },
+      {
+        "name": "(ITC.NS) | Stock Price & Latest News - Reuters",
+        "type": "Reuters",
+        "url": "https://www.reuters.com/markets/companies/ITC.NS/"
+      }
+    ]
+  },
+  "company": {
+    "name": "ITC Limited",
+    "ticker": "ITC.NS",
+    "sector": "Consumer Defensive",
+    "profile_summary": "ITC Limited is a diversified Indian conglomerate with operations across various sectors including FMCG, agribusiness, hotels, paperboards, packaging, and IT services.",
+    "headquarters": "Kolkata, India",
+    "founded_year": 1910,
+    "employees": 35000,
+    "products_services": [
+      "Fast-Moving Consumer Goods (FMCG)",
+      "Cigarettes",
+      "Food and Beverages",
+      "Personal Care Products",
+      "Paperboards and Packaging",
+      "Hotels",
+      "Agri-business"
+    ],
+    "subsidiaries": [
+      "ITC Infotech",
+      "ITC Hotels",
+      "ITC Agri Business"
+    ],
+    "market_presence": "ITC has a strong presence in the Indian market and is expanding its footprint internationally."
+  },
+  "scores": {
+    "trustworthiness_score": 86.67,
+    "financial_integrity_score": 85.0,
+    "management_risk_score": 10.0,
+    "market_manipulation_risk_score": 65.0
+  },
+  "findings": {
+    "overview_findings": [
+      "ITC Limited operates across six segments: FMCG, agri-business, hotels, paperboards, packaging, and information technology.",
+      "The company is a market leader in the FMCG sector in India, particularly in the cigarette market.",
+      "ITC's FMCG range includes a variety of products such as packaged foods, personal care items, and stationery.",
+      "The company focuses on sustainable practices and has numerous initiatives aimed at environmental conservation.",
+      "ITC has expanded its business in agribusiness significantly, focusing on farmer empowerment and sustainable sourcing.",
+      "Recent developments include investments in health and hygiene products amidst increasing demand due to the pandemic."
+    ],
+    "management_findings": [
+      "Sanjiv Puri has over three decades of experience with ITC and holds executive roles since the 1980s.",
+      "Supratim Dutta joined ITC in 1990 and assumed the CFO role with significant experience in finance and compliance.",
+      "Both executives have maintained a clean record with no reported controversies or fraud allegations.",
+      "The leadership team is focused on sustainable practices and expanding ITC's market presence."
+    ],
+    "financial_irregularities": [
+      "Revenue growth shows steady performance, but spikes may indicate aggressive revenue recognition tactics.",
+      "Net profit for 2023 was Rs. 18,753.31 crores, which is an increase from Rs. 15,057.83 crores in 2022.",
+      "Total debt levels and debt-to-equity ratio are stable, signaling a conservative approach to debt management.",
+      "The audit opinion for 2023 is unqualified, indicating no significant issues reported by auditors.",
+      "Related party transactions are disclosed, but scrutiny is needed to ensure transparency.",
+      "No significant off-balance sheet items were reported, suggesting that liabilities are well accounted for.",
+      "Accounting policy changes were minimal and mostly align with industry practices.",
+      "Earnings quality indicators show consistency, with cash flow from operations supporting reported earnings."
+    ],
+    "scam_signals": [
+      "Volume spike detected at 3.2x median volume, indicating potential manipulation signal.",
+      "Stock price dropped by 6.35% with notable volatility of 9.25%.",
+      "Upcoming Q4FY26 results announcement could attract speculative trading.",
+      "Significant trading dynamics preceding the corporate announcements."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Sanjiv Puri",
+        "role": "Chairman & Managing Director",
+        "red_flags": [],
+        "evidence_links": [
+          "https://en.wikipedia.org/wiki/ITC_Limited",
+          "https://itcportal.com/about-itc/leadership/sanjiv-puri.html",
+          "https://indiaspora.org/business-leader/sanjiv-puri/"
+        ]
+      },
+      {
+        "name": "Supratim Dutta",
+        "role": "CFO & Whole Time Director",
+        "red_flags": [],
+        "evidence_links": [
+          "https://itcportal.com/about-itc/leadership/supratim-dutta.html",
+          "https://in.linkedin.com/in/supratim-dutta-b74a1776",
+          "https://www.marketscreener.com/insider/SUPRATIM-DUTTA-A2R8E5/"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}

@@ -1,0 +1,10 @@
+business_analysis_task:
+  description: >
+    Analyze the company's business fundamentals
+    using company metadata, business summary,
+    sector information, and recent news.
+  expected_output: >
+    A structured business analysis containing
+    business model insights, growth drivers,
+    competitive strengths, and business risks.
+  agent: business_analysis_agent

@@ -1,0 +1,17 @@
+{
+  "ticker": "HDFCBANK.NS",
+  "period": "1d",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 1,
+  "ohlcv": [
+    {
+      "Date": "2026-06-04",
+      "Close": 751.25,
+      "High": 751.8499755859375,
+      "Low": 745.0,
+      "Open": 749.1500244140625,
+      "Volume": 10820567
+    }
+  ]
+}

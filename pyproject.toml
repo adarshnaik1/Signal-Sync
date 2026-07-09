@@ -8,10 +8,15 @@ dependencies = [
     "crewai[tools]>=0.141.0,<1.0.0",
     "yfinance>=0.2.36",
     "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
     "pdfplumber>=0.10.0",
     "streamlit>=1.31.0",
     "pydantic>=2.0.0",
     "jsonschema>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "openai>=1.0.0",
 ]
 
 [project.scripts]
@@ -21,6 +26,7 @@ run_bgv = "signal_sync.main:run"
 train = "signal_sync.main:train"
 replay = "signal_sync.main:replay"
 test = "signal_sync.main:test"
+run_ta = "signal_sync.ta.main:run"
 
 [build-system]
 requires = ["hatchling"]

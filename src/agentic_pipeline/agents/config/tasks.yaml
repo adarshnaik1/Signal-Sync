@@ -1,0 +1,20 @@
+# Data Acquisition Task Configuration
+
+data_acquisition_task:
+  description: >
+    Fetch company financial data, market metrics, balance sheet data,
+    cash flow data, and recent news. Normalize everything into a unified schema.
+    
+    Steps:
+    1. Query financial data for {ticker} on {exchange}
+    2. Extract company name and metadata
+    3. Fetch recent company news
+    4. Combine all data into a structured schema
+  expected_output: >
+    A structured JSON schema containing:
+    - company: metadata (name, ticker, sector, etc.)
+    - financial_statements: balance sheet, cash flow, income statement
+    - market_data: historical prices, volumes, ratios
+    - news_data: recent news articles with headlines and summaries
+  agent: data_acquisition_agent
+

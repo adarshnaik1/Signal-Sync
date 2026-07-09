@@ -1,0 +1,17 @@
+{
+  "ticker": "TCS.NS",
+  "period": "1d",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 1,
+  "ohlcv": [
+    {
+      "Date": "2026-05-20",
+      "Close": 2337.39990234375,
+      "High": 2342.0,
+      "Low": 2317.800048828125,
+      "Open": 2323.89990234375,
+      "Volume": 1498711
+    }
+  ]
+}

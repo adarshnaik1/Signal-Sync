@@ -1,0 +1,483 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\HDFCBANK.NS_bundle_20260604T160710Z.json",
+  "daily_rows": 63,
+  "weekly_rows": 53,
+  "actions_count": 33,
+  "validation": {
+    "success": true,
+    "rows": 63,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 761.2275,
+      "sma50": 773.584,
+      "sma100": null,
+      "sma200": null
+    },
+    "ema": {
+      "ema20": 762.3714,
+      "ema50": 780.4581,
+      "ema100": 804.4249,
+      "ema200": 828.478
+    }
+  },
+  "momentum": {
+    "rsi14": 42.9255,
+    "macd": -8.4285,
+    "macd_signal": -8.026,
+    "macd_histogram": -0.4025
+  },
+  "volatility": {
+    "atr14": 14.975,
+    "bb_basis20": 761.2275,
+    "bb_upper20": 785.1773,
+    "bb_lower20": 737.2778
+  },
+  "volume": {
+    "obv": -605048874.0
+  },
+  "candlestick_patterns": [],
+  "chart_patterns": [],
+  "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260604T160733Z.png",
+  "visual_review": {
+    "visual_summary": "The chart shows a general downtrend with the price consistently below the EMA20, EMA50, and EMA200, indicating bearish momentum. The EMA lines are aligned in descending order (EMA20 below EMA50, EMA50 below EMA200), reinforcing the downtrend. Recently, the price appears to be consolidating in a narrow range around 740-760, with volume showing no significant spikes. There is no clear breakout signal yet, but the consolidation near the lower end of the trend suggests potential for a breakout either way.",
+    "confidence": 0.85,
+    "advisory_only": true,
+    "image_analysis_status": "completed",
+    "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260604T160733Z.png",
+    "model": "gpt-4.1-mini",
+    "image_size": {
+      "width": 1820,
+      "height": 1040
+    },
+    "reviewed_image_size": {
+      "width": 1200,
+      "height": 686
+    },
+    "chart_url": "/api/ta/artifacts/ta_20260604T160659Z_f12b3b/HDFCBANK.NS_20260604T160733Z.png"
+  },
+  "support_zones": [
+    {
+      "zone": "Clustered + Volume",
+      "range": "768.1 - 786.375",
+      "confidence": 80
+    },
+    {
+      "zone": "Clustered",
+      "level": 810.775,
+      "confidence": 70
+    }
+  ],
+  "resistance_zones": [
+    {
+      "zone": "Dynamic EMA",
+      "levels": [
+        780.4581,
+        804.4249,
+        828.478
+      ],
+      "confidence": 75
+    },
+    {
+      "zone": "Volume",
+      "range": "786.375 - 804.65",
+      "confidence": 85
+    }
+  ],
+  "evidence_by_layer": {
+    "swings": {
+      "highs": [
+        877.75,
+        845.35,
+        782.3,
+        816.1,
+        811.75,
+        796.55,
+        769.55,
+        786.85
+      ],
+      "lows": [
+        817.0,
+        731.55,
+        794.7,
+        771.7,
+        749.6,
+        759.15,
+        742.7
+      ]
+    },
+    "clusters": [
+      810.775
+    ],
+    "volume_zones": [
+      {
+        "zone_low": 768.1,
+        "zone_high": 786.375,
+        "volume_weight": 649475113.0
+      },
+      {
+        "zone_low": 786.375,
+        "zone_high": 804.65,
+        "volume_weight": 570062117.0
+      },
+      {
+        "zone_low": 749.825,
+        "zone_high": 768.1,
+        "volume_weight": 552521513.0
+      }
+    ],
+    "dynamic_ema": [
+      780.4581,
+      804.4249,
+      828.478
+    ]
+  },
+  "summary": {
+    "stance": "bearish",
+    "confidence": 0.85,
+    "thesis": "The analysis indicates a bearish outlook for the asset in the medium to long term, characterized by sustained price weakness below key moving averages."
+  },
+  "indicator_explanation": {
+    "EMA_Analysis": "Current price is consistently trading below the EMA20 (762.37) and EMA50 (780.46), which indicates a prevailing downtrend. The EMA100 (804.42) further confirms resistance to price movement upwards.",
+    "RSI_Analysis": "The RSI stands at 42.93, suggesting a lack of bullish momentum, which often indicates that the price is not likely to recover soon."
+  },
+  "pattern_explanation": {
+    "Price_Consolidation": "There is a noted consolidation phase between 740 and 760. This range does not show a clear breakout, but the lack of strong upward momentum could lead to a downward breakout, particularly if support levels are breached."
+  },
+  "sr_explanation": {
+    "Support_Levels": "Key support is found at 768.1-786.375 with an 80% confidence level, and at a higher level of 810.775 with 70% confidence. Breaking below the lower range could signal further price declines.",
+    "Resistance_Levels": "Resistance is observed at dynamic EMA levels (780.46, 804.42, and 828.48), along with a significant volume range from 786.375 to 804.65, which holds an 85% confidence interval."
+  },
+  "uncertainty_notes": {
+    "Volume_Trend": "The On-Balance Volume (OBV) currently at -605,048,874 reflects bearish pressure indicating that selling activity exceeds buying, which may further suppress price.",
+    "ATR_Value": "The Average True Range (ATR) at 14.975 suggests moderate volatility, meaning price can move significantly, though how it moves remains uncertain and heavily dependent on market sentiment.",
+    "Momentum_Indicators": "The MACD value of -8.4285 indicates a stronger sell momentum, but divergences could emerge if the price unexpectedly rises, altering the current analysis."
+  },
+  "monitoring_checklist": [
+    "Watch for any price breaches below the support zone at 740-760, which could confirm a bearish breakout.",
+    "Observe any changes in volume patterns that signal a potential reversal or continued selling pressure.",
+    "Keep an eye on the RSI; if it drops below 30, it may indicate oversold conditions that could be part of a larger market correction."
+  ],
+  "_task_results": {
+    "market_data_task": {
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\HDFCBANK.NS_bundle_20260604T160710Z.json",
+      "daily_rows": 63,
+      "weekly_rows": 53,
+      "actions_count": 33,
+      "validation": {
+        "success": true,
+        "rows": 63,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "success": true,
+      "trend": {
+        "sma": {
+          "sma20": 761.2275,
+          "sma50": 773.584,
+          "sma100": null,
+          "sma200": null
+        },
+        "ema": {
+          "ema20": 762.3714,
+          "ema50": 780.4581,
+          "ema100": 804.4249,
+          "ema200": 828.478
+        }
+      },
+      "momentum": {
+        "rsi14": 42.9255,
+        "macd": -8.4285,
+        "macd_signal": -8.026,
+        "macd_histogram": -0.4025
+      },
+      "volatility": {
+        "atr14": 14.975,
+        "bb_basis20": 761.2275,
+        "bb_upper20": 785.1773,
+        "bb_lower20": 737.2778
+      },
+      "volume": {
+        "obv": -605048874.0
+      }
+    },
+    "pattern_detection_task": {
+      "candlestick_patterns": [],
+      "chart_patterns": [],
+      "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260604T160733Z.png",
+      "visual_review": {
+        "visual_summary": "The chart shows a general downtrend with the price consistently below the EMA20, EMA50, and EMA200, indicating bearish momentum. The EMA lines are aligned in descending order (EMA20 below EMA50, EMA50 below EMA200), reinforcing the downtrend. Recently, the price appears to be consolidating in a narrow range around 740-760, with volume showing no significant spikes. There is no clear breakout signal yet, but the consolidation near the lower end of the trend suggests potential for a breakout either way.",
+        "confidence": 0.85,
+        "advisory_only": true,
+        "image_analysis_status": "completed",
+        "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260604T160733Z.png",
+        "model": "gpt-4.1-mini",
+        "image_size": {
+          "width": 1820,
+          "height": 1040
+        },
+        "reviewed_image_size": {
+          "width": 1200,
+          "height": 686
+        }
+      }
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        {
+          "zone": "Clustered + Volume",
+          "range": "768.1 - 786.375",
+          "confidence": 80
+        },
+        {
+          "zone": "Clustered",
+          "level": 810.775,
+          "confidence": 70
+        }
+      ],
+      "resistance_zones": [
+        {
+          "zone": "Dynamic EMA",
+          "levels": [
+            780.4581,
+            804.4249,
+            828.478
+          ],
+          "confidence": 75
+        },
+        {
+          "zone": "Volume",
+          "range": "786.375 - 804.65",
+          "confidence": 85
+        }
+      ],
+      "evidence_by_layer": {
+        "swings": {
+          "highs": [
+            877.75,
+            845.35,
+            782.3,
+            816.1,
+            811.75,
+            796.55,
+            769.55,
+            786.85
+          ],
+          "lows": [
+            817.0,
+            731.55,
+            794.7,
+            771.7,
+            749.6,
+            759.15,
+            742.7
+          ]
+        },
+        "clusters": [
+          810.775
+        ],
+        "volume_zones": [
+          {
+            "zone_low": 768.1,
+            "zone_high": 786.375,
+            "volume_weight": 649475113.0
+          },
+          {
+            "zone_low": 786.375,
+            "zone_high": 804.65,
+            "volume_weight": 570062117.0
+          },
+          {
+            "zone_low": 749.825,
+            "zone_high": 768.1,
+            "volume_weight": 552521513.0
+          }
+        ],
+        "dynamic_ema": [
+          780.4581,
+          804.4249,
+          828.478
+        ]
+      },
+      "confidence_scores": {
+        "swing_highs": 70,
+        "swing_lows": 70,
+        "clustered_levels": 70,
+        "volume_zones": 80,
+        "dynamic_ema": 75
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "bearish",
+      "confidence": 0.85,
+      "thesis": "The current analysis suggests a bearish sentiment in the medium/long term for the asset. The price is consistently below the EMA lines, indicating a sustained downtrend. The RSI suggests a lack of bullish momentum, and the recent volume trends do not support significant upward movement. There's consolidation around 740-760, but no decisive breakout is indicated, leaving the door open for downward continuation.",
+      "key_supporting_evidence": {
+        "trend": {
+          "sma": {
+            "sma20": 761.2275,
+            "sma50": 773.584
+          },
+          "ema": {
+            "ema20": 762.3714,
+            "ema50": 780.4581,
+            "ema100": 804.4249
+          }
+        },
+        "momentum_indicators": {
+          "rsi": 42.9255,
+          "macd": -8.4285
+        },
+        "volatility_and_volume": {
+          "atr14": 14.975,
+          "obv": -605048874
+        },
+        "support_resistance": {
+          "support_zones": [
+            {
+              "zone": "Clustered + Volume",
+              "range": "768.1 - 786.375",
+              "confidence": 80
+            },
+            {
+              "zone": "Clustered",
+              "level": 810.775,
+              "confidence": 70
+            }
+          ],
+          "resistance_zones": [
+            {
+              "zone": "Dynamic EMA",
+              "levels": [
+                780.4581,
+                804.4249,
+                828.478
+              ],
+              "confidence": 75
+            },
+            {
+              "zone": "Volume",
+              "range": "786.375 - 804.65",
+              "confidence": 85
+            }
+          ]
+        },
+        "visual_review": {
+          "summary": "Bearish momentum is clear from the price's position below key EMA levels and the overall downtrend. The price consolidation indicates potential for a downward breakout, especially if it falls below established support.",
+          "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260604T160733Z.png"
+        }
+      }
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "bearish",
+        "confidence": 0.85,
+        "thesis": "The analysis indicates a bearish outlook for the asset in the medium to long term, characterized by sustained price weakness below key moving averages."
+      },
+      "indicator_explanation": {
+        "EMA_Analysis": "Current price is consistently trading below the EMA20 (762.37) and EMA50 (780.46), which indicates a prevailing downtrend. The EMA100 (804.42) further confirms resistance to price movement upwards.",
+        "RSI_Analysis": "The RSI stands at 42.93, suggesting a lack of bullish momentum, which often indicates that the price is not likely to recover soon."
+      },
+      "pattern_explanation": {
+        "Price_Consolidation": "There is a noted consolidation phase between 740 and 760. This range does not show a clear breakout, but the lack of strong upward momentum could lead to a downward breakout, particularly if support levels are breached."
+      },
+      "sr_explanation": {
+        "Support_Levels": "Key support is found at 768.1-786.375 with an 80% confidence level, and at a higher level of 810.775 with 70% confidence. Breaking below the lower range could signal further price declines.",
+        "Resistance_Levels": "Resistance is observed at dynamic EMA levels (780.46, 804.42, and 828.48), along with a significant volume range from 786.375 to 804.65, which holds an 85% confidence interval."
+      },
+      "uncertainty_notes": {
+        "Volume_Trend": "The On-Balance Volume (OBV) currently at -605,048,874 reflects bearish pressure indicating that selling activity exceeds buying, which may further suppress price.",
+        "ATR_Value": "The Average True Range (ATR) at 14.975 suggests moderate volatility, meaning price can move significantly, though how it moves remains uncertain and heavily dependent on market sentiment.",
+        "Momentum_Indicators": "The MACD value of -8.4285 indicates a stronger sell momentum, but divergences could emerge if the price unexpectedly rises, altering the current analysis."
+      },
+      "monitoring_checklist": [
+        "Watch for any price breaches below the support zone at 740-760, which could confirm a bearish breakout.",
+        "Observe any changes in volume patterns that signal a potential reversal or continued selling pressure.",
+        "Keep an eye on the RSI; if it drops below 30, it may indicate oversold conditions that could be part of a larger market correction."
+      ]
+    }
+  },
+  "chart_url": "/api/ta/artifacts/ta_20260604T160659Z_f12b3b/HDFCBANK.NS_20260604T160733Z.png",
+  "_artifact_urls": [
+    "/api/ta/artifacts/ta_20260604T160659Z_f12b3b/HDFCBANK.NS_20260604T160733Z.png"
+  ],
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 780.4581
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 761.2275
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 42.9255
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": -8.4285
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 14.975
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": -605048874.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 761.2275
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

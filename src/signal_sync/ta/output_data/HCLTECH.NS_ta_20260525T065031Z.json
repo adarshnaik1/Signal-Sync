@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "stance": "Bearish",
+    "confidence": 0.78,
+    "thesis": "Current technical indicators suggest a bearish outlook for the medium to long term, with indicators showing a downtrend in momentum and the presence of a double top pattern."
+  },
+  "indicator_explanation": {
+    "sma": {
+      "sma20": 1175.265,
+      "sma50": 1277.9901,
+      "interpretation": "The price is currently below both the 20-day and 50-day Simple Moving Averages, indicating a potential downtrend."
+    },
+    "ema": {
+      "ema20": 1191.0064,
+      "ema50": 1250.6023,
+      "interpretation": "Similar to SMAs, the price below Exponential Moving Averages suggests downward momentum."
+    },
+    "rsi": {
+      "rsi14": 42.0022,
+      "interpretation": "The RSI is approaching oversold conditions, which can indicate a potential price reversal, but it aligns currently with the bearish trend."
+    },
+    "macd": {
+      "macd": -35.2424,
+      "macd_signal": -41.832,
+      "interpretation": "Both MACD and its signal line are negative, confirming ongoing bearish momentum."
+    }
+  },
+  "pattern_explanation": {
+    "double_top": {
+      "description": "The formation of a double top pattern often signals a trend reversal or a price retracement, reinforcing the bearish outlook as it indicates that the asset may struggle to move above previous highs."
+    }
+  },
+  "sr_explanation": {
+    "support_zones": [
+      {
+        "zone": "1163.1727 to 1202.3454",
+        "confidence": 0.75
+      }
+    ],
+    "resistance_zones": [
+      {
+        "zone": "1359.0361 to 1363.0054",
+        "confidence": 0.85
+      }
+    ],
+    "interpretation": "The support zone suggests where the price could potentially find buying interest, while the resistance zone indicates where selling pressure might increase."
+  },
+  "uncertainty_notes": {
+    "factors_to_consider": "Despite the bearish outlook, market conditions can change rapidly, especially if external economic factors or news events influence investor sentiment. Negative MACD values support the current trend, but potential for a reversal exists if the RSI indicates oversold conditions lead to significant buying pressure."
+  },
+  "monitoring_checklist": {
+    "watch_for": [
+      "Price action around the support zone (1163.1727 to 1202.3454) for signs of sustained or weakened selling.",
+      "Breakout above key resistance levels (1359.0361 to 1363.0054) that could invalidate bearish predictions.",
+      "Changes in RSI indicating potential reversal if it breaks above 50.",
+      "Any shifts in volume trends, especially if the On-Balance Volume (OBV) moves toward positive territory."
+    ]
+  }
+}

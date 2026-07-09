@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "generated_at": "2023-10-25T12:00:00Z",
+    "pipeline_version": "1.2.0",
+    "sources": [
+      {
+        "name": "Yahoo Finance",
+        "type": "financial",
+        "url": "https://finance.yahoo.com/quote/ADANIPORTS.NS/"
+      },
+      {
+        "name": "Wikipedia",
+        "type": "encyclopedia",
+        "url": "https://en.wikipedia.org/wiki/Adani_Ports_%26_SEZ"
+      },
+      {
+        "name": "Adani Ports Official Website",
+        "type": "official",
+        "url": "https://www.adaniports.com/"
+      },
+      {
+        "name": "Screener",
+        "type": "financial analysis",
+        "url": "https://www.screener.in/company/ADANIPORTS/consolidated/"
+      },
+      {
+        "name": "Reuters",
+        "type": "news",
+        "url": "https://www.reuters.com/markets/companies/APSE.NS/"
+      },
+      {
+        "name": "Revelio Labs",
+        "type": "labor data",
+        "url": "https://www.reveliolabs.com/companies/adani-ports-sez/employees/"
+      }
+    ]
+  },
+  "company": {
+    "name": "Adani Ports and Special Economic Zone Limited",
+    "ticker": "ADANIPORTS.NS",
+    "sector": "Industrials",
+    "profile_summary": "Adani Ports and Special Economic Zone Limited (APSEZ) is the largest commercial port operator in India, managing a portfolio of facilities across the country's coastline. The company plays a crucial role in logistics and supply chain management.",
+    "headquarters": "Adani Corporate House, Shantigram, Near Vaishno Devi Circle, Ahmedabad - 382421, Gujarat, India",
+    "founded_year": 1993,
+    "employees": 10423,
+    "products_services": [
+      "Port and terminal operations",
+      "Cargo handling for bulk, break-bulk, liquid, LPG, LNG, and crude cargo",
+      "Logistics services",
+      "Special Economic Zones (SEZ) management"
+    ],
+    "subsidiaries": [
+      "Mundra Port",
+      "Dahej Port",
+      "Hazira Port",
+      "Kandla Port",
+      "Others in various regions including Israel"
+    ],
+    "market_presence": "APSEZ is present across India, with operations extending to various other countries including Israel. It holds approximately one-fourth of India's cargo movement."
+  },
+  "scores": {
+    "trustworthiness_score": 70.0,
+    "financial_integrity_score": 65.0,
+    "management_risk_score": 85.0,
+    "market_manipulation_risk_score": 65.0
+  },
+  "findings": {
+    "overview_findings": [
+      "Adani Ports is the largest private port operator in India, handling a diverse range of cargo types.",
+      "The company has a significant presence across strategic locations and is involved in various logistics and supply chain activities.",
+      "As of December 2025, the company employs approximately 10,423 personnel.",
+      "APSEZ has recorded substantial growth, with a 10.4% increase in profit year-over-year and a revenue increase of 26%.",
+      "It is also noted for its expansive operations in Special Economic Zones (SEZ) throughout India."
+    ],
+    "management_findings": [
+      "The executive leadership involves individuals who are closely associated with ongoing legal and regulatory investigations in the U.S.",
+      "Significant allegations of fraud against the Adani Group may affect the credibility of the management team.",
+      "Public perception and reputation are critically impacted due to multiple controversies and legal issues involving the Adani Group."
+    ],
+    "financial_irregularities": [
+      "Revenue patterns indicate significant growth, marked by a 26% increase in revenue year-over-year.",
+      "Earnings quality is questioned due to aggressive accounting practices and notable revenue spikes.",
+      "Cash flow discrepancies were identified, particularly where reported earnings do not align with actual cash flows.",
+      "Debt levels are concerning, with a debt-to-equity ratio standing at 55.7%, suggesting financial risk.",
+      "Audit opinions have raised some concerns regarding the independence of auditors and any qualified statements are sought after.",
+      "Related party transactions are being closely scrutinized, especially given the company's intricate structure."
+    ],
+    "scam_signals": [
+      "High volatility (96.11) in the stock price over the past month.",
+      "Average trading volume spike (2.45x the median volume, peaking at 7,476,052) noticed without clear market catalysts.",
+      "Recent stake sales by promoters may indicate insider activity and potential price pressure.",
+      "Adani Group faced multiple allegations of manipulation in the past, though recent regulatory reviews have cleared them."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Ashwani Gupta",
+        "role": "Whole-Time Director & CEO",
+        "red_flags": [
+          "Involvement in controversies related to the Adani Group",
+          "Faces allegations of fraud as stated in various reports",
+          "Associated with a company under scrutiny for potential accounting fraud"
+        ],
+        "evidence_links": [
+          "https://www.adani.com/about-us/leadership/ashwani-gupta",
+          "https://www.youtube.com/watch?v=IV-xwKUeDus",
+          "https://en.wikipedia.org/wiki/Adani_Ports_%26_SEZ"
+        ]
+      },
+      {
+        "name": "Karan Adani",
+        "role": "Managing Director",
+        "red_flags": [
+          "Part of the Adani Group, which has faced serious allegations of stock manipulation and fraud",
+          "Involved with a company that is under investigation by U.S. authorities for alleged financial misconduct"
+        ],
+        "evidence_links": [
+          "https://www.adani.com/about-us/leadership/karan-adani",
+          "https://www.researchgate.net/publication/383217624_ADANI_SCAM",
+          "https://www.financialexpress.com/business/industry-ashwani-gupta-former-global-coo-of-nissan-appointed-ceo-of-adani-ports-and-special-economic-zone-3357624/"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}

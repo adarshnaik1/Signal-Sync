@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "stance": "neutral",
+    "confidence": 0.65,
+    "thesis": "The current market shows mixed signals with a general lack of strong directional momentum. The price is trading within a channel pattern, suggesting consolidation. The absence of significant bullish or bearish candlestick patterns, alongside an RSI near neutral and a negative MACD histogram, indicates the market may remain range-bound in the medium to long term."
+  },
+  "indicator_explanation": {
+    "sma": {
+      "20-day": "The 20-day simple moving average (SMA) is 13159.65. This shows the short-term trend is relatively flat.",
+      "50-day": "The 50-day SMA at 13141.0 further confirms a lack of significant upward or downward momentum.",
+      "100-day": "At 13980.43, the 100-day SMA indicates a longer-term bearish pressure as it is higher than current prices.",
+      "200-day": "The 200-day SMA at 14899.35 also reinforces the long-term outlook remains weak."
+    },
+    "ema": {
+      "20-day": "The 20-day exponential moving average (EMA) is slightly higher at 13163.2084, suggesting a very recent short-term bullish tendency.",
+      "50-day": "The 50-day EMA of 13361.0854 and the 100-day EMA at 13816.199 mostly align in indicating a downward impulse."
+    },
+    "momentum_indicators": {
+      "rsi14": "The 14-day Relative Strength Index (RSI) is at 49.0988, which is close to the neutral level, showing no immediate strong buying or selling pressure.",
+      "macd": "The MACD line at -51.2836 and a negative histogram indicate weakening momentum, with a possible bearish bias."
+    },
+    "volatility_measures": {
+      "atr14": "The Average True Range (ATR) of 272.2857 indicates moderate volatility, suggesting potential price swings.",
+      "bollinger_bands": {
+        "basis": "The Bollinger Bands basis is at 13159.65, while the upper and lower bands are at 13555.6214 and 12763.6786 respectively, indicating a narrower range for price movement."
+      }
+    },
+    "volume": "The On-Balance Volume (OBV) at 9607534.0 indicates cumulative buying and selling pressure, but does not reflect significant changes currently."
+  },
+  "pattern_explanation": {
+    "chart_pattern": "The price is currently moving within a channel pattern, which suggests a period of consolidation without strong trends in either direction."
+  },
+  "sr_explanation": {
+    "support_zones": [
+      "Strong support is noted between 12260.9531 and 12525.745, with an 80% confidence level.",
+      "The next support zone ranges from 12525.745 to 12790.537, with a 60% confidence, indicating medium-strength support.",
+      "Continuing support exists from 12790.537 to 13055.3289, with a 70% confidence level indicating a plausible hold."
+    ],
+    "resistance_zones": [
+      "The primary resistance is established between 13867.0 and 14046.7194, showing a 70% confidence level.",
+      "A secondary resistance zone lies between 14046.7194 and 14384.0, with a 60% confidence score, suggesting more significant selling interest in that area."
+    ]
+  },
+  "uncertainty_notes": {
+    "range_bound": "The current market shows no clear trend and may remain range-bound amid mixed technical signals.",
+    "invalidation_points": "A clear break below 12260.9531 or above 14046.7194 would invalidate the current thesis and may lead to stronger directional moves."
+  },
+  "monitoring_checklist": {
+    "next_steps": [
+      "Watch for price action at the upper and lower bounds of the channel pattern.",
+      "Keep an eye on the RSI for potential divergence or crossover events.",
+      "Monitor MACD for any shifts indicating a change in momentum.",
+      "Track volume changes as it can provide clues about the sustainability of any moves out of the current channel."
+    ]
+  },
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious."
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital."
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": "The 14-day Relative Strength Index (RSI) is at 49.0988, which is close to the neutral level, showing no immediate strong buying or selling pressure."
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": "The MACD line at -51.2836 and a negative histogram indicate weakening momentum, with a possible bearish bias."
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": "The Average True Range (ATR) of 272.2857 indicates moderate volatility, suggesting potential price swings."
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV."
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

@@ -1,0 +1,582 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\INFY.NS_bundle_20260604T152817Z.json",
+  "daily_rows": 63,
+  "weekly_rows": 53,
+  "actions_count": 69,
+  "validation": {
+    "success": true,
+    "rows": 63,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 1171.825,
+      "sma50": 1220.058,
+      "sma100": null,
+      "sma200": null
+    },
+    "ema": {
+      "ema20": 1189.206,
+      "ema50": 1211.0095,
+      "ema100": 1241.3545,
+      "ema200": 1267.8861
+    }
+  },
+  "momentum": {
+    "rsi14": 63.935,
+    "macd": 1.6192,
+    "macd_signal": -9.1312,
+    "macd_histogram": 10.7504
+  },
+  "volatility": {
+    "atr14": 33.5429,
+    "bb_basis20": 1171.825,
+    "bb_upper20": 1249.7179,
+    "bb_lower20": 1093.9321
+  },
+  "volume": {
+    "obv": 46396094.0
+  },
+  "support_zones": [
+    {
+      "zone": 1157.8,
+      "evidence": [
+        "Swing Low",
+        "Volume Zone"
+      ],
+      "confidence_score": 0.75
+    },
+    {
+      "zone": 1196.9,
+      "evidence": [
+        "Volume Zone",
+        "EMA50"
+      ],
+      "confidence_score": 0.7
+    }
+  ],
+  "resistance_zones": [
+    {
+      "zone": 1267.8861,
+      "evidence": [
+        "EMA200",
+        "Swing High"
+      ],
+      "confidence_score": 0.85
+    },
+    {
+      "zone": 1319.2,
+      "evidence": [
+        "Swing High",
+        "Cluster Level"
+      ],
+      "confidence_score": 0.8
+    }
+  ],
+  "evidence_by_layer": {
+    "swings": [
+      1267.1,
+      1279.1,
+      1346.2,
+      1319.2,
+      1181.8,
+      1179.2,
+      1196.9,
+      1270.8,
+      1220.8,
+      1250.6,
+      1276.8,
+      1152.1,
+      1162.7,
+      1095.0,
+      1159.9
+    ],
+    "clusters": [
+      1223.88
+    ],
+    "volume_zones": [
+      {
+        "zone_low": 1157.8,
+        "zone_high": 1189.2,
+        "volume_weight": 200921891.0
+      },
+      {
+        "zone_low": 1252.0,
+        "zone_high": 1283.4,
+        "volume_weight": 179708762.0
+      }
+    ],
+    "dynamic_levels": [
+      1211.0095,
+      1241.3545,
+      1267.8861
+    ]
+  },
+  "summary": {
+    "stance": "bullish",
+    "confidence": 0.75,
+    "thesis": "The market is trending upwards with increasing momentum indicators and a favorable configuration of support and resistance zones. The current price is resting near strong support levels, and despite slight volatility fluctuations, overall positive momentum suggests potential upward movement."
+  },
+  "indicator_explanation": {
+    "sma": {
+      "sma20": "1171.825",
+      "sma50": "1220.058",
+      "explanation": "The short-term simple moving average (SMA) at 1171.825 is below the longer-term SMA at 1220.058, indicating a bullish trend as price remains above these averages."
+    },
+    "ema": {
+      "ema20": "1189.206",
+      "ema50": "1211.0095",
+      "explanation": "The exponential moving averages (EMAs) further reinforce this bullish stance, with the EMA20 at 1189.206 suggesting near-term strength over the EMA50 at 1211.0095."
+    },
+    "momentum_indicators": {
+      "rsi14": 63.935,
+      "macd": {
+        "value": 1.6192,
+        "signal": -9.1312,
+        "histogram": 10.7504,
+        "explanation": "The RSI at 63.935 indicates that the asset is approaching overbought conditions but remains within a bullish range. Additionally, the MACD shows a strong positive histogram, suggesting continued upward momentum."
+      }
+    },
+    "volatility_measures": {
+      "atr14": 33.5429,
+      "bollinger_bands": {
+        "upper": 1249.7179,
+        "lower": 1093.9321,
+        "explanation": "The Bollinger Bands indicate stability, with the current price well within the bands and above the moving average, supporting a bullish view."
+      }
+    },
+    "volume_analysis": {
+      "on_balance_volume": 46396094.0,
+      "explanation": "High on-balance volume indicates strong accumulation, supporting bullish sentiment as buying pressure outweighs selling."
+    }
+  },
+  "pattern_explanation": {
+    "general_patterns": "The market is currently exhibiting a bullish trend pattern, supported by the configurations mentioned above, including the presence of significant volume at the identified support levels."
+  },
+  "sr_explanation": {
+    "support_levels": {
+      "level_1": {
+        "zone": 1157.8,
+        "confidence_score": 0.75,
+        "evidence": [
+          "Swing Low",
+          "Volume Zone"
+        ]
+      },
+      "level_2": {
+        "zone": 1196.9,
+        "confidence_score": 0.7,
+        "evidence": [
+          "Volume Zone",
+          "EMA50"
+        ]
+      }
+    },
+    "resistance_levels": {
+      "level_1": {
+        "zone": 1267.8861,
+        "confidence_score": 0.85,
+        "evidence": [
+          "EMA200",
+          "Swing High"
+        ]
+      },
+      "level_2": {
+        "zone": 1319.2,
+        "confidence_score": 0.8,
+        "evidence": [
+          "Swing High",
+          "Cluster Level"
+        ]
+      }
+    },
+    "explanation": "Support is notably strong at 1157.8 and 1196.9, with the former being a swing low and the latter aligning with EMA50. Resistance is noted at 1267.8861 (EMA200 & swing high) and 1319.2, emphasizing key levels to monitor."
+  },
+  "uncertainty_notes": [
+    "While the RSI is nearing overbought levels, which could suggest a pullback is possible if it crosses above 70, current momentum indicates that upward price movement could still persist.",
+    "The ATR at 33.5429 shows that volatility is present, implying that price may experience notable swings; hence, traders should prepare for potential fluctuations around significant levels.",
+    "The proximity of the current price to support at 1157.8 indicates that a breach below this level could invalidate the bullish thesis, prompting reassessment of the stance."
+  ],
+  "monitoring_checklist": [
+    "Watch for the price to hold above the strong support level at 1157.8; failure to do so could suggest a trend reversal.",
+    "Monitor the RSI closely, particularly for movements above 70, which might indicate a potential overbought scenario.",
+    "Keep an eye on volume trends; an increase in volume alongside price rises would confirm the uptrend, while declining volume could signal weakness."
+  ],
+  "visual_review": {
+    "success": false,
+    "visual_summary": "Vision review was not returned by the pattern detection step.",
+    "confidence": 0.0,
+    "advisory_only": true,
+    "image_analysis_status": "missing"
+  },
+  "_task_results": {
+    "market_data_task": {
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\INFY.NS_bundle_20260604T152817Z.json",
+      "daily_rows": 63,
+      "weekly_rows": 53,
+      "actions_count": 69,
+      "validation": {
+        "success": true,
+        "rows": 63,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "trend": {
+        "sma": {
+          "sma20": 1171.825,
+          "sma50": 1220.058,
+          "sma100": null,
+          "sma200": null
+        },
+        "ema": {
+          "ema20": 1189.206,
+          "ema50": 1211.0095,
+          "ema100": 1241.3545,
+          "ema200": 1267.8861
+        }
+      },
+      "momentum": {
+        "rsi14": 63.935,
+        "macd": 1.6192,
+        "macd_signal": -9.1312,
+        "macd_histogram": 10.7504
+      },
+      "volatility": {
+        "atr14": 33.5429,
+        "bb_basis20": 1171.825,
+        "bb_upper20": 1249.7179,
+        "bb_lower20": 1093.9321
+      },
+      "volume": {
+        "obv": 46396094.0
+      }
+    },
+    "pattern_detection_task": {
+      "raw": "{\n  \"candlestick_patterns\": [],\n  \"chart_patterns\": [],\n  \"chart_path\": \"C:\\\\Users\\\\ADARSH NAIK\\\\Desktop\\\\signal_sync\\\\src\\\\signal_sync\\\\ta\\\\charts\\\\INFY.NS_20260604T152835Z.png\",\n  \"visual_review\": {\n    \"success\": true,\n    \"visual_summary\": \"Vision review unavailable (Error code: 400 - {'error': {'message': 'The requested model \\'standard\\' does not exist.', 'type': 'invalid_request_error', 'param': 'model', 'code': 'model_not_found'}}). Continue with deterministic results.\",\n    \"confidence\": 0.0,\n    \"advisory_only\": true,\n    \"image_analysis_status\": \"unavailable\",\n    \"error\": \"Error code: 400 - {'error': {'message': 'The requested model \\'standard\\' does not exist.', 'type': 'invalid_request_error', 'param': 'model', 'code': 'model_not_found'}}\"\n  }\n}"
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        {
+          "zone": 1157.8,
+          "evidence": [
+            "Swing Low",
+            "Volume Zone"
+          ],
+          "confidence_score": 0.75
+        },
+        {
+          "zone": 1196.9,
+          "evidence": [
+            "Volume Zone",
+            "EMA50"
+          ],
+          "confidence_score": 0.7
+        }
+      ],
+      "resistance_zones": [
+        {
+          "zone": 1267.8861,
+          "evidence": [
+            "EMA200",
+            "Swing High"
+          ],
+          "confidence_score": 0.85
+        },
+        {
+          "zone": 1319.2,
+          "evidence": [
+            "Swing High",
+            "Cluster Level"
+          ],
+          "confidence_score": 0.8
+        }
+      ],
+      "evidence_by_layer": {
+        "swings": [
+          1267.1,
+          1279.1,
+          1346.2,
+          1319.2,
+          1181.8,
+          1179.2,
+          1196.9,
+          1270.8,
+          1220.8,
+          1250.6,
+          1276.8,
+          1152.1,
+          1162.7,
+          1095.0,
+          1159.9
+        ],
+        "clusters": [
+          1223.88
+        ],
+        "volume_zones": [
+          {
+            "zone_low": 1157.8,
+            "zone_high": 1189.2,
+            "volume_weight": 200921891.0
+          },
+          {
+            "zone_low": 1252.0,
+            "zone_high": 1283.4,
+            "volume_weight": 179708762.0
+          }
+        ],
+        "dynamic_levels": [
+          1211.0095,
+          1241.3545,
+          1267.8861
+        ]
+      },
+      "confidence_scores": {
+        "high": 0.85,
+        "medium": 0.7,
+        "low": 0.5
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "bullish",
+      "confidence": 0.75,
+      "thesis": "The market is trending upwards with increasing momentum indicators and a favorable configuration of support and resistance zones. The current price is resting near strong support levels, and despite slight volatility fluctuations, overall positive momentum suggests potential upward movement.",
+      "key_supporting_evidence": {
+        "trend_analysis": {
+          "sma": {
+            "sma20": 1171.825,
+            "sma50": 1220.058
+          },
+          "ema": {
+            "ema20": 1189.206,
+            "ema50": 1211.0095
+          }
+        },
+        "momentum_indicators": {
+          "rsi14": 63.935,
+          "macd": {
+            "value": 1.6192,
+            "signal": -9.1312,
+            "histogram": 10.7504
+          }
+        },
+        "volatility_measures": {
+          "atr14": 33.5429,
+          "bollinger_bands": {
+            "upper": 1249.7179,
+            "lower": 1093.9321
+          }
+        },
+        "volume_analysis": {
+          "on_balance_volume": 46396094.0
+        },
+        "support_zones": [
+          {
+            "zone": 1157.8,
+            "evidence": [
+              "Swing Low",
+              "Volume Zone"
+            ],
+            "confidence_score": 0.75
+          },
+          {
+            "zone": 1196.9,
+            "evidence": [
+              "Volume Zone",
+              "EMA50"
+            ],
+            "confidence_score": 0.7
+          }
+        ],
+        "resistance_zones": [
+          {
+            "zone": 1267.8861,
+            "evidence": [
+              "EMA200",
+              "Swing High"
+            ],
+            "confidence_score": 0.85
+          },
+          {
+            "zone": 1319.2,
+            "evidence": [
+              "Swing High",
+              "Cluster Level"
+            ],
+            "confidence_score": 0.8
+          }
+        ]
+      }
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "bullish",
+        "confidence": 0.75,
+        "thesis": "The market is trending upwards with increasing momentum indicators and a favorable configuration of support and resistance zones. The current price is resting near strong support levels, and despite slight volatility fluctuations, overall positive momentum suggests potential upward movement."
+      },
+      "indicator_explanation": {
+        "sma": {
+          "sma20": "1171.825",
+          "sma50": "1220.058",
+          "explanation": "The short-term simple moving average (SMA) at 1171.825 is below the longer-term SMA at 1220.058, indicating a bullish trend as price remains above these averages."
+        },
+        "ema": {
+          "ema20": "1189.206",
+          "ema50": "1211.0095",
+          "explanation": "The exponential moving averages (EMAs) further reinforce this bullish stance, with the EMA20 at 1189.206 suggesting near-term strength over the EMA50 at 1211.0095."
+        },
+        "momentum_indicators": {
+          "rsi14": 63.935,
+          "macd": {
+            "value": 1.6192,
+            "signal": -9.1312,
+            "histogram": 10.7504,
+            "explanation": "The RSI at 63.935 indicates that the asset is approaching overbought conditions but remains within a bullish range. Additionally, the MACD shows a strong positive histogram, suggesting continued upward momentum."
+          }
+        },
+        "volatility_measures": {
+          "atr14": 33.5429,
+          "bollinger_bands": {
+            "upper": 1249.7179,
+            "lower": 1093.9321,
+            "explanation": "The Bollinger Bands indicate stability, with the current price well within the bands and above the moving average, supporting a bullish view."
+          }
+        },
+        "volume_analysis": {
+          "on_balance_volume": 46396094.0,
+          "explanation": "High on-balance volume indicates strong accumulation, supporting bullish sentiment as buying pressure outweighs selling."
+        }
+      },
+      "pattern_explanation": {
+        "general_patterns": "The market is currently exhibiting a bullish trend pattern, supported by the configurations mentioned above, including the presence of significant volume at the identified support levels."
+      },
+      "sr_explanation": {
+        "support_levels": {
+          "level_1": {
+            "zone": 1157.8,
+            "confidence_score": 0.75,
+            "evidence": [
+              "Swing Low",
+              "Volume Zone"
+            ]
+          },
+          "level_2": {
+            "zone": 1196.9,
+            "confidence_score": 0.7,
+            "evidence": [
+              "Volume Zone",
+              "EMA50"
+            ]
+          }
+        },
+        "resistance_levels": {
+          "level_1": {
+            "zone": 1267.8861,
+            "confidence_score": 0.85,
+            "evidence": [
+              "EMA200",
+              "Swing High"
+            ]
+          },
+          "level_2": {
+            "zone": 1319.2,
+            "confidence_score": 0.8,
+            "evidence": [
+              "Swing High",
+              "Cluster Level"
+            ]
+          }
+        },
+        "explanation": "Support is notably strong at 1157.8 and 1196.9, with the former being a swing low and the latter aligning with EMA50. Resistance is noted at 1267.8861 (EMA200 & swing high) and 1319.2, emphasizing key levels to monitor."
+      },
+      "uncertainty_notes": [
+        "While the RSI is nearing overbought levels, which could suggest a pullback is possible if it crosses above 70, current momentum indicates that upward price movement could still persist.",
+        "The ATR at 33.5429 shows that volatility is present, implying that price may experience notable swings; hence, traders should prepare for potential fluctuations around significant levels.",
+        "The proximity of the current price to support at 1157.8 indicates that a breach below this level could invalidate the bullish thesis, prompting reassessment of the stance."
+      ],
+      "monitoring_checklist": [
+        "Watch for the price to hold above the strong support level at 1157.8; failure to do so could suggest a trend reversal.",
+        "Monitor the RSI closely, particularly for movements above 70, which might indicate a potential overbought scenario.",
+        "Keep an eye on volume trends; an increase in volume alongside price rises would confirm the uptrend, while declining volume could signal weakness."
+      ]
+    }
+  },
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 1211.0095
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 1171.825
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 63.935
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": 1.6192
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 33.5429
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": 46396094.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 1171.825
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "ticker": "ITC.NS",
+  "period": "1d",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 1,
+  "ohlcv": [
+    {
+      "Date": "2026-06-04",
+      "Close": 279.70001220703125,
+      "High": 280.25,
+      "Low": 275.04998779296875,
+      "Open": 277.0,
+      "Volume": 9721660
+    }
+  ]
+}

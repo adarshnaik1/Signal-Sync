@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "generated_at": "2023-10-05T10:30:00Z",
+    "pipeline_version": "1.0.0",
+    "sources": [
+      {
+        "name": "Yahoo Finance",
+        "type": "Financial News",
+        "url": "https://finance.yahoo.com/quote/ITC.NS/"
+      },
+      {
+        "name": "Wikipedia",
+        "type": "Encyclopedia",
+        "url": "https://en.wikipedia.org/wiki/ITC_Limited"
+      },
+      {
+        "name": "GlobalData",
+        "type": "Market Intelligence",
+        "url": "https://www.globaldata.com/company-profile/itc-ltd/"
+      },
+      {
+        "name": "ITC Official Website",
+        "type": "Company website",
+        "url": "https://itcportal.com/about-itc/our-profile.html"
+      },
+      {
+        "name": "Revelio Labs",
+        "type": "Employee Statistics",
+        "url": "https://www.reveliolabs.com/companies/itc/employees/"
+      },
+      {
+        "name": "Forbes",
+        "type": "Business Overview",
+        "url": "https://www.forbes.com/companies/itc/"
+      },
+      {
+        "name": "ITC Official Website",
+        "type": "Company website",
+        "url": "https://itcportal.com/"
+      },
+      {
+        "name": "Economic Times",
+        "type": "Financial News",
+        "url": "https://m.economictimes.com/"
+      },
+      {
+        "name": "LinkedIn",
+        "type": "Professional Networking",
+        "url": "https://linkedin.com/"
+      }
+    ]
+  },
+  "company": {
+    "name": "ITC Limited",
+    "ticker": "ITC.NS",
+    "sector": "Consumer Defensive",
+    "profile_summary": "ITC Limited is one of India's foremost private sector companies operating across diverse business segments, including fast-moving consumer goods (FMCG), hotels, paperboards, packaging, and agribusiness.",
+    "headquarters": "Kolkata, India",
+    "founded_year": 1910,
+    "employees": 50610,
+    "products_services": [
+      "Cigarettes",
+      "Food & Beverages",
+      "Paper & Packaging",
+      "Personal Care",
+      "Agri Products",
+      "Hotels"
+    ],
+    "subsidiaries": [
+      "ITC Infotech",
+      "ITC Paperboards & Specialty Papers",
+      "ITC Agri Business Division",
+      "ITC Foods Division",
+      "ITC InfraTech",
+      "ITC Global Holdings",
+      "Gold Flake Corporation",
+      "Wills Corporation"
+    ],
+    "market_presence": "ITC Limited has a prominent market presence in India and is actively expanding its FMCG and agribusiness sectors internationally."
+  },
+  "scores": {
+    "trustworthiness_score": 83.6,
+    "financial_integrity_score": 75.0,
+    "management_risk_score": 10.0,
+    "market_manipulation_risk_score": 45.0
+  },
+  "findings": {
+    "overview_findings": [
+      "ITC Limited operates in diverse business segments which include FMCG, hotels, paperboards, packaging, and agribusiness.",
+      "The company is the largest cigarette manufacturer in India, which significantly contributes to its revenue.",
+      "ITC has made significant strides in diversifying its product portfolio beyond cigarettes to include food, personal care, and other consumer products.",
+      "As of 2023, ITC Limited employed approximately 50,610 people.",
+      "ITC's strategy focuses on sustainability and innovation within its manufacturing processes and product offerings.",
+      "Recent news indicates that ITC has faced challenges due to increased excise duties on cigarettes, impacting profitability concerns.",
+      "ITC is actively investing in the expansion of its FMCG product lines."
+    ],
+    "management_findings": [
+      "The management team of ITC Limited is composed of experienced professionals with long tenures in the company.",
+      "Sanjiv Puri has been with ITC since 1986, progressively taking on more responsibility.",
+      "Supratim Dutta became CFO in July 2022 and has remained integral to the company's financial strategy.",
+      "Hemant Malik oversees ITC's Foods and Personal Care products divisions and was appointed to his current position in August 2023.",
+      "No significant red flags such as fraud allegations, regulatory actions, or controversial statements have been identified for the key executives."
+    ],
+    "financial_irregularities": [
+      "ITC Limited has shown revenue growth from \u20b9 59,745.56 crores in 2022 to \u20b9 70,251.28 crores in 2023.",
+      "The company's incurred expenses were \u20b9 48,011.35 crores for 2023.",
+      "There may be aggressive revenue recognition practices based on a significantly increased revenue without a corresponding increase in cash flow.",
+      "Audit reports indicated no major concerns, but there are notes suggesting increased scrutiny on revenue recognition."
+    ],
+    "scam_signals": [
+      "No significant volume anomalies were detected, but volume reached nearly double the average on certain trading days without clear news.",
+      "The price has decreased by 5.02% from its recent high, indicating potential concern among investors likely related to recent excise duty increases.",
+      "There were no signs of coordinated trading patterns or pump-and-dump behavior based on the historical data collected.",
+      "The recent news indicates growing challenges for ITC Limited related to their cigarette business and overall market positioning."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Sanjiv Puri",
+        "role": "Chairman & Managing Director",
+        "red_flags": [],
+        "evidence_links": [
+          "https://itcportal.com/about-itc/leadership/sanjiv-puri.html",
+          "https://en.wikipedia.org/wiki/Sanjiv_Puri"
+        ]
+      },
+      {
+        "name": "Supratim Dutta",
+        "role": "Chief Financial Officer",
+        "red_flags": [],
+        "evidence_links": [
+          "https://itcportal.com/about-itc/leadership/supratim-dutta.html",
+          "https://m.economictimes.com/industry/cons-products/itc-appoints-new-cfo-supratim-dutta-as-per-strategy-to-lower-age-of-top-deck/articleshow/77957712.cms"
+        ]
+      },
+      {
+        "name": "Hemant Malik",
+        "role": "Whole-time Director",
+        "red_flags": [],
+        "evidence_links": [
+          "https://itcportal.com/about-itc/leadership/hemant-malik.html",
+          "https://in.linkedin.com/in/hemantmalik"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}

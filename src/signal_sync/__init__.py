@@ -6,6 +6,7 @@ BGV (Background Verification) Module
 
 from signal_sync.crew import BGVCrew
 from signal_sync.main import run_bgv
+from signal_sync.ta.crew import TAAnalysisCrew
 
 __version__ = "0.1.0"
-__all__ = ["BGVCrew", "run_bgv"]
+__all__ = ["BGVCrew", "run_bgv", "TAAnalysisCrew"]

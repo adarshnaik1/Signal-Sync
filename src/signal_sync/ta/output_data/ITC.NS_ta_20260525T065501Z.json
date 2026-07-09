@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "stance": "Bearish",
+    "confidence": 0.7,
+    "thesis": "The sentiment in the current technical analysis indicates a bearish outlook for the medium to long term. While there are support zones identified, the prevailing indicators suggest downward momentum. This is particularly visible through metrics such as the RSI and MACD, which illustrate challenges in maintaining upward movement."
+  },
+  "indicator_explanation": {
+    "sma": {
+      "sma20": "The short-term simple moving average (SMA) is at 308.35, indicating that recent price action is under this average, which can be seen as a bearish signal.",
+      "sma50": "The 50-day SMA at 303.72 further supports the view that prices are trading below average over a slightly longer period.",
+      "sma100": "At 314.88, the 100-day SMA also resides above current price levels, indicating a bearish landscape.",
+      "sma200": "The long-term SMA is at 356.86, confirming that the long-term trend remains bearish."
+    },
+    "ema": {
+      "ema20": "The 20-day exponential moving average is at 306.60, further indicating short-term resistance as the price is below this level.",
+      "ema50": "At 308.83, the 50-day EMA further reinforces this sentiment of bearishness.",
+      "ema100": "Positioned at 321.74, the 100-day EMA continues to suggest bearish conditions.",
+      "ema200": "The longer-term EMA is at 346.43 and remains well above current prices."
+    },
+    "momentum_indicators": {
+      "rsi14": "The 14-period Relative Strength Index (RSI) is at 36.62, which is below 40, indicating that the market is moving towards a bearish condition.",
+      "macd": "The MACD value of -0.1679 suggests negative momentum.",
+      "macd_signal": "The MACD signal at 0.5018 is higher than the MACD, further indicating bearish pressure.",
+      "macd_histogram": "The negative MACD histogram at -0.6697 suggests ongoing bearish momentum."
+    },
+    "volatility_metrics": {
+      "atr14": "The Average True Range (ATR) at 4.93 reflects a moderate level of volatility.",
+      "bb_basis20": "The basis of the Bollinger Bands is at 308.35, aligning with short-term prices.",
+      "bb_upper20": "The upper band at 316.94 indicates potential resistance levels.",
+      "bb_lower20": "The lower band set at 299.76 suggests a possible bottom if prices decline."
+    },
+    "volume_analysis": {
+      "obv": "The On-Balance Volume (OBV) is at -983181214.0, indicating that there has been significantly higher selling volume than buying volume."
+    }
+  },
+  "pattern_explanation": {
+    "chart_patterns": "A channel pattern indicates that the price has been moving within defined upper and lower bounds, recently testing upper resistance levels."
+  },
+  "sr_explanation": {
+    "support_zones": {
+      "zone_low": 301.526,
+      "zone_high": 308.439,
+      "confidence_score": 0.75,
+      "explanation": "The support zones provide critical levels to watch. A break below 301.53 could signal further downside risk."
+    },
+    "resistance_zones": {
+      "zone_low": 308.8311,
+      "zone_high": 346.4256,
+      "confidence_score": 0.85,
+      "explanation": "Resistance levels at 308.83 indicate where upward price movements might face strong selling pressure."
+    }
+  },
+  "uncertainty_notes": {
+    "explanation": "While the current analysis reflects a bearish sentiment, external factors can influence market movement. Economic data releases or unexpected news can change market conditions and sentiment rapidly."
+  },
+  "monitoring_checklist": {
+    "1": "Watch for price action around the support zone of 301.53; a break below this could lead to further declines.",
+    "2": "Monitor resistance at 308.83; upward movements stalling here could reinforce the bearish outlook.",
+    "3": "Keep an eye on RSI trends; if it starts to approach 30, consider potential oversold conditions.",
+    "4": "Observe volume patterns; a shift to positive on-balance volume may indicate a change in sentiment.",
+    "5": "Pay attention to broader market news that could affect sentiment, such as economic indicators or geopolitical events."
+  }
+}

@@ -1,3 +1,11 @@
+"use client";
+
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+
+const BGV_API_BASE = process.env.NEXT_PUBLIC_BGV_API_BASE_URL || "";
+const TA_API_BASE = process.env.NEXT_PUBLIC_TA_API_BASE_URL || BGV_API_BASE;
+
 export default function StockDetails({ data }) {
   const {
     companyName,
@@ -46,6 +54,46 @@ export default function StockDetails({ data }) {
     { label: "52W Low", value: formatNumber(fiftyTwoWeekLow) },
   ];
 
+  const router = useRouter();
+  const [loadingAction, setLoadingAction] = useState(null);
+  const [error, setError] = useState(null);
+
+  const startAnalysis = async ({ label, apiBase, routePrefix, formFields }) => {
+    if (!symbol) return;
+
+    try {
+      setError(null);
+      setLoadingAction(label);
+      const form = new FormData();
+      Object.entries(formFields).forEach(([key, value]) => {
+        form.append(key, value ?? "");
+      });
+
+      const res = await fetch(`${apiBase}/api/${routePrefix}/start`, { method: "POST", body: form });
+      const text = await res.text();
+      if (!res.ok) {
+        throw new Error(text || `Failed to start ${label}`);
+      }
+
+      let json;
+      try {
+        json = JSON.parse(text);
+      } catch {
+        throw new Error(`Invalid API response: ${text.slice(0, 120)}`);
+      }
+
+      if (!json?.job_id) {
+        throw new Error(`Missing job id in ${label} response`);
+      }
+
+      router.push(`/${routePrefix}/${json.job_id}`);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setLoadingAction(null);
+    }
+  };
+
   return (
     <div className="mx-auto max-w-6xl rounded-3xl border border-slate-200 bg-zinc-100 p-6 shadow-lg shadow-slate-200/60 sm:p-8">
       <div className="flex flex-col gap-6 border-b border-slate-200 pb-6 lg:flex-row lg:items-end lg:justify-between">
@@ -61,6 +109,57 @@ export default function StockDetails({ data }) {
               </span>
             ) : null}
           </div>
+
+          <div className="mt-3">
+            <div className="mt-3 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() =>
+                  startAnalysis({
+                    label: "BGV analysis",
+                    apiBase: BGV_API_BASE,
+                    routePrefix: "bgv",
+                    formFields: {
+                      company_name: companyName || symbol,
+                      ticker: symbol,
+                      sector: sector || "",
+                    },
+                  })
+                }
+                className="inline-flex items-center rounded-md bg-amber-400 px-3 py-1.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={loadingAction !== null}
+              >
+                {loadingAction === "BGV analysis" ? "Starting..." : "Run BGV Analysis"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  startAnalysis({
+                    label: "TA analysis",
+                    apiBase: TA_API_BASE,
+                    routePrefix: "ta",
+                    formFields: {
+                      company_name: companyName || symbol,
+                      ticker: symbol,
+                      sector: sector || "",
+                      horizon: "medium-term",
+                    },
+                  })
+                }
+                className="inline-flex items-center rounded-md bg-slate-950 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={loadingAction !== null}
+              >
+                {loadingAction === "TA analysis" ? "Starting..." : "Run TA Analysis"}
+              </button>
+            </div>
+          </div>
+
+          {error ? (
+            <div className="mt-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </div>
+          ) : null}
 
           <div className="border-white border mt-2 text-sm text-black lg:w-80 rounded-2xl p-2  bg-amber-200/40 shadow-amber-300 shadow">
                 {sector ? <span>{sector}</span> : null}

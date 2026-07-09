@@ -1,0 +1,9 @@
+{
+  "ticker": "INFY.NS",
+  "period": "2y",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 497,
+  "ohlcv": [
+    {
+      

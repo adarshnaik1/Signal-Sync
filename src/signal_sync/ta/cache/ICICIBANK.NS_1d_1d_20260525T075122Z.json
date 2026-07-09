@@ -1,0 +1,17 @@
+{
+  "ticker": "ICICIBANK.NS",
+  "period": "1d",
+  "interval": "1d",
+  "auto_adjust": true,
+  "rows": 1,
+  "ohlcv": [
+    {
+      "Date": "2026-05-25",
+      "Close": 1281.0,
+      "High": 1284.300048828125,
+      "Low": 1270.9000244140625,
+      "Open": 1271.0,
+      "Volume": 8905256
+    }
+  ]
+}

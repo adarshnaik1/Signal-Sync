@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "generated_at": "2023-10-10T12:00:00Z",
+    "pipeline_version": "1.0",
+    "sources": [
+      {
+        "name": "Yahoo Finance",
+        "type": "Financial Data",
+        "url": "https://finance.yahoo.com/quote/ITC.NS/"
+      },
+      {
+        "name": "Wikipedia",
+        "type": "Encyclopedia",
+        "url": "https://en.wikipedia.org/wiki/ITC_Limited"
+      },
+      {
+        "name": "Reuters",
+        "type": "News",
+        "url": "https://www.reuters.com/markets/companies/ITC.NS/"
+      },
+      {
+        "name": "ITC Official Website",
+        "type": "Corporate Information",
+        "url": "https://itcportal.com/about-itc/our-profile.html"
+      },
+      {
+        "name": "GlobalData",
+        "type": "Corporate Profile",
+        "url": "https://www.globaldata.com/company-profile/itc-ltd/"
+      },
+      {
+        "name": "LinkedIn Profiles",
+        "type": "Professional Network",
+        "url": "https://in.linkedin.com/"
+      }
+    ]
+  },
+  "company": {
+    "name": "ITC Limited",
+    "ticker": "ITC.NS",
+    "sector": "Consumer Defensive",
+    "profile_summary": "ITC Limited is a leading Indian conglomerate engaged in multiple businesses such as Fast-Moving Consumer Goods (FMCG), hotels, packaging, paperboards, and agriculture.",
+    "headquarters": "Kolkata, India",
+    "founded_year": 1910,
+    "employees": 37500,
+    "products_services": [
+      "Cigarettes",
+      "Branded Packaged Foods",
+      "Personal Care Products",
+      "Education & Stationery Products",
+      "Incense Sticks and Safety Matches",
+      "Hotels",
+      "Paperboards and Packaging"
+    ],
+    "subsidiaries": [
+      "ITC Infotech",
+      "ITC Paperboards & Specialty Papers",
+      "ITC Agri Business Division",
+      "ITC Foods Division",
+      "ITC InfraTech",
+      "ITC Global Holdings",
+      "Gold Flake Corporation",
+      "Wills Corporation"
+    ],
+    "market_presence": "Significant presence in India with growing international markets, particularly in the FMCG segment."
+  },
+  "scores": {
+    "trustworthiness_score": 88.33,
+    "financial_integrity_score": 90.0,
+    "management_risk_score": 10.0,
+    "market_manipulation_risk_score": 70.0
+  },
+  "findings": {
+    "overview_findings": [
+      "ITC is the largest cigarette manufacturer in India.",
+      "The company has diversified into several segments beyond tobacco, including FMCG, hotels, and packaging.",
+      "ITC has achieved substantial growth in its FMCG division, competing with key players in the market.",
+      "Recent financial results indicate a Gross Revenue of \u20b973,465 crores with an EBITDA of \u20b924,025 crores.",
+      "The company is recognized for its commitment to sustainability and innovative marketing strategies."
+    ],
+    "management_findings": [
+      "Sanjiv Puri has been with ITC since 1986 and has held multiple leadership roles.",
+      "Supratim Dutta has been with ITC since 1990 and recently became the CFO as part of a management refresh.",
+      "No significant regulatory actions or controversies were found against both Sanjiv Puri and Supratim Dutta.",
+      "Both executives appear to have positive reputations with no significant legal issues reported."
+    ],
+    "financial_irregularities": [
+      "No significant anomalies found in revenue patterns; observed steady growth in key segments.",
+      "Cash flows are generally aligned with reported earnings; net operating cash flow is robust.",
+      "Debt levels remain manageable, with a low debt-to-equity ratio indicating financial stability.",
+      "Audit opinions are unqualified, indicating reliable oversight without significant concerns.",
+      "No significant related party transactions were detected that could pose a conflict of interest.",
+      "There are no off-balance sheet items that require disclosure.",
+      "No recent accounting policy changes noted that could affect interpretation of financials.",
+      "Earnings quality appears strong with consistent operational performance."
+    ],
+    "scam_signals": [
+      "Volume spike ratio above 2 indicates potential manipulation activity.",
+      "Price volatility corresponds with earnings anticipation, aligning with trading spikes.",
+      "Recent corporate announcements about director changes and performance previews may heighten speculation."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Sanjiv Puri",
+        "role": "Chairman & Managing Director",
+        "red_flags": [],
+        "evidence_links": [
+          "https://itcportal.com/about-itc/leadership/sanjiv-puri.html",
+          "https://en.wikipedia.org/wiki/Sanjiv_Puri"
+        ]
+      },
+      {
+        "name": "Supratim Dutta",
+        "role": "Chief Financial Officer",
+        "red_flags": [],
+        "evidence_links": [
+          "https://itcportal.com/about-itc/leadership/supratim-dutta.html",
+          "https://in.linkedin.com/in/supratim-dutta-b74a1776"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}
