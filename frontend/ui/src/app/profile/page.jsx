@@ -1,14 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../../lib/supabase/client";
 import Header from "../../../components/ui/Header";
 import BasicInfo from "../../../components/Profile/BasicInfo";
 import AssetsSection from "../../../components/Profile/AssetsSection";
+import FinancialAssetsSection from "../../../components/Profile/FinancialAssetsSection";
 import LiabilitiesSection from "../../../components/Profile/LiabilitiesSection";
 import PortfolioSection from "../../../components/Profile/PortfolioSection";
 import AnalysisHistory from "../../../components/Profile/AnalysisHistory";
+import InvestorRecommendation from "../../../components/Profile/InvestorRecommendation";
+
+const API_BASE = process.env.NEXT_PUBLIC_BGV_API_BASE_URL || "";
 
 const INITIAL_CUSTOMER = {
   customer_id: "",
@@ -18,7 +22,10 @@ const INITIAL_CUSTOMER = {
   email: null,
   phone_number: null,
   number_of_dependents: null,
-  investor_type: null,
+  education_level_code: null,
+  is_married: null,
+  saves_regularly: null,
+  has_emergency_fund: null,
 };
 
 function toNullableString(value) {
@@ -48,6 +55,14 @@ function toNullableFloat(value) {
 
   const parsed = Number.parseFloat(normalized);
   return Number.isNaN(parsed) ? null : parsed;
+}
+
+function toNullableBoolean(value) {
+  const normalized = toNullableString(value);
+  if (normalized === null) {
+    return null;
+  }
+  return normalized === "true";
 }
 
 function toNullableDate(value) {
@@ -82,6 +97,14 @@ function buildHoldingsMap(holdings) {
   }, {});
 }
 
+function sumCurrentValue(rows) {
+  return rows.reduce((acc, row) => acc + Number(row.current_value || 0), 0);
+}
+
+function isMissingValue(value) {
+  return value === null || value === undefined || value === "";
+}
+
 export default function ProfilePage() {
   const router = useRouter();
   const [authUser, setAuthUser] = useState(null);
@@ -90,11 +113,17 @@ export default function ProfilePage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [assets, setAssets] = useState([]);
+  const [liquidAssets, setLiquidAssets] = useState([]);
+  const [illiquidAssets, setIlliquidAssets] = useState([]);
   const [liabilities, setLiabilities] = useState([]);
   const [portfolios, setPortfolios] = useState([]);
   const [holdingsByPortfolio, setHoldingsByPortfolio] = useState({});
   const [analysisHistory, setAnalysisHistory] = useState([]);
-  const [activeTab, setActiveTab] = useState("basic");
+  const [latestRecommendation, setLatestRecommendation] = useState(null);
+  const [recommendation, setRecommendation] = useState(null);
+  const [recommendationLoading, setRecommendationLoading] = useState(false);
+  const [recommendationError, setRecommendationError] = useState("");
+  const [activeTab, setActiveTab] = useState("recommendation");
 
   const loadProfile = useCallback(async () => {
     setLoading(true);
@@ -146,24 +175,59 @@ export default function ProfilePage() {
       currentCustomer = insertedCustomer;
     }
 
-    const [{ data: assetsData, error: assetsError }, { data: liabilitiesData, error: liabilitiesError }, { data: portfoliosData, error: portfoliosError }, { data: analysisData, error: analysisError }] =
-      await Promise.all([
-        supabase.from("customer_assets").select("*").eq("customer_id", user.id).order("asset_id", { ascending: false }),
-        supabase.from("customer_liabilities").select("*").eq("customer_id", user.id).order("liability_id", { ascending: false }),
-        supabase.from("portfolios").select("*").eq("customer_id", user.id).order("portfolio_name", { ascending: true }),
-        supabase
-          .from("analysis_history")
-          .select("*")
-          .eq("customer_id", user.id)
-          .order("date_of_analysis", { ascending: false }),
-      ]);
+    const [
+      { data: assetsData, error: assetsError },
+      { data: liquidAssetsData, error: liquidAssetsError },
+      { data: illiquidAssetsData, error: illiquidAssetsError },
+      { data: liabilitiesData, error: liabilitiesError },
+      { data: portfoliosData, error: portfoliosError },
+      { data: analysisData, error: analysisError },
+      { data: recommendationData, error: recommendationLoadError },
+    ] = await Promise.all([
+      supabase.from("customer_assets").select("*").eq("customer_id", user.id).order("asset_id", { ascending: false }),
+      supabase
+        .from("customer_liquid_assets")
+        .select("*")
+        .eq("customer_id", user.id)
+        .order("liquid_asset_id", { ascending: false }),
+      supabase
+        .from("customer_illiquid_assets")
+        .select("*")
+        .eq("customer_id", user.id)
+        .order("illiquid_asset_id", { ascending: false }),
+      supabase.from("customer_liabilities").select("*").eq("customer_id", user.id).order("liability_id", { ascending: false }),
+      supabase.from("portfolios").select("*").eq("customer_id", user.id).order("portfolio_name", { ascending: true }),
+      supabase
+        .from("analysis_history")
+        .select("*")
+        .eq("customer_id", user.id)
+        .order("date_of_analysis", { ascending: false }),
+      supabase
+        .from("investment_recommendations")
+        .select("*")
+        .eq("customer_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle(),
+    ]);
 
-    if (assetsError || liabilitiesError || portfoliosError || analysisError) {
+    if (
+      assetsError ||
+      liquidAssetsError ||
+      illiquidAssetsError ||
+      liabilitiesError ||
+      portfoliosError ||
+      analysisError ||
+      recommendationLoadError
+    ) {
       setError(
         assetsError?.message ||
+          liquidAssetsError?.message ||
+          illiquidAssetsError?.message ||
           liabilitiesError?.message ||
           portfoliosError?.message ||
           analysisError?.message ||
+          recommendationLoadError?.message ||
           "Unable to load profile dashboard."
       );
       setLoading(false);
@@ -190,15 +254,21 @@ export default function ProfilePage() {
 
     setCustomer(currentCustomer ?? INITIAL_CUSTOMER);
     setAssets(assetsData ?? []);
+    setLiquidAssets(liquidAssetsData ?? []);
+    setIlliquidAssets(illiquidAssetsData ?? []);
     setLiabilities(liabilitiesData ?? []);
     setPortfolios(portfoliosData ?? []);
     setHoldingsByPortfolio(holdingsMap);
     setAnalysisHistory(analysisData ?? []);
+    setLatestRecommendation(recommendationData ?? null);
+    setRecommendation(null);
     setLoading(false);
   }, [router]);
 
   useEffect(() => {
-    loadProfile();
+    queueMicrotask(() => {
+      loadProfile();
+    });
   }, [loadProfile]);
 
   const saveBasicInfo = async (formData) => {
@@ -217,7 +287,10 @@ export default function ProfilePage() {
       email: toNullableString(authUser.email),
       phone_number: toNullableInteger(formData.phone_number),
       number_of_dependents: toNullableInteger(formData.number_of_dependents),
-      investor_type: toNullableString(formData.investor_type),
+      education_level_code: toNullableInteger(formData.education_level_code),
+      is_married: toNullableBoolean(formData.is_married),
+      saves_regularly: toNullableBoolean(formData.saves_regularly),
+      has_emergency_fund: toNullableBoolean(formData.has_emergency_fund),
     };
 
     const { data: updatedCustomer, error: updateError } = await supabase
@@ -300,6 +373,82 @@ export default function ProfilePage() {
     }
     setAssets((prev) => prev.filter((asset) => asset.asset_id !== assetId));
   };
+
+  const createFinancialAssetHandlers = useCallback(
+    (tableName, idKey, setRows) => ({
+      add: async (payload) => {
+        const customerId = authUser?.id;
+        if (!customerId) {
+          return { error: "You need to log in again." };
+        }
+        const supabase = createClient();
+        const { data, error: queryError } = await supabase
+          .from(tableName)
+          .insert({
+            customer_id: customerId,
+            asset_name: toNullableString(payload.asset_name),
+            current_value: toNullableFloat(payload.current_value),
+          })
+          .select("*")
+          .single();
+        if (queryError) {
+          return { error: queryError.message || "Unable to add asset." };
+        }
+        setRows((prev) => [data, ...prev]);
+        return { error: null };
+      },
+      update: async (assetId, payload) => {
+        const customerId = authUser?.id;
+        if (!customerId) {
+          return { error: "You need to log in again." };
+        }
+        const supabase = createClient();
+        const { data, error: queryError } = await supabase
+          .from(tableName)
+          .update({
+            asset_name: toNullableString(payload.asset_name),
+            current_value: toNullableFloat(payload.current_value),
+          })
+          .eq(idKey, assetId)
+          .eq("customer_id", customerId)
+          .select("*")
+          .single();
+        if (queryError) {
+          return { error: queryError.message || "Unable to update asset." };
+        }
+        setRows((prev) => prev.map((asset) => (asset[idKey] === assetId ? data : asset)));
+        return { error: null };
+      },
+      delete: async (assetId) => {
+        const customerId = authUser?.id;
+        if (!customerId) {
+          setError("You need to log in again.");
+          return;
+        }
+        const supabase = createClient();
+        const { error: queryError } = await supabase
+          .from(tableName)
+          .delete()
+          .eq(idKey, assetId)
+          .eq("customer_id", customerId);
+        if (queryError) {
+          setError(queryError.message || "Unable to delete asset.");
+          return;
+        }
+        setRows((prev) => prev.filter((asset) => asset[idKey] !== assetId));
+      },
+    }),
+    [authUser?.id]
+  );
+
+  const liquidAssetHandlers = useMemo(
+    () => createFinancialAssetHandlers("customer_liquid_assets", "liquid_asset_id", setLiquidAssets),
+    [createFinancialAssetHandlers]
+  );
+  const illiquidAssetHandlers = useMemo(
+    () => createFinancialAssetHandlers("customer_illiquid_assets", "illiquid_asset_id", setIlliquidAssets),
+    [createFinancialAssetHandlers]
+  );
 
   const addLiability = async (payload) => {
     const customerId = authUser?.id;
@@ -533,9 +682,106 @@ export default function ProfilePage() {
     }));
   };
 
-  const totalAssets = assets.reduce((acc, asset) => acc + Number(asset.current_value || 0), 0);
-  const totalLiabilities = liabilities.reduce((acc, item) => acc + Number(item.current_value || 0), 0);
-  const netWorth = totalAssets - totalLiabilities;
+  const totals = useMemo(() => {
+    const totalStockAssets = sumCurrentValue(assets);
+    const totalLiquidAssets = sumCurrentValue(liquidAssets);
+    const totalIlliquidAssets = sumCurrentValue(illiquidAssets);
+    const totalLiabilities = sumCurrentValue(liabilities);
+    const totalAssets = totalStockAssets + totalLiquidAssets + totalIlliquidAssets;
+
+    return {
+      totalStockAssets,
+      totalLiquidAssets,
+      totalIlliquidAssets,
+      totalLiabilities,
+      totalAssets,
+      netWorth: totalAssets - totalLiabilities,
+    };
+  }, [assets, liquidAssets, illiquidAssets, liabilities]);
+
+  const recommendationPayload = useMemo(
+    () => ({
+      AGE: Number(customer.age || 0),
+      EDUC: Number(customer.education_level_code || 0),
+      MARRIED: customer.is_married ? 1 : 0,
+      KIDS: Number(customer.number_of_dependents || 0),
+      INCOME: Number(customer.annual_income || 0),
+      ASSET: totals.totalAssets,
+      DEBT: totals.totalLiabilities,
+      SAVED: customer.saves_regularly ? 1 : 0,
+      EMERGSAV: customer.has_emergency_fund ? 1 : 0,
+      STOCKS: totals.totalStockAssets,
+      LIQ: totals.totalLiquidAssets,
+    }),
+    [customer, totals]
+  );
+
+  const missingRecommendationFields = useMemo(() => {
+    const required = [
+      ["Age", customer.age],
+      ["Annual Income", customer.annual_income],
+      ["Number Of Dependents", customer.number_of_dependents],
+      ["Education", customer.education_level_code],
+      ["Married", customer.is_married],
+      ["Saves Regularly", customer.saves_regularly],
+      ["Emergency Fund", customer.has_emergency_fund],
+    ];
+
+    return required.filter(([, value]) => isMissingValue(value)).map(([label]) => label);
+  }, [customer]);
+
+  const generateRecommendation = async () => {
+    if (!authUser?.id) {
+      setRecommendationError("You need to log in again.");
+      return;
+    }
+
+    setRecommendationLoading(true);
+    setRecommendationError("");
+
+    try {
+      const response = await fetch(`${API_BASE}/api/investor/recommendation`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(recommendationPayload),
+      });
+
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.detail || data?.error || "Unable to generate recommendation.");
+      }
+
+      setRecommendation(data);
+
+      const supabase = createClient();
+      const insertPayload = {
+        customer_id: authUser.id,
+        investor_type_code: data.investor_type,
+        investor_type_label: data.investor_label,
+        equity_pct: data.allocation?.equity,
+        debt_pct: data.allocation?.debt,
+        gold_pct: data.allocation?.gold,
+        cash_pct: data.allocation?.cash,
+        input_snapshot: recommendationPayload,
+      };
+
+      const { data: storedRecommendation, error: insertError } = await supabase
+        .from("investment_recommendations")
+        .insert(insertPayload)
+        .select("*")
+        .single();
+
+      if (insertError) {
+        console.error("Unable to store investment recommendation:", insertError);
+      } else {
+        setLatestRecommendation(storedRecommendation);
+      }
+    } catch (err) {
+      setRecommendationError(err.message || "Unable to generate recommendation.");
+    } finally {
+      setRecommendationLoading(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -556,9 +802,7 @@ export default function ProfilePage() {
       <main className="container mx-auto px-6 pb-16 pt-28">
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight">Your Profile</h1>
-          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-            Complete financial profile dashboard.
-          </p>
+          <p className="mt-2 text-zinc-600 dark:text-zinc-400">Complete financial profile dashboard.</p>
         </div>
 
         {error ? (
@@ -567,25 +811,20 @@ export default function ProfilePage() {
           </div>
         ) : null}
 
-        <section className="mb-6 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">Total Assets</p>
-            <p className="mt-2 text-2xl font-semibold">{formatCurrency(totalAssets)}</p>
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">Total Liabilities</p>
-            <p className="mt-2 text-2xl font-semibold">{formatCurrency(totalLiabilities)}</p>
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">Net Worth</p>
-            <p className="mt-2 text-2xl font-semibold">{formatCurrency(netWorth)}</p>
-          </div>
+        <section className="mb-6 grid gap-4 sm:grid-cols-4">
+          <SummaryCard label="Total Assets" value={formatCurrency(totals.totalAssets)} />
+          <SummaryCard label="Liquid Assets" value={formatCurrency(totals.totalLiquidAssets)} />
+          <SummaryCard label="Total Liabilities" value={formatCurrency(totals.totalLiabilities)} />
+          <SummaryCard label="Net Worth" value={formatCurrency(totals.netWorth)} />
         </section>
 
         <div className="mb-6 flex flex-wrap gap-2">
           {[
+            ["recommendation", "Recommendation"],
             ["basic", "Basic Information"],
-            ["assets", "Assets"],
+            ["assets", "Stock Assets"],
+            ["liquid", "Liquid Assets"],
+            ["illiquid", "Illiquid Assets"],
             ["liabilities", "Liabilities"],
             ["portfolios", "Portfolio"],
             ["analysis", "Analysis History"],
@@ -606,6 +845,18 @@ export default function ProfilePage() {
         </div>
 
         <div className="space-y-6">
+          {activeTab === "recommendation" ? (
+            <InvestorRecommendation
+              recommendation={recommendation}
+              latestRecommendation={latestRecommendation}
+              missingFields={missingRecommendationFields}
+              totals={totals}
+              loading={recommendationLoading}
+              error={recommendationError}
+              onGenerate={generateRecommendation}
+            />
+          ) : null}
+
           {activeTab === "basic" ? (
             <BasicInfo customer={customer} authUser={authUser} onSave={saveBasicInfo} saving={saving} />
           ) : null}
@@ -613,17 +864,43 @@ export default function ProfilePage() {
           {activeTab === "assets" ? (
             <AssetsSection
               assets={assets}
-              totalAssets={formatCurrency(totalAssets)}
+              totalAssets={formatCurrency(totals.totalStockAssets)}
               onAdd={addAsset}
               onUpdate={updateAsset}
               onDelete={deleteAsset}
             />
           ) : null}
 
+          {activeTab === "liquid" ? (
+            <FinancialAssetsSection
+              title="Liquid Assets"
+              emptyLabel="No liquid assets added"
+              assets={liquidAssets}
+              total={formatCurrency(totals.totalLiquidAssets)}
+              idKey="liquid_asset_id"
+              onAdd={liquidAssetHandlers.add}
+              onUpdate={liquidAssetHandlers.update}
+              onDelete={liquidAssetHandlers.delete}
+            />
+          ) : null}
+
+          {activeTab === "illiquid" ? (
+            <FinancialAssetsSection
+              title="Illiquid Assets"
+              emptyLabel="No illiquid assets added"
+              assets={illiquidAssets}
+              total={formatCurrency(totals.totalIlliquidAssets)}
+              idKey="illiquid_asset_id"
+              onAdd={illiquidAssetHandlers.add}
+              onUpdate={illiquidAssetHandlers.update}
+              onDelete={illiquidAssetHandlers.delete}
+            />
+          ) : null}
+
           {activeTab === "liabilities" ? (
             <LiabilitiesSection
               liabilities={liabilities}
-              totalLiabilities={formatCurrency(totalLiabilities)}
+              totalLiabilities={formatCurrency(totals.totalLiabilities)}
               onAdd={addLiability}
               onUpdate={updateLiability}
               onDelete={deleteLiability}
@@ -643,11 +920,18 @@ export default function ProfilePage() {
             />
           ) : null}
 
-          {activeTab === "analysis" ? (
-            <AnalysisHistory analysisHistory={analysisHistory} />
-          ) : null}
+          {activeTab === "analysis" ? <AnalysisHistory analysisHistory={analysisHistory} /> : null}
         </div>
       </main>
+    </div>
+  );
+}
+
+function SummaryCard({ label, value }) {
+  return (
+    <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
+      <p className="text-sm text-zinc-500 dark:text-zinc-400">{label}</p>
+      <p className="mt-2 text-2xl font-semibold">{value}</p>
     </div>
   );
 }

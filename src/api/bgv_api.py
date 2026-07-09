@@ -10,11 +10,15 @@ from typing import Optional
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
+REPO_ROOT = os.path.abspath(os.path.join(ROOT, ".."))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
 
 from api.jobs_store import create_job, get_job, update_job
 from signal_sync.api_runner import run_bgv_job
 from signal_sync.ta.api_runner import run_ta_job
 from agentic_pipeline.fa_api_runner import run_fa_job
+from pipeline.pipeline import predict
 
 app = FastAPI(title="BGV API")
 
@@ -31,6 +35,52 @@ class StartRequest(BaseModel):
     company_name: str
     ticker: str
     sector: Optional[str] = ""
+
+
+class InvestorRecommendationRequest(BaseModel):
+    AGE: int
+    EDUC: int
+    MARRIED: int
+    KIDS: int
+    INCOME: float
+    ASSET: float
+    DEBT: float
+    SAVED: int
+    EMERGSAV: int
+    STOCKS: float
+    LIQ: float
+
+
+INVESTOR_LABELS = {
+    0: "Conservative Investor",
+    1: "Balanced Investor",
+    2: "Growth Investor",
+}
+
+INVESTOR_DESCRIPTIONS = {
+    0: "Focuses on capital protection, steadier returns, and lower risk exposure.",
+    1: "Balances growth potential with stability across multiple asset classes.",
+    2: "Comfortable with higher volatility in pursuit of stronger long-term growth.",
+}
+
+
+@app.post("/api/investor/recommendation")
+def investor_recommendation(profile: InvestorRecommendationRequest):
+    try:
+        result = predict(profile.model_dump())
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Unable to run investor model: {exc}") from exc
+
+    investor_type = result["investor_type"]
+    return {
+        "investor_type": investor_type,
+        "investor_label": INVESTOR_LABELS.get(investor_type, f"Investor Type {investor_type}"),
+        "investor_description": INVESTOR_DESCRIPTIONS.get(
+            investor_type,
+            "Portfolio allocation generated from the model output.",
+        ),
+        "allocation": result["allocation"],
+    }
 
 
 @app.post("/api/bgv/start")
