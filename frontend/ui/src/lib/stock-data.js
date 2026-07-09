@@ -13,11 +13,13 @@ function rawValue(value) {
 
 function buildCandidates(symbol) {
   const trimmed = symbol.trim().toUpperCase();
-  if (trimmed.includes(".")) {
-    return [trimmed];
+  const normalized = trimmed.replace(/(\.NS)+$/i, ".NS");
+
+  if (normalized.includes(".")) {
+    return [normalized];
   }
 
-  return [`${trimmed}.NS`];
+  return [`${normalized}.NS`];
 }
 
 function isLikelyEquity(payload) {

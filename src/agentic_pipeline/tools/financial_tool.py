@@ -20,10 +20,17 @@
 
 
 
+import re
+
 import yfinance as yf
 
 #import contextlib
 #import io
+
+
+def _normalize_yahoo_symbol(ticker):
+    value = str(ticker).strip().upper()
+    return re.sub(r"(?:\.(?:NS|BO))+$", "", value)
 
 
 def fetch_company_data(ticker, exchange):
@@ -32,12 +39,14 @@ def fetch_company_data(ticker, exchange):
 
         exchange = exchange.upper()
 
+        ticker = _normalize_yahoo_symbol(ticker)
+
         # Add Yahoo Finance suffix
         if exchange == "NSE":
-            ticker = ticker + ".NS"
+            ticker = f"{ticker}.NS"
 
         elif exchange == "BSE":
-            ticker = ticker + ".BO"
+            ticker = f"{ticker}.BO"
 
         else:
             raise ValueError("Exchange must be either NSE or BSE.")

@@ -7574,5 +7574,715 @@
         "Use bands to sense volatility regimes and to avoid chasing extreme moves."
       ]
     }
+  },
+  "fa_20260605T070451Z_b05421": {
+    "job_id": "fa_20260605T070451Z_b05421",
+    "status": "failed",
+    "created_at": "2026-06-05T07:04:51.281187Z",
+    "updated_at": "2026-06-05T07:04:54.482159Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Data Acquisition",
+    "current_agent": "Data Acquisition Specialist",
+    "step_message": "Fundamental analysis failed",
+    "completed_steps": [],
+    "remaining_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "output_path": "C:\\Users\\hedet\\Desktop\\test2\\Signal-sync\\src\\agentic_pipeline\\output_data\\ITC.NS_fa_20260605T070451Z.json",
+    "error": "Data acquisition failed: Failed to fetch company financial data."
+  },
+  "fa_20260605T084214Z_b26f4b": {
+    "job_id": "fa_20260605T084214Z_b26f4b",
+    "status": "failed",
+    "created_at": "2026-06-05T08:42:14.758319Z",
+    "updated_at": "2026-06-05T08:42:20.016156Z",
+    "metadata": {
+      "company_name": "HDFC Bank Limited",
+      "ticker": "HDFCBANK.NS",
+      "sector": "Financial Services",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Data Acquisition",
+    "current_agent": "Data Acquisition Specialist",
+    "step_message": "Fundamental analysis failed",
+    "completed_steps": [],
+    "remaining_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "output_path": "C:\\Users\\hedet\\Desktop\\test2\\Signal-Sync\\src\\agentic_pipeline\\output_data\\HDFCBANK.NS_fa_20260605T084214Z.json",
+    "error": "Data acquisition failed: Failed to fetch company financial data."
+  },
+  "fa_20260605T084459Z_70d67f": {
+    "job_id": "fa_20260605T084459Z_70d67f",
+    "status": "done",
+    "created_at": "2026-06-05T08:44:59.698386Z",
+    "updated_at": "2026-06-05T08:45:42.379640Z",
+    "metadata": {
+      "company_name": "HDFC Bank Limited",
+      "ticker": "HDFCBANK.NS",
+      "sector": "Financial Services",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "Fundamental analysis complete",
+    "completed_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\hedet\\Desktop\\test2\\Signal-Sync\\src\\agentic_pipeline\\output_data\\HDFCBANK.NS_fa_20260605T084459Z.json",
+    "error": null,
+    "result_json": {
+      "company_identification": {
+        "symbol": "HDFCBANK.NS",
+        "long_name": "HDFC Bank Limited",
+        "exchange": "NSE"
+      },
+      "company_metadata": {
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "business_summary": "HDFC Bank Limited provides banking and financial products and services to individuals and businesses in India, Bahrain, Hong Kong, Singapore, and Dubai. The company operates through Treasury, Retail Banking, Wholesale Banking, Other Banking Business, Insurance Business, and Other segments. It offers savings, salary, current, rural, public provident fund, pension, and demat accounts; fixed and recurring deposits; and safe deposit lockers, as well as offshore accounts and deposits, and overdrafts against fixed deposits. The company also provides personal, home, car, two-wheeler, business, doctor, educational, gold, consumer, and rural loans; loans against properties, securities, mutual funds, rental receivables, and assets; loans for professionals; government sponsored programs; and loans on credit card, as well as working capital and commercial/construction equipment finance, healthcare/medical equipment, commercial vehicle finance, dealer finance, and term loans. In addition, it offers credit, debit, prepaid, forex, and kisan gold cards; payment and collection, export, import, remittance, bank guarantee, letter of credit, trade, hedging, and merchant and cash management services; and insurance and investment products. Further, the company provides short term finance, bill discounting, structured finance, export credit, loan repayment, custodial, and documents collection services; online, mobile, and phone banking services; unified payment interface, immediate payment, national electronic funds transfer, and real time gross settlement services; channel financing, vendor financing, reimbursement account, money market, derivatives, employee trusts, cash surplus corporates, tax payment, and bankers to rights/public issue services; and financial solutions for supply chain partners and agricultural customers. It operates branches and automated teller machines in various cities/towns. The company was incorporated in 1994 and is headquartered in Mumbai, India."
+      },
+      "market_data": {
+        "currency": "INR",
+        "market_cap": 11493495013376,
+        "current_price": 746.5,
+        "fifty_two_week_high": 1020.5,
+        "fifty_two_week_low": 726.65,
+        "beta": 0.432,
+        "volume": 12693081,
+        "average_volume": 47556036
+      },
+      "financial_ratios": {
+        "pe_ratio": 16.66183,
+        "debt_to_equity": null,
+        "roe": 0.13818,
+        "roa": 0.01704,
+        "profit_margin": 0.26834
+      },
+      "business_analysis": {
+        "business_model": "Provides banking and financial services to individuals and businesses, including various loan and account options.",
+        "core_revenue_drivers": [
+          "Interest income from loans",
+          "Fee income from services",
+          "Investment income"
+        ],
+        "industry_position": "Leading private bank in India with significant market share in regional banking.",
+        "industry_outlook": {
+          "status": "Positive",
+          "summary": "Growing demand for banking services and strong economic recovery in India."
+        },
+        "industry_growth_potential": {
+          "status": "High",
+          "summary": "Increased financial inclusion and digital banking adoption drive growth."
+        },
+        "industry_risks": [
+          "Regulatory changes",
+          "Economic downturns",
+          "Rising competition"
+        ],
+        "competitive_advantages": [
+          "Strong brand recognition",
+          "Robust capital position",
+          "Diversified product offerings"
+        ],
+        "growth_opportunities": [
+          "Expansion in rural banking",
+          "Digital banking services",
+          "Increased loan disbursements"
+        ],
+        "business_risks": [
+          "Credit risk from loans",
+          "Market volatility",
+          "Operational risk"
+        ],
+        "recent_business_developments": [
+          "Trading near 52-week low; structural correction observed.",
+          "Bonus share issuance to enhance liquidity."
+        ],
+        "business_outlook": "Expect moderate growth driven by strong capital position and expansion in customer base.",
+        "business_summary": "Leading provider of financial products in India, with extensive banking and investment services."
+      },
+      "financial_analysis": {
+        "revenue_growth": {
+          "status": "Positive",
+          "value_percent": 19.36,
+          "summary": "Strong revenue growth indicates effective business strategies."
+        },
+        "profitability": {
+          "status": "Positive",
+          "summary": "Profit growth shows healthy margin improvements and management efficiency."
+        },
+        "debt_health": {
+          "status": "Neutral",
+          "summary": "Cash to debt ratio is moderate, indicating manageable debt levels."
+        },
+        "cash_flow_strength": {
+          "status": "Positive",
+          "summary": "Strong operating and free cash flow support operational viability."
+        },
+        "operational_efficiency": {
+          "status": "Positive",
+          "summary": "High return on equity suggests effective management of shareholder funds."
+        },
+        "financial_stability": {
+          "status": "Positive",
+          "summary": "Capital adequacy and liquidity ratios indicate strong financial health."
+        },
+        "key_financial_risks": [],
+        "financial_outlook": "Positive growth trends expected as market conditions improve.",
+        "financial_summary": "HDFC Bank exhibits strong financial performance and stability."
+      },
+      "risk_analysis": {
+        "overall_risk_level": "Low",
+        "market_risk": "Low",
+        "industry_risks": [],
+        "debt_risk": "Unknown",
+        "liquidity_risk": "Low",
+        "profitability_risk": "Low",
+        "operational_risk": "",
+        "financial_stability_risk": "",
+        "key_warning_signals": [
+          "52-week low",
+          "recent significant price drop"
+        ],
+        "risk_summary": "Strong capital ratios mitigate risk despite recent stock volatility."
+      },
+      "valuation_analysis": {
+        "valuation_status": "Fairly Valued",
+        "valuation_confidence": "Moderate",
+        "pe_analysis": "Fairly Valued",
+        "growth_vs_valuation": "Strong growth with fair valuation",
+        "intrinsic_value_outlook": "Stable",
+        "valuation_summary": "HDFC Bank shows strong growth and fair valuation metrics."
+      },
+      "investment_verdict": "BUY",
+      "explanation": {
+        "executive_summary": "HDFC Bank is positioned for moderate growth with strong financial health and favorable industry outlook.",
+        "why_buy_hold_sell": "BUY due to solid revenue growth, a robust capital position, and increasing demand for banking services despite recent market volatility.",
+        "key_strengths": [
+          "Strong capital position",
+          "Positive revenue growth",
+          "Healthy financial stability"
+        ],
+        "key_risks": [
+          "Recent stock volatility",
+          "Regulatory changes",
+          "Intensifying industry competition"
+        ],
+        "what_to_monitor": [
+          "Market performance and stock volatility",
+          "Regulatory developments",
+          "Growth in digital banking services"
+        ]
+      }
+    }
+  },
+  "fa_20260605T085004Z_f9f373": {
+    "job_id": "fa_20260605T085004Z_f9f373",
+    "status": "done",
+    "created_at": "2026-06-05T08:50:04.785880Z",
+    "updated_at": "2026-06-05T08:50:37.276355Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "Fundamental analysis complete",
+    "completed_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\hedet\\Desktop\\test2\\Signal-Sync\\src\\agentic_pipeline\\output_data\\ITC.NS_fa_20260605T085004Z.json",
+    "error": null,
+    "result_json": {
+      "company_identification": {
+        "symbol": "ITC.NS",
+        "long_name": "ITC Limited",
+        "exchange": "NSE"
+      },
+      "company_metadata": {
+        "sector": "Consumer Defensive",
+        "industry": "Tobacco",
+        "business_summary": "ITC Limited engages in the fast-moving consumer goods, paperboards, paper and packaging, and agri businesses in India and internationally. The company offers cigarettes and cigars; foods, including staples, spices, biscuits, confectionery and gums, snacks, noodles and pasta, beverages, dairy products, ready-to-eat meals, chocolates, coffee, and frozen foods; personal care products; education and stationery, such as balls, gels and roller pens, mechanical pencils, geometry boxes, erasers, sharpeners and rulers, wax crayons, plastic crayons, and sketch pens and oil pastels; safety matches; and agarbattis and dhoops under various brands, as well as operates a hotel under the ITC Grand Central name in Mumbai. It also provides virgin, recycled, coated barrier, cupstock base, liner, liquid packaging, antifungal, solid, and graphic boards, as well as specialty papers; surfacing, print base, barrier, overlay, and liner papers; plastic substitution products; and packaging products, including cartons, flexible, tobacco, and green packaging products. In addition, the company exports feed ingredients, food grains, marine products, processed fruits, coffee products, leaf tobacco products, and spices; and offers information technology services for the banking and financial services, healthcare, manufacturing, consumer goods, travel, and hospitality industries, as well as produces and commercializes seed potato technology products. Further, it provides property infrastructure maintenance; engineering, procurement and construction management and project management consultancy services; business consulting; and agro-forestry and other related services, as well as engages in the fabrication and assembly of machinery for tube filling, cartoning, wrapping, and conveyor solutions and engineering activities. ITC Limited was incorporated in 1910 and is headquartered in Kolkata, India."
+      },
+      "market_data": {
+        "currency": "INR",
+        "market_cap": 3510757228544,
+        "current_price": 280.2,
+        "fifty_two_week_high": 428.55,
+        "fifty_two_week_low": 275.2,
+        "beta": -0.08,
+        "volume": 12420575,
+        "average_volume": 21614699
+      },
+      "financial_ratios": {
+        "pe_ratio": 16.971533,
+        "debt_to_equity": 3.292,
+        "roe": 0.2934,
+        "roa": 0.17599002,
+        "profit_margin": 0.26233
+      },
+      "business_analysis": {
+        "business_model": "Diverse FMCG operations including tobacco, food, and packaging; also a hospitality and IT services provider.",
+        "core_revenue_drivers": [
+          "Cigarettes",
+          "Food products",
+          "Packaging solutions"
+        ],
+        "industry_position": "Leading player in the tobacco and FMCG market in India.",
+        "industry_outlook": {
+          "status": "Positive",
+          "summary": "Steady demand for consumer goods and strong brand loyalty support growth."
+        },
+        "industry_growth_potential": {
+          "status": "High",
+          "summary": "Consumer shift towards premium products and diversification into FMCG boosts prospects."
+        },
+        "industry_risks": [
+          "Regulatory challenges",
+          "Price competition",
+          "Changing consumer preferences"
+        ],
+        "competitive_advantages": [
+          "Strong brand portfolio",
+          "Diversified product range",
+          "Established distribution network"
+        ],
+        "growth_opportunities": [
+          "Expansion into new markets",
+          "Innovating product lines",
+          "Sustainability initiatives"
+        ],
+        "business_risks": [
+          "High debt levels",
+          "Economic downturns",
+          "Supply chain disruptions"
+        ],
+        "recent_business_developments": [
+          "Market experts' insights on ITC's fundamentals and technical levels."
+        ],
+        "business_outlook": "Optimistic growth trajectory backed by diverse revenue streams.",
+        "business_summary": "ITC Limited engages in FMCG, paper, packaging, and agri businesses, with a focus on innovation and sustainability."
+      },
+      "financial_analysis": {
+        "revenue_growth": {
+          "status": "Positive",
+          "value_percent": 4.77,
+          "summary": "Revenue growth is stable despite slight fluctuations."
+        },
+        "profitability": {
+          "status": "Negative",
+          "summary": "Net income declined significantly, indicating profitability concerns."
+        },
+        "debt_health": {
+          "status": "Negative",
+          "summary": "High debt-to-equity ratio indicates potential financial risk."
+        },
+        "cash_flow_strength": {
+          "status": "Positive",
+          "summary": "Strong operating and free cash flow suggests good liquidity."
+        },
+        "operational_efficiency": {
+          "status": "Neutral",
+          "summary": "Gross profit margin remains steady but shows room for improvement."
+        },
+        "financial_stability": {
+          "status": "Neutral",
+          "summary": "Stable equity but increased total liabilities raises caution."
+        },
+        "key_financial_risks": [
+          "High debt levels",
+          "Declining net income"
+        ],
+        "financial_outlook": "Cautiously optimistic with revenue growth; profitability risks remain.",
+        "financial_summary": "Overall, strong cash flow but profitability and debt levels are concerning."
+      },
+      "risk_analysis": {
+        "overall_risk_level": "Low",
+        "market_risk": "Low",
+        "industry_risks": [],
+        "debt_risk": "Low",
+        "liquidity_risk": "Low",
+        "profitability_risk": "Low",
+        "operational_risk": "",
+        "financial_stability_risk": "",
+        "key_warning_signals": [],
+        "risk_summary": "ITC Limited shows low risk across various metrics."
+      },
+      "valuation_analysis": {
+        "valuation_status": "Fairly Valued",
+        "valuation_confidence": "Moderate",
+        "pe_analysis": "Fairly Valued",
+        "growth_vs_valuation": "Weak",
+        "intrinsic_value_outlook": "Stable",
+        "valuation_summary": "Company shows steady growth but with weak momentum."
+      },
+      "investment_verdict": {
+        "investment_verdict": "HOLD",
+        "verdict_score": 55,
+        "confidence_level": "Moderate",
+        "holding_period": "Medium-Term",
+        "key_drivers": [
+          "Steady revenue growth",
+          "Strong cash flow",
+          "Diverse FMCG operations"
+        ],
+        "primary_reasons": [
+          "Optimistic business growth outlook",
+          "Stable industry demand",
+          "Low overall risk level"
+        ],
+        "major_concerns": [
+          "Declining net income",
+          "High debt levels",
+          "Weak momentum in valuation"
+        ],
+        "final_summary": "Solid fundamentals but profitability and debt concerns warrant caution."
+      },
+      "explanation": {
+        "executive_summary": "ITC Limited shows strong revenue growth and cash flow, but faces profitability and debt challenges.",
+        "why_buy_hold_sell": "Recommendation to HOLD due to optimistic growth outlook balanced by concerns over declining net income and high debt levels.",
+        "key_strengths": [
+          "Steady revenue growth",
+          "Strong cash flow",
+          "Diverse FMCG operations"
+        ],
+        "key_risks": [
+          "Declining net income",
+          "High debt levels",
+          "Weak momentum in valuation"
+        ],
+        "what_to_monitor": [
+          "Profitability trends",
+          "Debt management",
+          "Market expansion efforts"
+        ]
+      }
+    }
+  },
+  "fa_20260605T100413Z_73506b": {
+    "job_id": "fa_20260605T100413Z_73506b",
+    "status": "done",
+    "created_at": "2026-06-05T10:04:13.730670Z",
+    "updated_at": "2026-06-05T10:04:59.857236Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "Fundamental analysis complete",
+    "completed_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\hedet\\Desktop\\test2\\Signal-Sync\\src\\agentic_pipeline\\output_data\\ITC.NS_fa_20260605T100413Z.json",
+    "error": null,
+    "result_json": {
+      "company_identification": {
+        "symbol": "ITC.NS",
+        "long_name": "ITC Limited",
+        "exchange": "NSE"
+      },
+      "company_metadata": {
+        "sector": "Consumer Defensive",
+        "industry": "Tobacco",
+        "business_summary": "ITC Limited engages in the fast-moving consumer goods, paperboards, paper and packaging, and agri businesses in India and internationally. The company offers cigarettes and cigars; foods, including staples, spices, biscuits, confectionery and gums, snacks, noodles and pasta, beverages, dairy products, ready-to-eat meals, chocolates, coffee, and frozen foods; personal care products; education and stationery, such as balls, gels and roller pens, mechanical pencils, geometry boxes, erasers, sharpeners and rulers, wax crayons, plastic crayons, and sketch pens and oil pastels; safety matches; and agarbattis and dhoops under various brands, as well as operates a hotel under the ITC Grand Central name in Mumbai. It also provides virgin, recycled, coated barrier, cupstock base, liner, liquid packaging, antifungal, solid, and graphic boards, as well as specialty papers; surfacing, print base, barrier, overlay, and liner papers; plastic substitution products; and packaging products, including cartons, flexible, tobacco, and green packaging products. In addition, the company exports feed ingredients, food grains, marine products, processed fruits, coffee products, leaf tobacco products, and spices; and offers information technology services for the banking and financial services, healthcare, manufacturing, consumer goods, travel, and hospitality industries, as well as produces and commercializes seed potato technology products. Further, it provides property infrastructure maintenance; engineering, procurement and construction management and project management consultancy services; business consulting; and agro-forestry and other related services, as well as engages in the fabrication and assembly of machinery for tube filling, cartoning, wrapping, and conveyor solutions and engineering activities. ITC Limited was incorporated in 1910 and is headquartered in Kolkata, India."
+      },
+      "market_data": {
+        "currency": "INR",
+        "market_cap": 3517021945856,
+        "current_price": 280.7,
+        "fifty_two_week_high": 428.55,
+        "fifty_two_week_low": 275.2,
+        "beta": -0.08,
+        "volume": 16063244,
+        "average_volume": 21614699
+      },
+      "financial_ratios": {
+        "pe_ratio": 17.001818,
+        "debt_to_equity": 3.292,
+        "roe": 0.2934,
+        "roa": 0.17599002,
+        "profit_margin": 0.26233
+      },
+      "business_analysis": {
+        "business_model": "Diversified FMCG with a strong presence in tobacco and related sectors.",
+        "core_revenue_drivers": [
+          "Cigarettes",
+          "Food products",
+          "Personal care",
+          "Packaging solutions"
+        ],
+        "industry_position": "Leading player in the Indian tobacco market, with significant diversification.",
+        "industry_outlook": {
+          "status": "Neutral",
+          "summary": "Stable demand despite regulatory challenges in tobacco."
+        },
+        "industry_growth_potential": {
+          "status": "Moderate",
+          "summary": "Growth in FMCG and diversification reduces dependency on tobacco."
+        },
+        "industry_risks": [
+          "Regulatory pressures",
+          "Health concerns over tobacco",
+          "Competitive pricing"
+        ],
+        "competitive_advantages": [
+          "Strong brand portfolio",
+          "Diverse product lines",
+          "Established distribution network"
+        ],
+        "growth_opportunities": [
+          "Expansion in non-tobacco segments",
+          "Increase in export markets",
+          "Investment in sustainable practices"
+        ],
+        "business_risks": [
+          "High debt levels",
+          "Volatility in raw material prices",
+          "Economic downturns affecting discretionary spending"
+        ],
+        "recent_business_developments": [
+          "Market experts recommend holding ITC shares",
+          "Focus on fundamentals and technicals noted"
+        ],
+        "business_outlook": "Steady growth expected with a diversified revenue stream and stable market position.",
+        "business_summary": "ITC Limited is a diversified FMCG company with significant contributions from tobacco, foods, and packaging."
+      },
+      "financial_analysis": {
+        "revenue_growth": {
+          "status": "Positive",
+          "value_percent": 4.77,
+          "summary": "Revenue increased, indicating growth."
+        },
+        "profitability": {
+          "status": "Negative",
+          "summary": "Net income decreased significantly, impacting profit margins."
+        },
+        "debt_health": {
+          "status": "Negative",
+          "summary": "High debt-to-equity ratio raises concerns about financial leverage."
+        },
+        "cash_flow_strength": {
+          "status": "Positive",
+          "summary": "Strong operating and free cash flow support liquidity."
+        },
+        "operational_efficiency": {
+          "status": "Neutral",
+          "summary": "Operating income showed minor fluctuations, indicating stability."
+        },
+        "financial_stability": {
+          "status": "Neutral",
+          "summary": "Total assets increased, maintaining overall stability."
+        },
+        "key_financial_risks": [],
+        "financial_outlook": "Cautious optimism due to growth potential but risks from profitability decline.",
+        "financial_summary": "Revenue growth contrasts heavy profit drop; debt remains a concern."
+      },
+      "risk_analysis": {
+        "overall_risk_level": "Low",
+        "market_risk": "Low",
+        "industry_risks": [],
+        "debt_risk": "Low",
+        "liquidity_risk": "Low",
+        "profitability_risk": "Low",
+        "operational_risk": "Low",
+        "financial_stability_risk": "Low",
+        "key_warning_signals": [],
+        "risk_summary": "Stable profitability and low risks in debt, liquidity, and market."
+      },
+      "valuation_analysis": {
+        "valuation_status": "Fairly Valued",
+        "valuation_confidence": "Moderate",
+        "pe_analysis": "Fairly Valued",
+        "growth_vs_valuation": "Weak growth against fair valuation",
+        "intrinsic_value_outlook": "Stable with slight potential",
+        "valuation_summary": "ITC Limited is fairly valued with moderate confidence."
+      },
+      "investment_verdict": {
+        "investment_verdict": "HOLD",
+        "verdict_score": 50,
+        "confidence_level": "Moderate",
+        "holding_period": "Medium-Term",
+        "key_drivers": [
+          "Steady business outlook",
+          "Stable demand in FMCG",
+          "Cautious financial growth"
+        ],
+        "primary_reasons": [
+          "Diversified revenue stream",
+          "Moderate growth potential",
+          "Stable market position"
+        ],
+        "major_concerns": [
+          "Profitability decline",
+          "High debt levels",
+          "Regulatory risks in tobacco sector"
+        ],
+        "final_summary": "ITC Limited has a stable outlook but faces profitability and debt concerns."
+      }
+    }
   }
 }
