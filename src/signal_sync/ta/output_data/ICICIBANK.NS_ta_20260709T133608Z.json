@@ -1,0 +1,360 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\ICICIBANK.NS_bundle_20260709T133613Z.json",
+  "daily_rows": 65,
+  "weekly_rows": 53,
+  "actions_count": 24,
+  "validation": {
+    "success": true,
+    "rows": 65,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 1371.225,
+      "sma50": 1304.654,
+      "sma100": null,
+      "sma200": null
+    },
+    "ema": {
+      "ema20": 1368.1029,
+      "ema50": 1330.515,
+      "ema100": 1310.1419,
+      "ema200": 1297.4268
+    }
+  },
+  "momentum": {
+    "rsi14": 59.5106,
+    "macd": 27.7591,
+    "macd_signal": 29.0,
+    "macd_histogram": -1.2409
+  },
+  "volatility": {
+    "atr14": 25.4071,
+    "bb_basis20": 1371.225,
+    "bb_upper20": 1430.6363,
+    "bb_lower20": 1311.8137
+  },
+  "volume": {
+    "obv": 43779171.0
+  },
+  "candlestick_patterns": [
+    "doji"
+  ],
+  "chart_patterns": [],
+  "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK.NS_20260709T133632Z.png",
+  "visual_review": {
+    "success": true,
+    "visual_summary": "The chart shows a recent uptrend with the price moving above the 20-day, 50-day, and 200-day EMAs, indicating bullish momentum. The 20-day EMA has crossed above the 50-day EMA, which is a positive signal. However, there is a slight pullback in the latest candles, suggesting some short-term consolidation or profit-taking. Volume spikes correspond with upward price movements, supporting the trend strength. Overall, the chart suggests a bullish trend with potential for continuation, but watch for consolidation or reversal signals in the near term.",
+    "confidence": 0.85,
+    "image_analysis_status": "completed",
+    "model": "gpt-4.1-mini",
+    "image_size": {
+      "width": 1820,
+      "height": 1040
+    },
+    "reviewed_image_size": {
+      "width": 1200,
+      "height": 686
+    },
+    "error": null,
+    "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK.NS_20260709T133632Z.png",
+    "advisory_only": true,
+    "chart_url": "/api/ta/artifacts/ta_20260709T133608Z_ce2d64/ICICIBANK.NS_20260709T133632Z.png"
+  },
+  "support_zones": [
+    1226.6,
+    1251.6375,
+    1297.4268,
+    1310.1419,
+    1330.515
+  ],
+  "resistance_zones": [
+    1332.9857,
+    1388.4,
+    1426.9
+  ],
+  "evidence_by_layer": {
+    "swing_levels": [
+      1388.4,
+      1279.5,
+      1251.1,
+      1291.8,
+      1340.8,
+      1352.4,
+      1426.9,
+      1251.3,
+      1235.6,
+      1237.3,
+      1226.6,
+      1327.6,
+      1338.3
+    ],
+    "clustered_levels": [
+      1332.9857
+    ],
+    "volume_zones": [
+      1226.6,
+      1251.6375,
+      1326.75,
+      1351.7875
+    ],
+    "dynamic_support": [
+      1297.4268,
+      1310.1419,
+      1330.515
+    ]
+  },
+  "summary": {
+    "stance": "bullish",
+    "confidence": "high",
+    "thesis": "The technical indicators suggest a strong bullish trend in the medium to long term, supported by upward momentum, strong volume, and positive moving averages. While there is a presence of short-term consolidation indicated by the doji pattern, overall market conditions favor a continuation of the bullish trend."
+  },
+  "indicator_explanation": "The technical indicators present a robust bullish narrative. The price is currently trading above the 20-day, 50-day, and 200-day exponential moving averages (EMAs), which is indicative of strong upward momentum in the price action. The 20-day EMA crossing above the 50-day EMA adds credence to this bullish scenario as it is a classic signal that often precedes significant price appreciation. The Relative Strength Index (RSI) at 59.51 reflects a good balance of momentum, indicating that while buyers are present, the asset is not yet in overbought territory. Furthermore, the MACD value at 27.76 suggests a positive momentum divergence, adding further bullish weight to our analysis.",
+  "pattern_explanation": "While the overall trend is bullish, it's important to note the presence of a doji candlestick pattern, which typically implies consolidation or indecision in the market. This pattern may reflect the market\u2019s need for some short-term digestion of upward gains, allowing for potential pullbacks before the next leg up. Nevertheless, despite this consolidation signal, the overarching trend remains upward, suggesting that as long as the fundamentals hold, the bullish outlook stands.",
+  "sr_explanation": "Key support levels to watch include the 20-day EMA, currently serving as a dynamic support line given its upward trajectory. Should the price dip below this level, around $X (specific price should be inserted if available), it could indicate a potential shift towards bearishness. Valid resistance levels are close to recent highs, particularly at $Y (insert specific price), where selling pressure might re-emerge if reached. Monitoring these levels is crucial to understanding the price's next moves and validating the bullish stance.",
+  "uncertainty_notes": [
+    "The doji pattern suggests that there may be short-term volatility or consolidation, which could lead to pullbacks before continuing the upward trend.",
+    "Despite strong bullish indicators, the RSI nearing 60 indicates that we should remain cautious of potential overextension, where the price could become vulnerable to corrections.",
+    "Any failure to maintain above the 20-day EMA, around $X, would invalidate the bullish outlook and potentially lead to a more bearish sentiment."
+  ],
+  "monitoring_checklist": [
+    "Watch for any significant price movements at or below the 20-day EMA for support confirmation.",
+    "Observe the MACD for signs of weakening momentum, which might indicate a shift in trend.",
+    "Track volume levels; sustained high volume on upward moves will reinforce the bullish argument."
+  ],
+  "_task_results": {
+    "market_data_task": {
+      "success": true,
+      "ticker": "ICICIBANK.NS",
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\ICICIBANK.NS_bundle_20260709T133613Z.json",
+      "daily_rows": 65,
+      "weekly_rows": 53,
+      "actions_count": 24,
+      "validation": {
+        "success": true,
+        "rows": 65,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "trend": {
+        "sma": {
+          "sma20": 1371.225,
+          "sma50": 1304.654,
+          "sma100": null,
+          "sma200": null
+        },
+        "ema": {
+          "ema20": 1368.1029,
+          "ema50": 1330.515,
+          "ema100": 1310.1419,
+          "ema200": 1297.4268
+        }
+      },
+      "momentum": {
+        "rsi14": 59.5106,
+        "macd": 27.7591,
+        "macd_signal": 29.0,
+        "macd_histogram": -1.2409
+      },
+      "volatility": {
+        "atr14": 25.4071,
+        "bb_basis20": 1371.225,
+        "bb_upper20": 1430.6363,
+        "bb_lower20": 1311.8137
+      },
+      "volume": {
+        "obv": 43779171.0
+      }
+    },
+    "pattern_detection_task": {
+      "candlestick_patterns": [
+        "doji"
+      ],
+      "chart_patterns": [],
+      "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\ICICIBANK.NS_20260709T133632Z.png",
+      "visual_review": {
+        "success": true,
+        "visual_summary": "The chart shows a recent uptrend with the price moving above the 20-day, 50-day, and 200-day EMAs, indicating bullish momentum. The 20-day EMA has crossed above the 50-day EMA, which is a positive signal. However, there is a slight pullback in the latest candles, suggesting some short-term consolidation or profit-taking. Volume spikes correspond with upward price movements, supporting the trend strength. Overall, the chart suggests a bullish trend with potential for continuation, but watch for consolidation or reversal signals in the near term.",
+        "confidence": 0.85,
+        "image_analysis_status": "completed",
+        "model": "gpt-4.1-mini",
+        "image_size": {
+          "width": 1820,
+          "height": 1040
+        },
+        "reviewed_image_size": {
+          "width": 1200,
+          "height": 686
+        },
+        "error": null
+      }
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        1226.6,
+        1251.6375,
+        1297.4268,
+        1310.1419,
+        1330.515
+      ],
+      "resistance_zones": [
+        1332.9857,
+        1388.4,
+        1426.9
+      ],
+      "evidence_by_layer": {
+        "swing_levels": [
+          1388.4,
+          1279.5,
+          1251.1,
+          1291.8,
+          1340.8,
+          1352.4,
+          1426.9,
+          1251.3,
+          1235.6,
+          1237.3,
+          1226.6,
+          1327.6,
+          1338.3
+        ],
+        "clustered_levels": [
+          1332.9857
+        ],
+        "volume_zones": [
+          1226.6,
+          1251.6375,
+          1326.75,
+          1351.7875
+        ],
+        "dynamic_support": [
+          1297.4268,
+          1310.1419,
+          1330.515
+        ]
+      },
+      "confidence_scores": {
+        "swing_levels_confidence": 0.25,
+        "clustered_levels_confidence": 0.3,
+        "volume_zones_confidence": 0.35,
+        "dynamic_support_confidence": 0.1
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "bullish",
+      "confidence": "high",
+      "thesis": "The technical indicators suggest a strong bullish trend in the medium to long term, supported by upward momentum, strong volume, and positive moving averages. While there is a presence of short-term consolidation indicated by the doji pattern, overall market conditions favor a continuation of the bullish trend.",
+      "key_supporting_evidence": [
+        "The price is trading above the 20-day, 50-day, and 200-day EMAs, indicating strong bullish momentum.",
+        "The 20-day EMA has crossed above the 50-day EMA, a classic bullish signal.",
+        "RSI is at 59.5106, suggesting upward momentum without being overbought.",
+        "MACD shows a positive divergence with a current value of 27.7591, indicating bullish momentum.",
+        "Volume spikes align with upward price movements, reinforcing the strength of the bullish trend.",
+        "The recent visual analysis highlights an underlying bullish trend, despite a doji formation signalling potential short-term consolidation."
+      ]
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "bullish",
+        "confidence": "high",
+        "thesis": "The technical indicators suggest a strong bullish trend in the medium to long term, supported by upward momentum, strong volume, and positive moving averages. While there is a presence of short-term consolidation indicated by the doji pattern, overall market conditions favor a continuation of the bullish trend."
+      },
+      "indicator_explanation": "The technical indicators present a robust bullish narrative. The price is currently trading above the 20-day, 50-day, and 200-day exponential moving averages (EMAs), which is indicative of strong upward momentum in the price action. The 20-day EMA crossing above the 50-day EMA adds credence to this bullish scenario as it is a classic signal that often precedes significant price appreciation. The Relative Strength Index (RSI) at 59.51 reflects a good balance of momentum, indicating that while buyers are present, the asset is not yet in overbought territory. Furthermore, the MACD value at 27.76 suggests a positive momentum divergence, adding further bullish weight to our analysis.",
+      "pattern_explanation": "While the overall trend is bullish, it's important to note the presence of a doji candlestick pattern, which typically implies consolidation or indecision in the market. This pattern may reflect the market\u2019s need for some short-term digestion of upward gains, allowing for potential pullbacks before the next leg up. Nevertheless, despite this consolidation signal, the overarching trend remains upward, suggesting that as long as the fundamentals hold, the bullish outlook stands.",
+      "sr_explanation": "Key support levels to watch include the 20-day EMA, currently serving as a dynamic support line given its upward trajectory. Should the price dip below this level, around $X (specific price should be inserted if available), it could indicate a potential shift towards bearishness. Valid resistance levels are close to recent highs, particularly at $Y (insert specific price), where selling pressure might re-emerge if reached. Monitoring these levels is crucial to understanding the price's next moves and validating the bullish stance.",
+      "uncertainty_notes": [
+        "The doji pattern suggests that there may be short-term volatility or consolidation, which could lead to pullbacks before continuing the upward trend.",
+        "Despite strong bullish indicators, the RSI nearing 60 indicates that we should remain cautious of potential overextension, where the price could become vulnerable to corrections.",
+        "Any failure to maintain above the 20-day EMA, around $X, would invalidate the bullish outlook and potentially lead to a more bearish sentiment."
+      ],
+      "monitoring_checklist": [
+        "Watch for any significant price movements at or below the 20-day EMA for support confirmation.",
+        "Observe the MACD for signs of weakening momentum, which might indicate a shift in trend.",
+        "Track volume levels; sustained high volume on upward moves will reinforce the bullish argument."
+      ]
+    }
+  },
+  "chart_url": "/api/ta/artifacts/ta_20260709T133608Z_ce2d64/ICICIBANK.NS_20260709T133632Z.png",
+  "_artifact_urls": [
+    "/api/ta/artifacts/ta_20260709T133608Z_ce2d64/ICICIBANK.NS_20260709T133632Z.png"
+  ],
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 1330.515
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 1371.225
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 59.5106
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": 27.7591
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 25.4071
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": 43779171.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 1371.225
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

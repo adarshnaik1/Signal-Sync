@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "generated_at": "2023-10-05T10:45:00Z",
+    "pipeline_version": "1.0",
+    "sources": [
+      {
+        "name": "Wikipedia",
+        "type": "website",
+        "url": "https://en.wikipedia.org/wiki/Infosys"
+      },
+      {
+        "name": "Infosys Official Website",
+        "type": "website",
+        "url": "https://www.infosys.com/"
+      },
+      {
+        "name": "Yahoo Finance",
+        "type": "finance news",
+        "url": "https://finance.yahoo.com/quote/INFY.NS/profile/"
+      },
+      {
+        "name": "Reuters",
+        "type": "financial news",
+        "url": "https://www.reuters.com/markets/companies/INFY.NS/"
+      },
+      {
+        "name": "NDTV",
+        "type": "news article",
+        "url": "https://www.ndtv.com/india-news/infosys-ceo-salil-parekh-addresses-toxic-work-culture-charge-committed-to-fairness-7495033"
+      },
+      {
+        "name": "CNN",
+        "type": "news article",
+        "url": "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh"
+      },
+      {
+        "name": "CFO.com",
+        "type": "finance news",
+        "url": "https://www.cfo.com/news/infosys-investigating-ceos-unethical-practices/"
+      }
+    ]
+  },
+  "company": {
+    "name": "Infosys Limited",
+    "ticker": "INFY.NS",
+    "sector": "Technology",
+    "profile_summary": "Infosys Limited is a global leader in next-generation digital services and consulting, founded in 1981 and headquartered in Bengaluru, India.",
+    "headquarters": "Bengaluru, India",
+    "founded_year": 1981,
+    "employees": 330000,
+    "products_services": [
+      "Cloud Services",
+      "AI and Automation",
+      "Application Development",
+      "Digital Transformation Consulting",
+      "Maintenance and Support"
+    ],
+    "subsidiaries": [
+      "Infosys BPM",
+      "Infosys Consulting",
+      "EdgeVerve Systems"
+    ],
+    "market_presence": "Operating in over 50 countries worldwide"
+  },
+  "scores": {
+    "trustworthiness_score": 77.83,
+    "financial_integrity_score": 68.5,
+    "management_risk_score": 75.0,
+    "market_manipulation_risk_score": 75.0
+  },
+  "findings": {
+    "overview_findings": [
+      "Infosys is a leader in the IT services industry with a diverse product offering.",
+      "The company boasts a strong global presence with operations in many countries.",
+      "It has a considerable workforce, reflecting its scale and impact in the industry."
+    ],
+    "management_findings": [
+      "The current CEO, Salil Parekh, has faced significant allegations related to corporate governance and alleged unethical accounting practices.",
+      "The CFO, Jayesh Sanghrajka, has taken over his role amid scrutiny, raising concerns about financial management post the previous CFO's departure."
+    ],
+    "financial_irregularities": [
+      "Revenue attention towards digital transformation has led to increased revenues, but the growth rate exhibits fluctuations indicating potential recognition issues.",
+      "Reported cash flows exhibited discrepancies compared to earnings reported, suggesting potential earnings management.",
+      "Debt levels remained stable, but the debt-to-equity ratio showed slight increase, indicating higher leverage.",
+      "The audit opinion was unqualified; however, previous auditor changes raised concerns.",
+      "No significant related party transactions were noted.",
+      "No off-balance sheet items were reported.",
+      "Changes in accounting policies were minimal but pointed towards increased digital and technology-related cost allocations.",
+      "Earnings quality indicators flagged several one-time gains impacting reported net income."
+    ],
+    "scam_signals": [
+      "Significant volume spike detected (5.73x median volume) with no corresponding news.",
+      "Unusual price movements observed with noticeable gaps suggesting potential manipulation.",
+      "End-of-day price inflation with no fundamental backing raised risk flags."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Salil Parekh",
+        "role": "CEO",
+        "red_flags": [
+          "Whistleblower allegations regarding unethical practices",
+          "Accusations of false information related to employee treatment"
+        ],
+        "evidence_links": [
+          "https://www.ndtv.com/india-news/infosys-ceo-salil-parekh-addresses-toxic-work-culture-charge-committed-to-fairness-7495033",
+          "https://www.cnn.com/2019/10/22/tech/infosys-india-investigation-salil-parekh"
+        ]
+      },
+      {
+        "name": "Jayesh Sanghrajka",
+        "role": "CFO",
+        "red_flags": [
+          "Joined the company during a turbulent time marked by previous CFO's allegations",
+          "Faced scrutiny along with CEO for financial governance issues"
+        ],
+        "evidence_links": [
+          "https://www.infosys.com/about/management-profiles/jayesh-sanghrajka.html",
+          "https://www.cfo.com/news/infosys-investigating-ceos-unethical-practices/"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}
