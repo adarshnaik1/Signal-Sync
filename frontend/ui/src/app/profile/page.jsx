@@ -105,6 +105,10 @@ function isMissingValue(value) {
   return value === null || value === undefined || value === "";
 }
 
+function isMissingSupabaseTableError(error) {
+  return error?.code === "PGRST205" || /could not find the table/i.test(error?.message || "");
+}
+
 export default function ProfilePage() {
   const router = useRouter();
   const [authUser, setAuthUser] = useState(null);
@@ -218,7 +222,7 @@ export default function ProfilePage() {
       liabilitiesError ||
       portfoliosError ||
       analysisError ||
-      recommendationLoadError
+      (recommendationLoadError && !isMissingSupabaseTableError(recommendationLoadError))
     ) {
       setError(
         assetsError?.message ||
@@ -772,7 +776,13 @@ export default function ProfilePage() {
         .single();
 
       if (insertError) {
-        console.error("Unable to store investment recommendation:", insertError);
+        if (!isMissingSupabaseTableError(insertError)) {
+          console.error("Unable to store investment recommendation:", insertError?.message || insertError);
+        } else {
+          console.warn("Investment recommendation table is unavailable; keeping recommendation in session state only.");
+        }
+
+        setLatestRecommendation(data);
       } else {
         setLatestRecommendation(storedRecommendation);
       }
