@@ -41,3 +41,10 @@ uvicorn[standard]>=0.22.0
 python-multipart>=0.0.6
 aiofiles>=23.1.0
 
+# News Sentiment Analysis dependencies
+transformers>=4.30.0
+torch>=2.0.0
+dateparser>=1.1.8
+beautifulsoup4>=4.12.0
+
+
