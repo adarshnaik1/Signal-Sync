@@ -155,7 +155,7 @@ def run_fa_job(
             "financial_analysis": financial_analysis.get("financial_analysis", {}),
             "risk_analysis": risk_analysis.get("risk_analysis", {}),
             "valuation_analysis": valuation_analysis.get("valuation_analysis", {}),
-            "investment_verdict": verdict.get("investment_verdict", verdict),
+            "investment_verdict": verdict,
         }
 
         # ── Optional explanation layer ───────────────────────

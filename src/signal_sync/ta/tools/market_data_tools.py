@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Type
 
@@ -28,6 +29,11 @@ def _normalize_period(period: str, default: str = "1y") -> str:
     if value in VALID_YF_PERIODS:
         return value
     return default
+
+
+def _normalize_yahoo_symbol(symbol: str) -> str:
+    value = str(symbol).strip().upper()
+    return re.sub(r"(?:\.(?:NS|BO))+$", lambda match: ".NS" if match.group(0).endswith(".NS") else ".BO", value)
 
 
 class FetchOHLCVInput(BaseModel):
@@ -97,7 +103,7 @@ class FetchOHLCVTool(BaseTool):
         except ImportError:
             return json.dumps({"success": False, "error": "Missing dependencies. Install pandas and yfinance."})
 
-        symbol = ticker.strip().upper()
+        symbol = _normalize_yahoo_symbol(ticker)
         normalized_period = _normalize_period(period)
         try:
             df = yf.download(
@@ -164,7 +170,7 @@ class FetchActionsTool(BaseTool):
         except ImportError:
             return json.dumps({"success": False, "error": "Missing dependency: yfinance."})
 
-        symbol = ticker.strip().upper()
+        symbol = _normalize_yahoo_symbol(ticker)
         try:
             tk = yf.Ticker(symbol)
             actions = tk.actions

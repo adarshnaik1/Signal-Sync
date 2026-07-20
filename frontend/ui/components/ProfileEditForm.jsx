@@ -36,14 +36,16 @@ export default function ProfileEditForm({ customer, authUser, onSave, onCancel, 
     const displayName = toInputValue(authUser?.user_metadata?.full_name);
     const authEmail = toInputValue(authUser?.email);
 
-    setFormData({
-      name: displayName,
-      age: toInputValue(customer?.age),
-      annual_income: toInputValue(customer?.annual_income),
-      email: authEmail,
-      phone_number: toInputValue(customer?.phone_number),
-      number_of_dependents: toInputValue(customer?.number_of_dependents),
-      investor_type: toInputValue(customer?.investor_type),
+    queueMicrotask(() => {
+      setFormData({
+        name: displayName,
+        age: toInputValue(customer?.age),
+        annual_income: toInputValue(customer?.annual_income),
+        email: authEmail,
+        phone_number: toInputValue(customer?.phone_number),
+        number_of_dependents: toInputValue(customer?.number_of_dependents),
+        investor_type: toInputValue(customer?.investor_type),
+      });
     });
   }, [customer, authUser]);
 

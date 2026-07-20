@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 const BGV_API_BASE = process.env.NEXT_PUBLIC_BGV_API_BASE_URL || "";
 const TA_API_BASE = process.env.NEXT_PUBLIC_TA_API_BASE_URL || BGV_API_BASE;
+const FA_API_BASE = process.env.NEXT_PUBLIC_FA_API_BASE_URL || BGV_API_BASE;
 
 export default function StockDetails({ data }) {
   const {
@@ -151,6 +152,27 @@ export default function StockDetails({ data }) {
                 disabled={loadingAction !== null}
               >
                 {loadingAction === "TA analysis" ? "Starting..." : "Run TA Analysis"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  startAnalysis({
+                    label: "FA analysis",
+                    apiBase: FA_API_BASE,
+                    routePrefix: "fa",
+                    formFields: {
+                      company_name: companyName || symbol,
+                      ticker: symbol,
+                      sector: sector || "",
+                      exchange: "NSE",
+                    },
+                  })
+                }
+                className="inline-flex items-center rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={loadingAction !== null}
+              >
+                {loadingAction === "FA analysis" ? "Starting..." : "Run Fundamental Analysis"}
               </button>
             </div>
           </div>

@@ -1,195 +1,132 @@
-# Signal Sync - BGV Verification System
+# Signal Sync
 
-Welcome to the Signal Sync project, an **Agentic AI Retail Investment Advisor** powered by [crewAI](https://crewai.com). This system provides comprehensive Background Verification (BGV) for companies to help retail investors make informed decisions.
+Signal Sync is a combined Python + Next.js application for BGV, financial analysis, and investor recommendation workflows.
 
-## 🎯 Features
+The repository has two main runnable parts:
 
-The BGV Verification Crew performs:
+- A Python API in `src/` that serves the investor recommendation endpoint and the BGV pipeline.
+- A Next.js frontend in `frontend/ui/` that calls the Python API and uses Supabase for profile storage.
 
-- **🏢 Company Overview Analysis** - Generates comprehensive company profiles including business description, products, subsidiaries, and market presence
-- **👥 Management Research** - Verifies backgrounds of founders and executives, identifying red flags such as past fraud or controversies
-- **📊 Financial Irregularities Detection** - Detects accounting anomalies, unusual revenue patterns, debt issues, and audit concerns
-- **⚠️ Scam Detection** - Analyzes trading patterns using yfinance data to detect volume spikes and potential market manipulation
-
-## 📁 Project Structure
+## Project Layout
 
 ```
 signal_sync/
-├── streamlit_app/
-│   └── app.py                    # Streamlit frontend
-├── src/signal_sync/
-│   ├── config/
-│   │   ├── agents.yaml           # Agent configurations
-│   │   └── tasks.yaml            # Task configurations
-│   ├── schemas/
-│   │   ├── __init__.py
-│   │   └── bgv_schemas.py        # Pydantic models for structured outputs
-│   ├── tools/
-│   │   ├── __init__.py
-│   │   ├── stock_tool.py         # Stock data fetcher using yfinance
-│   │   └── cache/                # Cached stock data
-│   ├── output_data/
-│   │   └── bgv_output.json       # Final BGV report output
-│   ├── crew.py                   # BGV Crew definition
-│   └── main.py                   # Entry points
-├── requirements.txt
-├── pyproject.toml
-└── .env.example
+├── src/                      # Python API and agentic pipeline
+├── frontend/ui/              # Next.js frontend
+├── streamlit_app/            # Optional Streamlit UI
+├── requirements.txt          # Python dependencies
+├── pyproject.toml            # Python package metadata
+└── .env.example              # Example backend environment file
 ```
 
-## 🚀 Installation
+## Prerequisites
 
-### Prerequisites
-- Python >=3.10 <3.14
-- [UV](https://docs.astral.sh/uv/) (recommended) or pip
+- Python 3.10 or newer
+- Node.js 18 or newer
+- npm
 
-### Setup
+## Environment Variables
 
-1. **Clone and navigate to the project:**
-   ```bash
-   cd signal_sync
-   ```
+Create a root `.env` file for the Python side. The code reads this file automatically.
 
-2. **Install dependencies:**
-   ```bash
-   # Using UV (recommended)
-   pip install uv
-   crewai install
-   
-   # Or using pip
-   pip install -e .
-   pip install -r requirements.txt
-   ```
+Required or commonly used variables:
 
-3. **Configure environment variables:**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your API keys
-   ```
+- `OPENAI_API_KEY` for the agentic analysis and recommendation stack
+- `SERPER_API_KEY` for web search support where used
+- `NEWSDATA_API_KEY` for the news tool if you use the financial analysis agents
+- `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET`, `REDDIT_USERNAME`, `REDDIT_PASSWORD`, `REDDIT_USER_AGENT` for the reddit sentiment module if you use it
 
-   Required API keys:
-   - `OPENAI_API_KEY` - For LLM-based analysis
-   - `SERPER_API_KEY` - For web search functionality
+For the frontend, create `frontend/ui/.env.local` with:
 
-## 🖥️ Running the Application
+- `NEXT_PUBLIC_BGV_API_BASE_URL=http://localhost:8000`
+- `NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=<your-supabase-anon-or-publishable-key>`
+- `NEXT_PUBLIC_SITE_URL=http://localhost:3000`
 
-### Option 1: Streamlit Web Interface (Recommended)
+## Setup
+
+### 1) Clone the repository
+
+```bash
+cd signal_sync
+```
+
+### 2) Set up the Python environment
+
+From the repository root:
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e .
+python -m pip install fastapi "uvicorn[standard]" python-multipart aiofiles
+```
+
+The root `requirements.txt` mirrors the project stack, but the editable install above is the safest fresh-machine setup because it avoids the duplicate pin conflict in that file.
+
+### 3) Set up the frontend
+
+Open a second terminal and go to the Next.js app:
+
+```bash
+cd frontend/ui
+npm install
+```
+
+If you already have the lockfile dependencies installed, `npm i` is also fine.
+
+## Running the App
+
+Run the Python API first, then start the frontend.
+
+### Backend API
+
+From the repository root, with the virtual environment active:
+
+```bash
+python -m uvicorn src.api.bgv_api:app --reload --host 0.0.0.0 --port 8000
+```
+
+The API will be available at:
+
+- `http://localhost:8000`
+- `http://localhost:8000/docs` for the FastAPI Swagger UI
+
+### Frontend UI
+
+From `frontend/ui`:
+
+```bash
+npm run dev
+```
+
+The frontend will run on:
+
+- `http://localhost:3000`
+
+## Recommended Local Startup Order
+
+1. Activate the Python virtual environment.
+2. Start the Python API with `python -m uvicorn src.api.bgv_api:app --reload --host 0.0.0.0 --port 8000`.
+3. In a second terminal, go to `frontend/ui`.
+4. Install frontend dependencies with `npm install` if needed.
+5. Start the frontend with `npm run dev`.
+
+## Notes
+
+- The investor recommendation page expects Supabase tables and env vars to be configured before you try to persist recommendations.
+- If the frontend cannot reach the backend, verify `NEXT_PUBLIC_BGV_API_BASE_URL` points to `http://localhost:8000`.
+- If you are only testing the Python API, you can use FastAPI at `/docs` without starting the frontend.
+
+## Optional Streamlit App
+
+If you want the legacy Streamlit interface, run:
 
 ```bash
 streamlit run streamlit_app/app.py
 ```
 
-This launches a user-friendly web interface where you can:
-- Enter company name and ticker
-- Upload annual report PDF
-- Trigger BGV verification
-- View results with interactive visualizations
+## Disclaimer
 
-### Option 2: Command Line
-
-```bash
-# Using CrewAI CLI
-crewai run
-
-# Or directly with Python
-python -m signal_sync.main
-
-# With arguments
-python -m signal_sync.main "Company Name" "TICKER" "Sector" "/path/to/annual_report.pdf"
-```
-
-### Option 3: Programmatic Usage
-
-```python
-from signal_sync.main import run_bgv
-
-output_path = run_bgv(
-    company_name="Infosys Limited",
-    ticker="INFY.NS",
-    sector="Technology",
-    annual_report_path="/path/to/annual_report.pdf"  # Optional
-)
-
-print(f"BGV Report saved to: {output_path}")
-```
-
-## 📊 Output Format
-
-The BGV verification produces a structured JSON output (`bgv_output.json`) with:
-
-```json
-{
-  "meta": {
-    "generated_at": "2026-01-16T12:00:00Z",
-    "pipeline_version": "bgv_v1.0",
-    "sources": [...]
-  },
-  "company": {
-    "name": "Company Name",
-    "ticker": "TICKER",
-    "sector": "Technology",
-    "profile_summary": "...",
-    ...
-  },
-  "scores": {
-    "trustworthiness_score": 78.5,
-    "financial_integrity_score": 72.0,
-    "management_risk_score": 45.0,
-    "market_manipulation_risk_score": 20.0
-  },
-  "findings": {
-    "overview_findings": [...],
-    "management_findings": [...],
-    "financial_irregularities": [...],
-    "scam_signals": [...]
-  },
-  "evidence": {
-    "documents": [...],
-    "time_series": [...],
-    "people_profiles": [...]
-  },
-  "final_verdict": "MODERATE RISK: Proceed with caution..."
-}
-```
-
-## 🔧 Stock Data Tool
-
-The project includes a custom stock data tool that fetches historical data from Yahoo Finance:
-
-```python
-from signal_sync.tools.stock_tool import fetch_stock_data
-
-# Fetch 30 days of daily data
-result = fetch_stock_data("AAPL", period="30d", interval="1d")
-print(result)
-```
-
-The tool automatically:
-- Fetches price and volume data
-- Calculates key metrics (volatility, volume spikes, etc.)
-- Detects anomalies
-- Caches data locally for efficiency
-
-## 🏗️ Customization
-
-### Adding New Agents
-Edit `src/signal_sync/config/agents.yaml` to define new agents
-
-### Adding New Tasks
-Edit `src/signal_sync/config/tasks.yaml` to define new tasks
-
-### Modifying Output Schema
-Edit `src/signal_sync/schemas/bgv_schemas.py` to modify the structured output format
-
-## ⚠️ Disclaimer
-
-This tool is for **informational purposes only**. Always conduct your own due diligence before making investment decisions. The BGV verification results should be used as one of many inputs in your investment research process.
-
-## 📚 Support
-
-- [CrewAI Documentation](https://docs.crewai.com)
-- [CrewAI GitHub](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+This project is for informational purposes only. It is not financial advice, and outputs should be reviewed with your own due diligence.

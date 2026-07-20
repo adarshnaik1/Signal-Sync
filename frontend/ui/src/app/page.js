@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "../../components/ui/Header";
@@ -15,6 +15,14 @@ const MESSAGES = {
 };
 
 export default function Home() {
+  return (
+    <Suspense fallback={null}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [toast, setToast] = useState("");
@@ -22,9 +30,11 @@ export default function Home() {
   useEffect(() => {
     const msg = searchParams.get("msg");
     if (msg && MESSAGES[msg]) {
-      setToast(MESSAGES[msg]);
-      // Clean the query param from the URL without re-render
-      router.replace("/", { scroll: false });
+      queueMicrotask(() => {
+        setToast(MESSAGES[msg]);
+        // Clean the query param from the URL without re-render
+        router.replace("/", { scroll: false });
+      });
     }
   }, [searchParams, router]);
 

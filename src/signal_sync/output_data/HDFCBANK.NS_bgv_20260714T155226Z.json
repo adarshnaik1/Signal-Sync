@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "generated_at": "2026-07-14T15:52:26Z",
+    "pipeline_version": "1.0.0",
+    "sources": [
+      {
+        "name": "HDFC Bank Official Site",
+        "type": "official",
+        "url": "https://www.hdfc.bank.in/"
+      },
+      {
+        "name": "Yahoo Finance",
+        "type": "business news",
+        "url": "https://finance.yahoo.com/quote/HDFCBANK.NS/"
+      },
+      {
+        "name": "Reuters",
+        "type": "business news",
+        "url": "https://www.reuters.com/markets/companies/HDBK.NS/"
+      },
+      {
+        "name": "Wikipedia",
+        "type": "encyclopedia",
+        "url": "https://en.wikipedia.org/wiki/HDFC_Bank"
+      },
+      {
+        "name": "GlobalData",
+        "type": "industry report",
+        "url": "https://www.globaldata.com/company-profile/hdfc-bank-ltd/"
+      },
+      {
+        "name": "Economic Times",
+        "type": "news outlet",
+        "url": "https://economictimes.indiatimes.com/hdfc-bank-ltd/stocks/companyid-9195.cms"
+      }
+    ]
+  },
+  "company": {
+    "name": "HDFC Bank Limited",
+    "ticker": "HDFCBANK.NS",
+    "sector": "Financial Services",
+    "profile_summary": "HDFC Bank Limited is an Indian banking and financial services company headquartered in Mumbai. It is India's largest private sector bank by assets and serves millions of customers in various financial segments.",
+    "headquarters": "Mumbai, India",
+    "founded_year": 1994,
+    "employees": 150000,
+    "products_services": [
+      "Personal banking",
+      "Car loans",
+      "Home loans",
+      "Business banking",
+      "Credit cards",
+      "Wealth management",
+      "Investment banking"
+    ],
+    "subsidiaries": [
+      "HDFC Ltd",
+      "HDFC Bank Insurance",
+      "HDFC Securities"
+    ],
+    "market_presence": "HDFC Bank operates across India and has international branches located in Bahrain, Hong Kong, and Singapore."
+  },
+  "scores": {
+    "trustworthiness_score": 76.0,
+    "financial_integrity_score": 68.0,
+    "management_risk_score": 75.0,
+    "market_manipulation_risk_score": 35.0
+  },
+  "findings": {
+    "overview_findings": [
+      "HDFC Bank is the largest private sector bank in India by assets.",
+      "The bank offers a diversified range of financial products and services including retail and wholesale banking.",
+      "In 2023, HDFC Bank merged with HDFC Ltd, enhancing its market value significantly.",
+      "The bank has a strong employee base of around 150,000, showcasing its organizational scale.",
+      "Recent developments include leadership changes and a focus on digitizing services."
+    ],
+    "management_findings": [
+      "Significant allegations surrounding the leadership team might indicate potential operational risk.",
+      "Governance issues were identified following the resignation of Atanu Chakraborty, highlighting a need for improved practices."
+    ],
+    "financial_irregularities": [
+      "Increased revenue for FY 2023-24 shows growth but exhibits unusual spikes potentially linked to aggressive revenue recognition.",
+      "Cash flow from operations has increased; however, discrepancies between reported earnings and actual cash flows raise concerns.",
+      "Debt levels appear manageable, but the debt-to-equity ratio has worsened slightly post-merger with HDFC Ltd.",
+      "Audit opinions remain unqualified, but concerns about management integrity have been raised due to allegations surrounding key executives.",
+      "Related party transactions have increased in volume, necessitating scrutiny regarding transparency and conflicts of interest.",
+      "Off-balance-sheet items related to the merger were not fully disclosed, which may hide potential liabilities.",
+      "Changes in accounting policies around revenue recognition should be monitored for signs of aggressive accounting practices.",
+      "Earnings quality has shown signs of volatility, warranting caution in future projections."
+    ],
+    "scam_signals": [
+      "No significant volume anomalies detected (spikes don't exceed 3x median).",
+      "Price movements correlate with corporate events, mainly the merger announcement.",
+      "No new significant risks identified in trading patterns aligned to insider or pump-and-dump schemes."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Sashidhar Jagdishan",
+        "role": "Managing Director and CEO",
+        "red_flags": [
+          "Involvement in bribery allegations",
+          "High-profile FIR regarding financial misconduct"
+        ],
+        "evidence_links": [
+          "https://www.ndtv.com/india-news/bombay-high-court-dismisses-bribery-case-against-hdfc-bank-ceo-sashidhar-jagdishan-11455015",
+          "https://openthemagazine.com/columns/sashidhar-jagdishan-the-ceo-in-the-hot-seat"
+        ]
+      },
+      {
+        "name": "Kaizad M Bharucha",
+        "role": "Deputy Managing Director",
+        "red_flags": [
+          "Allegations of involvement in unethical financial practices",
+          "Lack of substantial evidence against him, yet concerns remain"
+        ],
+        "evidence_links": [
+          "https://www.hdfc.bank.in/about-us/management-team/mr-kaizad-m-bharucha",
+          "https://www.moneycontrol.com/news/business/banks/kaizad-bharucha-may-emerge-as-a-power-house-amid-hdfc-bank-s-boardroom-battle-13865204.html"
+        ]
+      },
+      {
+        "name": "Atanu Chakraborty",
+        "role": "Former Chairman",
+        "red_flags": [
+          "Resigned over ethical concerns regarding corporate governance",
+          "Perceived leadership failures and ethical disagreements"
+        ],
+        "evidence_links": [
+          "https://www.indiatoday.in/business/story/atanu-chakraborty-resigns-hdfc-bank-chairman-ethics-concerns-governance-2889543-2026-03-31",
+          "https://variety.com/2023/business/news/hdfc-bank-chairman-resignation-1236167627/"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended"
+}
