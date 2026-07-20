@@ -1,0 +1,361 @@
+{
+  "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\HDFCBANK.NS_bundle_20260714T155536Z.json",
+  "daily_rows": 250,
+  "weekly_rows": 53,
+  "actions_count": 34,
+  "validation": {
+    "success": true,
+    "rows": 250,
+    "dropped_rows": 0
+  },
+  "trend": {
+    "sma": {
+      "sma20": 800.8097,
+      "sma50": 770.2297,
+      "sma100": 787.5252,
+      "sma200": 871.991
+    },
+    "ema": {
+      "ema20": 800.1178,
+      "ema50": 786.6993,
+      "ema100": 803.9741,
+      "ema200": 847.4393
+    }
+  },
+  "momentum": {
+    "rsi14": 58.7662,
+    "macd": 14.6818,
+    "macd_signal": 14.3264,
+    "macd_histogram": 0.3555
+  },
+  "volatility": {
+    "atr14": 13.6643,
+    "bb_basis20": 800.8097,
+    "bb_upper20": 834.4886,
+    "bb_lower20": 767.1308
+  },
+  "volume": {
+    "obv": -1093096557.0
+  },
+  "candlestick_patterns": [],
+  "chart_patterns": [],
+  "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260714T155554Z.png",
+  "visual_review": {
+    "success": true,
+    "visual_summary": "The chart shows a recent recovery after a significant downtrend, with the price moving above the 20-day and 50-day EMAs but still below the 200-day EMA, indicating a potential early-stage uptrend or consolidation phase. Volume spikes coincide with price movements, suggesting active trading interest. The price is currently testing resistance near the 200-day EMA, which could act as a key level for a breakout or reversal.",
+    "confidence": 0.8,
+    "image_analysis_status": "completed",
+    "model": "gpt-4.1-mini",
+    "image_size": {
+      "width": 1820,
+      "height": 1040
+    },
+    "reviewed_image_size": {
+      "width": 1200,
+      "height": 686
+    },
+    "error": null,
+    "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260714T155554Z.png",
+    "advisory_only": true,
+    "chart_url": "/api/ta/artifacts/ta_20260714T155529Z_87ac5d/HDFCBANK.NS_20260714T155554Z.png"
+  },
+  "support_zones": [
+    775.0019,
+    786.6993
+  ],
+  "resistance_zones": [
+    803.9741,
+    787.5377,
+    847.4393
+  ],
+  "evidence_by_layer": {
+    "swings": [
+      831.5958,
+      769.5717,
+      802.8218,
+      798.5425,
+      783.5898,
+      757.0292,
+      774.0477,
+      741.9289,
+      786.4,
+      829.85,
+      854.5168,
+      803.7072,
+      719.6474,
+      781.77,
+      759.1442,
+      737.4037,
+      746.7984,
+      730.616,
+      726.3368,
+      774.65
+    ],
+    "clusters": [
+      787.5377
+    ],
+    "volume_zones": [
+      775.0019,
+      788.8405,
+      761.1633,
+      775.0019
+    ],
+    "dynamic_emas": [
+      786.6993,
+      803.9741
+    ]
+  },
+  "summary": {
+    "stance": "bullish",
+    "confidence": "high",
+    "thesis": "The asset is showing early signs of an uptrend, having recently recovered from a significant downtrend and currently testing key resistance levels near the 200-day EMA. The price is above the 20-day and 50-day EMAs, indicating potential bullish momentum. However, close monitoring is suggested as the asset remains below the 200-day EMA, which is a critical resistance point that could reverse the trend if not overcome."
+  },
+  "indicator_explanation": "The price is exhibiting positive behavior as it trades above both the 20-day and 50-day EMAs. This indicates short- to medium-term bullish momentum. The RSI value at 58.7662 suggests that the asset is not overbought, leaving room for further price increases.",
+  "pattern_explanation": "The current movement can be interpreted as a potential trend reversal from a recent downtrend. The MACD histogram and signal are showing positive momentum, which typically indicates momentum strengthening in the direction of the trend. This reinforces the view that the asset may be on the verge of a breakout.",
+  "sr_explanation": "The critical resistance level is located at the 200-day EMA, currently positioned at 871.991. This level has significant influence; if the asset can close and sustain above this point, it may indicate a strong bullish continuation. Conversely, falling below the 20-day and 50-day EMAs could invalidate the bullish outlook.",
+  "uncertainty_notes": [
+    "If the price fails to break above the 200-day EMA at 871.991, it could indicate a rejection and potential reversal back into a downtrend.",
+    "The bullish momentum observed may lose strength if there are negative fluctuations in trading volume during increases in price.",
+    "While the RSI suggests room for growth, a rapid increase above 70 would signal possible overbought conditions, leading to a correction."
+  ],
+  "monitoring_checklist": [
+    "Watch for a sustained close above the 200-day EMA at 871.991 to validate the bullish momentum.",
+    "Observe the RSI for upward movement towards overbought territory and watch for subsequent price action.",
+    "Monitor trading volume trends\u2014an increase in volume should accompany price rises for confirmation of bullish strength."
+  ],
+  "_task_results": {
+    "market_data_task": {
+      "success": true,
+      "ticker": "HDFCBANK.NS",
+      "bundle_file": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\cache\\HDFCBANK.NS_bundle_20260714T155536Z.json",
+      "daily_rows": 250,
+      "weekly_rows": 53,
+      "actions_count": 34,
+      "validation": {
+        "success": true,
+        "rows": 250,
+        "dropped_rows": 0
+      }
+    },
+    "indicator_task": {
+      "trend": {
+        "sma": {
+          "sma20": 800.8097,
+          "sma50": 770.2297,
+          "sma100": 787.5252,
+          "sma200": 871.991
+        },
+        "ema": {
+          "ema20": 800.1178,
+          "ema50": 786.6993,
+          "ema100": 803.9741,
+          "ema200": 847.4393
+        }
+      },
+      "momentum": {
+        "rsi14": 58.7662,
+        "macd": 14.6818,
+        "macd_signal": 14.3264,
+        "macd_histogram": 0.3555
+      },
+      "volatility": {
+        "atr14": 13.6643,
+        "bb_basis20": 800.8097,
+        "bb_upper20": 834.4886,
+        "bb_lower20": 767.1308
+      },
+      "volume": {
+        "obv": -1093096557.0
+      }
+    },
+    "pattern_detection_task": {
+      "candlestick_patterns": [],
+      "chart_patterns": [],
+      "chart_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\ta\\charts\\HDFCBANK.NS_20260714T155554Z.png",
+      "visual_review": {
+        "success": true,
+        "visual_summary": "The chart shows a recent recovery after a significant downtrend, with the price moving above the 20-day and 50-day EMAs but still below the 200-day EMA, indicating a potential early-stage uptrend or consolidation phase. Volume spikes coincide with price movements, suggesting active trading interest. The price is currently testing resistance near the 200-day EMA, which could act as a key level for a breakout or reversal.",
+        "confidence": 0.8,
+        "image_analysis_status": "completed",
+        "model": "gpt-4.1-mini",
+        "image_size": {
+          "width": 1820,
+          "height": 1040
+        },
+        "reviewed_image_size": {
+          "width": 1200,
+          "height": 686
+        },
+        "error": null
+      }
+    },
+    "support_resistance_task": {
+      "support_zones": [
+        775.0019,
+        786.6993
+      ],
+      "resistance_zones": [
+        803.9741,
+        787.5377,
+        847.4393
+      ],
+      "evidence_by_layer": {
+        "swings": [
+          831.5958,
+          769.5717,
+          802.8218,
+          798.5425,
+          783.5898,
+          757.0292,
+          774.0477,
+          741.9289,
+          786.4,
+          829.85,
+          854.5168,
+          803.7072,
+          719.6474,
+          781.77,
+          759.1442,
+          737.4037,
+          746.7984,
+          730.616,
+          726.3368,
+          774.65
+        ],
+        "clusters": [
+          787.5377
+        ],
+        "volume_zones": [
+          775.0019,
+          788.8405,
+          761.1633,
+          775.0019
+        ],
+        "dynamic_emas": [
+          786.6993,
+          803.9741
+        ]
+      },
+      "confidence_scores": {
+        "swings": 0.25,
+        "clusters": 0.3,
+        "volume_zones": 0.2,
+        "dynamic_emas": 0.25
+      }
+    },
+    "strategy_signal_task": {
+      "stance": "bullish",
+      "confidence": "high",
+      "thesis": "The asset is showing early signs of an uptrend, having recently recovered from a significant downtrend and currently testing key resistance levels near the 200-day EMA. The price is above the 20-day and 50-day EMAs, indicating potential bullish momentum. However, close monitoring is suggested as the asset remains below the 200-day EMA, which is a critical resistance point that could reverse the trend if not overcome.",
+      "key_supporting_evidence": [
+        "Price is currently testing resistance near the 200-day EMA at 871.991, which is a critical level.",
+        "Recent recovery above the 20-day and 50-day EMAs indicates bullish momentum.",
+        "RSI value of 58.7662 suggests the asset is not overbought, maintaining room for growth.",
+        "MACD histogram and signal show positive momentum, reinforcing the bullish thesis.",
+        "Volume spikes during price movements indicate active trading interest, supporting the potential for further gains."
+      ]
+    },
+    "explanation_task": {
+      "summary": {
+        "stance": "bullish",
+        "confidence": "high",
+        "thesis": "The asset is showing early signs of an uptrend, having recently recovered from a significant downtrend and currently testing key resistance levels near the 200-day EMA. The price is above the 20-day and 50-day EMAs, indicating potential bullish momentum. However, close monitoring is suggested as the asset remains below the 200-day EMA, which is a critical resistance point that could reverse the trend if not overcome."
+      },
+      "indicator_explanation": "The price is exhibiting positive behavior as it trades above both the 20-day and 50-day EMAs. This indicates short- to medium-term bullish momentum. The RSI value at 58.7662 suggests that the asset is not overbought, leaving room for further price increases.",
+      "pattern_explanation": "The current movement can be interpreted as a potential trend reversal from a recent downtrend. The MACD histogram and signal are showing positive momentum, which typically indicates momentum strengthening in the direction of the trend. This reinforces the view that the asset may be on the verge of a breakout.",
+      "sr_explanation": "The critical resistance level is located at the 200-day EMA, currently positioned at 871.991. This level has significant influence; if the asset can close and sustain above this point, it may indicate a strong bullish continuation. Conversely, falling below the 20-day and 50-day EMAs could invalidate the bullish outlook.",
+      "uncertainty_notes": [
+        "If the price fails to break above the 200-day EMA at 871.991, it could indicate a rejection and potential reversal back into a downtrend.",
+        "The bullish momentum observed may lose strength if there are negative fluctuations in trading volume during increases in price.",
+        "While the RSI suggests room for growth, a rapid increase above 70 would signal possible overbought conditions, leading to a correction."
+      ],
+      "monitoring_checklist": [
+        "Watch for a sustained close above the 200-day EMA at 871.991 to validate the bullish momentum.",
+        "Observe the RSI for upward movement towards overbought territory and watch for subsequent price action.",
+        "Monitor trading volume trends\u2014an increase in volume should accompany price rises for confirmation of bullish strength."
+      ]
+    }
+  },
+  "chart_url": "/api/ta/artifacts/ta_20260714T155529Z_87ac5d/HDFCBANK.NS_20260714T155554Z.png",
+  "_artifact_urls": [
+    "/api/ta/artifacts/ta_20260714T155529Z_87ac5d/HDFCBANK.NS_20260714T155554Z.png"
+  ],
+  "explanations": {
+    "ema": {
+      "meaning": "Exponential Moving Average gives recent prices more weight, showing short-to-midterm trend.",
+      "implication": [
+        "Price above EMA: short-term bullish bias.",
+        "Price below EMA: short-term bearish bias.",
+        "Crosses of faster EMA above slower EMA signal strengthening momentum."
+      ],
+      "takeaway": "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+      "observed_value": 786.6993
+    },
+    "sma": {
+      "meaning": "Simple Moving Average smooths price over a window to reveal trend direction.",
+      "implication": [
+        "Rising SMA: trend is up over that window.",
+        "Falling SMA: trend is down.",
+        "Price crossing the SMA indicates potential change in trend."
+      ],
+      "takeaway": "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+      "observed_value": 800.8097
+    },
+    "rsi": {
+      "meaning": "Relative Strength Index measures recent gains vs losses to gauge momentum (0-100).",
+      "implication": [
+        "RSI > 70 often means overbought (short-term pullback possible).",
+        "RSI < 30 often means oversold (possible bounce).",
+        "Divergences vs price can signal weakening trend."
+      ],
+      "takeaway": "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+      "observed_value": 58.7662
+    },
+    "macd": {
+      "meaning": "MACD shows momentum by comparing two EMAs and their difference (histogram).",
+      "implication": [
+        "MACD line crossing above signal line suggests bullish momentum gaining.",
+        "MACD below zero implies longer-term downward bias."
+      ],
+      "takeaway": "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+      "observed_value": 14.6818
+    },
+    "atr": {
+      "meaning": "Average True Range measures recent price volatility (higher = more movement).",
+      "implication": [
+        "Higher ATR means larger expected moves; position sizing should account for this.",
+        "Lower ATR means quieter market; breakouts may be more meaningful."
+      ],
+      "takeaway": "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+      "observed_value": 13.6643
+    },
+    "obv": {
+      "meaning": "On-Balance Volume accumulates volume on up vs down days to show participation direction.",
+      "implication": [
+        "Rising OBV with rising price confirms healthy buying interest.",
+        "Falling OBV while price rises suggests weak participation and risk of reversal."
+      ],
+      "takeaway": "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+      "observed_value": -1093096557.0
+    },
+    "bollinger_bands": {
+      "meaning": "Bands around a moving average that expand/contract with volatility.",
+      "implication": [
+        "Price touching upper band may be stretched; lower band touch may be oversold.",
+        "Squeezes (narrow bands) often precede bigger breakouts."
+      ],
+      "takeaway": "Use bands to sense volatility regimes and to avoid chasing extreme moves.",
+      "observed_value": 800.8097
+    },
+    "patterns": {}
+  },
+  "takeaways": [
+    "If price stays above key EMAs (e.g., 50/200), consider the trend supportive; if below, be cautious.",
+    "Look for price consistently above longer SMAs for confirmation of an uptrend; otherwise preserve capital.",
+    "Use RSI as a momentum check: avoid buying into high RSI spikes without confirmation; consider watchlist for low RSI recovery.",
+    "Watch MACD crossovers as supporting evidence for entries or exits, not as sole signals.",
+    "Use ATR to size stops and position sizes \u2014 increase stop distance when ATR is high.",
+    "Prefer trades where volume/OBV confirm price moves; be cautious when price diverges from OBV.",
+    "Use bands to sense volatility regimes and to avoid chasing extreme moves."
+  ]
+}

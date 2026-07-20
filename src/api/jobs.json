@@ -8534,5 +8534,482 @@
         "Use bands to sense volatility regimes and to avoid chasing extreme moves."
       ]
     }
+  },
+  "bgv_20260720T152104Z_ae3d84": {
+    "job_id": "bgv_20260720T152104Z_ae3d84",
+    "status": "running",
+    "created_at": "2026-07-20T15:21:04.272657Z",
+    "updated_at": "2026-07-20T15:22:28.630716Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive"
+    },
+    "progress": 40,
+    "current_step": "Financial Irregularities",
+    "current_agent": "Forensic Financial Analyst",
+    "step_message": "Running Financial Irregularities",
+    "completed_steps": [
+      {
+        "key": "company_overview_task",
+        "label": "Company Overview",
+        "agent": "Corporate Intelligence Analyst"
+      },
+      {
+        "key": "management_research_task",
+        "label": "Management Research",
+        "agent": "Executive Background Verification Specialist"
+      }
+    ],
+    "remaining_steps": [
+      {
+        "key": "financial_irregularities_task",
+        "label": "Financial Irregularities",
+        "agent": "Forensic Financial Analyst"
+      },
+      {
+        "key": "scam_detection_task",
+        "label": "Scam Detection",
+        "agent": "Market Manipulation Detection Specialist"
+      },
+      {
+        "key": "compile_bgv_report_task",
+        "label": "Final Report",
+        "agent": "BGV Report Compiler"
+      }
+    ],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\signal_sync\\output_data\\ITC.NS_bgv_20260720T152104Z.json",
+    "error": null
+  },
+  "fa_20260720T162413Z_020dd0": {
+    "job_id": "fa_20260720T162413Z_020dd0",
+    "status": "done",
+    "created_at": "2026-07-20T16:24:13.598593Z",
+    "updated_at": "2026-07-20T16:25:11.979659Z",
+    "metadata": {
+      "company_name": "ITC Limited",
+      "ticker": "ITC.NS",
+      "sector": "Consumer Defensive",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "Fundamental analysis complete",
+    "completed_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\agentic_pipeline\\output_data\\ITC.NS_fa_20260720T162414Z.json",
+    "error": null,
+    "result_json": {
+      "company_identification": {
+        "symbol": "ITC.NS",
+        "long_name": "ITC Limited",
+        "exchange": "NSE"
+      },
+      "company_metadata": {
+        "sector": "Consumer Defensive",
+        "industry": "Tobacco",
+        "business_summary": "ITC Limited engages in the fast-moving consumer goods, paperboards, paper and packaging, and agri businesses in India and internationally. The company offers cigarettes and cigars; foods, including staples, spices, biscuits, confectionery and gums, snacks, noodles and pasta, beverages, dairy products, ready-to-eat meals, chocolates, coffee, and frozen foods; personal care products; education and stationery, such as balls, gels and roller pens, mechanical pencils, geometry boxes, erasers, sharpeners and rulers, wax crayons, plastic crayons, and sketch pens and oil pastels; safety matches; and agarbattis and dhoops under various brands, as well as operates a hotel under the ITC Grand Central name in Mumbai. It also provides virgin, recycled, coated barrier, cupstock base, liner, liquid packaging, antifungal, solid, and graphic boards, as well as specialty papers; surfacing, print base, barrier, overlay, and liner papers; plastic substitution products; and packaging products, including cartons, flexible, tobacco, and green packaging products. In addition, the company exports feed ingredients, food grains, marine products, processed fruits, coffee products, leaf tobacco products, and spices; and offers information technology services for the banking and financial services, healthcare, manufacturing, consumer goods, travel, and hospitality industries, as well as produces and commercializes seed potato technology products. Further, it provides property infrastructure maintenance; engineering, procurement and construction management and project management consultancy services; business consulting; and agro-forestry and other related services, as well as engages in the fabrication and assembly of machinery for tube filling, cartoning, wrapping, and conveyor solutions and engineering activities. ITC Limited was incorporated in 1910 and is headquartered in Kolkata, India."
+      },
+      "market_data": {
+        "currency": "INR",
+        "market_cap": 3542080815104,
+        "current_price": 282.7,
+        "fifty_two_week_high": 427.0,
+        "fifty_two_week_low": 275.0,
+        "beta": -0.081,
+        "volume": 9911225,
+        "average_volume": 16696799
+      },
+      "financial_ratios": {
+        "pe_ratio": 17.122957,
+        "debt_to_equity": 3.293,
+        "roe": 0.2934,
+        "roa": 0.17591,
+        "profit_margin": 0.26233
+      },
+      "business_analysis": {
+        "business_model": "Diverse FMCG operations, including tobacco, food, personal care, and packaging.",
+        "core_revenue_drivers": [
+          "Cigarettes and tobacco products",
+          "Food products",
+          "Personal care products",
+          "Packaging solutions"
+        ],
+        "industry_position": "Leading player in the Indian tobacco and FMCG market.",
+        "industry_outlook": {
+          "status": "Neutral",
+          "summary": "Stable demand amidst regulatory challenges and health awareness."
+        },
+        "industry_growth_potential": {
+          "status": "Moderate",
+          "summary": "Steady growth in FMCG sector, albeit limited for tobacco products."
+        },
+        "industry_risks": [
+          "Regulatory pressures on tobacco",
+          "Changing consumer preferences",
+          "Health awareness impacting sales"
+        ],
+        "competitive_advantages": [
+          "Strong brand portfolio",
+          "Established distribution network",
+          "Diversified product offerings"
+        ],
+        "growth_opportunities": [
+          "Expansion in non-tobacco FMCG segments",
+          "International market expansion",
+          "Sustainable packaging innovations"
+        ],
+        "business_risks": [
+          "High debt-to-equity ratio",
+          "Economic downturn impacts on luxury segments",
+          "Rising input costs"
+        ],
+        "recent_business_developments": [
+          "Shareholder vote on hotel business demerger scheduled for June."
+        ],
+        "business_outlook": "Moderate growth anticipated with strategic diversification and focus on sustainability.",
+        "business_summary": "ITC Limited operates across multiple consumer sectors, with a significant presence in tobacco and FMCG products."
+      },
+      "financial_analysis": {
+        "revenue_growth": {
+          "status": "Positive",
+          "value_percent": 4.77,
+          "summary": "Steady revenue growth observed."
+        },
+        "profitability": {
+          "status": "Negative",
+          "summary": "Significant decline in net profit."
+        },
+        "debt_health": {
+          "status": "Negative",
+          "summary": "High debt-to-equity ratio indicates risk."
+        },
+        "cash_flow_strength": {
+          "status": "Positive",
+          "summary": "Strong operating and free cash flow."
+        },
+        "operational_efficiency": {
+          "status": "Neutral",
+          "summary": "Stable operational metrics, needs improvement."
+        },
+        "financial_stability": {
+          "status": "Neutral",
+          "summary": "Stable financial position with manageable debt."
+        },
+        "key_financial_risks": [
+          "High debt levels",
+          "Declining profitability"
+        ],
+        "financial_outlook": "Cautiously optimistic with emphasis on cost management.",
+        "financial_summary": "Revenue growth positive, but profitability decline raises concerns."
+      },
+      "risk_analysis": {
+        "overall_risk_level": "Low",
+        "market_risk": "Low",
+        "industry_risks": [],
+        "debt_risk": "Low",
+        "liquidity_risk": "Low",
+        "profitability_risk": "Low",
+        "operational_risk": "Medium",
+        "financial_stability_risk": "Low",
+        "key_warning_signals": [
+          "High debt-to-equity ratio",
+          "Volatility in hospitality segment"
+        ],
+        "risk_summary": "Stable financials with low risks overall."
+      },
+      "valuation_analysis": {
+        "valuation_status": "Fairly Valued",
+        "valuation_confidence": "Moderate",
+        "pe_analysis": "Fairly Valued",
+        "growth_vs_valuation": "Weak growth against fair valuation",
+        "intrinsic_value_outlook": "Stable with potential for upside",
+        "valuation_summary": "Current valuation reflects moderate growth prospects."
+      },
+      "investment_verdict": {
+        "investment_verdict": "HOLD",
+        "verdict_score": 55,
+        "confidence_level": "Moderate",
+        "holding_period": "Medium-Term",
+        "key_drivers": [
+          "Steady revenue growth",
+          "Cautious financial outlook",
+          "Risks from high debt levels"
+        ],
+        "primary_reasons": [
+          "Moderate growth anticipated",
+          "Valuation reflects moderate growth prospects",
+          "Stable financial position"
+        ],
+        "major_concerns": [
+          "Declining profitability",
+          "High debt-to-equity ratio",
+          "Regulatory pressures"
+        ],
+        "final_summary": "Moderate growth expected amidst financial concerns and industry risks."
+      },
+      "explanation": {
+        "executive_summary": "Moderate growth anticipated for ITC Limited with steady revenue, but financial concerns persist.",
+        "why_buy_hold_sell": "Hold due to stable position and risks from high debt and declining profitability.",
+        "key_strengths": [
+          "Steady revenue growth",
+          "Strong brand portfolio",
+          "Established distribution network"
+        ],
+        "key_risks": [
+          "High debt-to-equity ratio",
+          "Declining profitability",
+          "Regulatory pressures"
+        ],
+        "what_to_monitor": [
+          "Profitability trends",
+          "Debt management strategies",
+          "Regulatory changes affecting tobacco products"
+        ]
+      }
+    }
+  },
+  "fa_20260720T162707Z_0d0392": {
+    "job_id": "fa_20260720T162707Z_0d0392",
+    "status": "done",
+    "created_at": "2026-07-20T16:27:07.630491Z",
+    "updated_at": "2026-07-20T16:27:36.626813Z",
+    "metadata": {
+      "company_name": "ICICI Bank Limited",
+      "ticker": "ICICIBANK.NS",
+      "sector": "Financial Services",
+      "exchange": "NSE"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "Fundamental analysis complete",
+    "completed_steps": [
+      {
+        "key": "data_acquisition_task",
+        "label": "Data Acquisition",
+        "agent": "Data Acquisition Specialist"
+      },
+      {
+        "key": "business_analysis_task",
+        "label": "Business Analysis",
+        "agent": "Business Analysis Specialist"
+      },
+      {
+        "key": "financial_analysis_task",
+        "label": "Financial Analysis",
+        "agent": "Financial Analysis Specialist"
+      },
+      {
+        "key": "risk_analysis_task",
+        "label": "Risk Analysis",
+        "agent": "Risk Analysis Specialist"
+      },
+      {
+        "key": "valuation_task",
+        "label": "Valuation",
+        "agent": "Valuation Specialist"
+      },
+      {
+        "key": "verdict_task",
+        "label": "Investment Verdict",
+        "agent": "Investment Verdict Specialist"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\agentic_pipeline\\output_data\\ICICIBANK.NS_fa_20260720T162707Z.json",
+    "error": null,
+    "result_json": {
+      "company_identification": {
+        "symbol": "ICICIBANK.NS",
+        "long_name": "ICICI Bank Limited",
+        "exchange": "NSE"
+      },
+      "company_metadata": {
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "business_summary": "ICICI Bank Limited, together with its subsidiaries, engages in the provision of various banking and financial services to retail and corporate customers in India and internationally. The company operates through Retail Banking, Wholesale Banking, Treasury, Other Banking, Life Insurance, General Insurance, and Others segments. It offers savings, salary, pension, current, trade, escrow, foreign currency, and vostro accounts, as well as time, fixed, recurring, and security deposits. The company also provides home, car, two-wheeler, personal, education, gold, and commercial business loans, as well as loans against securities, shares, mutual funds, and property; working capital finance, term loans, collateral free loans, loans without financials, finance for importers and exporters, and overdraft facilities, as well as loans for new entities and card swipes; and credit, debit, prepaid, travel, forex, and corporate cards. In addition, it offers pockets wallet; fixed income products; investment products, such as mutual funds, gold monetization schemes, initial public offerings, and other online investment services; and agri and rural business, farmer finance, tractor loans, and micro banking services. Further, the company provides portfolio management, trade, foreign exchange, locker, private and NRI banking, and cash management services; family wealth and demat accounts; commercial and investment banking, capital market, custodial, and institutional banking services; general, life health, personal accident, fire, travel, and motor insurance products; and internet, mobile, and phone banking services. Additionally, it offers securities investment, broking, trading, and underwriting services; and merchant banking, trusteeship, housing finance, pension fund management, asset management, investment advisory, points of presence, and private equity/venture capital fund management services. The company was founded in 1955 and is headquartered in Mumbai, India."
+      },
+      "market_data": {
+        "currency": "INR",
+        "market_cap": 10474418601984,
+        "current_price": 1460.2,
+        "fifty_two_week_high": 1500.0,
+        "fifty_two_week_low": 1187.6,
+        "beta": 0.235,
+        "volume": 22235043,
+        "average_volume": 16041954
+      },
+      "financial_ratios": {
+        "pe_ratio": 19.518782,
+        "debt_to_equity": null,
+        "roe": 0.16073999,
+        "roa": 0.021070002,
+        "profit_margin": 0.2514
+      },
+      "business_analysis": {
+        "business_model": "Provision of various banking and financial services to retail and corporate customers.",
+        "core_revenue_drivers": [
+          "Retail Banking",
+          "Wholesale Banking",
+          "Insurance Services",
+          "Investment Products"
+        ],
+        "industry_position": "Leading regional bank in India with diversified financial services.",
+        "industry_outlook": {
+          "status": "Positive",
+          "summary": "Robust growth in financial services driven by rising demand."
+        },
+        "industry_growth_potential": {
+          "status": "High",
+          "summary": "Expansion opportunities in personal and corporate banking."
+        },
+        "industry_risks": [
+          "Economic slowdowns",
+          "Regulatory changes",
+          "Increased competition"
+        ],
+        "competitive_advantages": [
+          "Strong brand recognition",
+          "Diverse product offerings",
+          "Robust digital banking infrastructure"
+        ],
+        "growth_opportunities": [
+          "Digital transformation",
+          "Expanding insurance services",
+          "Rural market penetration"
+        ],
+        "business_risks": [
+          "Credit risk",
+          "Liquidity risk",
+          "Operational risk"
+        ],
+        "recent_business_developments": [
+          "Positive market reaction post Q1 results announcement"
+        ],
+        "business_outlook": "Expected to maintain growth trajectory with strategic expansions.",
+        "business_summary": "ICICI Bank Limited engages in comprehensive banking services for diverse clientele both in India and internationally."
+      },
+      "financial_analysis": {
+        "revenue_growth": {
+          "status": "Positive",
+          "value_percent": 8.53,
+          "summary": "Revenue increased by 8.53%, indicating strong growth."
+        },
+        "profitability": {
+          "status": "Positive",
+          "summary": "Profit margin at 25.14% shows solid profitability."
+        },
+        "debt_health": {
+          "status": "Neutral",
+          "summary": "Debt remains high, but cash cover is adequate."
+        },
+        "cash_flow_strength": {
+          "status": "Positive",
+          "summary": "Strong operating and free cash flow supports liquidity."
+        },
+        "operational_efficiency": {
+          "status": "Positive",
+          "summary": "ROE and ROA reflect healthy operational efficiency."
+        },
+        "financial_stability": {
+          "status": "Positive",
+          "summary": "Overall financial position is robust with growing equity."
+        },
+        "key_financial_risks": [],
+        "financial_outlook": "Positive growth trajectory expected in the coming years.",
+        "financial_summary": "ICICI Bank demonstrates strong financial health and growth."
+      },
+      "risk_analysis": {
+        "overall_risk_level": "Low",
+        "market_risk": "Low",
+        "industry_risks": [],
+        "debt_risk": "Unknown",
+        "liquidity_risk": "Low",
+        "profitability_risk": "Low",
+        "operational_risk": "",
+        "financial_stability_risk": "",
+        "key_warning_signals": [],
+        "risk_summary": "Company shows stable growth with low market and liquidity risks."
+      },
+      "valuation_analysis": {
+        "valuation_status": "Fairly Valued",
+        "valuation_confidence": "Moderate",
+        "pe_analysis": "Fairly Valued",
+        "growth_vs_valuation": "Moderate growth with fair valuation.",
+        "intrinsic_value_outlook": "Stabilizing with potential for moderate growth.",
+        "valuation_summary": "Current valuation aligns with growth projections."
+      },
+      "investment_verdict": {
+        "investment_verdict": "BUY",
+        "verdict_score": 85,
+        "confidence_level": "High",
+        "holding_period": "Long-Term",
+        "key_drivers": [
+          "Positive financial outlook",
+          "Strong industry growth potential",
+          "Robust business model"
+        ],
+        "primary_reasons": [
+          "Leading position in financial services",
+          "Consistent revenue growth",
+          "Low overall risk level"
+        ],
+        "major_concerns": [
+          "High debt levels"
+        ],
+        "final_summary": "Investment outlook remains strong with positive growth potential."
+      },
+      "explanation": {
+        "executive_summary": "ICICI Bank presents a strong long-term investment opportunity with stable growth prospects and a low-risk profile.",
+        "why_buy_hold_sell": "The favorable financial outlook, robust business model, and leading market position make it a compelling buy.",
+        "key_strengths": [
+          "Leading position in financial services",
+          "Consistent revenue growth",
+          "Robust digital banking infrastructure"
+        ],
+        "key_risks": [
+          "High debt levels",
+          "Economic slowdowns"
+        ],
+        "what_to_monitor": [
+          "Debt levels and cash flow stability",
+          "Expansion into new markets",
+          "Regulatory changes affecting the banking sector"
+        ]
+      }
+    }
   }
 }

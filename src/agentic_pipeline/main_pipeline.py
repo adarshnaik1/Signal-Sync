@@ -97,10 +97,7 @@ class SignalSyncPipeline:
                 ),
 
             "investment_verdict":
-                verdict.get(
-                    "investment_verdict",
-                    {}
-                )
+                verdict
         }
 
 

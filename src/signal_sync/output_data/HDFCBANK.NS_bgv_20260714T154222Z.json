@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "generated_at": "2023-10-14T15:42:22Z",
+    "pipeline_version": "1.0",
+    "sources": [
+      {
+        "name": "Yahoo Finance",
+        "type": "finance",
+        "url": "https://finance.yahoo.com/quote/HDFCBANK.NS/profile/"
+      },
+      {
+        "name": "HDFC Bank Official Website",
+        "type": "company",
+        "url": "https://www.hdfc.bank.in/about-us/who-we-are"
+      },
+      {
+        "name": "GlobalData",
+        "type": "industry report",
+        "url": "https://www.globaldata.com/company-profile/hdfc-bank-ltd/"
+      },
+      {
+        "name": "Wikipedia",
+        "type": "informational",
+        "url": "https://en.wikipedia.org/wiki/HDFC_Bank"
+      },
+      {
+        "name": "Reuters",
+        "type": "news",
+        "url": "https://www.reuters.com/markets/companies/HDBK.NS/"
+      },
+      {
+        "name": "NDTV",
+        "type": "news",
+        "url": "https://www.ndtv.com/india-news/bombay-high-court-dismisses-bribery-case-against-hdfc-bank-ceo-sashidhar-jagdishan-11455015"
+      },
+      {
+        "name": "The Probe",
+        "type": "news",
+        "url": "https://theprobe.in/governance/hdfc-bank-governance-crisis-vigilance-probe-11882079"
+      },
+      {
+        "name": "Economic Times",
+        "type": "news",
+        "url": "https://www.facebook.com/EconomicTimes/posts/a-resignation-explained-hdfcs-atanu-chakraborty-said-his-resignation-was-a-call-/1510609664428270/"
+      },
+      {
+        "name": "Instagram",
+        "type": "social",
+        "url": "https://www.instagram.com/reel/DY1jxAHP91A/?hl=en"
+      }
+    ]
+  },
+  "company": {
+    "name": "HDFC Bank Limited",
+    "ticker": "HDFCBANK.NS",
+    "sector": "Financial Services",
+    "profile_summary": "HDFC Bank Limited provides banking and financial products and services to individuals and businesses in India and abroad. It is India's largest private sector bank by assets and market capitalization.",
+    "headquarters": "Mumbai, India",
+    "founded_year": 1994,
+    "employees": 215000,
+    "products_services": [
+      "Retail Banking",
+      "Wholesale Banking",
+      "Treasury",
+      "Insurance",
+      "Investment Banking",
+      "Asset Management"
+    ],
+    "subsidiaries": [
+      "HDFC Securities Limited",
+      "HDFC Asset Management Company",
+      "HDFC Life Insurance Company",
+      "HDFC Credila Financial Services",
+      "HDFC ERGO General Insurance"
+    ],
+    "market_presence": "HDFC Bank has a strong market presence in India, with branches in Bahrain, Hong Kong, Singapore, and Dubai."
+  },
+  "scores": {
+    "trustworthiness_score": 81.67,
+    "financial_integrity_score": 85.0,
+    "management_risk_score": 70.0,
+    "market_manipulation_risk_score": 75.0
+  },
+  "findings": {
+    "overview_findings": [
+      "HDFC Bank Limited is the largest private sector bank in India by assets and market capitalization.",
+      "The bank was incorporated in 1994 and has since expanded its operations domestically and internationally.",
+      "It offers a wide range of financial products including retail banking, wholesale banking, treasury, and insurance services.",
+      "The bank employs over 215,000 people, indicating a large organizational scale.",
+      "HDFC Bank has been consistently expanding its market presence both in urban and rural sectors.",
+      "Recent developments include technology upgrades and enhancements in digital banking capabilities."
+    ],
+    "management_findings": [
+      "HDFC Bank has recently faced scrutiny due to internal governance issues and resignations of key executives.",
+      "Sashidhar Jagdishan, the CEO, was under investigation for possible financial misconduct.",
+      "The bank's former chairman raised ethical concerns before his resignation, indicating possible corporate governance issues."
+    ],
+    "financial_irregularities": [
+      "No significant unusual spikes in revenue were noted, but steady growth was observed.",
+      "Cash flow reported aligns closely with net earnings, indicating no major discrepancies.",
+      "Debt levels remain stable, but the debt-to-equity ratio suggests potential concerns for future borrowing.",
+      "The audit opinion was unqualified with no significant concerns raised by auditors.",
+      "No notable related party transactions were disclosed that could indicate conflicts of interest.",
+      "No off-balance sheet items were identified in the financial statements.",
+      "No significant changes in accounting policies were noted that could affect reported earnings.",
+      "Earnings quality indicators remained strong, with no significant one-time gains impacting earnings."
+    ],
+    "scam_signals": [
+      "Identified significant volume spikes exceeding 3 times median volume.",
+      "Price volatility was high, with movements inconsistent with fundamentals.",
+      "Recent governance issues and financial misconduct allegations reported in the news."
+    ]
+  },
+  "evidence": {
+    "documents": [],
+    "time_series": [],
+    "people_profiles": [
+      {
+        "name": "Sashidhar Jagdishan",
+        "role": "Managing Director & CEO",
+        "red_flags": [
+          "Under investigation for alleged financial irregularities",
+          "Involved in a bribery case that was dismissed by the court"
+        ],
+        "evidence_links": [
+          "https://www.ndtv.com/india-news/bombay-high-court-dismisses-bribery-case-against-hdfc-bank-ceo-sashidhar-jagdishan-11455015",
+          "https://theprobe.in/governance/hdfc-bank-governance-crisis-vigilance-probe-11882079"
+        ]
+      },
+      {
+        "name": "Atanu Chakraborty",
+        "role": "Former Part-Time Chairman",
+        "red_flags": [
+          "Resigned citing concerns over ethics and governance",
+          "Involvement in allegations of internal vigilance probe"
+        ],
+        "evidence_links": [
+          "https://www.facebook.com/EconomicTimes/posts/a-resignation-explained-hdfcs-atanu-chakraborty-said-his-resignation-was-a-call-/1510609664428270/",
+          "https://www.instagram.com/reel/DY1jxAHP91A/?hl=en"
+        ]
+      }
+    ]
+  },
+  "final_verdict": "MODERATE RISK: Proceed with caution, additional due diligence recommended."
+}
