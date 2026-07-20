@@ -18,6 +18,7 @@ from api.jobs_store import create_job, get_job, update_job
 from signal_sync.api_runner import run_bgv_job
 from signal_sync.ta.api_runner import run_ta_job
 from agentic_pipeline.fa_api_runner import run_fa_job
+from news_sentiment.api_runner import run_news_job
 from pipeline.pipeline import predict
 
 app = FastAPI(title="BGV API")
@@ -256,6 +257,60 @@ def fa_status(job_id: str):
 
 @app.get("/api/fa/result/{job_id}")
 def fa_result(job_id: str):
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    if job.get("status") != "done":
+        raise HTTPException(status_code=409, detail="Job not completed")
+
+    stored_result = job.get("result_json")
+    if isinstance(stored_result, dict) and stored_result:
+        return stored_result
+
+    output_path = job.get("output_path")
+    if not output_path or not os.path.exists(output_path):
+        raise HTTPException(status_code=404, detail="Result file not found")
+
+    import json
+    with open(output_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data
+
+
+# ── News Sentiment Analysis endpoints ───────────────────────────────────
+
+@app.post("/api/news/start")
+async def start_news(
+    background: BackgroundTasks,
+    company_name: str = Form(...),
+    ticker: str = Form(...),
+):
+    """
+    Start a News Sentiment Analysis job.
+    Returns job_id to poll for status.
+    """
+    metadata = {
+        "company_name": company_name,
+        "ticker": ticker,
+    }
+    job = create_job(metadata, prefix="news")
+    job_id = job["job_id"]
+
+    background.add_task(run_news_job, job_id, ticker, company_name)
+
+    return {"job_id": job_id, "status": "queued"}
+
+
+@app.get("/api/news/status/{job_id}")
+def news_status(job_id: str):
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return job
+
+
+@app.get("/api/news/result/{job_id}")
+def news_result(job_id: str):
     job = get_job(job_id)
     if not job:
         raise HTTPException(status_code=404, detail="Job not found")

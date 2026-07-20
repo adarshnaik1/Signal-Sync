@@ -1,0 +1,136 @@
+{
+  "status": "success",
+  "overall_status": "Bearish",
+  "average_score": -1.0,
+  "total_articles": 10,
+  "distribution": {
+    "positive": 0,
+    "negative": 10,
+    "neutral": 0,
+    "positive_pct": 0.0,
+    "negative_pct": 100.0,
+    "neutral_pct": 0.0
+  },
+  "news": [
+    {
+      "title": "Shares of leading Indian private-sector banks slump 5% on weak earnings in June quarter",
+      "link": "https://www.cnbc.com/2026/07/20/hdfc-axis-india-banks-shares-fall.html",
+      "snippet": "Stocks of India's largest private-sector lender HDFC Bank and Axis Bank fell nearly 5% on Monday. HDFC's net interest margin contracted 13...",
+      "date": "11 hours ago",
+      "source": "CNBC",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHe_oO9D3X5duubFcUMKoJ8xtBf0TXQduaYo0bOdPCDIqxoNBcdOu588&usqp=CAI&s",
+      "parsed_date": "2026-07-20 11:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9715070724487305,
+      "sentiment_score": -1
+    },
+    {
+      "title": "Why HDFC Bank shares fell 5% today?",
+      "link": "https://www.indiainfoline.com/news/companies/why-hdfc-bank-shares-fell-5-today",
+      "snippet": "HDFC Bank share price came under significant selling pressure on Monday, July 20, with the stock falling nearly 5% in morning trade after...",
+      "date": "12 hours ago",
+      "source": "India Infoline",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxmosQm_Y6QeYYx4kb-uClkFlVJxX0XDoD0ezcNm_ScKEd030YzHUltE8&usqp=CAI&s",
+      "parsed_date": "2026-07-20 10:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9588091969490051,
+      "sentiment_score": -1
+    },
+    {
+      "title": "India's HDFC Bank drops on weak margins; drags Nifty, bank stocks",
+      "link": "https://sg.finance.yahoo.com/news/indias-hdfc-bank-drops-weak-042711838.html",
+      "snippet": "July 20 (Reuters) - HDFC Bank slid 4.6% to 782.25 rupees on Monday after its June-quarter margin miss outweighed steady loan growth,...",
+      "date": "13 hours ago",
+      "source": "Yahoo Finance Singapore",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMq_tL36Zaml4rJnbsLMW-2EoK-xTFjCq_RO9bOxEPwsu76JtxRwxO5as&usqp=CAI&s",
+      "parsed_date": "2026-07-20 09:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9706875681877136,
+      "sentiment_score": -1
+    },
+    {
+      "title": "HDFC Bank stock plunges over 5% owing to investors concern on performance",
+      "link": "https://www.thehindu.com/business/hdfc-bank-stock-plunges-over-5-owing-to-investors-concern-on-performance/article71246485.ece/amp/",
+      "snippet": "Shares of India's largest private sector lender HDFC Bank on Monday (20.07.2026) declined by 5.12% to \u20b9777.60 apiece on the NSE owing to...",
+      "date": "1 hour ago",
+      "source": "The Hindu",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXGNcV0vExgAyD80fER6MOB-FGaYZhd9SuyrNovb-Hyvq4kVraf6ECdBI&usqp=CAI&s",
+      "parsed_date": "2026-07-20 21:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9607464671134949,
+      "sentiment_score": -1
+    },
+    {
+      "title": "HDFC Bank shares fall nearly 5% post Q1 results; analysts bullish",
+      "link": "https://www.business-standard.com/markets/news/hdfc-bank-shares-fall-nearly-5-despite-upbeat-q1-analysts-bullish-126072000199_1.html",
+      "snippet": "HDFC Bank reported a 5 per cent increase in standalone profit for the first quarter to \u20b919060 crore on a year-on-year basis.",
+      "date": "13 hours ago",
+      "source": "Business Standard",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAL4MxHLiHBJgzbjlmc4GMyzSSLWPdouWcKuQhdrM9M3YAkqDZw-0TDo&usqp=CAI&s",
+      "parsed_date": "2026-07-20 09:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9692546129226685,
+      "sentiment_score": -1
+    },
+    {
+      "title": "Stock markets tumble in early trade dragged by HDFC Bank, spike in crude oil prices",
+      "link": "https://www.newindianexpress.com/business/2026/Jul/20/stock-markets-tumble-in-early-trade-dragged-by-hdfc-bank-spike-in-crude-oil-prices",
+      "snippet": "The 30-share BSE Sensex tanked 523.22 points to 77628.23 in early trade. The 50-share NSE Nifty declined 134.10 points to 24198.25.",
+      "date": "13 hours ago",
+      "source": "The New Indian Express",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqtIZ_uvrnqzxwEjjRpEpYBLHG65qxIDOJ1-xwbvzou-HGVMe3efDKx0&usqp=CAI&s",
+      "parsed_date": "2026-07-20 09:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9595376253128052,
+      "sentiment_score": -1
+    },
+    {
+      "title": "HDFC Bank Ltd Stock (HDB) Moved Down by 9.83% on Jul 20: What Investors Need To Know",
+      "link": "https://www.tradingkey.com/news/market-movers/262041912-market-movers-hdb-20260720",
+      "snippet": "HDFC Bank shares declined following disappointing quarterly results and contracting net interest margins.Rising non-performing assets in...",
+      "date": "2 hours ago",
+      "source": "TradingKey",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcYsDKwDxlbZshYXhZxMhveNHdbtzm0f5zvDzHOe76L3srs4EmmTRdMXk&usqp=CAI&s",
+      "parsed_date": "2026-07-20 20:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9644355177879333,
+      "sentiment_score": -1
+    },
+    {
+      "title": "Stock Markets Today: Sensex, Nifty Tumble, HDFC Bank, Oil Spike Hurt Sentiments",
+      "link": "https://www.rediff.com/business/report/indian-stock-markets-decline-on-july-20-hdfc-bank-earnings--us-iran-tensions-impact/20260720.htm",
+      "snippet": "Indian benchmark indices Sensex and Nifty experienced a significant tumble in early trade, primarily driven by heavy selling in HDFC Bank...",
+      "date": "13 hours ago",
+      "source": "Rediff",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0xx8C_1ZndMZ2LShkHz7JdIZB3fpZgILP0m5aTGieC91myeizXz73Zo4&usqp=CAI&s",
+      "parsed_date": "2026-07-20 09:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9280291795730591,
+      "sentiment_score": -1
+    },
+    {
+      "title": "Banks drag Sensex down 443 points; HDFC Bank, Axis Bank fall over 5%",
+      "link": "https://www.fortuneindia.com/markets/banks-drag-sensex-down-443-points-hdfc-bank-axis-bank-fall-over-5/149168",
+      "snippet": "Indian stock markets slipped on Monday as the Sensex fell 443 points and Nifty dropped 96 points, dragged down by sharp losses in HDFC Bank...",
+      "date": "6 hours ago",
+      "source": "Fortune India",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTo8rDRqGkXtcrX1LL8L-TX8dVXqkAwH4y-1LsSHiV1MXHYuIsnBC0KYo&usqp=CAI&s",
+      "parsed_date": "2026-07-20 16:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9693463444709778,
+      "sentiment_score": -1
+    },
+    {
+      "title": "Margin worries for private banks, Middle East war drag down Indian shares",
+      "link": "https://www.reuters.com/world/india/indian-shares-may-open-tad-lower-mideast-concerns-earnings-focus-2026-07-20/",
+      "snippet": "Indian shares fell on Monday, led by private lenders after quarterly earnings pointed \u200bto pressure on net interest margins, while escalating...",
+      "date": "15 hours ago",
+      "source": "Reuters",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uHkswQ0AIQB1824MtqBfPIzlpeVI4LJ2NZk086iXVAaLaVJhv7ccZ94&usqp=CAI&s",
+      "parsed_date": "2026-07-20 07:56:18",
+      "sentiment_label": "negative",
+      "sentiment_confidence": 0.9495363831520081,
+      "sentiment_score": -1
+    }
+  ]
+}

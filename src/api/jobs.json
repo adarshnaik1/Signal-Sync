@@ -9011,5 +9011,316 @@
         ]
       }
     }
+  },
+  "news_20260720T172540Z_e36e85": {
+    "job_id": "news_20260720T172540Z_e36e85",
+    "status": "done",
+    "created_at": "2026-07-20T17:25:40.307703Z",
+    "updated_at": "2026-07-20T17:26:19.135035Z",
+    "metadata": {
+      "company_name": "HDFC Bank Limited",
+      "ticker": "HDFCBANK.NS"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "News sentiment analysis complete",
+    "completed_steps": [
+      {
+        "key": "news_sentiment_analysis_task",
+        "label": "News Sentiment Analysis",
+        "agent": "News Sentiment Analyzer"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\news_sentiment\\output_data\\HDFCBANK.NS_news_20260720T172540Z.json",
+    "error": null,
+    "result_json": {
+      "status": "success",
+      "overall_status": "Bearish",
+      "average_score": -1.0,
+      "total_articles": 10,
+      "distribution": {
+        "positive": 0,
+        "negative": 10,
+        "neutral": 0,
+        "positive_pct": 0.0,
+        "negative_pct": 100.0,
+        "neutral_pct": 0.0
+      },
+      "news": [
+        {
+          "title": "Shares of leading Indian private-sector banks slump 5% on weak earnings in June quarter",
+          "link": "https://www.cnbc.com/2026/07/20/hdfc-axis-india-banks-shares-fall.html",
+          "snippet": "Stocks of India's largest private-sector lender HDFC Bank and Axis Bank fell nearly 5% on Monday. HDFC's net interest margin contracted 13...",
+          "date": "11 hours ago",
+          "source": "CNBC",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHe_oO9D3X5duubFcUMKoJ8xtBf0TXQduaYo0bOdPCDIqxoNBcdOu588&usqp=CAI&s",
+          "parsed_date": "2026-07-20 11:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9715070724487305,
+          "sentiment_score": -1
+        },
+        {
+          "title": "Why HDFC Bank shares fell 5% today?",
+          "link": "https://www.indiainfoline.com/news/companies/why-hdfc-bank-shares-fell-5-today",
+          "snippet": "HDFC Bank share price came under significant selling pressure on Monday, July 20, with the stock falling nearly 5% in morning trade after...",
+          "date": "12 hours ago",
+          "source": "India Infoline",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxmosQm_Y6QeYYx4kb-uClkFlVJxX0XDoD0ezcNm_ScKEd030YzHUltE8&usqp=CAI&s",
+          "parsed_date": "2026-07-20 10:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9588091969490051,
+          "sentiment_score": -1
+        },
+        {
+          "title": "India's HDFC Bank drops on weak margins; drags Nifty, bank stocks",
+          "link": "https://sg.finance.yahoo.com/news/indias-hdfc-bank-drops-weak-042711838.html",
+          "snippet": "July 20 (Reuters) - HDFC Bank slid 4.6% to 782.25 rupees on Monday after its June-quarter margin miss outweighed steady loan growth,...",
+          "date": "13 hours ago",
+          "source": "Yahoo Finance Singapore",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMq_tL36Zaml4rJnbsLMW-2EoK-xTFjCq_RO9bOxEPwsu76JtxRwxO5as&usqp=CAI&s",
+          "parsed_date": "2026-07-20 09:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9706875681877136,
+          "sentiment_score": -1
+        },
+        {
+          "title": "HDFC Bank stock plunges over 5% owing to investors concern on performance",
+          "link": "https://www.thehindu.com/business/hdfc-bank-stock-plunges-over-5-owing-to-investors-concern-on-performance/article71246485.ece/amp/",
+          "snippet": "Shares of India's largest private sector lender HDFC Bank on Monday (20.07.2026) declined by 5.12% to \u20b9777.60 apiece on the NSE owing to...",
+          "date": "1 hour ago",
+          "source": "The Hindu",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXGNcV0vExgAyD80fER6MOB-FGaYZhd9SuyrNovb-Hyvq4kVraf6ECdBI&usqp=CAI&s",
+          "parsed_date": "2026-07-20 21:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9607464671134949,
+          "sentiment_score": -1
+        },
+        {
+          "title": "HDFC Bank shares fall nearly 5% post Q1 results; analysts bullish",
+          "link": "https://www.business-standard.com/markets/news/hdfc-bank-shares-fall-nearly-5-despite-upbeat-q1-analysts-bullish-126072000199_1.html",
+          "snippet": "HDFC Bank reported a 5 per cent increase in standalone profit for the first quarter to \u20b919060 crore on a year-on-year basis.",
+          "date": "13 hours ago",
+          "source": "Business Standard",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAL4MxHLiHBJgzbjlmc4GMyzSSLWPdouWcKuQhdrM9M3YAkqDZw-0TDo&usqp=CAI&s",
+          "parsed_date": "2026-07-20 09:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9692546129226685,
+          "sentiment_score": -1
+        },
+        {
+          "title": "Stock markets tumble in early trade dragged by HDFC Bank, spike in crude oil prices",
+          "link": "https://www.newindianexpress.com/business/2026/Jul/20/stock-markets-tumble-in-early-trade-dragged-by-hdfc-bank-spike-in-crude-oil-prices",
+          "snippet": "The 30-share BSE Sensex tanked 523.22 points to 77628.23 in early trade. The 50-share NSE Nifty declined 134.10 points to 24198.25.",
+          "date": "13 hours ago",
+          "source": "The New Indian Express",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqtIZ_uvrnqzxwEjjRpEpYBLHG65qxIDOJ1-xwbvzou-HGVMe3efDKx0&usqp=CAI&s",
+          "parsed_date": "2026-07-20 09:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9595376253128052,
+          "sentiment_score": -1
+        },
+        {
+          "title": "HDFC Bank Ltd Stock (HDB) Moved Down by 9.83% on Jul 20: What Investors Need To Know",
+          "link": "https://www.tradingkey.com/news/market-movers/262041912-market-movers-hdb-20260720",
+          "snippet": "HDFC Bank shares declined following disappointing quarterly results and contracting net interest margins.Rising non-performing assets in...",
+          "date": "2 hours ago",
+          "source": "TradingKey",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcYsDKwDxlbZshYXhZxMhveNHdbtzm0f5zvDzHOe76L3srs4EmmTRdMXk&usqp=CAI&s",
+          "parsed_date": "2026-07-20 20:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9644355177879333,
+          "sentiment_score": -1
+        },
+        {
+          "title": "Stock Markets Today: Sensex, Nifty Tumble, HDFC Bank, Oil Spike Hurt Sentiments",
+          "link": "https://www.rediff.com/business/report/indian-stock-markets-decline-on-july-20-hdfc-bank-earnings--us-iran-tensions-impact/20260720.htm",
+          "snippet": "Indian benchmark indices Sensex and Nifty experienced a significant tumble in early trade, primarily driven by heavy selling in HDFC Bank...",
+          "date": "13 hours ago",
+          "source": "Rediff",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0xx8C_1ZndMZ2LShkHz7JdIZB3fpZgILP0m5aTGieC91myeizXz73Zo4&usqp=CAI&s",
+          "parsed_date": "2026-07-20 09:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9280291795730591,
+          "sentiment_score": -1
+        },
+        {
+          "title": "Banks drag Sensex down 443 points; HDFC Bank, Axis Bank fall over 5%",
+          "link": "https://www.fortuneindia.com/markets/banks-drag-sensex-down-443-points-hdfc-bank-axis-bank-fall-over-5/149168",
+          "snippet": "Indian stock markets slipped on Monday as the Sensex fell 443 points and Nifty dropped 96 points, dragged down by sharp losses in HDFC Bank...",
+          "date": "6 hours ago",
+          "source": "Fortune India",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTo8rDRqGkXtcrX1LL8L-TX8dVXqkAwH4y-1LsSHiV1MXHYuIsnBC0KYo&usqp=CAI&s",
+          "parsed_date": "2026-07-20 16:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9693463444709778,
+          "sentiment_score": -1
+        },
+        {
+          "title": "Margin worries for private banks, Middle East war drag down Indian shares",
+          "link": "https://www.reuters.com/world/india/indian-shares-may-open-tad-lower-mideast-concerns-earnings-focus-2026-07-20/",
+          "snippet": "Indian shares fell on Monday, led by private lenders after quarterly earnings pointed \u200bto pressure on net interest margins, while escalating...",
+          "date": "15 hours ago",
+          "source": "Reuters",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uHkswQ0AIQB1824MtqBfPIzlpeVI4LJ2NZk086iXVAaLaVJhv7ccZ94&usqp=CAI&s",
+          "parsed_date": "2026-07-20 07:56:18",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9495363831520081,
+          "sentiment_score": -1
+        }
+      ]
+    }
+  },
+  "news_20260720T172657Z_6b89ec": {
+    "job_id": "news_20260720T172657Z_6b89ec",
+    "status": "done",
+    "created_at": "2026-07-20T17:26:57.514925Z",
+    "updated_at": "2026-07-20T17:27:09.222236Z",
+    "metadata": {
+      "company_name": "Infosys Limited",
+      "ticker": "INFY.NS"
+    },
+    "progress": 100,
+    "current_step": "Complete",
+    "current_agent": null,
+    "step_message": "News sentiment analysis complete",
+    "completed_steps": [
+      {
+        "key": "news_sentiment_analysis_task",
+        "label": "News Sentiment Analysis",
+        "agent": "News Sentiment Analyzer"
+      }
+    ],
+    "remaining_steps": [],
+    "output_path": "C:\\Users\\ADARSH NAIK\\Desktop\\signal_sync\\src\\news_sentiment\\output_data\\INFY.NS_news_20260720T172657Z.json",
+    "error": null,
+    "result_json": {
+      "status": "success",
+      "overall_status": "Bullish",
+      "average_score": 0.3333333333333333,
+      "total_articles": 9,
+      "distribution": {
+        "positive": 6,
+        "negative": 3,
+        "neutral": 0,
+        "positive_pct": 66.66666666666666,
+        "negative_pct": 33.33333333333333,
+        "neutral_pct": 0.0
+      },
+      "news": [
+        {
+          "title": "Q1 results this week: Infosys, IndiGo, Paytm, Bajaj Auto, Eternal, Meesho, Adani Power and more",
+          "link": "https://upstox.com/news/market-news/earnings/q1-results-this-week-infosys-indi-go-paytm-bajaj-auto-eternal-meesho-adani-power-and-more/article-197158/",
+          "snippet": "Along with the results, the boards of Crisil, Gandhar Oil Refinery, Central Mine Planning & Design Institute, CSM Technologies, SRF,...",
+          "date": "1 day ago",
+          "source": "Upstox",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmOM0llzdooFpodn5_fltCEaXLl5mT92tBZ7ilQrQJCSOgKZPtG4wRftk&usqp=CAI&s",
+          "parsed_date": "2026-07-19 22:57:04",
+          "deep_analyzed": true,
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9640868902206421,
+          "sentiment_score": -1
+        },
+        {
+          "title": "Q1 results 2026: Infosys to Eternal among companies to declare Q1 results next week; check full list here",
+          "link": "https://www.livemint.com/market/stock-market-news/q1-results-2026-infosys-to-eternal-among-companies-to-declare-q1-results-next-week-check-full-list-here-11784439990844.html",
+          "snippet": "Q1 results 2026: Infosys, Eternal, One 97 Communications Paytm, Bajaj Auto, Adani Energy Solutions, Indian Hotels Company, Bharat Petroleum...",
+          "date": "1 day ago",
+          "source": "mint",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE5wjWs566AjJ6kTCRi_LWjsbuk-SWYubgqoLqjmDeUbmukdIlLowwagpf&usqp=CAI&s",
+          "parsed_date": "2026-07-19 22:57:04",
+          "deep_analyzed": true,
+          "sentiment_label": "positive",
+          "sentiment_confidence": 0.5206974744796753,
+          "sentiment_score": 1
+        },
+        {
+          "title": "TCS, Infosys, Wipro, HCL Tech, TechM Crashed: Why IT Stocks Are Falling? Jefferies Downgrades 6 Tech Shares",
+          "link": "https://www.goodreturns.in/news/tcs-infosys-wipro-hcl-tech-techm-crash-why-it-stocks-are-falling-jefferies-downgrades-6-tech-shares-1491755.html",
+          "snippet": "The latest fear is fuelled after global brokerage Jefferies downgraded its rating on six big players in India.",
+          "date": "2 days ago",
+          "source": "Goodreturns",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR574GAEJeN36RpQdl-lyK9zpKicORusx7fccb1ctBb4WkFB1Izvh_Rslo&usqp=CAI&s",
+          "parsed_date": "2026-07-18 22:57:04",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.9618728160858154,
+          "sentiment_score": -1
+        },
+        {
+          "title": "TCS Shares up 6%. Infosys up 3%. Why IT companies are up today?",
+          "link": "https://www.indiainfoline.com/news/companies/tcs-shares-up-6-infosys-up-3-why-it-companies-are-up-today",
+          "snippet": "Tata Consultancy Services (TCS) shares surged more than 6% on Monday, emerging as the top performer in the NIFTY IT index after the company...",
+          "date": "1 week ago",
+          "source": "India Infoline",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedCvTMYfY8yeO-3Mh2ZDuz6OVtJ7SPWCNusrq0Onpe_LUi-2OphDsAtU&usqp=CAI&s",
+          "parsed_date": "2026-07-13 22:57:04",
+          "deep_analyzed": true,
+          "sentiment_label": "positive",
+          "sentiment_confidence": 0.9452136754989624,
+          "sentiment_score": 1
+        },
+        {
+          "title": "Infosys Stock Leads 3 Founder Backed Indian Companies Worth Watching",
+          "link": "https://simplywall.st/stocks/in/software/nse-infy/infosys-shares/news/infosys-stock-leads-3-founder-backed-indian-companies-worth",
+          "snippet": "Founder led companies sit at an interesting crossroads right now. While global data from China to Brazil points to ongoing shifts in growth,...",
+          "date": "3 weeks ago",
+          "source": "Simply Wall Street",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw4SfrJt6vPcE8UzbNWvb4aIKcKoumQJOGGw0LCYLqtUHK7Eg-DGtAq9A&usqp=CAI&s",
+          "parsed_date": "2026-06-29 22:57:04",
+          "sentiment_label": "positive",
+          "sentiment_confidence": 0.5486057996749878,
+          "sentiment_score": 1
+        },
+        {
+          "title": "TCS, Infosys, HCLTech rally despite weak market. Why are IT stocks rising?",
+          "link": "https://www.indiatoday.in/business/market/story/it-stocks-rise-tcs-infosys-hcltech-rally-despite-weak-market-2946538-2026-07-13",
+          "snippet": "Even as the benchmark stock market indices traded in the red on Monday, investors were buying shares of some of India's biggest information...",
+          "date": "1 week ago",
+          "source": "India Today",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwEJc61-JLgcSxCRK2on1oTRSLq2ZOO_BpLAe89mwfLejFEUS9k9elrEA&usqp=CAI&s",
+          "parsed_date": "2026-07-13 22:57:04",
+          "sentiment_label": "negative",
+          "sentiment_confidence": 0.5108510851860046,
+          "sentiment_score": -1
+        },
+        {
+          "title": "TCS, Infosys, Wipro Shares In Focus: Why The India-UK FTA May Spell Relief For IT Giants",
+          "link": "https://www.ndtvprofit.com/markets/tcs-infosys-wipro-shares-in-focus-why-the-india-uk-fta-may-spell-gains-for-it-companies-11770937",
+          "snippet": "Britain is the second-largest market globally for TCS, with over 22000 direct employees across more than 60 locations.",
+          "date": "6 days ago",
+          "source": "NDTV Profit",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2JvOSzeYFWJ5jm7-fKEFQnX4UzgFyzSKjtJQ0KILEivKn5DqXF3YE35x8&usqp=CAI&s",
+          "parsed_date": "2026-07-14 22:57:04",
+          "sentiment_label": "positive",
+          "sentiment_confidence": 0.7819018363952637,
+          "sentiment_score": 1
+        },
+        {
+          "title": "IT Stocks Rally as Q1 Results Ease Growth Concerns; Infosys, Tech Mahindra and HCL Tech Lead Gains",
+          "link": "https://ascendants.in/my-money/why-it-stocks-rising-today-infosys-tcs-hcl-tech-gain/",
+          "snippet": "Mumbai, July 17, 2026: IT stocks led gains in the Indian equity market on Friday, with the Nifty IT index rising as much as 2.3 percent...",
+          "date": "3 days ago",
+          "source": "https://ascendants.in/",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPUn1U_2cASdbmneGI8wR-g7Rn9uju2XxGr-rX8T9Cvm2w9t4V2Hzqi2c&usqp=CAI&s",
+          "parsed_date": "2026-07-17 22:57:04",
+          "sentiment_label": "positive",
+          "sentiment_confidence": 0.8243377804756165,
+          "sentiment_score": 1
+        },
+        {
+          "title": "Infosys, Coforge, TCS, Wipro, HCL, LTM, Persistent, Mphasis: IT stock with highest upside target",
+          "link": "https://www.businesstoday.in/markets/stocks/story/infosys-coforge-tcs-wipro-hcl-ltm-persistent-mphasis-stock-with-highest-st-target-542749-2026-07-14",
+          "snippet": "The 12-month consensus target for Infosys stands at Rs 1332.83 apiece, Bloomberg data compiled by Business Today suggests.",
+          "date": "6 days ago",
+          "source": "Business Today",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT6KYlkh0_Bmp10hYb3jtw_0LQNN0mp-sslWAOblZDDYC9DQgYtBhER1U&usqp=CAI&s",
+          "parsed_date": "2026-07-14 22:57:04",
+          "sentiment_label": "positive",
+          "sentiment_confidence": 0.779249906539917,
+          "sentiment_score": 1
+        }
+      ]
+    }
   }
 }
