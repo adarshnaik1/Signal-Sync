@@ -1,0 +1,8 @@
+financial_analysis_task:
+  description: >
+    Analyze the company's financial statements, growth trends, debt profile,
+    and cash flows.
+  expected_output: >
+    A professional financial analysis report covering company financial health,
+    strengths, weaknesses, and outlook.
+  agent: financial_analysis_agent

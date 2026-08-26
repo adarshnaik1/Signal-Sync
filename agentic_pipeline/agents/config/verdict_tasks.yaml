@@ -1,0 +1,8 @@
+# Verdict Task Configuration
+
+verdict_task:
+  description: >
+    Generate the final investment verdict based on all analytical outputs.
+  expected_output: >
+    Compact JSON-based investment verdict.
+  agent: verdict_agent
